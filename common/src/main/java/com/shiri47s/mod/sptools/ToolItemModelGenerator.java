@@ -1,6 +1,5 @@
 package com.shiri47s.mod.sptools;
 
-import com.shiri47s.mod.sptools.armors.CopperArmorItem;
 import com.shiri47s.mod.sptools.materials.CopperToolsMaterial;
 import dev.architectury.registry.registries.DeferredRegister;
 import net.minecraft.item.*;
@@ -19,6 +18,6 @@ public class ToolItemModelGenerator {
         ItemRegister.register(Constants.Tool.COPPER_AXE, () -> new AxeItem(copperMaterial, 6.0F, -3.1F, new Item.Settings()));
         ItemRegister.register(Constants.Tool.COPPER_HOE, () -> new HoeItem(copperMaterial, -2, -1.0F, new Item.Settings()));
 
-        ItemRegister.getRegistrar().get()
+        ItemRegister.register();
     }
 }
