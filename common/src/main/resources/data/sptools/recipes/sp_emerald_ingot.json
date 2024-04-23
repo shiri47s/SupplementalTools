@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "EEE",
+    "   "
+  ],
+  "result": {
+    "item": "sptools:sp_emerald_ingot"
+  }
+}

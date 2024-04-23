@@ -11,6 +11,8 @@ import net.minecraft.sound.SoundEvents;
 import java.util.HashMap;
 
 public class IronCopperArmorMaterials implements ArmorMaterial {
+    public static final IronCopperArmorMaterials INSTANCE = new IronCopperArmorMaterials();
+
     private static final HashMap<ArmorItem.Type, Integer> DURABILITIES = new HashMap<>()
     {
         {

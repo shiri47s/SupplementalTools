@@ -1,3 +1,55 @@
 {
-  "item.sptools.sp_copper_helmet": "Copper Helmet"
+  "item.sptools.sp_copper_helmet": "Copper Helmet",
+  "item.sptools.sp_copper_chestplate": "Copper Chestplate",
+  "item.sptools.sp_copper_leggings": "Copper Leggings",
+  "item.sptools.sp_copper_boots": "Copper Boots",
+  "item.sptools.sp_copper_sword": "Copper Sword",
+  "item.sptools.sp_copper_shovel": "Copper Shovel",
+  "item.sptools.sp_copper_axe": "Copper Axe",
+  "item.sptools.sp_copper_pickaxe": "Copper Pickaxe",
+  "item.sptools.sp_copper_hoe": "Copper Hoe",
+
+  "item.sptools.sp_ironcopper_helmet": "Alloy of copper and iron Helmet",
+  "item.sptools.sp_ironcopper_chestplate": "Alloy of copper and iron Chestplate",
+  "item.sptools.sp_ironcopper_leggings": "Alloy of copper and iron Leggings",
+  "item.sptools.sp_ironcopper_boots": "Alloy of copper and iron Boots",
+  "item.sptools.sp_ironcopper_sword": "Alloy of copper and iron Sword",
+  "item.sptools.sp_ironcopper_shovel": "Alloy of copper and iron Shovel",
+  "item.sptools.sp_ironcopper_axe": "Alloy of copper and iron Axe",
+  "item.sptools.sp_ironcopper_pickaxe": "Alloy of copper and iron Pickaxe",
+  "item.sptools.sp_ironcopper_hoe": "Alloy of copper and iron Hoe",
+
+  "item.sptools.sp_amethyst_helmet": "Amethyst Helmet",
+  "item.sptools.sp_amethyst_chestplate": "Amethyst Chestplate",
+  "item.sptools.sp_amethyst_leggings": "Amethyst Leggings",
+  "item.sptools.sp_amethyst_boots": "Amethyst Boots",
+  "item.sptools.sp_amethyst_sword": "Amethyst Sword",
+  "item.sptools.sp_amethyst_shovel": "Amethyst Shovel",
+  "item.sptools.sp_amethyst_axe": "Amethyst Axe",
+  "item.sptools.sp_amethyst_pickaxe": "Amethyst Pickaxe",
+  "item.sptools.sp_amethyst_hoe": "Amethyst Hoe",
+
+  "item.sptools.sp_emerald_helmet": "Emerald Helmet",
+  "item.sptools.sp_emerald_chestplate": "Emerald Chestplate",
+  "item.sptools.sp_emerald_leggings": "Emerald Leggings",
+  "item.sptools.sp_emerald_boots": "Emerald Boots",
+  "item.sptools.sp_emerald_sword": "Emerald Sword",
+  "item.sptools.sp_emerald_shovel": "Emerald Shovel",
+  "item.sptools.sp_emerald_axe": "Emerald Axe",
+  "item.sptools.sp_emerald_pickaxe": "Emerald Pickaxe",
+  "item.sptools.sp_emerald_hoe": "Emerald Hoe",
+
+  "item.sptools.sp_amethyst_ingot": "Amethyst Ingot",
+  "item.sptools.sp_emerald_ingot": "Emerald Ingot",
+
+  "effect.sptools.sp_knockback_resistance" :"Knockback Resistance",
+  "effect.sptools.sp_attack_knockback" :"Knockback",
+  "effect.sptools.sp_movement_speed" :"Movement Speed",
+  "effect.sptools.sp_haste_and_luck" :"Haste and Luck",
+
+  "item.sptools.blessing" :"FullSet Bonus: ",
+  "item.sptools.blessing.copper": " Provide Knockback Resistance",
+  "item.sptools.blessing.ironcopper": " Provide Attack Knockback",
+  "item.sptools.blessing.amethyst": " Provide Movement Speed",
+  "item.sptools.blessing.emerald": " Provide Haste and Luck"
 }

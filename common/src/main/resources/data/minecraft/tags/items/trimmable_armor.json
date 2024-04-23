@@ -1,6 +1,21 @@
 {
   "replace": false,
   "values": [
-    "sptools:sp_copper_helmet"
+    "sptools:sp_copper_helmet",
+    "sptools:sp_copper_chestplate",
+    "sptools:sp_copper_leggings",
+    "sptools:sp_copper_boots",
+    "sptools:sp_ironcopper_helmet",
+    "sptools:sp_ironcopper_chestplate",
+    "sptools:sp_ironcopper_leggings",
+    "sptools:sp_ironcopper_boots",
+    "sptools:sp_amethyst_helmet",
+    "sptools:sp_amethyst_chestplate",
+    "sptools:sp_amethyst_leggings",
+    "sptools:sp_amethyst_boots",
+    "sptools:sp_emerald_helmet",
+    "sptools:sp_emerald_chestplate",
+    "sptools:sp_emerald_leggings",
+    "sptools:sp_emerald_boots"
   ]
 }

@@ -8,5 +8,7 @@ public class SupplementalTools
 		ItemModelGenerator.generate();
 		BlockItemModelGenerator.generate();
 		ToolItemModelGenerator.generate();
+		EventGenerator.generate();
+		EffectGenerator.generate();
 	}
 }
