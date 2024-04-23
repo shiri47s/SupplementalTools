@@ -9,7 +9,6 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Lazy;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
@@ -61,12 +60,13 @@ public enum SupplementalToolMaterials implements ToolMaterial {
         return this.repairIngredientSupplier.get();
     }
 
+    @SuppressWarnings("unused")
     public @Nullable TagKey<Item> getTag() {
         return switch (this) {
             case COPPER -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.COPPERS));
-            case IRONCOPPER ->
-                    TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.IRONCOPPERS));
-            default -> throw new UnsupportedOperationException();
+            case IRONCOPPER -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.IRONCOPPERS));
+            case EMERALD -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.EMERALDS));
+            case AMETHYST -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.AMETHYSTS));
         };
     }
 }

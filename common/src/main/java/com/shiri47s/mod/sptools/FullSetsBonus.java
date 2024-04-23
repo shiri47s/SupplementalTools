@@ -5,7 +5,6 @@ import com.shiri47s.mod.sptools.armors.CopperArmorItem;
 import com.shiri47s.mod.sptools.armors.EmeraldArmorItem;
 import com.shiri47s.mod.sptools.armors.IronCopperArmorItem;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import oshi.util.tuples.Pair;

@@ -1,7 +1,6 @@
 package com.shiri47s.mod.sptools.armors;
 
 import com.shiri47s.mod.sptools.Enums;
-import com.shiri47s.mod.sptools.materials.CopperArmorMaterials;
 import com.shiri47s.mod.sptools.materials.EmeraldArmorMaterials;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
