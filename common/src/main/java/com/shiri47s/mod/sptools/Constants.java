@@ -12,11 +12,14 @@ public class Constants {
         public static final String AMETHYSTS = "amethysts";
 
         public static final String EMERALDS = "emerald";
+
+        public static final String LEAD = "lead";
     }
 
     public static class Item {
         public static final String AMETHYST_INGOT = PREFIX + "amethyst_ingot";
         public static final String EMERALD_INGOT = PREFIX + "emerald_ingot";
+        public static final String LEAD_INGOT = PREFIX + "lead_ingot";
     }
 
     public static class Armor {
@@ -43,6 +46,12 @@ public class Constants {
         public static final String EMERALD_CHESTPLATE = PREFIX + "emerald_chestplate";
         public static final String EMERALD_LEGGINGS = PREFIX + "emerald_leggings";
         public static final String EMERALD_BOOTS = PREFIX + "emerald_boots";
+
+        public static final String LEAD_ARMOR = PREFIX + "lead_armor";
+        public static final String LEAD_HELMET = PREFIX + "lead_helmet";
+        public static final String LEAD_CHESTPLATE = PREFIX + "lead_chestplate";
+        public static final String LEAD_LEGGINGS = PREFIX + "lead_leggings";
+        public static final String LEAD_BOOTS = PREFIX + "lead_boots";
     }
 
     public static class Tool {
@@ -69,10 +78,16 @@ public class Constants {
         public static final String EMERALD_SHOVEL = PREFIX + "emerald_shovel";
         public static final String EMERALD_PICKAXE = PREFIX + "emerald_pickaxe";
         public static final String EMERALD_HOE = PREFIX + "emerald_hoe";
+
+        public static final String LEAD_SWORD = PREFIX + "lead_sword";
+        public static final String LEAD_AXE = PREFIX + "lead_axe";
+        public static final String LEAD_SHOVEL = PREFIX + "lead_shovel";
+        public static final String LEAD_PICKAXE = PREFIX + "lead_pickaxe";
+        public static final String LEAD_HOE = PREFIX + "lead_hoe";
     }
 
     public static class Block {
-
+        public static final String LEAD_ORE = PREFIX + "lead_ore";
     }
 
     public static class Effect {

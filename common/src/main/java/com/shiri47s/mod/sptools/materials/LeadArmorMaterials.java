@@ -10,8 +10,8 @@ import net.minecraft.sound.SoundEvents;
 
 import java.util.HashMap;
 
-public class EmeraldArmorMaterials implements ArmorMaterial {
-    public static final EmeraldArmorMaterials INSTANCE = new EmeraldArmorMaterials();
+public class LeadArmorMaterials implements ArmorMaterial {
+    public static final LeadArmorMaterials INSTANCE = new LeadArmorMaterials();
 
     private static final HashMap<ArmorItem.Type, Integer> DURABILITIES = new HashMap<>()
     {

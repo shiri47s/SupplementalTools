@@ -38,6 +38,12 @@ public class ToolItemModelGenerator {
         ItemRegister.register(Constants.Tool.EMERALD_AXE, () -> new SupplementalAxeItem(SupplementalToolMaterials.EMERALD, 6.0F, -3.0F, new Item.Settings()));
         ItemRegister.register(Constants.Tool.EMERALD_HOE, () -> new SupplementalHoeItem(SupplementalToolMaterials.EMERALD, 0, -3.0F, new Item.Settings()));
 
+        ItemRegister.register(Constants.Tool.LEAD_SWORD, () -> new SupplementalSwordItem(SupplementalToolMaterials.LEAD, 4, -3.6F, new Item.Settings()));
+        ItemRegister.register(Constants.Tool.LEAD_SHOVEL, () -> new SupplementalShovelItem(SupplementalToolMaterials.LEAD, 2.5F, -4.2F, new Item.Settings()));
+        ItemRegister.register(Constants.Tool.LEAD_PICKAXE, () -> new SupplementalPickaxeItem(SupplementalToolMaterials.LEAD, 2, -3.8F, new Item.Settings()));
+        ItemRegister.register(Constants.Tool.LEAD_AXE, () -> new SupplementalAxeItem(SupplementalToolMaterials.LEAD, 7.5F, -4.0F, new Item.Settings()));
+        ItemRegister.register(Constants.Tool.LEAD_HOE, () -> new SupplementalHoeItem(SupplementalToolMaterials.LEAD, 0, -4.0F, new Item.Settings()));
+
         blessingOfFullSets();
         ItemRegister.register();
     }

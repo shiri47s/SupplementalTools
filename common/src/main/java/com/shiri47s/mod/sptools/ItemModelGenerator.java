@@ -1,11 +1,9 @@
 package com.shiri47s.mod.sptools;
 
-import com.shiri47s.mod.sptools.armors.AmethystArmorItem;
-import com.shiri47s.mod.sptools.armors.CopperArmorItem;
-import com.shiri47s.mod.sptools.armors.EmeraldArmorItem;
-import com.shiri47s.mod.sptools.armors.IronCopperArmorItem;
+import com.shiri47s.mod.sptools.armors.*;
 import com.shiri47s.mod.sptools.items.AmethystIngot;
 import com.shiri47s.mod.sptools.items.EmeraldIngot;
+import com.shiri47s.mod.sptools.items.LeadIngot;
 import dev.architectury.registry.registries.DeferredRegister;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -43,10 +41,16 @@ public class ItemModelGenerator {
         ItemRegister.register(Constants.Armor.EMERALD_CHESTPLATE, () -> new EmeraldArmorItem(ArmorItem.Type.CHESTPLATE));
         ItemRegister.register(Constants.Armor.EMERALD_LEGGINGS, () -> new EmeraldArmorItem(ArmorItem.Type.LEGGINGS));
         ItemRegister.register(Constants.Armor.EMERALD_BOOTS, () -> new EmeraldArmorItem(ArmorItem.Type.BOOTS));
+
+        ItemRegister.register(Constants.Armor.LEAD_HELMET, () -> new LeadArmorItem(ArmorItem.Type.HELMET));
+        ItemRegister.register(Constants.Armor.LEAD_CHESTPLATE, () -> new LeadArmorItem(ArmorItem.Type.CHESTPLATE));
+        ItemRegister.register(Constants.Armor.LEAD_LEGGINGS, () -> new LeadArmorItem(ArmorItem.Type.LEGGINGS));
+        ItemRegister.register(Constants.Armor.LEAD_BOOTS, () -> new LeadArmorItem(ArmorItem.Type.BOOTS));
     }
 
     private static void generateItems() {
         ItemRegister.register(Constants.Item.AMETHYST_INGOT, () -> new AmethystIngot(new Item.Settings()));
         ItemRegister.register(Constants.Item.EMERALD_INGOT, () -> new EmeraldIngot(new Item.Settings()));
+        ItemRegister.register(Constants.Item.LEAD_INGOT, () -> new LeadIngot(new Item.Settings()));
     }
 }

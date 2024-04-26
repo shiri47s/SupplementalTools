@@ -1,0 +1,13 @@
+{
+  "values": [
+    "sptools:sp_lead_sword",
+    "sptools:sp_lead_axe",
+    "sptools:sp_lead_pickaxe",
+    "sptools:sp_lead_shovel",
+    "sptools:sp_lead_hoe",
+    "sptools:sp_lead_helmet",
+    "sptools:sp_lead_chestplate",
+    "sptools:sp_lead_leggings",
+    "sptools:sp_lead_boots"
+  ]
+}

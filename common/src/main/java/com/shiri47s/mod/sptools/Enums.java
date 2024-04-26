@@ -6,6 +6,7 @@ public class Enums {
         Copper,
         IronCopper,
         Amethyst,
-        Emerald
+        Emerald,
+        Lead
     }
 }

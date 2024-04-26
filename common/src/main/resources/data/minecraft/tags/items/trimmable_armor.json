@@ -16,6 +16,11 @@
     "sptools:sp_emerald_helmet",
     "sptools:sp_emerald_chestplate",
     "sptools:sp_emerald_leggings",
-    "sptools:sp_emerald_boots"
+    "sptools:sp_emerald_boots",
+    "sptools:sp_amethyst_boots",
+    "sptools:sp_lead_helmet",
+    "sptools:sp_lead_chestplate",
+    "sptools:sp_lead_leggings",
+    "sptools:sp_lead_boots"
   ]
 }
