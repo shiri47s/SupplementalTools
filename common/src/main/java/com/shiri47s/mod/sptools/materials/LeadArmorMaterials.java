@@ -60,7 +60,7 @@ public class LeadArmorMaterials implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return Constants.Armor.EMERALD_ARMOR;
+        return Constants.Armor.LEAD_ARMOR;
     }
 
     @Override
