@@ -2,6 +2,7 @@ package com.shiri47s.mod.sptools.armors;
 
 import com.shiri47s.mod.sptools.Enums;
 import com.shiri47s.mod.sptools.FullSetsBonus;
+import com.shiri47s.mod.sptools.Instances;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
@@ -13,9 +14,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+@SuppressWarnings("UnstableApiUsage")
 public abstract class SupplementalArmorItem extends ArmorItem {
     public SupplementalArmorItem(ArmorMaterial material, Type type, Settings settings) {
-        super(material, type, settings);
+        super(material, type, settings.arch$tab(Instances.Group));
     }
 
     @Override

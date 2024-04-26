@@ -12,6 +12,6 @@ public class LeadBlock extends SupplementalToosBlock {
                 .mapColor(MapColor.STONE_GRAY)
                 .instrument(Instrument.BASEDRUM)
                 .requiresTool()
-                .strength(4.5F, 3.0F));
+                .strength(3.0F, 3.0F));
     }
 }

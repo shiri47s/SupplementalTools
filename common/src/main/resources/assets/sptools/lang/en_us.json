@@ -1,4 +1,6 @@
 {
+  "item.sptools": "Supplemental Tools",
+
   "item.sptools.sp_copper_helmet": "Copper Helmet",
   "item.sptools.sp_copper_chestplate": "Copper Chestplate",
   "item.sptools.sp_copper_leggings": "Copper Leggings",
@@ -39,17 +41,33 @@
   "item.sptools.sp_emerald_pickaxe": "Emerald Pickaxe",
   "item.sptools.sp_emerald_hoe": "Emerald Hoe",
 
+  "item.sptools.sp_lead_helmet": "Lead Helmet",
+  "item.sptools.sp_lead_chestplate": "Lead Chestplate",
+  "item.sptools.sp_lead_leggings": "Lead Leggings",
+  "item.sptools.sp_lead_boots": "Lead Boots",
+  "item.sptools.sp_lead_sword": "Lead Sword",
+  "item.sptools.sp_lead_shovel": "Lead Shovel",
+  "item.sptools.sp_lead_axe": "Lead Axe",
+  "item.sptools.sp_lead_pickaxe": "Lead Pickaxe",
+  "item.sptools.sp_lead_hoe": "Lead Hoe",
+
   "item.sptools.sp_amethyst_ingot": "Amethyst Ingot",
   "item.sptools.sp_emerald_ingot": "Emerald Ingot",
+  "item.sptools.sp_lead_ingot": "Lead Ingot",
+  "item.sptools.sp_raw_lead": "Raw Lead",
+  "item.sptools.sp_lead_ore": "Lead Ore",
+  "block.sptools.sp_lead_ore": "Lead Ore",
 
-  "effect.sptools.sp_knockback_resistance" :"Knockback Resistance",
+  "effect.sptools.sp_knockback_resistance" :"Knockback",
   "effect.sptools.sp_attack_knockback" :"Knockback",
-  "effect.sptools.sp_movement_speed" :"Movement Speed",
-  "effect.sptools.sp_haste_and_luck" :"Haste and Luck",
+  "effect.sptools.sp_movement_speed" :"Speed",
+  "effect.sptools.sp_haste_and_luck" :"Haste/Luck",
+  "effect.sptools.sp_heavy" :"Heavy",
 
   "item.sptools.blessing" :"FullSet Bonus: ",
   "item.sptools.blessing.copper": " Provide Knockback Resistance",
   "item.sptools.blessing.ironcopper": " Provide Attack Knockback",
   "item.sptools.blessing.amethyst": " Provide Movement Speed",
-  "item.sptools.blessing.emerald": " Provide Haste and Luck"
+  "item.sptools.blessing.emerald": " Provide Haste and Luck",
+  "item.sptools.blessing.heavy": " Provide Resistance up and slow down"
 }

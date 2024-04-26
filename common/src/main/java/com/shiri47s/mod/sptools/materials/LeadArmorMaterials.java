@@ -65,11 +65,11 @@ public class LeadArmorMaterials implements ArmorMaterial {
 
     @Override
     public float getToughness() {
-        return 2.5F;
+        return 1.0F;
     }
 
     @Override
     public float getKnockbackResistance() {
-        return 0.25F;
+        return 0.15F;
     }
 }

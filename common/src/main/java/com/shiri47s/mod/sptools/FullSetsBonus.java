@@ -1,9 +1,6 @@
 package com.shiri47s.mod.sptools;
 
-import com.shiri47s.mod.sptools.armors.AmethystArmorItem;
-import com.shiri47s.mod.sptools.armors.CopperArmorItem;
-import com.shiri47s.mod.sptools.armors.EmeraldArmorItem;
-import com.shiri47s.mod.sptools.armors.IronCopperArmorItem;
+import com.shiri47s.mod.sptools.armors.*;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -83,6 +80,14 @@ public class FullSetsBonus {
             return;
         }
 
+        if (all(isLead(player.getEquippedStack(EquipmentSlot.HEAD)),
+                isLead(player.getEquippedStack(EquipmentSlot.CHEST)),
+                isLead(player.getEquippedStack(EquipmentSlot.LEGS)),
+                isLead(player.getEquippedStack(EquipmentSlot.FEET)))) {
+            updateInternal(player, Enums.Series.Lead);
+            return;
+        }
+
         updateInternal(player, Enums.Series.None);
     }
 
@@ -121,5 +126,9 @@ public class FullSetsBonus {
 
     private static boolean isEmerald(ItemStack stack) {
         return stack.getItem() instanceof EmeraldArmorItem;
+    }
+
+    private static boolean isLead(ItemStack stack) {
+        return stack.getItem() instanceof LeadArmorItem;
     }
 }

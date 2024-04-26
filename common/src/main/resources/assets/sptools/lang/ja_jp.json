@@ -1,4 +1,6 @@
 {
+  "item.sptools": "補助ツール",
+
   "item.sptools.sp_copper_helmet": "銅のヘルメット",
   "item.sptools.sp_copper_chestplate": "銅のチェストプレート",
   "item.sptools.sp_copper_leggings": "銅のレギンス",
@@ -29,6 +31,16 @@
   "item.sptools.sp_amethyst_pickaxe": "アメジストのツルハシ",
   "item.sptools.sp_amethyst_hoe": "アメジストのクワ",
 
+  "item.sptools.sp_lead_helmet": "鉛のヘルメット",
+  "item.sptools.sp_lead_chestplate": "鉛のチェストプレート",
+  "item.sptools.sp_lead_leggings": "鉛のレギンス",
+  "item.sptools.sp_lead_boots": "鉛のブーツ",
+  "item.sptools.sp_lead_sword": "鉛の剣",
+  "item.sptools.sp_lead_shovel": "鉛のシャベル",
+  "item.sptools.sp_lead_axe": "鉛の斧",
+  "item.sptools.sp_lead_pickaxe": "鉛のツルハシ",
+  "item.sptools.sp_lead_hoe": "鉛のクワ",
+
   "item.sptools.sp_emerald_helmet": "エメラルドのヘルメット",
   "item.sptools.sp_emerald_chestplate": "エメエラルドのチェストプレート",
   "item.sptools.sp_emerald_leggings": "エメラルドのレギンス",
@@ -41,15 +53,21 @@
 
   "item.sptools.sp_amethyst_ingot": "アメジストインゴット",
   "item.sptools.sp_emerald_ingot": "エメラルドインゴット",
+  "item.sptools.sp_lead_ingot": "鉛のインゴット",
+  "item.sptools.sp_raw_lead": "鉛",
+  "item.sptools.sp_lead_ore": "鉛鉱石",
+  "block.sptools.sp_lead_ore": "鉛鉱石",
 
   "effect.sptools.sp_knockback_resistance" :"ノックバック耐性",
   "effect.sptools.sp_attack_knockback" :"ノックバック",
   "effect.sptools.sp_movement_speed" :"移動速度上昇",
   "effect.sptools.sp_haste_and_luck" :"幸運＆採掘速度上昇",
+  "effect.sptools.sp_heavy" :"重量",
 
   "item.sptools.blessing" :"フルセットボーナス: ",
   "item.sptools.blessing.copper": " ノックバック耐性付与",
   "item.sptools.blessing.ironcopper": " ノックバック付与",
   "item.sptools.blessing.amethyst": " 移動速度上昇付与",
-  "item.sptools.blessing.emerald": " 幸運＆採掘速度上昇付与"
+  "item.sptools.blessing.emerald": " 幸運＆採掘速度上昇付与",
+  "item.sptools.blessing.heavy": " 防御上昇＆移動速度低下付与"
 }

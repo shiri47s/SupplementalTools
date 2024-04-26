@@ -20,6 +20,8 @@ public class Constants {
         public static final String AMETHYST_INGOT = PREFIX + "amethyst_ingot";
         public static final String EMERALD_INGOT = PREFIX + "emerald_ingot";
         public static final String LEAD_INGOT = PREFIX + "lead_ingot";
+        public static final String RAW_LEAD = PREFIX + "raw_lead";
+        public static final String LEAD_ORE = PREFIX + "lead_ore";
     }
 
     public static class Armor {
@@ -95,5 +97,6 @@ public class Constants {
         public static final String ATTACK_KNOCKBACK = PREFIX + "attack_knockback";
         public static final String MOVEMENT_SPEED = PREFIX + "movement_speed";
         public static final String HASTE_AND_LUCK = PREFIX + "haste_and_luck";
+        public static final String HEAVY = PREFIX + "heavy";
     }
 }
