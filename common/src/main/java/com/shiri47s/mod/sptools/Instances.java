@@ -26,6 +26,7 @@ public class Instances {
         public static final net.minecraft.item.Item LEAD_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.LEAD_INGOT)));
     }
 
+    @SuppressWarnings("unused")
     public static class ARMOR {
         public static final net.minecraft.item.Item COPPER_HELMET = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.COPPER_HELMET)));
         public static final net.minecraft.item.Item COPPER_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.COPPER_CHESTPLATE)));
