@@ -54,6 +54,7 @@ public class Instances {
         public static final net.minecraft.item.Item LEAD_BOOTS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.LEAD_BOOTS)));
     }
 
+    @SuppressWarnings("unused")
     public static class TOOL {
         public static final net.minecraft.item.Item COPPER_SWORD = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.COPPER_SWORD)));
         public static final net.minecraft.item.Item COPPER_AXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.COPPER_AXE)));
