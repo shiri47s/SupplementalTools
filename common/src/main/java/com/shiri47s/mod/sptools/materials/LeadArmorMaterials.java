@@ -16,20 +16,20 @@ public class LeadArmorMaterials implements ArmorMaterial {
     private static final HashMap<ArmorItem.Type, Integer> DURABILITIES = new HashMap<>()
     {
         {
-            put(ArmorItem.Type.HELMET, 350);
-            put(ArmorItem.Type.CHESTPLATE, 500);
-            put(ArmorItem.Type.LEGGINGS, 470);
-            put(ArmorItem.Type.BOOTS, 310);
+            put(ArmorItem.Type.HELMET, 175);
+            put(ArmorItem.Type.CHESTPLATE, 250);
+            put(ArmorItem.Type.LEGGINGS, 235);
+            put(ArmorItem.Type.BOOTS, 165);
         }
     };
 
     private static final HashMap<ArmorItem.Type, Integer> PROTECTIONS = new HashMap<>()
     {
         {
-            put(ArmorItem.Type.HELMET, 3);
+            put(ArmorItem.Type.HELMET, 4);
             put(ArmorItem.Type.CHESTPLATE, 8);
             put(ArmorItem.Type.LEGGINGS, 6);
-            put(ArmorItem.Type.BOOTS, 3);
+            put(ArmorItem.Type.BOOTS, 4);
         }
     };
 
@@ -45,7 +45,7 @@ public class LeadArmorMaterials implements ArmorMaterial {
 
     @Override
     public int getEnchantability() {
-        return 14;
+        return 3;
     }
 
     @Override
@@ -65,11 +65,11 @@ public class LeadArmorMaterials implements ArmorMaterial {
 
     @Override
     public float getToughness() {
-        return 1.0F;
+        return 2.5F;
     }
 
     @Override
     public float getKnockbackResistance() {
-        return 0.10F;
+        return 0.25F;
     }
 }
