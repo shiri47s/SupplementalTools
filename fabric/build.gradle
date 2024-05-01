@@ -1,6 +1,5 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
-    id "com.modrinth.minotaur" version "2.+"
 }
 
 architectury {
@@ -17,7 +16,7 @@ configurations {
 }
 
 dependencies {
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
@@ -73,20 +72,5 @@ publishing {
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
         // Add repositories to publish to here.
-    }
-}
-
-modrinth {
-    token = System.getenv("MODRINTH_TOKEN")
-    projectId = "mMGSs9QN"
-
-    versionNumber = project.mod_version
-    versionType = "alpha"
-    uploadFile = remapJar
-    gameVersions = ["${project.minecraft_version}"]
-    loaders = ["fabric"]
-    dependencies {
-        required.project "fabric-api"
-        required.project "architectury-api"
     }
 }

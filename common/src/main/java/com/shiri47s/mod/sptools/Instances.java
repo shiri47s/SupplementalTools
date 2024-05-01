@@ -1,7 +1,6 @@
 package com.shiri47s.mod.sptools;
 
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;

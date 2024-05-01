@@ -100,8 +100,4 @@ public class Constants {
         public static final String HASTE_AND_LUCK = PREFIX + "haste_and_luck";
         public static final String HEAVY = PREFIX + "heavy";
     }
-
-    public static class Trigger {
-        public static final String COPPER = PREFIX + "copper";
-    }
 }

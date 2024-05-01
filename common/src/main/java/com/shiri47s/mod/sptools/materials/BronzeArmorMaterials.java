@@ -1,9 +1,9 @@
 package com.shiri47s.mod.sptools.materials;
 
 import com.shiri47s.mod.sptools.Constants;
+import com.shiri47s.mod.sptools.Instances;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -55,7 +55,7 @@ public class BronzeArmorMaterials implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.COPPER_INGOT);
+        return Ingredient.ofItems(Instances.Item.BRONZE_INGOT);
     }
 
     @Override
