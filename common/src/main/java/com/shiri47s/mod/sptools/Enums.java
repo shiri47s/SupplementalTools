@@ -3,7 +3,7 @@ package com.shiri47s.mod.sptools;
 public class Enums {
     public enum Series {
         None,
-        Copper,
+        Bronze,
         IronCopper,
         Amethyst,
         Emerald,

@@ -1,15 +1,15 @@
 {
   "item.sptools": "Supplemental Tools",
 
-  "item.sptools.sp_copper_helmet": "Copper Helmet",
-  "item.sptools.sp_copper_chestplate": "Copper Chestplate",
-  "item.sptools.sp_copper_leggings": "Copper Leggings",
-  "item.sptools.sp_copper_boots": "Copper Boots",
-  "item.sptools.sp_copper_sword": "Copper Sword",
-  "item.sptools.sp_copper_shovel": "Copper Shovel",
-  "item.sptools.sp_copper_axe": "Copper Axe",
-  "item.sptools.sp_copper_pickaxe": "Copper Pickaxe",
-  "item.sptools.sp_copper_hoe": "Copper Hoe",
+  "item.sptools.sp_bronze_helmet": "Bronze Helmet",
+  "item.sptools.sp_bronze_chestplate": "Bronze Chestplate",
+  "item.sptools.sp_bronze_leggings": "Bronze Leggings",
+  "item.sptools.sp_bronze_boots": "Bronze Boots",
+  "item.sptools.sp_bronze_sword": "Bronze Sword",
+  "item.sptools.sp_bronze_shovel": "Bronze Shovel",
+  "item.sptools.sp_bronze_axe": "Bronze Axe",
+  "item.sptools.sp_bronze_pickaxe": "Bronze Pickaxe",
+  "item.sptools.sp_bronze_hoe": "Bronze Hoe",
 
   "item.sptools.sp_ironcopper_helmet": "Alloy of copper and iron Helmet",
   "item.sptools.sp_ironcopper_chestplate": "Alloy of copper and iron Chestplate",
@@ -51,6 +51,7 @@
   "item.sptools.sp_lead_pickaxe": "Lead Pickaxe",
   "item.sptools.sp_lead_hoe": "Lead Hoe",
 
+  "item.sptools.sp_bronze_ingot": "Bronze Ingot",
   "item.sptools.sp_amethyst_ingot": "Amethyst Ingot",
   "item.sptools.sp_emerald_ingot": "Emerald Ingot",
   "item.sptools.sp_lead_ingot": "Lead Ingot",
@@ -69,5 +70,8 @@
   "item.sptools.blessing.ironcopper": " Provide Attack Knockback",
   "item.sptools.blessing.amethyst": " Provide Movement Speed",
   "item.sptools.blessing.emerald": " Provide Haste and Luck",
-  "item.sptools.blessing.heavy": " Provide Resistance up and slow down"
+  "item.sptools.blessing.heavy": " Provide Resistance up and slow down",
+
+  "advancement.sptools.bronze.title": "Welcome",
+  "advancement.sptools.bronze.description": "Welcome Supplemental Tools"
 }

@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "sptools:sp_copper_axe",
+    "sptools:sp_bronze_axe",
     "sptools:sp_ironcopper_axe",
     "sptools:sp_amethyst_axe",
     "sptools:sp_emerald_axe",

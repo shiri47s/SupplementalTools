@@ -10,8 +10,8 @@ import net.minecraft.sound.SoundEvents;
 
 import java.util.HashMap;
 
-public class CopperArmorMaterials implements ArmorMaterial {
-    public static final CopperArmorMaterials INSTANCE = new CopperArmorMaterials();
+public class BronzeArmorMaterials implements ArmorMaterial {
+    public static final BronzeArmorMaterials INSTANCE = new BronzeArmorMaterials();
 
     private static final HashMap<ArmorItem.Type, Integer> DURABILITIES = new HashMap<>()
     {
@@ -60,7 +60,7 @@ public class CopperArmorMaterials implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return Constants.Armor.COPPER_ARMOR;
+        return Constants.Armor.BRONZE_ARMOR;
     }
 
     @Override

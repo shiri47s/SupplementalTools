@@ -52,7 +52,7 @@ public class FullSetsBonus {
                 isCopper(player.getEquippedStack(EquipmentSlot.CHEST)),
                 isCopper(player.getEquippedStack(EquipmentSlot.LEGS)),
                 isCopper(player.getEquippedStack(EquipmentSlot.FEET)))) {
-            updateInternal(player, Enums.Series.Copper);
+            updateInternal(player, Enums.Series.Bronze);
             return;
         }
 
@@ -113,7 +113,7 @@ public class FullSetsBonus {
     }
 
     private static boolean isCopper(ItemStack stack) {
-        return stack.getItem() instanceof CopperArmorItem;
+        return stack.getItem() instanceof BronzeArmorItem;
     }
 
     private static boolean isIronCopper(ItemStack stack) {

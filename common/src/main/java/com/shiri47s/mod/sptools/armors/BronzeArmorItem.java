@@ -1,7 +1,7 @@
 package com.shiri47s.mod.sptools.armors;
 
 import com.shiri47s.mod.sptools.Enums;
-import com.shiri47s.mod.sptools.materials.CopperArmorMaterials;
+import com.shiri47s.mod.sptools.materials.BronzeArmorMaterials;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,14 +11,14 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class CopperArmorItem extends SupplementalArmorItem {
-    public CopperArmorItem(Type type) {
-        super(CopperArmorMaterials.INSTANCE, type, new Item.Settings());
+public class BronzeArmorItem extends SupplementalArmorItem {
+    public BronzeArmorItem(Type type) {
+        super(BronzeArmorMaterials.INSTANCE, type, new Item.Settings());
     }
 
     @Override
     protected Enums.Series getSeries() {
-        return Enums.Series.Copper;
+        return Enums.Series.Bronze;
     }
 
     @Override

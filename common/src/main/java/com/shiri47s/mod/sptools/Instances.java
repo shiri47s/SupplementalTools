@@ -1,6 +1,7 @@
 package com.shiri47s.mod.sptools;
 
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
@@ -24,14 +25,15 @@ public class Instances {
         public static final net.minecraft.item.Item AMETHYST_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.AMETHYST_INGOT)));
         public static final net.minecraft.item.Item EMERALD_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.EMERALD_INGOT)));
         public static final net.minecraft.item.Item LEAD_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.LEAD_INGOT)));
+        public static final net.minecraft.item.Item BRONZE_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.BRONZE_INGOT)));
     }
 
     @SuppressWarnings("unused")
     public static class ARMOR {
-        public static final net.minecraft.item.Item COPPER_HELMET = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.COPPER_HELMET)));
-        public static final net.minecraft.item.Item COPPER_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.COPPER_CHESTPLATE)));
-        public static final net.minecraft.item.Item COPPER_LEGGINGS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.COPPER_LEGGINGS)));
-        public static final net.minecraft.item.Item COPPER_BOOTS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.COPPER_BOOTS)));
+        public static final net.minecraft.item.Item COPPER_HELMET = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.BRONZE_HELMET)));
+        public static final net.minecraft.item.Item COPPER_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.BRONZE_CHESTPLATE)));
+        public static final net.minecraft.item.Item COPPER_LEGGINGS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.BRONZE_LEGGINGS)));
+        public static final net.minecraft.item.Item COPPER_BOOTS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.BRONZE_BOOTS)));
 
         public static final net.minecraft.item.Item IRONCOPPER_HELMET = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.IRONCOPPER_HELMET)));
         public static final net.minecraft.item.Item IRONCOPPER_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.IRONCOPPER_CHESTPLATE)));
@@ -56,11 +58,11 @@ public class Instances {
 
     @SuppressWarnings("unused")
     public static class TOOL {
-        public static final net.minecraft.item.Item COPPER_SWORD = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.COPPER_SWORD)));
-        public static final net.minecraft.item.Item COPPER_AXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.COPPER_AXE)));
-        public static final net.minecraft.item.Item COPPER_PICKAXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.COPPER_PICKAXE)));
-        public static final net.minecraft.item.Item COPPER_SHOVEL = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.COPPER_SHOVEL)));
-        public static final net.minecraft.item.Item COPPER_HOE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.COPPER_HOE)));
+        public static final net.minecraft.item.Item COPPER_SWORD = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_SWORD)));
+        public static final net.minecraft.item.Item COPPER_AXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_AXE)));
+        public static final net.minecraft.item.Item COPPER_PICKAXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_PICKAXE)));
+        public static final net.minecraft.item.Item COPPER_SHOVEL = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_SHOVEL)));
+        public static final net.minecraft.item.Item COPPER_HOE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_HOE)));
 
         public static final net.minecraft.item.Item IRONCOPPER_SWORD = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.IRONCOPPER_SWORD)));
         public static final net.minecraft.item.Item IRONCOPPER_AXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.IRONCOPPER_AXE)));

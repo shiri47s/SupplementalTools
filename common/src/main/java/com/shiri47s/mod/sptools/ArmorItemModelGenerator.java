@@ -1,10 +1,7 @@
 package com.shiri47s.mod.sptools;
 
 import com.shiri47s.mod.sptools.armors.*;
-import com.shiri47s.mod.sptools.items.AmethystIngot;
-import com.shiri47s.mod.sptools.items.EmeraldIngot;
-import com.shiri47s.mod.sptools.items.LeadBlockItem;
-import com.shiri47s.mod.sptools.items.LeadIngot;
+import com.shiri47s.mod.sptools.items.*;
 import dev.architectury.registry.registries.DeferredRegister;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -23,10 +20,10 @@ public class ArmorItemModelGenerator {
     }
 
     private static void generateArmors() {
-        ARMOR_REGISTER.register(Constants.Armor.COPPER_HELMET, () -> new CopperArmorItem(ArmorItem.Type.HELMET));
-        ARMOR_REGISTER.register(Constants.Armor.COPPER_CHESTPLATE, () -> new CopperArmorItem(ArmorItem.Type.CHESTPLATE));
-        ARMOR_REGISTER.register(Constants.Armor.COPPER_LEGGINGS, () -> new CopperArmorItem(ArmorItem.Type.LEGGINGS));
-        ARMOR_REGISTER.register(Constants.Armor.COPPER_BOOTS, () -> new CopperArmorItem(ArmorItem.Type.BOOTS));
+        ARMOR_REGISTER.register(Constants.Armor.BRONZE_HELMET, () -> new BronzeArmorItem(ArmorItem.Type.HELMET));
+        ARMOR_REGISTER.register(Constants.Armor.BRONZE_CHESTPLATE, () -> new BronzeArmorItem(ArmorItem.Type.CHESTPLATE));
+        ARMOR_REGISTER.register(Constants.Armor.BRONZE_LEGGINGS, () -> new BronzeArmorItem(ArmorItem.Type.LEGGINGS));
+        ARMOR_REGISTER.register(Constants.Armor.BRONZE_BOOTS, () -> new BronzeArmorItem(ArmorItem.Type.BOOTS));
 
         ARMOR_REGISTER.register(Constants.Armor.IRONCOPPER_HELMET, () -> new IronCopperArmorItem(ArmorItem.Type.HELMET));
         ARMOR_REGISTER.register(Constants.Armor.IRONCOPPER_CHESTPLATE, () -> new IronCopperArmorItem(ArmorItem.Type.CHESTPLATE));
@@ -50,6 +47,7 @@ public class ArmorItemModelGenerator {
     }
 
     private static void generateItems() {
+        ARMOR_REGISTER.register(Constants.Item.BRONZE_INGOT, () -> new BronzeIngot(new Item.Settings()));
         ARMOR_REGISTER.register(Constants.Item.AMETHYST_INGOT, () -> new AmethystIngot(new Item.Settings()));
         ARMOR_REGISTER.register(Constants.Item.EMERALD_INGOT, () -> new EmeraldIngot(new Item.Settings()));
         ARMOR_REGISTER.register(Constants.Item.LEAD_INGOT, () -> new LeadIngot(new Item.Settings()));

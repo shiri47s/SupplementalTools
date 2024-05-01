@@ -14,11 +14,11 @@ public class ToolItemModelGenerator {
     private static final DeferredRegister<Item> TOOL_REGISTER = DeferredRegister.create(MOD_ID, RegistryKeys.ITEM);
 
     public static void generate() {
-        TOOL_REGISTER.register(Constants.Tool.COPPER_SWORD, () -> new SupplementalSwordItem(SupplementalToolMaterials.COPPER, 3, -2.4F, new Item.Settings()));
-        TOOL_REGISTER.register(Constants.Tool.COPPER_SHOVEL, () -> new SupplementalShovelItem(SupplementalToolMaterials.COPPER, 1.5F, -3.0F, new Item.Settings()));
-        TOOL_REGISTER.register(Constants.Tool.COPPER_PICKAXE, () -> new SupplementalPickaxeItem(SupplementalToolMaterials.COPPER, 1, -2.8F, new Item.Settings()));
-        TOOL_REGISTER.register(Constants.Tool.COPPER_AXE, () -> new SupplementalAxeItem(SupplementalToolMaterials.COPPER, 6.0F, -3.1F, new Item.Settings()));
-        TOOL_REGISTER.register(Constants.Tool.COPPER_HOE, () -> new SupplementalHoeItem(SupplementalToolMaterials.COPPER, -2, -1.0F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.BRONZE_SWORD, () -> new SupplementalSwordItem(SupplementalToolMaterials.Bronze, 3, -2.4F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.BRONZE_SHOVEL, () -> new SupplementalShovelItem(SupplementalToolMaterials.Bronze, 1.5F, -3.0F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.BRONZE_PICKAXE, () -> new SupplementalPickaxeItem(SupplementalToolMaterials.Bronze, 1, -2.8F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.BRONZE_AXE, () -> new SupplementalAxeItem(SupplementalToolMaterials.Bronze, 6.0F, -3.1F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.BRONZE_HOE, () -> new SupplementalHoeItem(SupplementalToolMaterials.Bronze, -2, -1.0F, new Item.Settings()));
 
         TOOL_REGISTER.register(Constants.Tool.IRONCOPPER_SWORD, () -> new SupplementalSwordItem(SupplementalToolMaterials.IRONCOPPER, 3, -2.4F, new Item.Settings()));
         TOOL_REGISTER.register(Constants.Tool.IRONCOPPER_SHOVEL, () -> new SupplementalShovelItem(SupplementalToolMaterials.IRONCOPPER, 1.5F, -3.0F, new Item.Settings()));
@@ -52,7 +52,7 @@ public class ToolItemModelGenerator {
         FullSetsBonus.listen(p -> {
             clearBlessings(p.getA());
             switch (p.getB()) {
-                case Copper -> blessingCopper(p.getA());
+                case Bronze -> blessingCopper(p.getA());
                 case IronCopper -> blessingIronCopper(p.getA());
                 case Amethyst -> blessingAmethyst(p.getA());
                 case Emerald -> blessingEmerald(p.getA());

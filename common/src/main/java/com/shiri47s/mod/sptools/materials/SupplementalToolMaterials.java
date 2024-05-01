@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 
 public enum SupplementalToolMaterials implements ToolMaterial {
 
-    COPPER(1, 172, 5.0F, 1.5F, 5, () -> Ingredient.ofItems(Items.COPPER_INGOT)),
+    Bronze(1, 172, 5.0F, 1.5F, 5, () -> Ingredient.ofItems(Items.COPPER_INGOT)),
     IRONCOPPER(2, 255, 7.0F, 2.0F, 7, () -> Ingredient.ofItems(Items.IRON_INGOT, Items.COPPER_INGOT)),
     AMETHYST(3, 255, 8.0F, 3.0F, 14, () -> Ingredient.ofItems(Instances.Item.AMETHYST_INGOT)),
     EMERALD(3, 1000, 8.5F, 3.5F, 12, () -> Ingredient.ofItems(Instances.Item.EMERALD_INGOT)),
@@ -64,7 +64,7 @@ public enum SupplementalToolMaterials implements ToolMaterial {
     @SuppressWarnings("unused")
     public @Nullable TagKey<Item> getTag() {
         return switch (this) {
-            case COPPER -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.COPPERS));
+            case Bronze -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.Bronzes));
             case IRONCOPPER -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.IRONCOPPERS));
             case EMERALD -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.EMERALDS));
             case AMETHYST -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.AMETHYSTS));

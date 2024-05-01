@@ -5,7 +5,7 @@ public class Constants {
     public static final String PREFIX =  "sp_";
 
     public static class Tag {
-        public static final String COPPERS = "coppers";
+        public static final String Bronzes = "bronzes";
 
         public static final String IRONCOPPERS = "ironcoppers";
 
@@ -17,6 +17,7 @@ public class Constants {
     }
 
     public static class Item {
+        public static final String BRONZE_INGOT = PREFIX + "bronze_ingot";
         public static final String AMETHYST_INGOT = PREFIX + "amethyst_ingot";
         public static final String EMERALD_INGOT = PREFIX + "emerald_ingot";
         public static final String LEAD_INGOT = PREFIX + "lead_ingot";
@@ -25,11 +26,11 @@ public class Constants {
     }
 
     public static class Armor {
-        public static final String COPPER_ARMOR = PREFIX + "copper_armor";
-        public static final String COPPER_HELMET = PREFIX + "copper_helmet";
-        public static final String COPPER_CHESTPLATE = PREFIX + "copper_chestplate";
-        public static final String COPPER_LEGGINGS = PREFIX + "copper_leggings";
-        public static final String COPPER_BOOTS = PREFIX + "copper_boots";
+        public static final String BRONZE_ARMOR = PREFIX + "bronze_armor";
+        public static final String BRONZE_HELMET = PREFIX + "bronze_helmet";
+        public static final String BRONZE_CHESTPLATE = PREFIX + "bronze_chestplate";
+        public static final String BRONZE_LEGGINGS = PREFIX + "bronze_leggings";
+        public static final String BRONZE_BOOTS = PREFIX + "bronze_boots";
 
         public static final String IRONCOPPER_ARMOR = PREFIX + "ironcopper_armor";
         public static final String IRONCOPPER_HELMET = PREFIX + "ironcopper_helmet";
@@ -57,11 +58,11 @@ public class Constants {
     }
 
     public static class Tool {
-        public static final String COPPER_SWORD = PREFIX + "copper_sword";
-        public static final String COPPER_AXE = PREFIX + "copper_axe";
-        public static final String COPPER_SHOVEL = PREFIX + "copper_shovel";
-        public static final String COPPER_PICKAXE = PREFIX + "copper_pickaxe";
-        public static final String COPPER_HOE = PREFIX + "copper_hoe";
+        public static final String BRONZE_SWORD = PREFIX + "bronze_sword";
+        public static final String BRONZE_AXE = PREFIX + "bronze_axe";
+        public static final String BRONZE_SHOVEL = PREFIX + "bronze_shovel";
+        public static final String BRONZE_PICKAXE = PREFIX + "bronze_pickaxe";
+        public static final String BRONZE_HOE = PREFIX + "bronze_hoe";
 
         public static final String IRONCOPPER_SWORD = PREFIX + "ironcopper_sword";
         public static final String IRONCOPPER_AXE = PREFIX + "ironcopper_axe";
@@ -98,5 +99,9 @@ public class Constants {
         public static final String MOVEMENT_SPEED = PREFIX + "movement_speed";
         public static final String HASTE_AND_LUCK = PREFIX + "haste_and_luck";
         public static final String HEAVY = PREFIX + "heavy";
+    }
+
+    public static class Trigger {
+        public static final String COPPER = PREFIX + "copper";
     }
 }

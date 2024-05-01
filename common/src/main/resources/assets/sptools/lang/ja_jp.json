@@ -1,15 +1,15 @@
 {
   "item.sptools": "補助ツール",
 
-  "item.sptools.sp_copper_helmet": "銅のヘルメット",
-  "item.sptools.sp_copper_chestplate": "銅のチェストプレート",
-  "item.sptools.sp_copper_leggings": "銅のレギンス",
-  "item.sptools.sp_copper_boots": "銅のブーツ",
-  "item.sptools.sp_copper_sword": "銅の剣",
-  "item.sptools.sp_copper_shovel": "銅のシャベル",
-  "item.sptools.sp_copper_axe": "銅の斧",
-  "item.sptools.sp_copper_pickaxe": "銅のツルハシ",
-  "item.sptools.sp_copper_hoe": "銅のクワ",
+  "item.sptools.sp_bronze_helmet": "ブロンズのヘルメット",
+  "item.sptools.sp_bronze_chestplate": "ブロンズのチェストプレート",
+  "item.sptools.sp_bronze_leggings": "ブロンズのレギンス",
+  "item.sptools.sp_bronze_boots": "ブロンズのブーツ",
+  "item.sptools.sp_bronze_sword": "ブロンズの剣",
+  "item.sptools.sp_bronze_shovel": "ブロンズのシャベル",
+  "item.sptools.sp_bronze_axe": "ブロンズの斧",
+  "item.sptools.sp_bronze_pickaxe": "ブロンズのツルハシ",
+  "item.sptools.sp_bronze_hoe": "ブロンズのクワ",
 
   "item.sptools.sp_ironcopper_helmet": "銅鉄合金ヘルメット",
   "item.sptools.sp_ironcopper_chestplate": "銅鉄合金チェストプレート",
@@ -51,6 +51,7 @@
   "item.sptools.sp_emerald_pickaxe": "エメラルドのツルハシ",
   "item.sptools.sp_emerald_hoe": "エメラルドのクワ",
 
+  "item.sptools.sp_bronze_ingot": "ブロンズインゴット",
   "item.sptools.sp_amethyst_ingot": "アメジストインゴット",
   "item.sptools.sp_emerald_ingot": "エメラルドインゴット",
   "item.sptools.sp_lead_ingot": "鉛のインゴット",
