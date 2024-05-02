@@ -1,7 +1,6 @@
 package com.shiri47s.mod.sptools;
 
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
@@ -10,8 +9,6 @@ import java.util.Objects;
 import static com.shiri47s.mod.sptools.Constants.MOD_ID;
 
 public class Instances {
-    public static final ItemGroup Group = Objects.requireNonNull(Registries.ITEM_GROUP.get(new Identifier(MOD_ID, MOD_ID)));
-
     public static class Effect {
         public static final StatusEffect KNOCKBACK_RESISTANCE = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.KNOCKBACK_RESISTANCE)));
         public static final StatusEffect ATTACK_KNOCKBACK = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.ATTACK_KNOCKBACK)));
