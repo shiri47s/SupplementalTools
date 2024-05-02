@@ -7,7 +7,7 @@ import net.minecraft.item.ToolMaterial;
 @SuppressWarnings("UnstableApiUsage")
 public class SupplementalPickaxeItem extends PickaxeItem
 {
-    public SupplementalPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
-        super(material, attackDamage, attackSpeed, settings.arch$tab(SupplementalTools.TAB_SUPPLIER));
+    public SupplementalPickaxeItem(ToolMaterial material, Settings settings) {
+        super(material, settings.arch$tab(SupplementalTools.TAB_SUPPLIER));
     }
 }

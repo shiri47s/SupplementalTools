@@ -1,19 +1,19 @@
 package com.shiri47s.mod.sptools.armors;
 
 import com.shiri47s.mod.sptools.Enums;
-import com.shiri47s.mod.sptools.materials.EmeraldArmorMaterials;
-import net.minecraft.client.item.TooltipContext;
+import com.shiri47s.mod.sptools.materials.SupplementalArmorMaterials;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.world.World;
+import net.minecraft.util.Rarity;
 
 import java.util.List;
 
 public class EmeraldArmorItem extends SupplementalArmorItem {
 
     public EmeraldArmorItem(Type type) {
-        super(EmeraldArmorMaterials.INSTANCE, type, new Settings());
+        super(SupplementalArmorMaterials.EMERALD, type, new Item.Settings().rarity(Rarity.RARE).maxDamage(type.getMaxDamage(25)));
     }
 
     @Override
@@ -22,7 +22,7 @@ public class EmeraldArmorItem extends SupplementalArmorItem {
     }
 
     @Override
-    protected void appendFullSetsTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
+    protected void appendFullSetsTooltip(ItemStack stack, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.translatable("item.sptools.blessing.emerald").formatted(Formatting.GREEN));
     }
 }

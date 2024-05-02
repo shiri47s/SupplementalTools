@@ -12,6 +12,6 @@ public class KnockBackResistanceEffect extends StatusEffect {
                 EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE,
                 "309ab45b-9334-477c-91fe-2995171e97a6",
                 1,
-                EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 }

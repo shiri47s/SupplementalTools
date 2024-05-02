@@ -2,6 +2,7 @@ package com.shiri47s.mod.sptools;
 
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 
 import java.util.Objects;
@@ -10,11 +11,11 @@ import static com.shiri47s.mod.sptools.Constants.MOD_ID;
 
 public class Instances {
     public static class Effect {
-        public static final StatusEffect KNOCKBACK_RESISTANCE = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.KNOCKBACK_RESISTANCE)));
-        public static final StatusEffect ATTACK_KNOCKBACK = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.ATTACK_KNOCKBACK)));
-        public static final StatusEffect MOVEMENT_SPEED = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.MOVEMENT_SPEED)));
-        public static final StatusEffect HASTE_AND_LUCK = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.HASTE_AND_LUCK)));
-        public static final StatusEffect HEAVY = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.HEAVY)));
+        public static final RegistryEntry<StatusEffect> KNOCKBACK_RESISTANCE = Registries.STATUS_EFFECT.getEntry(new Identifier(MOD_ID, Constants.Effect.KNOCKBACK_RESISTANCE)).orElseThrow();
+        public static final RegistryEntry<StatusEffect> ATTACK_KNOCKBACK = Registries.STATUS_EFFECT.getEntry(new Identifier(MOD_ID, Constants.Effect.ATTACK_KNOCKBACK)).orElseThrow();
+        public static final RegistryEntry<StatusEffect> MOVEMENT_SPEED = Registries.STATUS_EFFECT.getEntry(new Identifier(MOD_ID, Constants.Effect.MOVEMENT_SPEED)).orElseThrow();
+        public static final RegistryEntry<StatusEffect> HASTE_AND_LUCK = Registries.STATUS_EFFECT.getEntry(new Identifier(MOD_ID, Constants.Effect.HASTE_AND_LUCK)).orElseThrow();
+        public static final RegistryEntry<StatusEffect> HEAVY = Registries.STATUS_EFFECT.getEntry(new Identifier(MOD_ID, Constants.Effect.HEAVY)).orElseThrow();
     }
 
     public static class Item {

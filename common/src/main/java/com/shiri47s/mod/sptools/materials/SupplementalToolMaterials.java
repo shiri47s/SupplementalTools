@@ -2,6 +2,7 @@ package com.shiri47s.mod.sptools.materials;
 
 import com.shiri47s.mod.sptools.Constants;
 import com.shiri47s.mod.sptools.Instances;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
@@ -15,11 +16,11 @@ import java.util.function.Supplier;
 
 public enum SupplementalToolMaterials implements ToolMaterial {
 
-    Bronze(1, 172, 5.0F, 1.5F, 5, () -> Ingredient.ofItems(Items.COPPER_INGOT)),
-    IRONCOPPER(2, 255, 7.0F, 2.0F, 7, () -> Ingredient.ofItems(Items.IRON_INGOT, Items.COPPER_INGOT)),
-    AMETHYST(3, 255, 8.0F, 3.0F, 14, () -> Ingredient.ofItems(Instances.Item.AMETHYST_INGOT)),
-    EMERALD(3, 1000, 8.5F, 3.5F, 12, () -> Ingredient.ofItems(Instances.Item.EMERALD_INGOT)),
-    LEAD(3, 153, 7.5F, 3.0F, 3, () -> Ingredient.ofItems(Instances.Item.LEAD_INGOT));
+    Bronze(1, 172, 5.0F, 1.5F, 5, () -> Ingredient.ofItems(Items.COPPER_INGOT), Constants.Tag.INCORRECT_FOR_BRONZE_TOOL),
+    IRONCOPPER(2, 255, 7.0F, 2.0F, 7, () -> Ingredient.ofItems(Items.IRON_INGOT, Items.COPPER_INGOT), Constants.Tag.INCORRECT_FOR_IRONCOPPER_TOOL),
+    AMETHYST(3, 255, 8.0F, 3.0F, 14, () -> Ingredient.ofItems(Instances.Item.AMETHYST_INGOT), Constants.Tag.INCORRECT_FOR_AMETHYST_TOOL),
+    EMERALD(3, 1000, 8.5F, 3.5F, 12, () -> Ingredient.ofItems(Instances.Item.EMERALD_INGOT), Constants.Tag.INCORRECT_FOR_EMERALD_TOOL),
+    LEAD(3, 153, 7.5F, 3.0F, 3, () -> Ingredient.ofItems(Instances.Item.LEAD_INGOT), Constants.Tag.INCORRECT_FOR_LEAD_TOOL);
 
     private final int miningLevel;
     private final int itemDurability;
@@ -27,14 +28,16 @@ public enum SupplementalToolMaterials implements ToolMaterial {
     private final float attackDamage;
     private final int enchantability;
     private final Supplier<Ingredient> repairIngredientSupplier;
+    private final TagKey<Block> inverseTag;
 
-    SupplementalToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+    SupplementalToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient, TagKey<Block> inverseTag) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
         this.repairIngredientSupplier = repairIngredient;
+        this.inverseTag = inverseTag;
     }
 
     public int getDurability() {
@@ -47,6 +50,11 @@ public enum SupplementalToolMaterials implements ToolMaterial {
 
     public float getAttackDamage() {
         return this.attackDamage;
+    }
+
+    @Override
+    public TagKey<Block> getInverseTag() {
+        return inverseTag;
     }
 
     public int getMiningLevel() {

@@ -1,5 +1,10 @@
 package com.shiri47s.mod.sptools;
 
+import net.minecraft.block.Block;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
+
 public class Constants {
     public static final String MOD_ID = "sptools";
     public static final String PREFIX =  "sp_";
@@ -14,6 +19,20 @@ public class Constants {
         public static final String EMERALDS = "emerald";
 
         public static final String LEAD = "lead";
+
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_BRONZE_TOOL = of("incorrect_for_bronze_tool");
+
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_IRONCOPPER_TOOL = of("incorrect_for_ironcopper_tool");
+
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_AMETHYST_TOOL = of("incorrect_for_amethyst_tool");
+
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_EMERALD_TOOL = of("incorrect_for_emerald_tool");
+
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_LEAD_TOOL = of("incorrect_for_lead_tool");
+
+        private static TagKey<net.minecraft.block.Block> of(String id) {
+            return TagKey.of(RegistryKeys.BLOCK, new Identifier(id));
+        }
     }
 
     public static class Item {

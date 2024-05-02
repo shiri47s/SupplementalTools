@@ -12,11 +12,11 @@ public class HasteAndLuckEffect extends StatusEffect {
                 EntityAttributes.GENERIC_LUCK,
                 "cae82afa-fd4b-4cfa-9548-211c1a199df4",
                 1,
-                EntityAttributeModifier.Operation.ADDITION);
+                EntityAttributeModifier.Operation.ADD_VALUE);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_ATTACK_SPEED,
                 "cf0486b3-adff-4c66-a439-939b222f5df9",
                 0.10000000149011612,
-                EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 }

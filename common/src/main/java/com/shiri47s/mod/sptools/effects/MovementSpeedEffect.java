@@ -12,6 +12,6 @@ public class MovementSpeedEffect extends StatusEffect {
                 EntityAttributes.GENERIC_MOVEMENT_SPEED,
                 "151ea760-0908-4db3-b56a-4de31e5eb4eb",
                 0.20000000298023224,
-                EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 }

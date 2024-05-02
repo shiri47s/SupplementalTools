@@ -7,7 +7,7 @@ import net.minecraft.item.ToolMaterial;
 @SuppressWarnings("UnstableApiUsage")
 public class SupplementalAxeItem extends AxeItem
 {
-    public SupplementalAxeItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
-        super(material, attackDamage, attackSpeed, settings.arch$tab(SupplementalTools.TAB_SUPPLIER));
+    public SupplementalAxeItem(ToolMaterial material, Settings settings) {
+        super(material, settings.arch$tab(SupplementalTools.TAB_SUPPLIER));
     }
 }

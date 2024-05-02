@@ -6,7 +6,7 @@ import net.minecraft.item.ToolMaterial;
 
 @SuppressWarnings("UnstableApiUsage")
 public class SupplementalSwordItem extends SwordItem {
-    public SupplementalSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings.arch$tab(SupplementalTools.TAB_SUPPLIER));
+    public SupplementalSwordItem(ToolMaterial toolMaterial, Settings settings) {
+        super(toolMaterial, settings.arch$tab(SupplementalTools.TAB_SUPPLIER));
     }
 }

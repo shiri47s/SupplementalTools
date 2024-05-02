@@ -7,7 +7,7 @@ import net.minecraft.item.ToolMaterial;
 @SuppressWarnings("UnstableApiUsage")
 public class SupplementalShovelItem extends ShovelItem
 {
-    public SupplementalShovelItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
-        super(material, attackDamage, attackSpeed, settings.arch$tab(SupplementalTools.TAB_SUPPLIER));
+    public SupplementalShovelItem(ToolMaterial material, Settings settings) {
+        super(material, settings.arch$tab(SupplementalTools.TAB_SUPPLIER));
     }
 }

@@ -12,6 +12,6 @@ public class AttackKnockBackEffect extends StatusEffect {
                 EntityAttributes.GENERIC_ATTACK_KNOCKBACK,
                 "c38c3245-ba5c-452a-8594-e25ab6e1974e",
                 0.20000000298023224,
-                EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 }
