@@ -2,7 +2,6 @@ package com.shiri47s.mod.sptools.armors;
 
 import com.shiri47s.mod.sptools.Enums;
 import com.shiri47s.mod.sptools.FullSetsBonus;
-import com.shiri47s.mod.sptools.Instances;
 import com.shiri47s.mod.sptools.SupplementalTools;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ArmorItem;

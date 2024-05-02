@@ -1,6 +1,5 @@
 package com.shiri47s.mod.sptools.tools;
 
-import com.shiri47s.mod.sptools.Instances;
 import com.shiri47s.mod.sptools.SupplementalTools;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
