@@ -10,7 +10,7 @@ import java.util.Objects;
 import static com.shiri47s.mod.sptools.Constants.MOD_ID;
 
 public class Instances {
-    public static final ItemGroup Group = Objects.requireNonNull(Registries.ITEM_GROUP.get(new Identifier(MOD_ID, MOD_ID)));
+    //public static final ItemGroup Group = Objects.requireNonNull(Registries.ITEM_GROUP.get(new Identifier(MOD_ID, MOD_ID)));
 
     public static class Effect {
         public static final StatusEffect KNOCKBACK_RESISTANCE = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.KNOCKBACK_RESISTANCE)));
