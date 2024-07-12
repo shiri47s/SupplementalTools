@@ -42,13 +42,13 @@ public class SupplementalArmorMaterials {
         });
         return Registry.registerReference(
                 Registries.ARMOR_MATERIAL,
-                new Identifier(Constants.Armor.BRONZE_ARMOR),
+                Identifier.of(Constants.Armor.BRONZE_ARMOR),
                 new ArmorMaterial(
                         enumMap,
                         12,
                         SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
                         () -> Ingredient.ofItems(Instances.Item.BRONZE_INGOT),
-                        List.of(new ArmorMaterial.Layer(new Identifier(Constants.Armor.BRONZE_ARMOR))),
+                        List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.BRONZE_ARMOR))),
                         0,
                         0));
     }
@@ -63,13 +63,13 @@ public class SupplementalArmorMaterials {
         });
         return Registry.registerReference(
                 Registries.ARMOR_MATERIAL,
-                new Identifier(Constants.Armor.IRONCOPPER_ARMOR),
+                Identifier.of(Constants.Armor.IRONCOPPER_ARMOR),
                 new ArmorMaterial(
                         enumMap,
                         12,
                         SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
                         () -> Ingredient.ofItems(Items.COPPER_INGOT, Items.IRON_INGOT),
-                        List.of(new ArmorMaterial.Layer(new Identifier(Constants.Armor.IRONCOPPER_ARMOR))),
+                        List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.IRONCOPPER_ARMOR))),
                         0,
                         0));
     }
@@ -84,13 +84,13 @@ public class SupplementalArmorMaterials {
         });
         return Registry.registerReference(
                 Registries.ARMOR_MATERIAL,
-                new Identifier(Constants.Armor.AMETHYST_ARMOR),
+                Identifier.of(Constants.Armor.AMETHYST_ARMOR),
                 new ArmorMaterial(
                         enumMap,
                         15,
                         SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
                         () -> Ingredient.ofItems(Instances.Item.AMETHYST_INGOT),
-                        List.of(new ArmorMaterial.Layer(new Identifier(Constants.Armor.AMETHYST_ARMOR))),
+                        List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.AMETHYST_ARMOR))),
                         0,
                         0));
     }
@@ -105,13 +105,13 @@ public class SupplementalArmorMaterials {
         });
         return Registry.registerReference(
                 Registries.ARMOR_MATERIAL,
-                new Identifier(Constants.Armor.EMERALD_ARMOR),
+                Identifier.of(Constants.Armor.EMERALD_ARMOR),
                 new ArmorMaterial(
                         enumMap,
                         15,
                         SoundEvents.ITEM_ARMOR_EQUIP_IRON,
                         () -> Ingredient.ofItems(Instances.Item.EMERALD_INGOT),
-                        List.of(new ArmorMaterial.Layer(new Identifier(Constants.Armor.EMERALD_ARMOR))),
+                        List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.EMERALD_ARMOR))),
                         1.0F,
                         0.1F));
     }
@@ -126,13 +126,13 @@ public class SupplementalArmorMaterials {
         });
         return Registry.registerReference(
                 Registries.ARMOR_MATERIAL,
-                new Identifier(Constants.Armor.LEAD_ARMOR),
+                Identifier.of(Constants.Armor.LEAD_ARMOR),
                 new ArmorMaterial(
                         enumMap,
                         15,
                         SoundEvents.ITEM_ARMOR_EQUIP_TURTLE,
                         () -> Ingredient.ofItems(Instances.Item.LEAD_INGOT),
-                        List.of(new ArmorMaterial.Layer(new Identifier(Constants.Armor.LEAD_ARMOR))),
+                        List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.LEAD_ARMOR))),
                         1.0F,
                         0.18F));
     }

@@ -10,7 +10,7 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.PlacedFeature;
 
 public class WorldGenerator {
-    public static final RegistryKey<PlacedFeature> LEAD_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(Constants.MOD_ID, Constants.Block.LEAD_ORE));
+    public static final RegistryKey<PlacedFeature> LEAD_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Constants.MOD_ID, Constants.Block.LEAD_ORE));
 
     @SuppressWarnings("UnstableApiUsage")
     public static void generate() {
