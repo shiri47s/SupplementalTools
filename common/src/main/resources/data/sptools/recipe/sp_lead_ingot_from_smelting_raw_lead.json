@@ -7,5 +7,7 @@
   "ingredient": {
     "item": "sptools:sp_raw_lead"
   },
-  "result": "sptools:sp_lead_ingot"
+  "result": {
+    "id": "sptools:sp_lead_ingot"
+  }
 }
