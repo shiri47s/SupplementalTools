@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "minecraft:quartz"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XXX",
+    "   "
+  ],
+  "result": {
+    "id": "sptools:sp_quartz_ingot"
+  }
+}

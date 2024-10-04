@@ -1,3 +1,3 @@
-Added 2 armors series.
+Added armor series.
  - Quartz Series
- - Redstone Series
+

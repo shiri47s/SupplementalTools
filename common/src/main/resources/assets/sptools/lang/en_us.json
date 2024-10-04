@@ -59,6 +59,16 @@
   "item.sptools.sp_lead_ore": "Lead Ore",
   "block.sptools.sp_lead_ore": "Lead Ore",
 
+  "item.sptools.sp_quartz_helmet": "quartz Helmet",
+  "item.sptools.sp_quartz_chestplate": "quartz Chestplate",
+  "item.sptools.sp_quartz_leggings": "quartz Leggings",
+  "item.sptools.sp_quartz_boots": "quartz Boots",
+  "item.sptools.sp_quartz_sword": "quartz Sword",
+  "item.sptools.sp_quartz_shovel": "quartz Shovel",
+  "item.sptools.sp_quartz_axe": "quartz Axe",
+  "item.sptools.sp_quartz_pickaxe": "quartz Pickaxe",
+  "item.sptools.sp_quartz_hoe": "quartz Hoe",
+
   "effect.sptools.sp_knockback_resistance" :"Knockback",
   "effect.sptools.sp_attack_knockback" :"Knockback",
   "effect.sptools.sp_movement_speed" :"Speed",
