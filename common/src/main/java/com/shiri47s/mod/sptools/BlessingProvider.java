@@ -14,6 +14,7 @@ public class BlessingProvider {
                 case Emerald -> blessingEmerald(p.getA());
                 case Lead -> blessingLead(p.getA());
                 case Quartz -> blessingQuartz(p.getA());
+                case Redstone -> blessingRedstone(p.getA());
             }
         });
     }
@@ -23,7 +24,7 @@ public class BlessingProvider {
                 new StatusEffectInstance(
                         Instances.Effect.HEAVY,
                         StatusEffectInstance.INFINITE,
-                        1,
+                        0,
                         false,
                         false,
                         false),
@@ -35,7 +36,7 @@ public class BlessingProvider {
                 new StatusEffectInstance(
                         Instances.Effect.KNOCKBACK_RESISTANCE,
                         StatusEffectInstance.INFINITE,
-                        1,
+                        0,
                         false,
                         false,
                         false),
@@ -47,7 +48,7 @@ public class BlessingProvider {
                 new StatusEffectInstance(
                         Instances.Effect.ATTACK_KNOCKBACK,
                         StatusEffectInstance.INFINITE,
-                        1,
+                        0,
                         false,
                         false,
                         false),
@@ -59,7 +60,7 @@ public class BlessingProvider {
                 new StatusEffectInstance(
                         Instances.Effect.MOVEMENT_SPEED,
                         StatusEffectInstance.INFINITE,
-                        1,
+                        0,
                         false,
                         false,
                         false),
@@ -71,7 +72,7 @@ public class BlessingProvider {
                 new StatusEffectInstance(
                         Instances.Effect.HASTE_AND_LUCK,
                         StatusEffectInstance.INFINITE,
-                        2,
+                        0,
                         false,
                         false,
                         false),
@@ -83,7 +84,19 @@ public class BlessingProvider {
                 new StatusEffectInstance(
                         Instances.Effect.BOUNDED_GLOWING,
                         StatusEffectInstance.INFINITE,
-                        1,
+                        0,
+                        false,
+                        false,
+                        false),
+                player);
+    }
+
+    private static void blessingRedstone(PlayerEntity player) {
+        player.setStatusEffect(
+                new StatusEffectInstance(
+                        Instances.Effect.REDSTONE_OVERFLOW,
+                        StatusEffectInstance.INFINITE,
+                        0,
                         false,
                         false,
                         false),
@@ -97,5 +110,6 @@ public class BlessingProvider {
         player.removeStatusEffect(Instances.Effect.HASTE_AND_LUCK);
         player.removeStatusEffect(Instances.Effect.HEAVY);
         player.removeStatusEffect(Instances.Effect.BOUNDED_GLOWING);
+        player.removeStatusEffect(Instances.Effect.REDSTONE_OVERFLOW);
     }
 }
