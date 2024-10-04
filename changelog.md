@@ -1,1 +1,3 @@
-Releasing a beta version mod because it has implemented some features.
+Added 2 armors series.
+ - Quartz Series
+ - Redstone Series

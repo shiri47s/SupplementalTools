@@ -5,6 +5,7 @@ import net.minecraft.util.math.intprovider.ConstantIntProvider;
 
 public class SupplementalToosBlock extends ExperienceDroppingBlock {
     public SupplementalToosBlock(Settings settings) {
+
         super(ConstantIntProvider.create(0), settings);
     }
 }
