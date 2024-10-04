@@ -1,15 +1,31 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "key": {
-    "X": {
-      "item": "minecraft:quartz"
+  "ingredients": [
+    {
+      "item": "sptools:sp_quartz_scrap"
+    },
+    {
+      "item": "sptools:sp_quartz_scrap"
+    },
+    {
+      "item": "sptools:sp_quartz_scrap"
+    },
+    {
+      "item": "sptools:sp_quartz_scrap"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
     }
-  },
-  "pattern": [
-    "XXX",
-    "XXX",
-    "   "
   ],
   "result": {
     "id": "sptools:sp_quartz_ingot"

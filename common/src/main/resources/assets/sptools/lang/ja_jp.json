@@ -61,6 +61,16 @@
   "item.sptools.sp_quartz_pickaxe": "クォーツのツルハシ",
   "item.sptools.sp_quartz_hoe": "クォーツのクワ",
 
+  "item.sptools.sp_redstone_helmet": "レッドストーンのヘルメット",
+  "item.sptools.sp_redstone_chestplate": "レッドストーンのチェストプレート",
+  "item.sptools.sp_redstone_leggings": "レッドストーンのレギンス",
+  "item.sptools.sp_redstone_boots": "レッドストーンのブーツ",
+  "item.sptools.sp_redstone_sword": "レッドストーンの剣",
+  "item.sptools.sp_redstone_shovel": "レッドストーンのシャベル",
+  "item.sptools.sp_redstone_axe": "レッドストーンの斧",
+  "item.sptools.sp_redstone_pickaxe": "レッドストーンのツルハシ",
+  "item.sptools.sp_redstone_hoe": "レッドストーンのクワ",
+
   "item.sptools.sp_bronze_ingot": "ブロンズインゴット",
   "item.sptools.sp_amethyst_ingot": "アメジストインゴット",
   "item.sptools.sp_emerald_ingot": "エメラルドインゴット",
@@ -69,13 +79,15 @@
   "item.sptools.sp_lead_ore": "鉛鉱石",
   "block.sptools.sp_lead_ore": "鉛鉱石",
   "item.sptools.sp_quartz_ingot": "クォーツインゴット",
+  "item.sptools.sp_quartz_scrap": "クォーツの欠片",
+  "item.sptools.sp_redstone_ingot": "レッドストーンインゴット",
 
   "effect.sptools.sp_knockback_resistance" :"ノックバック耐性",
   "effect.sptools.sp_attack_knockback" :"ノックバック",
   "effect.sptools.sp_movement_speed" :"移動速度上昇",
   "effect.sptools.sp_haste_and_luck" :"幸運＆採掘速度上昇",
   "effect.sptools.sp_heavy" :"重量",
-  "effect.sptools.sp_bounded_glowing" :"透視",
+  "effect.sptools.sp_redstone_overflow" :"溢るレッドストーン",
 
   "item.sptools.blessing" :"フルセットボーナス: ",
   "item.sptools.blessing.copper": " ノックバック耐性付与",
@@ -83,5 +95,6 @@
   "item.sptools.blessing.amethyst": " 移動速度上昇付与",
   "item.sptools.blessing.emerald": " 幸運＆採掘速度上昇付与",
   "item.sptools.blessing.heavy": " 防御上昇＆移動速度低下付与",
-  "item.sptools.blessing.quartz": " 透視付与"
+  "item.sptools.blessing.quartz": " 透視付与",
+  "item.sptools.blessing.redstone": " 溢れるレッドストーン付与"
 }

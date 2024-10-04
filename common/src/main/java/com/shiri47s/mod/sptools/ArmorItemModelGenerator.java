@@ -59,5 +59,6 @@ public class ArmorItemModelGenerator {
         ARMOR_REGISTER.register(Constants.Item.RAW_LEAD, () -> new Item(new Item.Settings()));
         ARMOR_REGISTER.register(Constants.Item.LEAD_ORE, () -> new LeadBlockItem(new Item.Settings()));
         ARMOR_REGISTER.register(Constants.Item.QUARTZ_INGOT, () -> new QuartzIngot(new Item.Settings()));
+        ARMOR_REGISTER.register(Constants.Item.QUARTZ_SCRAP, () -> new Item(new Item.Settings()));
     }
 }

@@ -141,11 +141,11 @@ public class SupplementalArmorMaterials {
 
     private static RegistryEntry<ArmorMaterial> createQuartz() {
         var enumMap = Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
-            map.put(ArmorItem.Type.BOOTS, 3);
-            map.put(ArmorItem.Type.LEGGINGS, 7);
+            map.put(ArmorItem.Type.BOOTS, 2);
+            map.put(ArmorItem.Type.LEGGINGS, 6);
             map.put(ArmorItem.Type.CHESTPLATE, 8);
             map.put(ArmorItem.Type.HELMET, 3);
-            map.put(ArmorItem.Type.BODY, 5);
+            map.put(ArmorItem.Type.BODY, 4);
         });
         return Registry.registerReference(
                 Registries.ARMOR_MATERIAL,
