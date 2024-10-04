@@ -74,6 +74,7 @@
   "effect.sptools.sp_movement_speed" :"Speed",
   "effect.sptools.sp_haste_and_luck" :"Haste/Luck",
   "effect.sptools.sp_heavy" :"Heavy",
+  "effect.sptools.sp_bounded_glowing" :"Clairvoyance",
 
   "item.sptools.blessing" :"FullSet Bonus: ",
   "item.sptools.blessing.copper": " Provide Knockback Resistance",
@@ -81,6 +82,7 @@
   "item.sptools.blessing.amethyst": " Provide Movement Speed",
   "item.sptools.blessing.emerald": " Provide Haste and Luck",
   "item.sptools.blessing.heavy": " Provide Resistance up and slow down",
+  "item.sptools.blessing.quartz": " Provide clairvoyance",
 
   "advancement.sptools.bronze.title": "Welcome",
   "advancement.sptools.bronze.description": "Welcome Supplemental Tools"

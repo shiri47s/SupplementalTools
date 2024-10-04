@@ -16,6 +16,7 @@ public class Instances {
         public static final RegistryEntry<StatusEffect> MOVEMENT_SPEED = Registries.STATUS_EFFECT.getEntry(Identifier.of(MOD_ID, Constants.Effect.MOVEMENT_SPEED)).orElseThrow();
         public static final RegistryEntry<StatusEffect> HASTE_AND_LUCK = Registries.STATUS_EFFECT.getEntry(Identifier.of(MOD_ID, Constants.Effect.HASTE_AND_LUCK)).orElseThrow();
         public static final RegistryEntry<StatusEffect> HEAVY = Registries.STATUS_EFFECT.getEntry(Identifier.of(MOD_ID, Constants.Effect.HEAVY)).orElseThrow();
+        public static final RegistryEntry<StatusEffect> BOUNDED_GLOWING = Registries.STATUS_EFFECT.getEntry(Identifier.of(MOD_ID, Constants.Effect.BOUNDED_GLOWING)).orElseThrow();
     }
 
     public static class Item {
@@ -23,6 +24,7 @@ public class Instances {
         public static final net.minecraft.item.Item EMERALD_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.EMERALD_INGOT)));
         public static final net.minecraft.item.Item LEAD_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.LEAD_INGOT)));
         public static final net.minecraft.item.Item BRONZE_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.BRONZE_INGOT)));
+        public static final net.minecraft.item.Item QUARTZ_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.QUARTZ_INGOT)));
     }
 
     @SuppressWarnings("unused")
@@ -51,6 +53,11 @@ public class Instances {
         public static final net.minecraft.item.Item LEAD_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Armor.LEAD_CHESTPLATE)));
         public static final net.minecraft.item.Item LEAD_LEGGINGS = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Armor.LEAD_LEGGINGS)));
         public static final net.minecraft.item.Item LEAD_BOOTS = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Armor.LEAD_BOOTS)));
+
+        public static final net.minecraft.item.Item QUARTZ_HELMET = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Armor.QUARTZ_HELMET)));
+        public static final net.minecraft.item.Item QUARTZ_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Armor.QUARTZ_CHESTPLATE)));
+        public static final net.minecraft.item.Item QUARTZ_LEGGINGS = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Armor.QUARTZ_LEGGINGS)));
+        public static final net.minecraft.item.Item QUARTZ_BOOTS = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Armor.QUARTZ_BOOTS)));
     }
 
     @SuppressWarnings("unused")
@@ -84,6 +91,12 @@ public class Instances {
         public static final net.minecraft.item.Item LEAD_PICKAXE = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Tool.LEAD_PICKAXE)));
         public static final net.minecraft.item.Item LEAD_SHOVEL = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Tool.LEAD_SHOVEL)));
         public static final net.minecraft.item.Item LEAD_HOE = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Tool.LEAD_HOE)));
+
+        public static final net.minecraft.item.Item QUARTZ_SWORD = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Tool.QUARTZ_SWORD)));
+        public static final net.minecraft.item.Item QUARTZ_AXE = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Tool.QUARTZ_AXE)));
+        public static final net.minecraft.item.Item QUARTZ_PICKAXE = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Tool.QUARTZ_PICKAXE)));
+        public static final net.minecraft.item.Item QUARTZ_SHOVEL = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Tool.QUARTZ_SHOVEL)));
+        public static final net.minecraft.item.Item QUARTZ_HOE = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Tool.QUARTZ_HOE)));
     }
 
     public static class Block {

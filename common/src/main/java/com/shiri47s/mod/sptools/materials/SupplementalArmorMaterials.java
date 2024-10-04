@@ -16,13 +16,14 @@ import net.minecraft.util.Util;
 import java.util.EnumMap;
 import java.util.List;
 
-@SuppressWarnings({"rawtypes", "unchecked"})
+@SuppressWarnings({"rawtypes", "unchecked", "DuplicatedCode"})
 public class SupplementalArmorMaterials {
     public static RegistryEntry<ArmorMaterial> BRONZE;
     public static RegistryEntry<ArmorMaterial> IRONCOPPER;
     public static RegistryEntry<ArmorMaterial> AMETHYST;
     public static RegistryEntry<ArmorMaterial> EMERALD;
     public static RegistryEntry<ArmorMaterial> LEAD;
+    public static RegistryEntry<ArmorMaterial> QUARTZ;
 
     static {
         BRONZE = createBronze();
@@ -30,6 +31,7 @@ public class SupplementalArmorMaterials {
         AMETHYST = createAmethyst();
         EMERALD = createEmerald();
         LEAD = createLead();
+        QUARTZ = createQuartz();
     }
 
     private static RegistryEntry<ArmorMaterial> createBronze() {
@@ -133,6 +135,27 @@ public class SupplementalArmorMaterials {
                         SoundEvents.ITEM_ARMOR_EQUIP_TURTLE,
                         () -> Ingredient.ofItems(Instances.Item.LEAD_INGOT),
                         List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.LEAD_ARMOR))),
+                        1.0F,
+                        0.18F));
+    }
+
+    private static RegistryEntry<ArmorMaterial> createQuartz() {
+        var enumMap = Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+            map.put(ArmorItem.Type.BOOTS, 3);
+            map.put(ArmorItem.Type.LEGGINGS, 7);
+            map.put(ArmorItem.Type.CHESTPLATE, 8);
+            map.put(ArmorItem.Type.HELMET, 3);
+            map.put(ArmorItem.Type.BODY, 5);
+        });
+        return Registry.registerReference(
+                Registries.ARMOR_MATERIAL,
+                Identifier.of(Constants.Armor.QUARTZ_ARMOR),
+                new ArmorMaterial(
+                        enumMap,
+                        15,
+                        SoundEvents.ITEM_ARMOR_EQUIP_CHAIN,
+                        () -> Ingredient.ofItems(Instances.Item.QUARTZ_INGOT),
+                        List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.QUARTZ_ARMOR))),
                         1.0F,
                         0.18F));
     }

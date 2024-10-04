@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "X": {
-      "item": "minecraft:quartz_ingot"
+      "item": "sptools:sp_quartz_ingot"
     }
   },
   "pattern": [

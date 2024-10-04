@@ -80,5 +80,6 @@
   "item.sptools.blessing.ironcopper": " ノックバック付与",
   "item.sptools.blessing.amethyst": " 移動速度上昇付与",
   "item.sptools.blessing.emerald": " 幸運＆採掘速度上昇付与",
-  "item.sptools.blessing.heavy": " 防御上昇＆移動速度低下付与"
+  "item.sptools.blessing.heavy": " 防御上昇＆移動速度低下付与",
+  "item.sptools.blessing.quartz": " 発光付与"
 }

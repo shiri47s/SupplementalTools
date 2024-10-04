@@ -88,6 +88,14 @@ public class FullSetsBonus {
             return;
         }
 
+        if (all(isQuartz(player.getEquippedStack(EquipmentSlot.HEAD)),
+                isQuartz(player.getEquippedStack(EquipmentSlot.CHEST)),
+                isQuartz(player.getEquippedStack(EquipmentSlot.LEGS)),
+                isQuartz(player.getEquippedStack(EquipmentSlot.FEET)))) {
+            updateInternal(player, Enums.Series.Quartz);
+            return;
+        }
+
         updateInternal(player, Enums.Series.None);
     }
 
@@ -130,5 +138,9 @@ public class FullSetsBonus {
 
     private static boolean isLead(ItemStack stack) {
         return stack.getItem() instanceof LeadArmorItem;
+    }
+
+    private static boolean isQuartz(ItemStack stack) {
+        return stack.getItem() instanceof QuartzArmorItem;
     }
 }

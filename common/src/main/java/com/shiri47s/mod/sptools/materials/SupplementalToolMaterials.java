@@ -20,7 +20,8 @@ public enum SupplementalToolMaterials implements ToolMaterial {
     IRONCOPPER(255, 7.0F, 2.0F, 7, () -> Ingredient.ofItems(Items.IRON_INGOT, Items.COPPER_INGOT), Constants.Tag.INCORRECT_FOR_IRONCOPPER_TOOL),
     AMETHYST(255, 8.0F, 3.0F, 14, () -> Ingredient.ofItems(Instances.Item.AMETHYST_INGOT), Constants.Tag.INCORRECT_FOR_AMETHYST_TOOL),
     EMERALD(1000, 8.5F, 3.5F, 12, () -> Ingredient.ofItems(Instances.Item.EMERALD_INGOT), Constants.Tag.INCORRECT_FOR_EMERALD_TOOL),
-    LEAD(153, 7.5F, 3.0F, 3, () -> Ingredient.ofItems(Instances.Item.LEAD_INGOT), Constants.Tag.INCORRECT_FOR_LEAD_TOOL);
+    LEAD(153, 7.5F, 3.0F, 3, () -> Ingredient.ofItems(Instances.Item.LEAD_INGOT), Constants.Tag.INCORRECT_FOR_LEAD_TOOL),
+    QUARTZ(1532, 9.0F, 3.5F, 9, () -> Ingredient.ofItems(Instances.Item.QUARTZ_INGOT), Constants.Tag.INCORRECT_FOR_QUARTZ_TOOL);
 
     private final int itemDurability;
     private final float miningSpeed;
@@ -71,6 +72,7 @@ public enum SupplementalToolMaterials implements ToolMaterial {
             case EMERALD -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.EMERALDS));
             case AMETHYST -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.AMETHYSTS));
             case LEAD -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.LEAD));
+            case QUARTZ -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.QUARTZ));
         };
     }
 }

@@ -19,6 +19,8 @@ public class Constants {
 
         public static final String LEAD = "lead";
 
+        public static final String QUARTZ = "quartz";
+
         public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_BRONZE_TOOL = of("incorrect_for_bronze_tool");
 
         public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_IRONCOPPER_TOOL = of("incorrect_for_ironcopper_tool");
@@ -28,6 +30,8 @@ public class Constants {
         public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_EMERALD_TOOL = of("incorrect_for_emerald_tool");
 
         public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_LEAD_TOOL = of("incorrect_for_lead_tool");
+
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_QUARTZ_TOOL = of("incorrect_for_quartz_tool");
 
         private static TagKey<net.minecraft.block.Block> of(String id) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(id));
@@ -41,6 +45,7 @@ public class Constants {
         public static final String LEAD_INGOT = PREFIX + "lead_ingot";
         public static final String RAW_LEAD = PREFIX + "raw_lead";
         public static final String LEAD_ORE = PREFIX + "lead_ore";
+        public static final String QUARTZ_INGOT = PREFIX + "quartz_ingot";
     }
 
     public static class Armor {
@@ -73,6 +78,12 @@ public class Constants {
         public static final String LEAD_CHESTPLATE = PREFIX + "lead_chestplate";
         public static final String LEAD_LEGGINGS = PREFIX + "lead_leggings";
         public static final String LEAD_BOOTS = PREFIX + "lead_boots";
+
+        public static final String QUARTZ_ARMOR = PREFIX + "quartz_armor";
+        public static final String QUARTZ_HELMET = PREFIX + "quartz_helmet";
+        public static final String QUARTZ_CHESTPLATE = PREFIX + "quartz_chestplate";
+        public static final String QUARTZ_LEGGINGS = PREFIX + "quartz_leggings";
+        public static final String QUARTZ_BOOTS = PREFIX + "quartz_boots";
     }
 
     public static class Tool {
@@ -105,6 +116,12 @@ public class Constants {
         public static final String LEAD_SHOVEL = PREFIX + "lead_shovel";
         public static final String LEAD_PICKAXE = PREFIX + "lead_pickaxe";
         public static final String LEAD_HOE = PREFIX + "lead_hoe";
+
+        public static final String QUARTZ_SWORD = PREFIX + "quartz_sword";
+        public static final String QUARTZ_AXE = PREFIX + "quartz_axe";
+        public static final String QUARTZ_SHOVEL = PREFIX + "quartz_shovel";
+        public static final String QUARTZ_PICKAXE = PREFIX + "quartz_pickaxe";
+        public static final String QUARTZ_HOE = PREFIX + "quartz_hoe";
     }
 
     public static class Block {
@@ -117,5 +134,6 @@ public class Constants {
         public static final String MOVEMENT_SPEED = PREFIX + "movement_speed";
         public static final String HASTE_AND_LUCK = PREFIX + "haste_and_luck";
         public static final String HEAVY = PREFIX + "heavy";
+        public static final String BOUNDED_GLOWING = PREFIX + "bounded_glowing";
     }
 }
