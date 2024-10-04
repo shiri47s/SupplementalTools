@@ -24,6 +24,7 @@ public class SupplementalArmorMaterials {
     public static RegistryEntry<ArmorMaterial> EMERALD;
     public static RegistryEntry<ArmorMaterial> LEAD;
     public static RegistryEntry<ArmorMaterial> QUARTZ;
+    public static RegistryEntry<ArmorMaterial> REDSTONE;
 
     static {
         BRONZE = createBronze();
@@ -32,6 +33,7 @@ public class SupplementalArmorMaterials {
         EMERALD = createEmerald();
         LEAD = createLead();
         QUARTZ = createQuartz();
+        REDSTONE = createRedstone();
     }
 
     private static RegistryEntry<ArmorMaterial> createBronze() {
@@ -156,6 +158,27 @@ public class SupplementalArmorMaterials {
                         SoundEvents.ITEM_ARMOR_EQUIP_CHAIN,
                         () -> Ingredient.ofItems(Instances.Item.QUARTZ_INGOT),
                         List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.QUARTZ_ARMOR))),
+                        1.0F,
+                        0.18F));
+    }
+
+    private static RegistryEntry<ArmorMaterial> createRedstone() {
+        var enumMap = Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+            map.put(ArmorItem.Type.BOOTS, 2);
+            map.put(ArmorItem.Type.LEGGINGS, 5);
+            map.put(ArmorItem.Type.CHESTPLATE, 7);
+            map.put(ArmorItem.Type.HELMET, 3);
+            map.put(ArmorItem.Type.BODY, 5);
+        });
+        return Registry.registerReference(
+                Registries.ARMOR_MATERIAL,
+                Identifier.of(Constants.Armor.REDSTONE_ARMOR),
+                new ArmorMaterial(
+                        enumMap,
+                        15,
+                        SoundEvents.ITEM_ARMOR_EQUIP_CHAIN,
+                        () -> Ingredient.ofItems(Instances.Item.REDSTONE_INGOT),
+                        List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.REDSTONE_ARMOR))),
                         1.0F,
                         0.18F));
     }

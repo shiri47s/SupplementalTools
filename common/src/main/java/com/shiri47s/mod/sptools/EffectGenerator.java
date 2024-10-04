@@ -16,6 +16,7 @@ public class EffectGenerator {
         EFFECT_REGISTER.register(Constants.Effect.HASTE_AND_LUCK, HasteAndLuckEffect::new);
         EFFECT_REGISTER.register(Constants.Effect.HEAVY, HeavyEffect::new);
         EFFECT_REGISTER.register(Constants.Effect.BOUNDED_GLOWING, BoundedGlowingEffect::new);
+        EFFECT_REGISTER.register(Constants.Effect.REDSTONE_OVERFLOW, RedstoneOverflowEffect::new);
 
         EFFECT_REGISTER.register();
     }

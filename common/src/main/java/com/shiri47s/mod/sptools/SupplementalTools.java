@@ -27,5 +27,7 @@ public class SupplementalTools
 		EventGenerator.generate();
 		EffectGenerator.generate();
 		WorldGenerator.generate();
+
+		BlessingProvider.provide();
 	}
 }

@@ -17,6 +17,7 @@ public class Instances {
         public static final RegistryEntry<StatusEffect> HASTE_AND_LUCK = Registries.STATUS_EFFECT.getEntry(Identifier.of(MOD_ID, Constants.Effect.HASTE_AND_LUCK)).orElseThrow();
         public static final RegistryEntry<StatusEffect> HEAVY = Registries.STATUS_EFFECT.getEntry(Identifier.of(MOD_ID, Constants.Effect.HEAVY)).orElseThrow();
         public static final RegistryEntry<StatusEffect> BOUNDED_GLOWING = Registries.STATUS_EFFECT.getEntry(Identifier.of(MOD_ID, Constants.Effect.BOUNDED_GLOWING)).orElseThrow();
+        public static final RegistryEntry<StatusEffect> REDSTONE_OVERFLOW = Registries.STATUS_EFFECT.getEntry(Identifier.of(MOD_ID, Constants.Effect.REDSTONE_OVERFLOW)).orElseThrow();
     }
 
     public static class Item {
@@ -25,6 +26,7 @@ public class Instances {
         public static final net.minecraft.item.Item LEAD_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.LEAD_INGOT)));
         public static final net.minecraft.item.Item BRONZE_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.BRONZE_INGOT)));
         public static final net.minecraft.item.Item QUARTZ_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.QUARTZ_INGOT)));
+        public static final net.minecraft.item.Item REDSTONE_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.REDSTONE_INGOT)));
     }
 
     @SuppressWarnings("unused")

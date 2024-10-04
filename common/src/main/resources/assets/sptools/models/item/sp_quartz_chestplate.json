@@ -2,12 +2,6 @@
   "parent": "minecraft:item/generated",
   "overrides": [
     {
-      "model": "sptools:item/sp_quartz_chestplate_quartz_trim",
-      "predicate": {
-        "trim_type": 0.1
-      }
-    },
-    {
       "model": "sptools:item/sp_quartz_chestplate_iron_trim",
       "predicate": {
         "trim_type": 0.2
@@ -26,7 +20,7 @@
       }
     },
     {
-      "model": "sptools:item/sp_quartz_chestplate_quartz_trim",
+      "model": "sptools:item/sp_quartz_chestplate_copper_trim",
       "predicate": {
         "trim_type": 0.5
       }

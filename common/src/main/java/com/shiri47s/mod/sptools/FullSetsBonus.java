@@ -96,6 +96,14 @@ public class FullSetsBonus {
             return;
         }
 
+        if (all(isRedstone(player.getEquippedStack(EquipmentSlot.HEAD)),
+                isRedstone(player.getEquippedStack(EquipmentSlot.CHEST)),
+                isRedstone(player.getEquippedStack(EquipmentSlot.LEGS)),
+                isRedstone(player.getEquippedStack(EquipmentSlot.FEET)))) {
+            updateInternal(player, Enums.Series.Redstone);
+            return;
+        }
+
         updateInternal(player, Enums.Series.None);
     }
 
@@ -142,5 +150,9 @@ public class FullSetsBonus {
 
     private static boolean isQuartz(ItemStack stack) {
         return stack.getItem() instanceof QuartzArmorItem;
+    }
+
+    private static boolean isRedstone(ItemStack stack) {
+        return stack.getItem() instanceof RedstoneArmorItem;
     }
 }

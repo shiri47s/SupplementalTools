@@ -8,6 +8,7 @@ public class Enums {
         Amethyst,
         Emerald,
         Lead,
-        Quartz
+        Quartz,
+        Redstone
     }
 }

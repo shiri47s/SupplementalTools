@@ -49,6 +49,11 @@ public class ArmorItemModelGenerator {
         ARMOR_REGISTER.register(Constants.Armor.QUARTZ_CHESTPLATE, () -> new QuartzArmorItem(ArmorItem.Type.CHESTPLATE));
         ARMOR_REGISTER.register(Constants.Armor.QUARTZ_LEGGINGS, () -> new QuartzArmorItem(ArmorItem.Type.LEGGINGS));
         ARMOR_REGISTER.register(Constants.Armor.QUARTZ_BOOTS, () -> new QuartzArmorItem(ArmorItem.Type.BOOTS));
+
+        ARMOR_REGISTER.register(Constants.Armor.REDSTONE_HELMET, () -> new RedstoneArmorItem(ArmorItem.Type.HELMET));
+        ARMOR_REGISTER.register(Constants.Armor.REDSTONE_CHESTPLATE, () -> new RedstoneArmorItem(ArmorItem.Type.CHESTPLATE));
+        ARMOR_REGISTER.register(Constants.Armor.REDSTONE_LEGGINGS, () -> new RedstoneArmorItem(ArmorItem.Type.LEGGINGS));
+        ARMOR_REGISTER.register(Constants.Armor.REDSTONE_BOOTS, () -> new RedstoneArmorItem(ArmorItem.Type.BOOTS));
     }
 
     private static void generateItems() {
@@ -60,5 +65,6 @@ public class ArmorItemModelGenerator {
         ARMOR_REGISTER.register(Constants.Item.LEAD_ORE, () -> new LeadBlockItem(new Item.Settings()));
         ARMOR_REGISTER.register(Constants.Item.QUARTZ_INGOT, () -> new QuartzIngot(new Item.Settings()));
         ARMOR_REGISTER.register(Constants.Item.QUARTZ_SCRAP, () -> new Item(new Item.Settings()));
+        ARMOR_REGISTER.register(Constants.Item.REDSTONE_INGOT, () -> new RedstoneIngot(new Item.Settings()));
     }
 }

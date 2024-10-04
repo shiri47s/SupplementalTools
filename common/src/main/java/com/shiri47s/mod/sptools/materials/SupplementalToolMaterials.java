@@ -19,9 +19,10 @@ public enum SupplementalToolMaterials implements ToolMaterial {
     Bronze(172, 5.0F, 1.5F, 5, () -> Ingredient.ofItems(Items.COPPER_INGOT), Constants.Tag.INCORRECT_FOR_BRONZE_TOOL),
     IRONCOPPER(255, 7.0F, 2.0F, 7, () -> Ingredient.ofItems(Items.IRON_INGOT, Items.COPPER_INGOT), Constants.Tag.INCORRECT_FOR_IRONCOPPER_TOOL),
     AMETHYST(255, 8.0F, 3.0F, 14, () -> Ingredient.ofItems(Instances.Item.AMETHYST_INGOT), Constants.Tag.INCORRECT_FOR_AMETHYST_TOOL),
-    EMERALD(1000, 8.5F, 3.5F, 12, () -> Ingredient.ofItems(Instances.Item.EMERALD_INGOT), Constants.Tag.INCORRECT_FOR_EMERALD_TOOL),
+    EMERALD(777, 8.5F, 3.5F, 12, () -> Ingredient.ofItems(Instances.Item.EMERALD_INGOT), Constants.Tag.INCORRECT_FOR_EMERALD_TOOL),
     LEAD(153, 7.5F, 3.0F, 3, () -> Ingredient.ofItems(Instances.Item.LEAD_INGOT), Constants.Tag.INCORRECT_FOR_LEAD_TOOL),
-    QUARTZ(1532, 9.0F, 3.5F, 9, () -> Ingredient.ofItems(Instances.Item.QUARTZ_INGOT), Constants.Tag.INCORRECT_FOR_QUARTZ_TOOL);
+    QUARTZ(666, 7.0F, 3.0F, 6, () -> Ingredient.ofItems(Instances.Item.QUARTZ_INGOT), Constants.Tag.INCORRECT_FOR_QUARTZ_TOOL),
+    REDSTONE(184, 6.5F, 2.5F, 11, () -> Ingredient.ofItems(Instances.Item.REDSTONE_INGOT), Constants.Tag.INCORRECT_FOR_REDSTONE_TOOL);
 
     private final int itemDurability;
     private final float miningSpeed;
@@ -73,6 +74,7 @@ public enum SupplementalToolMaterials implements ToolMaterial {
             case AMETHYST -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.AMETHYSTS));
             case LEAD -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.LEAD));
             case QUARTZ -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.QUARTZ));
+            case REDSTONE -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.REDSTONE));
         };
     }
 }

@@ -50,102 +50,12 @@ public class ToolItemModelGenerator {
         TOOL_REGISTER.register(Constants.Tool.QUARTZ_AXE, () -> new SupplementalAxeItem(SupplementalToolMaterials.QUARTZ, (new Item.Settings()).attributeModifiers(AxeItem.createAttributeModifiers(SupplementalToolMaterials.QUARTZ, 7, -3.8F))));
         TOOL_REGISTER.register(Constants.Tool.QUARTZ_HOE, () -> new SupplementalHoeItem(SupplementalToolMaterials.QUARTZ, (new Item.Settings()).attributeModifiers(HoeItem.createAttributeModifiers(SupplementalToolMaterials.QUARTZ, -2.0F, -3.0F))));
 
-        blessingOfFullSets();
+        TOOL_REGISTER.register(Constants.Tool.REDSTONE_SWORD, () -> new SupplementalSwordItem(SupplementalToolMaterials.REDSTONE, (new Item.Settings()).attributeModifiers(SwordItem.createAttributeModifiers(SupplementalToolMaterials.REDSTONE, 3, -2.6F))));
+        TOOL_REGISTER.register(Constants.Tool.REDSTONE_SHOVEL, () -> new SupplementalShovelItem(SupplementalToolMaterials.REDSTONE, (new Item.Settings()).attributeModifiers(ShovelItem.createAttributeModifiers(SupplementalToolMaterials.REDSTONE, 1.0F, -3.0F))));
+        TOOL_REGISTER.register(Constants.Tool.REDSTONE_PICKAXE, () -> new SupplementalPickaxeItem(SupplementalToolMaterials.REDSTONE, (new Item.Settings()).attributeModifiers(PickaxeItem.createAttributeModifiers(SupplementalToolMaterials.REDSTONE, 1.0F, -2.8F))));
+        TOOL_REGISTER.register(Constants.Tool.REDSTONE_AXE, () -> new SupplementalAxeItem(SupplementalToolMaterials.REDSTONE, (new Item.Settings()).attributeModifiers(AxeItem.createAttributeModifiers(SupplementalToolMaterials.REDSTONE, 6, -3.8F))));
+        TOOL_REGISTER.register(Constants.Tool.REDSTONE_HOE, () -> new SupplementalHoeItem(SupplementalToolMaterials.REDSTONE, (new Item.Settings()).attributeModifiers(HoeItem.createAttributeModifiers(SupplementalToolMaterials.REDSTONE, -2.0F, -3.2F))));
+
         TOOL_REGISTER.register();
-    }
-
-    private static void blessingOfFullSets() {
-        FullSetsBonus.listen(p -> {
-            clearBlessings(p.getA());
-            switch (p.getB()) {
-                case Bronze -> blessingCopper(p.getA());
-                case IronCopper -> blessingIronCopper(p.getA());
-                case Amethyst -> blessingAmethyst(p.getA());
-                case Emerald -> blessingEmerald(p.getA());
-                case Lead -> blessingLead(p.getA());
-                case Quartz -> blessingQuartz(p.getA());
-            }
-        });
-    }
-
-    private static void blessingLead(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
-                        Instances.Effect.HEAVY,
-                        StatusEffectInstance.INFINITE,
-                        1,
-                        false,
-                        false,
-                        false),
-                player);
-    }
-
-    private static void blessingCopper(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
-                        Instances.Effect.KNOCKBACK_RESISTANCE,
-                        StatusEffectInstance.INFINITE,
-                        1,
-                        false,
-                        false,
-                        false),
-                player);
-    }
-
-    private static void blessingIronCopper(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
-                        Instances.Effect.ATTACK_KNOCKBACK,
-                        StatusEffectInstance.INFINITE,
-                        1,
-                        false,
-                        false,
-                        false),
-                player);
-    }
-
-    private static void blessingAmethyst(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
-                        Instances.Effect.MOVEMENT_SPEED,
-                        StatusEffectInstance.INFINITE,
-                        1,
-                        false,
-                        false,
-                        false),
-                player);
-    }
-
-    private static void blessingEmerald(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
-                        Instances.Effect.HASTE_AND_LUCK,
-                        StatusEffectInstance.INFINITE,
-                        2,
-                        false,
-                        false,
-                        false),
-                player);
-    }
-
-    private static void blessingQuartz(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
-                        Instances.Effect.BOUNDED_GLOWING,
-                        StatusEffectInstance.INFINITE,
-                        1,
-                        false,
-                        false,
-                        false),
-                player);
-    }
-
-    private static void clearBlessings(PlayerEntity player) {
-        player.removeStatusEffect(Instances.Effect.KNOCKBACK_RESISTANCE);
-        player.removeStatusEffect(Instances.Effect.ATTACK_KNOCKBACK);
-        player.removeStatusEffect(Instances.Effect.MOVEMENT_SPEED);
-        player.removeStatusEffect(Instances.Effect.HASTE_AND_LUCK);
-        player.removeStatusEffect(Instances.Effect.HEAVY);
-        player.removeStatusEffect(Instances.Effect.BOUNDED_GLOWING);
     }
 }
