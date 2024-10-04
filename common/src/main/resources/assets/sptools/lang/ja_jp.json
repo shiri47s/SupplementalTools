@@ -74,6 +74,7 @@
   "effect.sptools.sp_movement_speed" :"移動速度上昇",
   "effect.sptools.sp_haste_and_luck" :"幸運＆採掘速度上昇",
   "effect.sptools.sp_heavy" :"重量",
+  "effect.sptools.sp_bounded_glowing" :"透視",
 
   "item.sptools.blessing" :"フルセットボーナス: ",
   "item.sptools.blessing.copper": " ノックバック耐性付与",
@@ -81,5 +82,5 @@
   "item.sptools.blessing.amethyst": " 移動速度上昇付与",
   "item.sptools.blessing.emerald": " 幸運＆採掘速度上昇付与",
   "item.sptools.blessing.heavy": " 防御上昇＆移動速度低下付与",
-  "item.sptools.blessing.quartz": " 発光付与"
+  "item.sptools.blessing.quartz": " 透視付与"
 }
