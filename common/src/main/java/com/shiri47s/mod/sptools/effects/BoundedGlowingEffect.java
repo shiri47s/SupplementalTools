@@ -16,7 +16,7 @@ public class BoundedGlowingEffect extends StatusEffect {
     private static final double RANGE = 16.0F;
     private static final int DURATION = 100;
     public BoundedGlowingEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0);
+        super(StatusEffectCategory.BENEFICIAL, 0xDDEEFF);
     }
 
     public static void effect(World world, PlayerEntity player) {

@@ -22,6 +22,9 @@ public class EventGenerator {
                 if (redstoneOverflowEffect != null) {
                     RedstoneOverflowEffect.effect(world, player);
                 }
+                else {
+                    RedstoneOverflowEffect.clear(player);
+                }
             }
         }));
     }

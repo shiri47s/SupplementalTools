@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 
 public class HasteAndLuckEffect extends StatusEffect {
     public HasteAndLuckEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0);
+        super(StatusEffectCategory.BENEFICIAL, 0x2211DDD);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_LUCK,
                 Identifier.of("cae82afa-fd4b-4cfa-9548-211c1a199df4"),

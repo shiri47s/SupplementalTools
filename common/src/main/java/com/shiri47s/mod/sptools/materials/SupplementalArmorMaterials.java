@@ -165,10 +165,10 @@ public class SupplementalArmorMaterials {
     private static RegistryEntry<ArmorMaterial> createRedstone() {
         var enumMap = Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
             map.put(ArmorItem.Type.BOOTS, 2);
-            map.put(ArmorItem.Type.LEGGINGS, 5);
-            map.put(ArmorItem.Type.CHESTPLATE, 7);
+            map.put(ArmorItem.Type.LEGGINGS, 4);
+            map.put(ArmorItem.Type.CHESTPLATE, 6);
             map.put(ArmorItem.Type.HELMET, 3);
-            map.put(ArmorItem.Type.BODY, 5);
+            map.put(ArmorItem.Type.BODY, 4);
         });
         return Registry.registerReference(
                 Registries.ARMOR_MATERIAL,

@@ -88,7 +88,7 @@
   "effect.sptools.sp_haste_and_luck" :"Haste/Luck",
   "effect.sptools.sp_heavy" :"Heavy",
   "effect.sptools.sp_bounded_glowing" :"Clairvoyance",
-  "effect.sptools.sp_redstone_overflow" :"RedStone Overflow",
+  "effect.sptools.sp_redstone_overflow" :"Signal Overflow",
 
   "item.sptools.blessing" :"FullSet Bonus: ",
   "item.sptools.blessing.copper": " Provide Knockback Resistance",
@@ -97,7 +97,9 @@
   "item.sptools.blessing.emerald": " Provide Haste and Luck",
   "item.sptools.blessing.heavy": " Provide Resistance up and slow down",
   "item.sptools.blessing.quartz": " Provide clairvoyance",
-  "item.sptools.blessing.redstone": " Provide RedStone Overflow",
+  "item.sptools.blessing.redstone": " Provide Signal Overflow",
+
+  "item.sptools.blessing.redstone.level": " RedStone Power: %s",
 
   "advancement.sptools.bronze.title": "Welcome",
   "advancement.sptools.bronze.description": "Welcome Supplemental Tools"

@@ -11,8 +11,26 @@ import java.util.List;
 
 public class RedstoneArmorItem extends SupplementalArmorItem {
 
+    private static final String[] POWERS = {
+            "□□□□□□□□",
+            "■□□□□□□□",
+            "■■□□□□□□",
+            "■■■□□□□□",
+            "■■■■□□□□",
+            "■■■■■□□□",
+            "■■■■■■□□",
+            "■■■■■■■□",
+            "■■■■■■■■"
+    };
+
+    private int currentPower;
+
     public RedstoneArmorItem(Type type) {
-        super(SupplementalArmorMaterials.REDSTONE, type, new Settings().rarity(Rarity.RARE).maxDamage(type.getMaxDamage(25)));
+        super(SupplementalArmorMaterials.REDSTONE, type, new Settings().rarity(Rarity.RARE).maxDamage(type.getMaxDamage(14)));
+    }
+
+    public void receivePower(int power) {
+        currentPower = power;
     }
 
     @Override
@@ -23,5 +41,6 @@ public class RedstoneArmorItem extends SupplementalArmorItem {
     @Override
     protected void appendFullSetsTooltip(ItemStack stack, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.translatable("item.sptools.blessing.redstone").formatted(Formatting.GREEN));
+        tooltip.add(Text.translatable("item.sptools.blessing.redstone.level", POWERS[currentPower]).formatted(Formatting.RED));
     }
 }

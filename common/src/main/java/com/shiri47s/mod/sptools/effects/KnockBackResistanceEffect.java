@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 
 public class KnockBackResistanceEffect extends StatusEffect {
     public KnockBackResistanceEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0xAB66F0);
+        super(StatusEffectCategory.BENEFICIAL, 0x4477BB);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE,
                 Identifier.of("309ab45b-9334-477c-91fe-2995171e97a6"),

@@ -13,7 +13,7 @@ import java.util.List;
 public class EmeraldArmorItem extends SupplementalArmorItem {
 
     public EmeraldArmorItem(Type type) {
-        super(SupplementalArmorMaterials.EMERALD, type, new Item.Settings().rarity(Rarity.RARE).maxDamage(type.getMaxDamage(25)));
+        super(SupplementalArmorMaterials.EMERALD, type, new Item.Settings().rarity(Rarity.RARE).maxDamage(type.getMaxDamage(21)));
     }
 
     @Override

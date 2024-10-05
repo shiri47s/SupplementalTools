@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 
 public class HeavyEffect extends StatusEffect {
     public HeavyEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0);
+        super(StatusEffectCategory.BENEFICIAL, 0x888888);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_ATTACK_KNOCKBACK,
                 Identifier.of("0e247b51-f633-4677-8380-cdc80e98b0b0"),

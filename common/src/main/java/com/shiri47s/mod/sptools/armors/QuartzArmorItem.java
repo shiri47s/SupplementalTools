@@ -12,7 +12,7 @@ import java.util.List;
 public class QuartzArmorItem extends SupplementalArmorItem {
 
     public QuartzArmorItem(Type type) {
-        super(SupplementalArmorMaterials.QUARTZ, type, new Settings().rarity(Rarity.RARE).maxDamage(type.getMaxDamage(25)));
+        super(SupplementalArmorMaterials.QUARTZ, type, new Settings().rarity(Rarity.RARE).maxDamage(type.getMaxDamage(22)));
     }
 
     @Override
