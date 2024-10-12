@@ -12,7 +12,7 @@ import java.util.List;
 
 public class IronCopperArmorItem extends SupplementalArmorItem {
     public IronCopperArmorItem(Type type) {
-        super(SupplementalArmorMaterials.BRONZE, type, new Item.Settings().rarity(Rarity.UNCOMMON).maxDamage(type.getMaxDamage(11)));
+        super(SupplementalArmorMaterials.IRONCOPPER, type, new Item.Settings().rarity(Rarity.UNCOMMON).maxDamage(type.getMaxDamage(11)));
     }
 
     @Override

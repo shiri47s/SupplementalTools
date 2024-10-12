@@ -31,16 +31,6 @@
   "item.sptools.sp_amethyst_pickaxe": "アメジストのツルハシ",
   "item.sptools.sp_amethyst_hoe": "アメジストのクワ",
 
-  "item.sptools.sp_lead_helmet": "鉛のヘルメット",
-  "item.sptools.sp_lead_chestplate": "鉛のチェストプレート",
-  "item.sptools.sp_lead_leggings": "鉛のレギンス",
-  "item.sptools.sp_lead_boots": "鉛のブーツ",
-  "item.sptools.sp_lead_sword": "鉛の剣",
-  "item.sptools.sp_lead_shovel": "鉛のシャベル",
-  "item.sptools.sp_lead_axe": "鉛の斧",
-  "item.sptools.sp_lead_pickaxe": "鉛のツルハシ",
-  "item.sptools.sp_lead_hoe": "鉛のクワ",
-
   "item.sptools.sp_emerald_helmet": "エメラルドのヘルメット",
   "item.sptools.sp_emerald_chestplate": "エメエラルドのチェストプレート",
   "item.sptools.sp_emerald_leggings": "エメラルドのレギンス",
@@ -50,6 +40,16 @@
   "item.sptools.sp_emerald_axe": "エメラルドの斧",
   "item.sptools.sp_emerald_pickaxe": "エメラルドのツルハシ",
   "item.sptools.sp_emerald_hoe": "エメラルドのクワ",
+
+  "item.sptools.sp_lead_helmet": "鉛のヘルメット",
+  "item.sptools.sp_lead_chestplate": "鉛のチェストプレート",
+  "item.sptools.sp_lead_leggings": "鉛のレギンス",
+  "item.sptools.sp_lead_boots": "鉛のブーツ",
+  "item.sptools.sp_lead_sword": "鉛の剣",
+  "item.sptools.sp_lead_shovel": "鉛のシャベル",
+  "item.sptools.sp_lead_axe": "鉛の斧",
+  "item.sptools.sp_lead_pickaxe": "鉛のツルハシ",
+  "item.sptools.sp_lead_hoe": "鉛のクワ",
 
   "item.sptools.sp_quartz_helmet": "クォーツのヘルメット",
   "item.sptools.sp_quartz_chestplate": "クォーツのチェストプレート",
@@ -87,9 +87,8 @@
   "effect.sptools.sp_movement_speed" :"移動速度上昇",
   "effect.sptools.sp_haste_and_luck" :"幸運＆採掘速度上昇",
   "effect.sptools.sp_heavy" :"重量",
+  "effect.sptools.sp_bounded_glowing" :"千里眼",
   "effect.sptools.sp_redstone_overflow" :"溢る信号",
-
-  "item.sptools.blessing.redstone.level": " 受信パワー: %s",
 
   "item.sptools.blessing" :"フルセットボーナス: ",
   "item.sptools.blessing.copper": " ノックバック耐性付与",
@@ -98,5 +97,10 @@
   "item.sptools.blessing.emerald": " 幸運＆採掘速度上昇付与",
   "item.sptools.blessing.heavy": " 防御上昇＆移動速度低下付与",
   "item.sptools.blessing.quartz": " 透視付与",
-  "item.sptools.blessing.redstone": " 溢れる信号付与"
+  "item.sptools.blessing.redstone": " 溢れる信号付与",
+
+  "item.sptools.blessing.redstone.level": " 受信パワー: %s",
+
+  "advancement.sptools.bronze.title": "ようこそ",
+  "advancement.sptools.bronze.description": "Supplemental Toolsのはじまり"
 }
