@@ -15,6 +15,8 @@ public class Instances {
         public static final StatusEffect MOVEMENT_SPEED = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.MOVEMENT_SPEED)));
         public static final StatusEffect HASTE_AND_LUCK = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.HASTE_AND_LUCK)));
         public static final StatusEffect HEAVY = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.HEAVY)));
+        public static final StatusEffect BOUNDED_GLOWING = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.BOUNDED_GLOWING)));
+        public static final StatusEffect REDSTONE_OVERFLOW = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.REDSTONE_OVERFLOW)));
     }
 
     public static class Item {
@@ -22,6 +24,8 @@ public class Instances {
         public static final net.minecraft.item.Item EMERALD_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.EMERALD_INGOT)));
         public static final net.minecraft.item.Item LEAD_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.LEAD_INGOT)));
         public static final net.minecraft.item.Item BRONZE_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.BRONZE_INGOT)));
+        public static final net.minecraft.item.Item QUARTZ_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.QUARTZ_INGOT)));
+        public static final net.minecraft.item.Item REDSTONE_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.REDSTONE_INGOT)));
     }
 
     @SuppressWarnings("unused")
@@ -50,15 +54,25 @@ public class Instances {
         public static final net.minecraft.item.Item LEAD_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.LEAD_CHESTPLATE)));
         public static final net.minecraft.item.Item LEAD_LEGGINGS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.LEAD_LEGGINGS)));
         public static final net.minecraft.item.Item LEAD_BOOTS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.LEAD_BOOTS)));
+
+        public static final net.minecraft.item.Item QUARTZ_HELMET = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.QUARTZ_HELMET)));
+        public static final net.minecraft.item.Item QUARTZ_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.QUARTZ_CHESTPLATE)));
+        public static final net.minecraft.item.Item QUARTZ_LEGGINGS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.QUARTZ_LEGGINGS)));
+        public static final net.minecraft.item.Item QUARTZ_BOOTS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.QUARTZ_BOOTS)));
+
+        public static final net.minecraft.item.Item REDSTONE_HELMET = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.REDSTONE_HELMET)));
+        public static final net.minecraft.item.Item REDSTONE_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.REDSTONE_CHESTPLATE)));
+        public static final net.minecraft.item.Item REDSTONE_LEGGINGS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.REDSTONE_LEGGINGS)));
+        public static final net.minecraft.item.Item REDSTONE_BOOTS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.REDSTONE_BOOTS)));
     }
 
     @SuppressWarnings("unused")
     public static class TOOL {
-        public static final net.minecraft.item.Item COPPER_SWORD = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_SWORD)));
-        public static final net.minecraft.item.Item COPPER_AXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_AXE)));
-        public static final net.minecraft.item.Item COPPER_PICKAXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_PICKAXE)));
-        public static final net.minecraft.item.Item COPPER_SHOVEL = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_SHOVEL)));
-        public static final net.minecraft.item.Item COPPER_HOE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_HOE)));
+        public static final net.minecraft.item.Item BRONZE_SWORD = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_SWORD)));
+        public static final net.minecraft.item.Item BRONZE_AXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_AXE)));
+        public static final net.minecraft.item.Item BRONZE_PICKAXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_PICKAXE)));
+        public static final net.minecraft.item.Item BRONZE_SHOVEL = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_SHOVEL)));
+        public static final net.minecraft.item.Item BRONZE_HOE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.BRONZE_HOE)));
 
         public static final net.minecraft.item.Item IRONCOPPER_SWORD = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.IRONCOPPER_SWORD)));
         public static final net.minecraft.item.Item IRONCOPPER_AXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.IRONCOPPER_AXE)));
@@ -83,6 +97,18 @@ public class Instances {
         public static final net.minecraft.item.Item LEAD_PICKAXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.LEAD_PICKAXE)));
         public static final net.minecraft.item.Item LEAD_SHOVEL = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.LEAD_SHOVEL)));
         public static final net.minecraft.item.Item LEAD_HOE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.LEAD_HOE)));
+
+        public static final net.minecraft.item.Item QUARTZ_SWORD = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.QUARTZ_SWORD)));
+        public static final net.minecraft.item.Item QUARTZ_AXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.QUARTZ_AXE)));
+        public static final net.minecraft.item.Item QUARTZ_PICKAXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.QUARTZ_PICKAXE)));
+        public static final net.minecraft.item.Item QUARTZ_SHOVEL = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.QUARTZ_SHOVEL)));
+        public static final net.minecraft.item.Item QUARTZ_HOE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.QUARTZ_HOE)));
+
+        public static final net.minecraft.item.Item REDSTONE_SWORD = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.REDSTONE_SWORD)));
+        public static final net.minecraft.item.Item REDSTONE_AXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.REDSTONE_AXE)));
+        public static final net.minecraft.item.Item REDSTONE_PICKAXE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.REDSTONE_PICKAXE)));
+        public static final net.minecraft.item.Item REDSTONE_SHOVEL = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.REDSTONE_SHOVEL)));
+        public static final net.minecraft.item.Item REDSTONE_HOE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Tool.REDSTONE_HOE)));
     }
 
     public static class Block {

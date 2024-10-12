@@ -21,6 +21,10 @@
     "sptools:sp_lead_helmet",
     "sptools:sp_lead_chestplate",
     "sptools:sp_lead_leggings",
-    "sptools:sp_lead_boots"
+    "sptools:sp_lead_boots",
+    "sptools:sp_quartz_helmet",
+    "sptools:sp_quartz_chestplate",
+    "sptools:sp_quartz_leggings",
+    "sptools:sp_quartz_boots"
   ]
 }
