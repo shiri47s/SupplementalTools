@@ -13,9 +13,9 @@
     }
   },
   "pattern": [
-    "I",
-    "X",
-    "#"
+    " I ",
+    " X ",
+    " ##"
   ],
   "result": {
     "item": "sptools:sp_ironcopper_shovel"

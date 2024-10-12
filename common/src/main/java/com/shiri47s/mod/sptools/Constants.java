@@ -11,9 +11,13 @@ public class Constants {
 
         public static final String AMETHYSTS = "amethysts";
 
-        public static final String EMERALDS = "emerald";
+        public static final String EMERALDS = "emeralds";
 
-        public static final String LEAD = "lead";
+        public static final String LEADS = "leads";
+
+        public static final String QUARTZS = "quartzs";
+
+        public static final String REDSTONES = "redstones";
     }
 
     public static class Item {
@@ -23,7 +27,9 @@ public class Constants {
         public static final String LEAD_INGOT = PREFIX + "lead_ingot";
         public static final String RAW_LEAD = PREFIX + "raw_lead";
         public static final String LEAD_ORE = PREFIX + "lead_ore";
-    }
+        public static final String QUARTZ_INGOT = PREFIX + "quartz_ingot";
+        public static final String QUARTZ_SCRAP = PREFIX + "quartz_scrap";
+        public static final String REDSTONE_INGOT = PREFIX + "redstone_ingot";    }
 
     public static class Armor {
         public static final String BRONZE_ARMOR = PREFIX + "bronze_armor";
@@ -55,6 +61,18 @@ public class Constants {
         public static final String LEAD_CHESTPLATE = PREFIX + "lead_chestplate";
         public static final String LEAD_LEGGINGS = PREFIX + "lead_leggings";
         public static final String LEAD_BOOTS = PREFIX + "lead_boots";
+
+        public static final String QUARTZ_ARMOR = PREFIX + "quartz_armor";
+        public static final String QUARTZ_HELMET = PREFIX + "quartz_helmet";
+        public static final String QUARTZ_CHESTPLATE = PREFIX + "quartz_chestplate";
+        public static final String QUARTZ_LEGGINGS = PREFIX + "quartz_leggings";
+        public static final String QUARTZ_BOOTS = PREFIX + "quartz_boots";
+
+        public static final String REDSTONE_ARMOR = PREFIX + "redstone_armor";
+        public static final String REDSTONE_HELMET = PREFIX + "redstone_helmet";
+        public static final String REDSTONE_CHESTPLATE = PREFIX + "redstone_chestplate";
+        public static final String REDSTONE_LEGGINGS = PREFIX + "redstone_leggings";
+        public static final String REDSTONE_BOOTS = PREFIX + "redstone_boots";
     }
 
     public static class Tool {
@@ -87,6 +105,18 @@ public class Constants {
         public static final String LEAD_SHOVEL = PREFIX + "lead_shovel";
         public static final String LEAD_PICKAXE = PREFIX + "lead_pickaxe";
         public static final String LEAD_HOE = PREFIX + "lead_hoe";
+
+        public static final String QUARTZ_SWORD = PREFIX + "quartz_sword";
+        public static final String QUARTZ_AXE = PREFIX + "quartz_axe";
+        public static final String QUARTZ_SHOVEL = PREFIX + "quartz_shovel";
+        public static final String QUARTZ_PICKAXE = PREFIX + "quartz_pickaxe";
+        public static final String QUARTZ_HOE = PREFIX + "quartz_hoe";
+
+        public static final String REDSTONE_SWORD = PREFIX + "redstone_sword";
+        public static final String REDSTONE_AXE = PREFIX + "redstone_axe";
+        public static final String REDSTONE_SHOVEL = PREFIX + "redstone_shovel";
+        public static final String REDSTONE_PICKAXE = PREFIX + "redstone_pickaxe";
+        public static final String REDSTONE_HOE = PREFIX + "redstone_hoe";
     }
 
     public static class Block {
@@ -99,5 +129,7 @@ public class Constants {
         public static final String MOVEMENT_SPEED = PREFIX + "movement_speed";
         public static final String HASTE_AND_LUCK = PREFIX + "haste_and_luck";
         public static final String HEAVY = PREFIX + "heavy";
+        public static final String BOUNDED_GLOWING = PREFIX + "bounded_glowing";
+        public static final String REDSTONE_OVERFLOW = PREFIX + "redstone_overflow";
     }
 }
