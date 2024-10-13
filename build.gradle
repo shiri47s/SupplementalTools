@@ -51,7 +51,7 @@ subprojects {
     if (!enabled_platforms.split(',').contains(project.name))
         return
 
-    def RELEASE = "beta"
+    def RELEASE = project.release_type
 
     def CHANGE_LOG = rootProject.file('changelog.md').getText("UTF-8")
     def PUBLISH_NAME = "${project.archives_base_name}-v${project.mod_version}_${project.minecraft_version}-${project.name}"

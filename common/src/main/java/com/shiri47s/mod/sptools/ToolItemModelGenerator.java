@@ -44,6 +44,18 @@ public class ToolItemModelGenerator {
         TOOL_REGISTER.register(Constants.Tool.LEAD_AXE, () -> new SupplementalAxeItem(SupplementalToolMaterials.LEAD, 6.5F, -3.2F, new Item.Settings()));
         TOOL_REGISTER.register(Constants.Tool.LEAD_HOE, () -> new SupplementalHoeItem(SupplementalToolMaterials.LEAD, 0, -3.1F, new Item.Settings()));
 
+        TOOL_REGISTER.register(Constants.Tool.QUARTZ_SWORD, () -> new SupplementalSwordItem(SupplementalToolMaterials.Quartz, 3, -2.4F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.QUARTZ_SHOVEL, () -> new SupplementalShovelItem(SupplementalToolMaterials.Quartz, 1.5F, -3.0F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.QUARTZ_PICKAXE, () -> new SupplementalPickaxeItem(SupplementalToolMaterials.Quartz, 1, -2.6F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.QUARTZ_AXE, () -> new SupplementalAxeItem(SupplementalToolMaterials.Quartz, 5.0F, -3.1F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.QUARTZ_HOE, () -> new SupplementalHoeItem(SupplementalToolMaterials.Quartz, -2, -3.0F, new Item.Settings()));
+
+        TOOL_REGISTER.register(Constants.Tool.REDSTONE_SWORD, () -> new SupplementalSwordItem(SupplementalToolMaterials.Redstone, 3, -2.6F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.REDSTONE_SHOVEL, () -> new SupplementalShovelItem(SupplementalToolMaterials.Redstone, 1.0F, -3.0F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.REDSTONE_PICKAXE, () -> new SupplementalPickaxeItem(SupplementalToolMaterials.Redstone, 1, -2.8F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.REDSTONE_AXE, () -> new SupplementalAxeItem(SupplementalToolMaterials.Redstone, 6.0F, -3.2F, new Item.Settings()));
+        TOOL_REGISTER.register(Constants.Tool.REDSTONE_HOE, () -> new SupplementalHoeItem(SupplementalToolMaterials.Redstone, -3, -3.2F, new Item.Settings()));
+
         blessingOfFullSets();
         TOOL_REGISTER.register();
     }
@@ -57,6 +69,8 @@ public class ToolItemModelGenerator {
                 case Amethyst -> blessingAmethyst(p.getA());
                 case Emerald -> blessingEmerald(p.getA());
                 case Lead -> blessingLead(p.getA());
+                case Quartz -> blessingQuartz(p.getA());
+                case Redstone -> blessingRedstone(p.getA());
             }
         });
     }
@@ -121,12 +135,38 @@ public class ToolItemModelGenerator {
                 player);
     }
 
+    private static void blessingQuartz(PlayerEntity player) {
+        player.setStatusEffect(
+                new StatusEffectInstance(
+                        Instances.Effect.BOUNDED_GLOWING,
+                        StatusEffectInstance.INFINITE,
+                        0,
+                        false,
+                        false,
+                        false),
+                player);
+    }
+
+    private static void blessingRedstone(PlayerEntity player) {
+        player.setStatusEffect(
+                new StatusEffectInstance(
+                        Instances.Effect.REDSTONE_OVERFLOW,
+                        StatusEffectInstance.INFINITE,
+                        0,
+                        false,
+                        false,
+                        false),
+                player);
+    }
+
     private static void clearBlessings(PlayerEntity player) {
         player.removeStatusEffect(Instances.Effect.KNOCKBACK_RESISTANCE);
         player.removeStatusEffect(Instances.Effect.ATTACK_KNOCKBACK);
         player.removeStatusEffect(Instances.Effect.MOVEMENT_SPEED);
         player.removeStatusEffect(Instances.Effect.HASTE_AND_LUCK);
         player.removeStatusEffect(Instances.Effect.HEAVY);
+        player.removeStatusEffect(Instances.Effect.BOUNDED_GLOWING);
+        player.removeStatusEffect(Instances.Effect.REDSTONE_OVERFLOW);
     }
 
 
