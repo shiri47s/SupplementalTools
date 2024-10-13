@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "sptools:sp_amethyst_boots",
+    "sptools:sp_bronze_boots",
+    "sptools:sp_emerald_boots",
+    "sptools:sp_ironcopper_boots",
+    "sptools:sp_lead_boots",
+    "sptools:sp_quartz_boots",
+    "sptools:sp_redstone_boots"
+  ]
+}

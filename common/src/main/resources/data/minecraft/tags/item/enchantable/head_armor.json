@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "sptools:sp_amethyst_helmet",
+    "sptools:sp_bronze_helmet",
+    "sptools:sp_emerald_helmet",
+    "sptools:sp_ironcopper_helmet",
+    "sptools:sp_lead_helmet",
+    "sptools:sp_quartz_helmet",
+    "sptools:sp_redstone_helmet"
+  ]
+}

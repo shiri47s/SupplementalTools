@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "sptools:equipment/Amethyst",
+    "sptools:equipment/bronze",
+    "sptools:equipment/emerald",
+    "sptools:equipment/ironcopper",
+    "sptools:equipment/lead",
+    "sptools:equipment/quartz",
+    "sptools:equipment/redstone"
+  ]
+}
