@@ -26,7 +26,7 @@
       }
     },
     {
-      "model": "sptools:item/sp_bronze_chestplate_bronze_trim",
+      "model": "sptools:item/sp_bronze_chestplate_copper_trim",
       "predicate": {
         "trim_type": 0.5
       }

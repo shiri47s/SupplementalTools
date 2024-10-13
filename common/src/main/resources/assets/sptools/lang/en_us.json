@@ -51,6 +51,26 @@
   "item.sptools.sp_lead_pickaxe": "Lead Pickaxe",
   "item.sptools.sp_lead_hoe": "Lead Hoe",
 
+  "item.sptools.sp_quartz_helmet": "Quartz Helmet",
+  "item.sptools.sp_quartz_chestplate": "Quartz Chestplate",
+  "item.sptools.sp_quartz_leggings": "Quartz Leggings",
+  "item.sptools.sp_quartz_boots": "Quartz Boots",
+  "item.sptools.sp_quartz_sword": "Quartz Sword",
+  "item.sptools.sp_quartz_shovel": "Quartz Shovel",
+  "item.sptools.sp_quartz_axe": "Quartz Axe",
+  "item.sptools.sp_quartz_pickaxe": "Quartz Pickaxe",
+  "item.sptools.sp_quartz_hoe": "Quartz Hoe",
+
+  "item.sptools.sp_redstone_helmet": "Redstone Helmet",
+  "item.sptools.sp_redstone_chestplate": "Redstone Chestplate",
+  "item.sptools.sp_redstone_leggings": "Redstone Leggings",
+  "item.sptools.sp_redstone_boots": "Redstone Boots",
+  "item.sptools.sp_redstone_sword": "Redstone Sword",
+  "item.sptools.sp_redstone_shovel": "Redstone Shovel",
+  "item.sptools.sp_redstone_axe": "Redstone Axe",
+  "item.sptools.sp_redstone_pickaxe": "Redstone Pickaxe",
+  "item.sptools.sp_redstone_hoe": "Redstone Hoe",
+
   "item.sptools.sp_bronze_ingot": "Bronze Ingot",
   "item.sptools.sp_amethyst_ingot": "Amethyst Ingot",
   "item.sptools.sp_emerald_ingot": "Emerald Ingot",
@@ -58,12 +78,17 @@
   "item.sptools.sp_raw_lead": "Raw Lead",
   "item.sptools.sp_lead_ore": "Lead Ore",
   "block.sptools.sp_lead_ore": "Lead Ore",
+  "item.sptools.sp_quartz_ingot": "Quartz Ingot",
+  "item.sptools.sp_quartz_scrap": "Quartz Scrap",
+  "item.sptools.sp_redstone_ingot": "Redstone Ingot",
 
   "effect.sptools.sp_knockback_resistance" :"Knockback",
   "effect.sptools.sp_attack_knockback" :"Knockback",
   "effect.sptools.sp_movement_speed" :"Speed",
   "effect.sptools.sp_haste_and_luck" :"Haste/Luck",
   "effect.sptools.sp_heavy" :"Heavy",
+  "effect.sptools.sp_bounded_glowing" :"Clairvoyance",
+  "effect.sptools.sp_redstone_overflow" :"Signal Overflow",
 
   "item.sptools.blessing" :"FullSet Bonus: ",
   "item.sptools.blessing.copper": " Provide Knockback Resistance",
@@ -71,6 +96,10 @@
   "item.sptools.blessing.amethyst": " Provide Movement Speed",
   "item.sptools.blessing.emerald": " Provide Haste and Luck",
   "item.sptools.blessing.heavy": " Provide Resistance up and slow down",
+  "item.sptools.blessing.quartz": " Provide clairvoyance",
+  "item.sptools.blessing.redstone": " Provide Signal Overflow",
+
+  "item.sptools.blessing.redstone.level": " RedStone Power: %s",
 
   "advancement.sptools.bronze.title": "Welcome",
   "advancement.sptools.bronze.description": "Welcome Supplemental Tools"

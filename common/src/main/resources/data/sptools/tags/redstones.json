@@ -1,0 +1,13 @@
+{
+  "values": [
+    "sptools:sp_redstone_sword",
+    "sptools:sp_redstone_axe",
+    "sptools:sp_redstone_pickaxe",
+    "sptools:sp_redstone_shovel",
+    "sptools:sp_redstone_hoe",
+    "sptools:sp_redstone_helmet",
+    "sptools:sp_redstone_chestplate",
+    "sptools:sp_redstone_leggings",
+    "sptools:sp_redstone_boots"
+  ]
+}
