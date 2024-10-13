@@ -60,7 +60,7 @@ public class RedstoneArmorMaterials implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return Constants.Armor.AMETHYST_ARMOR;
+        return Constants.Armor.REDSTONE_ARMOR;
     }
 
     @Override
