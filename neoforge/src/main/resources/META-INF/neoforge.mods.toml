@@ -16,21 +16,21 @@ It is a supplementary mod and provides several complementary equipment.
 [[dependencies.sptools]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21,)"
+versionRange = "[20,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.sptools]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21,)"
+versionRange = "[1.20.6,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.sptools]]
 modId = "architectury"
 type = "required"
-versionRange = "[13.0.6,)"
+versionRange = "[12.1.0,)"
 ordering = "AFTER"
 side = "BOTH"
 

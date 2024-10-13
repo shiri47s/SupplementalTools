@@ -8,13 +8,14 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
+
+import java.util.UUID;
 
 public class RedstoneOverflowEffect extends StatusEffect {
 
     private static final double AMOUNT_BASE = 0.16;
-    private static final Identifier MODIFIER_ID = Identifier.of(Constants.MOD_ID, RedstoneOverflowEffect.class.getName().toLowerCase());
+    private static final UUID MODIFIER_ID = UUID.randomUUID();
 
     public RedstoneOverflowEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0xFF0000);
@@ -59,6 +60,7 @@ public class RedstoneOverflowEffect extends StatusEffect {
         removeModifier(attribute);
         var newModifier = new EntityAttributeModifier(
                 MODIFIER_ID,
+                Constants.Effect.REDSTONE_OVERFLOW,
                 amount,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         attribute.addPersistentModifier(newModifier);

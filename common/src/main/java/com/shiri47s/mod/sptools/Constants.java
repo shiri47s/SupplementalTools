@@ -38,7 +38,7 @@ public class Constants {
         public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_REDSTONE_TOOL = of("incorrect_for_redstone_tool");
 
         private static TagKey<net.minecraft.block.Block> of(String id) {
-            return TagKey.of(RegistryKeys.BLOCK, Identifier.of(id));
+            return TagKey.of(RegistryKeys.BLOCK, new Identifier(id));
         }
     }
 

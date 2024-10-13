@@ -68,13 +68,13 @@ public enum SupplementalToolMaterials implements ToolMaterial {
     @SuppressWarnings("unused")
     public @Nullable TagKey<Item> getTag() {
         return switch (this) {
-            case Bronze -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.Bronzes));
-            case IRONCOPPER -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.IRONCOPPERS));
-            case EMERALD -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.EMERALDS));
-            case AMETHYST -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.AMETHYSTS));
-            case LEAD -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.LEAD));
-            case QUARTZ -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.QUARTZ));
-            case REDSTONE -> TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, Constants.Tag.REDSTONE));
+            case Bronze -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.Bronzes));
+            case IRONCOPPER -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.IRONCOPPERS));
+            case EMERALD -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.EMERALDS));
+            case AMETHYST -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.AMETHYSTS));
+            case LEAD -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.LEAD));
+            case QUARTZ -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.QUARTZ));
+            case REDSTONE -> TagKey.of(RegistryKeys.ITEM, new Identifier(Constants.MOD_ID, Constants.Tag.REDSTONE));
         };
     }
 }

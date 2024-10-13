@@ -11,7 +11,7 @@ public class MovementSpeedEffect extends StatusEffect {
         super(StatusEffectCategory.BENEFICIAL, 0xFFFF33);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_MOVEMENT_SPEED,
-                Identifier.of("151ea760-0908-4db3-b56a-4de31e5eb4eb"),
+                "151ea760-0908-4db3-b56a-4de31e5eb4eb",
                 0.20000000298023224,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }

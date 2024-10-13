@@ -4,14 +4,13 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.util.Identifier;
 
 public class AttackKnockBackEffect extends StatusEffect {
     public AttackKnockBackEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0x44AA33);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_ATTACK_KNOCKBACK,
-                Identifier.of("c38c3245-ba5c-452a-8594-e25ab6e1974e"),
+                "c38c3245-ba5c-452a-8594-e25ab6e1974e",
                 0.20000000298023224,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }

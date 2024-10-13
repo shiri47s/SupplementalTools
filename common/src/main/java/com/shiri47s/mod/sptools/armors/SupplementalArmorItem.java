@@ -3,10 +3,10 @@ package com.shiri47s.mod.sptools.armors;
 import com.shiri47s.mod.sptools.Enums;
 import com.shiri47s.mod.sptools.FullSetsBonus;
 import com.shiri47s.mod.sptools.SupplementalTools;
+import net.minecraft.client.item.TooltipType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -21,7 +21,6 @@ public abstract class SupplementalArmorItem extends ArmorItem {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        super.appendTooltip(stack, context, tooltip, type);
         super.appendTooltip(stack, context, tooltip, type);
         if (FullSetsBonus.isFullSets(getSeries())) {
             tooltip.add(Text.translatable("item.sptools.blessing").formatted(Formatting.GREEN));
