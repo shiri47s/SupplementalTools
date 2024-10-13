@@ -60,7 +60,7 @@ public class QuartzArmorMaterials implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return Constants.Armor.AMETHYST_ARMOR;
+        return Constants.Armor.QUARTZ_ARMOR;
     }
 
     @Override
