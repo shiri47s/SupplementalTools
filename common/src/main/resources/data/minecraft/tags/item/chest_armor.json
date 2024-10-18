@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "sptools:sp_amethyst_chestplate",
+    "sptools:sp_bronze_chestplate",
+    "sptools:sp_emerald_chestplate",
+    "sptools:sp_ironcopper_chestplate",
+    "sptools:sp_lead_chestplate",
+    "sptools:sp_quartz_chestplate",
+    "sptools:sp_redstone_chestplate"
+  ]
+}

@@ -96,6 +96,18 @@ subprojects {
                 changelog = CHANGE_LOG
                 addGameVersion project.support_versions
 
+                if (MOD_LOADER == "fabric") {
+                    relations {
+                        requiredDependency 'fabric-api'
+                        requiredDependency 'architectury-api'
+                    }
+                }
+                else {
+                    relations {
+                        requiredDependency 'architectury-api'
+                    }
+                }
+
                 mainArtifact(remapJar.archiveFile.get().asFile) {
                     displayName = PUBLISH_NAME
                 }
@@ -105,7 +117,7 @@ subprojects {
             }
             options {
                 forgeGradleIntegration = false
-                javaVersionAutoDetect = false
+                javaVersionAutoDetect = true
             }
         }
     }

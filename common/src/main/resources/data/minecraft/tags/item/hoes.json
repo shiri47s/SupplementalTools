@@ -1,11 +1,12 @@
 {
   "replace": false,
   "values": [
-    "sptools:sp_bronze_hoe",
-    "sptools:sp_ironcopper_hoe",
     "sptools:sp_amethyst_hoe",
+    "sptools:sp_bronze_hoe",
     "sptools:sp_emerald_hoe",
+    "sptools:sp_ironcopper_hoe",
     "sptools:sp_lead_hoe",
-    "sptools:sp_quartz_hoe"
+    "sptools:sp_quartz_hoe",
+    "sptools:sp_redstone_hoe"
   ]
 }

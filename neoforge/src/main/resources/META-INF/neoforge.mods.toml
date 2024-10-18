@@ -9,7 +9,7 @@ version = "${version}"
 displayName = "SupplementalTools"
 authors = "shiri47s"
 description = '''
-It is a supplementary mod and provides several complementary equipment.
+This is a mod to add a set of equipment. The items to be added are crafted from copper, amethyst, emeralds, etc.
 '''
 #logoFile = ""
 

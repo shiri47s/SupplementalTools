@@ -1,11 +1,12 @@
 {
   "replace": false,
   "values": [
-    "sptools:sp_bronze_shovel",
-    "sptools:sp_ironcopper_shovel",
     "sptools:sp_amethyst_shovel",
+    "sptools:sp_bronze_shovel",
     "sptools:sp_emerald_shovel",
+    "sptools:sp_ironcopper_shovel",
     "sptools:sp_lead_shovel",
-    "sptools:sp_quartz_shovel"
+    "sptools:sp_quartz_shovel",
+    "sptools:sp_redstone_shovel"
   ]
 }
