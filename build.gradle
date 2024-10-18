@@ -22,7 +22,7 @@ subprojects {
         //mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
         mappings loom.layered {
             it.mappings("net.fabricmc:yarn:$rootProject.yarn_mappings:v2")
-            it.mappings("dev.architectury:yarn-mappings-patch-neoforge:$rootProject.neoforge_patch")
+            //it.mappings("dev.architectury:yarn-mappings-patch-neoforge:$rootProject.neoforge_patch")
         }
     }
 }
@@ -96,7 +96,7 @@ subprojects {
                 changelog = CHANGE_LOG
                 addGameVersion project.support_versions
 
-                if (MOD_LOADER == "fabric") {
+                if (MOD_LOADER.contains("fabric")) {
                     relations {
                         requiredDependency 'fabric-api'
                         requiredDependency 'architectury-api'
