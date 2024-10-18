@@ -1,12 +1,19 @@
 {
   "replace": false,
   "values": [
+    "sptools:sp_amethyst_sword",
     "sptools:sp_amethyst_axe",
+    "sptools:sp_bronze_sword",
     "sptools:sp_bronze_axe",
+    "sptools:sp_emerald_sword",
     "sptools:sp_emerald_axe",
+    "sptools:sp_ironcopper_sword",
     "sptools:sp_ironcopper_axe",
+    "sptools:sp_lead_sword",
     "sptools:sp_lead_axe",
+    "sptools:sp_quartz_sword",
     "sptools:sp_quartz_axe",
+    "sptools:sp_redstone_sword",
     "sptools:sp_redstone_axe"
   ]
 }

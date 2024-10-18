@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "sptools:sp_amethyst_leggings",
+    "sptools:sp_bronze_leggings",
+    "sptools:sp_emerald_leggings",
+    "sptools:sp_ironcopper_leggings",
+    "sptools:sp_lead_leggings",
+    "sptools:sp_quartz_leggings",
+    "sptools:sp_redstone_leggings"
+  ]
+}

@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class BoundedGlowingEffect extends StatusEffect {
-    private static final double RANGE = 16.0F;
+    private static final double RANGE = 12.0F;
     private static final int DURATION = 100;
     public BoundedGlowingEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0xDDEEFF);
@@ -38,7 +38,7 @@ public class BoundedGlowingEffect extends StatusEffect {
             }
 
             if (!entity.hasStatusEffect(StatusEffects.GLOWING)) {
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, DURATION, 1));
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, DURATION, 1, false ,false, false));
             }
         }
     }

@@ -25,6 +25,10 @@
     "sptools:sp_quartz_helmet",
     "sptools:sp_quartz_chestplate",
     "sptools:sp_quartz_leggings",
-    "sptools:sp_quartz_boots"
+    "sptools:sp_quartz_boots",
+    "sptools:sp_redstone_helmet",
+    "sptools:sp_redstone_chestplate",
+    "sptools:sp_redstone_leggings",
+    "sptools:sp_redstone_boots"
   ]
 }
