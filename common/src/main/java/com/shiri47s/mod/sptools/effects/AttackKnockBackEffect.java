@@ -5,8 +5,6 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
-import java.util.UUID;
-
 public class AttackKnockBackEffect extends StatusEffect {
     public AttackKnockBackEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0x44AA33);
