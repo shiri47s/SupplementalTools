@@ -7,6 +7,7 @@
     "sptools:sp_ironcopper_chestplate",
     "sptools:sp_lead_chestplate",
     "sptools:sp_quartz_chestplate",
-    "sptools:sp_redstone_chestplate"
+    "sptools:sp_redstone_chestplate",
+    "sptools:sp_lava_chestplate"
   ]
 }

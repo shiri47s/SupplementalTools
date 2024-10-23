@@ -1,11 +1,14 @@
 {
   "required": true,
-  "minVersion": "0.8",
-  "package": "com.shiri47s.mod.sptools.forge.mixin",
+  "package": "com.shiri47s.mod.sptools.mixin",
   "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
   "mixins": [
+    "EntityMixin",
+    "PlayerEntityMixin"
   ],
   "client": [
+    "BackgroundRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

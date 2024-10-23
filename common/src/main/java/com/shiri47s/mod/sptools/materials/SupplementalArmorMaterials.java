@@ -25,6 +25,7 @@ public class SupplementalArmorMaterials {
     public static RegistryEntry<ArmorMaterial> LEAD;
     public static RegistryEntry<ArmorMaterial> QUARTZ;
     public static RegistryEntry<ArmorMaterial> REDSTONE;
+    public static RegistryEntry<ArmorMaterial> LAVA;
 
     static {
         BRONZE = createBronze();
@@ -34,6 +35,7 @@ public class SupplementalArmorMaterials {
         LEAD = createLead();
         QUARTZ = createQuartz();
         REDSTONE = createRedstone();
+        LAVA = createLava();
     }
 
     private static RegistryEntry<ArmorMaterial> createBronze() {
@@ -181,5 +183,26 @@ public class SupplementalArmorMaterials {
                         List.of(new ArmorMaterial.Layer(new Identifier(Constants.Armor.REDSTONE_ARMOR))),
                         1.0F,
                         0.18F));
+    }
+
+    private static RegistryEntry<ArmorMaterial> createLava() {
+        var enumMap = Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+            map.put(ArmorItem.Type.BOOTS, 4);
+            map.put(ArmorItem.Type.LEGGINGS, 6);
+            map.put(ArmorItem.Type.CHESTPLATE, 8);
+            map.put(ArmorItem.Type.HELMET, 5);
+            map.put(ArmorItem.Type.BODY, 12);
+        });
+        return Registry.registerReference(
+                Registries.ARMOR_MATERIAL,
+                Identifier.of(Constants.Armor.LAVA_ARMOR),
+                new ArmorMaterial(
+                        enumMap,
+                        12,
+                        SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
+                        () -> Ingredient.ofItems(Instances.Item.RED_DIAMOND_INGOT),
+                        List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.LAVA_ARMOR))),
+                        2.0F,
+                        0.2F));
     }
 }

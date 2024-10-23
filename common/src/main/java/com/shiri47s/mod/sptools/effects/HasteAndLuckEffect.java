@@ -7,16 +7,18 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 
 public class HasteAndLuckEffect extends StatusEffect {
+    public static final String LUCK_ATTRIBUTE = AntiLavaEffect.class.getName().toLowerCase() + ".luck";
+    public static final String ATTACK_SPEED_ATTRIBUTE = AntiLavaEffect.class.getName().toLowerCase() + ".attack_speed";
     public HasteAndLuckEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0x2211DDD);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_LUCK,
-                "cae82afa-fd4b-4cfa-9548-211c1a199df4",
+                LUCK_ATTRIBUTE,
                 1,
                 EntityAttributeModifier.Operation.ADD_VALUE);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_ATTACK_SPEED,
-                "cf0486b3-adff-4c66-a439-939b222f5df9",
+                ATTACK_SPEED_ATTRIBUTE,
                 0.10000000149011612,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }

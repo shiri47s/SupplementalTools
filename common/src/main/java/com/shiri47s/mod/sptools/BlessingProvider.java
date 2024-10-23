@@ -15,6 +15,7 @@ public class BlessingProvider {
                 case Lead -> blessingLead(p.getA());
                 case Quartz -> blessingQuartz(p.getA());
                 case Redstone -> blessingRedstone(p.getA());
+                case Lava -> blessingAntiLava(p.getA());
             }
         });
     }
@@ -103,6 +104,18 @@ public class BlessingProvider {
                 player);
     }
 
+    private static void blessingAntiLava(PlayerEntity player) {
+        player.setStatusEffect(
+                new StatusEffectInstance(
+                        Instances.Effect.ANTI_LAVA,
+                        StatusEffectInstance.INFINITE,
+                        0,
+                        false,
+                        false,
+                        false),
+                player);
+    }
+
     private static void clearBlessings(PlayerEntity player) {
         player.removeStatusEffect(Instances.Effect.KNOCKBACK_RESISTANCE);
         player.removeStatusEffect(Instances.Effect.ATTACK_KNOCKBACK);
@@ -111,5 +124,6 @@ public class BlessingProvider {
         player.removeStatusEffect(Instances.Effect.HEAVY);
         player.removeStatusEffect(Instances.Effect.BOUNDED_GLOWING);
         player.removeStatusEffect(Instances.Effect.REDSTONE_OVERFLOW);
+        player.removeStatusEffect(Instances.Effect.ANTI_LAVA);
     }
 }
