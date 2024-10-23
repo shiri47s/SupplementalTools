@@ -1,5 +1,6 @@
 package com.shiri47s.mod.sptools;
 
+import com.shiri47s.mod.sptools.effects.AntiLavaEffect;
 import com.shiri47s.mod.sptools.effects.BoundedGlowingEffect;
 import com.shiri47s.mod.sptools.effects.RedstoneOverflowEffect;
 import dev.architectury.event.events.common.TickEvent;

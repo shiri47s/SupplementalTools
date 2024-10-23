@@ -1,5 +1,6 @@
 package com.shiri47s.mod.sptools;
 
+import net.minecraft.entity.damage.DamageType;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
@@ -52,6 +53,11 @@ public class Constants {
         public static final String QUARTZ_INGOT = PREFIX + "quartz_ingot";
         public static final String QUARTZ_SCRAP = PREFIX + "quartz_scrap";
         public static final String REDSTONE_INGOT = PREFIX + "redstone_ingot";
+        public static final String RED_DIAMOND = PREFIX + "red_diamond";
+        public static final String RED_DIAMOND_ORE = PREFIX + "red_diamond_ore";
+        public static final String DEEPSLATE_RED_DIAMOND_ORE = "deepslate_" + PREFIX + "red_diamond_ore";
+        public static final String RED_DIAMOND_INGOT = PREFIX + "red_diamond_ingot";
+        public static final String LAVA_SMITHING_TEMPLATE = PREFIX + "lava_upgrade_smithing_template";
     }
 
     public static class Armor {
@@ -96,6 +102,12 @@ public class Constants {
         public static final String REDSTONE_CHESTPLATE = PREFIX + "redstone_chestplate";
         public static final String REDSTONE_LEGGINGS = PREFIX + "redstone_leggings";
         public static final String REDSTONE_BOOTS = PREFIX + "redstone_boots";
+
+        public static final String LAVA_ARMOR = PREFIX + "lava_armor";
+        public static final String LAVA_HELMET = PREFIX + "lava_helmet";
+        public static final String LAVA_CHESTPLATE = PREFIX + "lava_chestplate";
+        public static final String LAVA_LEGGINGS = PREFIX + "lava_leggings";
+        public static final String LAVA_BOOTS = PREFIX + "lava_boots";
     }
 
     public static class Tool {
@@ -144,6 +156,8 @@ public class Constants {
 
     public static class Block {
         public static final String LEAD_ORE = PREFIX + "lead_ore";
+        public static final String RED_DIAMOND_ORE = PREFIX + "red_diamond_ore";
+        public static final String DEEPSLATE_RED_DIAMOND_ORE = "deepslate_" + PREFIX + "red_diamond_ore";;
     }
 
     public static class Effect {
@@ -154,5 +168,6 @@ public class Constants {
         public static final String HEAVY = PREFIX + "heavy";
         public static final String BOUNDED_GLOWING = PREFIX + "bounded_glowing";
         public static final String REDSTONE_OVERFLOW = PREFIX + "redstone_overflow";
+        public static final String ANTI_LAVA = PREFIX + "anti_lava";
     }
 }

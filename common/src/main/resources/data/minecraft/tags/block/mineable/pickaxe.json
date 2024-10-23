@@ -1,6 +1,8 @@
  {
   "replace": false,
   "values": [
-    "sptools:sp_lead_ore"
+    "sptools:sp_lead_ore",
+    "sptools:sp_red_diamond_ore",
+    "sptools:deepslate_sp_red_diamond_ore"
   ]
 }

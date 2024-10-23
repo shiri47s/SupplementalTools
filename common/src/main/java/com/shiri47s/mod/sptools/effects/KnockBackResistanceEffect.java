@@ -7,11 +7,12 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 
 public class KnockBackResistanceEffect extends StatusEffect {
+    public static final String KNOCKBACK_RESISTANCE_ATTRIBUTE = AntiLavaEffect.class.getName().toLowerCase() + ".knockback_resistance";
     public KnockBackResistanceEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0x4477BB);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE,
-                Identifier.of("309ab45b-9334-477c-91fe-2995171e97a6"),
+                Identifier.of(KNOCKBACK_RESISTANCE_ATTRIBUTE),
                 1,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }

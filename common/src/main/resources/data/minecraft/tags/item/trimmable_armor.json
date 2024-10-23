@@ -29,6 +29,10 @@
     "sptools:sp_redstone_helmet",
     "sptools:sp_redstone_chestplate",
     "sptools:sp_redstone_leggings",
-    "sptools:sp_redstone_boots"
+    "sptools:sp_redstone_boots",
+    "sptools:sp_lava_helmet",
+    "sptools:sp_lava_chestplate",
+    "sptools:sp_lava_leggings",
+    "sptools:sp_lava_boots"
   ]
 }

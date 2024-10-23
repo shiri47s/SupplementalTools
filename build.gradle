@@ -76,9 +76,17 @@ subprojects {
             changelog = CHANGE_LOG
             gameVersions = ["${project.minecraft_version}"]
             loaders = [MOD_LOADER]
-            dependencies {
-                required.project "fabric-api"
-                required.project "architectury-api"
+            if (MOD_LOADER.equalsIgnoreCase('fabric')) {
+                dependencies {
+                    required.project "fabric-api"
+                    required.project "architectury-api"
+                    optional.project "lambdynamiclights"
+                }
+            }
+            else {
+                dependencies {
+                    required.project "architectury-api"
+                }
             }
         }
     }
@@ -100,6 +108,7 @@ subprojects {
                     relations {
                         requiredDependency 'fabric-api'
                         requiredDependency 'architectury-api'
+                        optionalDependency 'lambdynamiclights'
                     }
                 }
                 else {

@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "sp_red_diamond_ingot",
+  "ingredients": [
+    {
+      "item": "sptools:sp_red_diamond"
+    },
+    {
+      "item": "sptools:sp_red_diamond"
+    },
+    {
+      "item": "sptools:sp_red_diamond"
+    },
+    {
+      "item": "sptools:sp_red_diamond"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "result": {
+    "id": "sptools:sp_red_diamond_ingot"
+  }
+}
