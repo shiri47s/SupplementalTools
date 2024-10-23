@@ -1,6 +1,5 @@
 package com.shiri47s.mod.sptools;
 
-import com.shiri47s.mod.sptools.Constants;
 import dev.architectury.registry.level.biome.BiomeModifications;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
