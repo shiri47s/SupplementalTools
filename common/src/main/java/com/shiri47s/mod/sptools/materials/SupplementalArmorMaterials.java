@@ -200,7 +200,7 @@ public class SupplementalArmorMaterials {
                         enumMap,
                         12,
                         SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
-                        () -> Ingredient.ofItems(Items.NETHERITE_INGOT),
+                        () -> Ingredient.ofItems(Instances.Item.RED_DIAMOND_INGOT),
                         List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.LAVA_ARMOR))),
                         2.0F,
                         0.2F));

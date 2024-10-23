@@ -28,9 +28,7 @@ public class Instances {
         public static final net.minecraft.item.Item BRONZE_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.BRONZE_INGOT)));
         public static final net.minecraft.item.Item QUARTZ_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.QUARTZ_INGOT)));
         public static final net.minecraft.item.Item REDSTONE_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.REDSTONE_INGOT)));
-        public static final net.minecraft.item.Item RED_DIAMOND = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.RED_DIAMOND)));
         public static final net.minecraft.item.Item RED_DIAMOND_INGOT = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.RED_DIAMOND_INGOT)));
-        public static final net.minecraft.item.Item LAVA_SMITHING_TEMPLATE = Objects.requireNonNull(Registries.ITEM.get(Identifier.of(MOD_ID, Constants.Item.LAVA_SMITHING_TEMPLATE)));
     }
 
     @SuppressWarnings("unused")

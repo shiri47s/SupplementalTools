@@ -1,6 +1,5 @@
 package com.shiri47s.mod.sptools.effects;
 
-import com.shiri47s.mod.sptools.Constants;
 import com.shiri47s.mod.sptools.Instances;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;

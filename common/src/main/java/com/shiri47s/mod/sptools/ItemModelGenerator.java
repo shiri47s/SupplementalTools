@@ -1,7 +1,6 @@
 package com.shiri47s.mod.sptools;
 
 import com.shiri47s.mod.sptools.armors.*;
-import com.shiri47s.mod.sptools.blocks.RedDiamondBlock;
 import com.shiri47s.mod.sptools.items.*;
 import dev.architectury.registry.registries.DeferredRegister;
 import net.minecraft.item.ArmorItem;

@@ -1,6 +1,5 @@
 package com.shiri47s.mod.sptools;
 
-import net.minecraft.entity.damage.DamageType;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
@@ -157,7 +156,7 @@ public class Constants {
     public static class Block {
         public static final String LEAD_ORE = PREFIX + "lead_ore";
         public static final String RED_DIAMOND_ORE = PREFIX + "red_diamond_ore";
-        public static final String DEEPSLATE_RED_DIAMOND_ORE = "deepslate_" + PREFIX + "red_diamond_ore";;
+        public static final String DEEPSLATE_RED_DIAMOND_ORE = "deepslate_" + PREFIX + "red_diamond_ore";
     }
 
     public static class Effect {
