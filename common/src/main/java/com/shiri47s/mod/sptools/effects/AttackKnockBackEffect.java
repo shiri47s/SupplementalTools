@@ -11,7 +11,7 @@ public class AttackKnockBackEffect extends StatusEffect {
     public AttackKnockBackEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0x44AA33);
         this.addAttributeModifier(
-                EntityAttributes.GENERIC_ATTACK_KNOCKBACK,
+                EntityAttributes.ATTACK_KNOCKBACK,
                 Identifier.of(ATTACK_KNOCKBACK_ATTRIBUTE),
                 0.20000000298023224,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);

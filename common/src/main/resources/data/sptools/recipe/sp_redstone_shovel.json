@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "X": {
-      "item": "sptools:sp_redstone_ingot"
-    }
+    "#": "minecraft:stick",
+    "X": "sptools:sp_redstone_ingot"
   },
   "pattern": [
     "X",

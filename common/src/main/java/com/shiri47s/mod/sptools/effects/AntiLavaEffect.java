@@ -14,7 +14,7 @@ public class AntiLavaEffect extends StatusEffect {
     public AntiLavaEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0xFFA54321);
         this.addAttributeModifier(
-                EntityAttributes.GENERIC_BURNING_TIME,
+                EntityAttributes.BURNING_TIME,
                 Identifier.of(BURN_TIME_ATTRIBUTE),
                 -0.91,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE);

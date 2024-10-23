@@ -4,6 +4,7 @@ import com.shiri47s.mod.sptools.Enums;
 import com.shiri47s.mod.sptools.materials.SupplementalArmorMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
@@ -11,8 +12,8 @@ import net.minecraft.util.Rarity;
 import java.util.List;
 
 public class BronzeArmorItem extends SupplementalArmorItem {
-    public BronzeArmorItem(Type type) {
-        super(SupplementalArmorMaterials.BRONZE, type, new Item.Settings().rarity(Rarity.RARE).maxDamage(type.getMaxDamage(12)));
+    public BronzeArmorItem(EquipmentType type, Item.Settings settings) {
+        super(SupplementalArmorMaterials.BRONZE, type, settings.rarity(Rarity.RARE).maxDamage(type.getMaxDamage(12)));
     }
 
     @Override

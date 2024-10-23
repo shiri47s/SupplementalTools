@@ -13,12 +13,12 @@ public class HeavyEffect extends StatusEffect {
     public HeavyEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0x888888);
         this.addAttributeModifier(
-                EntityAttributes.GENERIC_ATTACK_KNOCKBACK,
+                EntityAttributes.ATTACK_KNOCKBACK,
                 Identifier.of(ATTACK_KNOCKBACK_ATTRIBUTE),
                 0.25,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         this.addAttributeModifier(
-                EntityAttributes.GENERIC_MOVEMENT_SPEED,
+                EntityAttributes.MOVEMENT_SPEED,
                 Identifier.of(MOVEMENT_SPEED_ATTRIBUTE),
                 -0.15,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);

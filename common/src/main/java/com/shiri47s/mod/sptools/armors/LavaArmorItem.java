@@ -4,6 +4,7 @@ import com.shiri47s.mod.sptools.Enums;
 import com.shiri47s.mod.sptools.materials.SupplementalArmorMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
@@ -12,8 +13,8 @@ import java.util.List;
 
 public class LavaArmorItem extends SupplementalArmorItem {
 
-    public LavaArmorItem(Type type) {
-        super(SupplementalArmorMaterials.LAVA, type, new Item.Settings().rarity(Rarity.EPIC).fireproof().maxDamage(type.getMaxDamage(40)));
+    public LavaArmorItem(EquipmentType type, Item.Settings settings) {
+        super(SupplementalArmorMaterials.LAVA, type, settings.rarity(Rarity.EPIC).fireproof().maxDamage(type.getMaxDamage(40)));
     }
 
     @Override

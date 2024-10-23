@@ -1,5 +1,7 @@
 package com.shiri47s.mod.sptools;
 
+import net.minecraft.block.Block;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
@@ -10,35 +12,41 @@ public class Constants {
 
     public static class Tag {
         public static final String Bronzes = "bronzes";
-
         public static final String IRONCOPPERS = "ironcoppers";
-
         public static final String AMETHYSTS = "amethysts";
-
         public static final String EMERALDS = "emerald";
-
         public static final String LEAD = "lead";
-
         public static final String QUARTZ = "quartz";
-
         public static final String REDSTONE = "redstone";
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_BRONZE_TOOL = ofBlock("incorrect_for_bronze_tool");
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_IRONCOPPER_TOOL = ofBlock("incorrect_for_ironcopper_tool");
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_AMETHYST_TOOL = ofBlock("incorrect_for_amethyst_tool");
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_EMERALD_TOOL = ofBlock("incorrect_for_emerald_tool");
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_LEAD_TOOL = ofBlock("incorrect_for_lead_tool");
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_QUARTZ_TOOL = ofBlock("incorrect_for_quartz_tool");
+        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_REDSTONE_TOOL = ofBlock("incorrect_for_redstone_tool");
+        public static final TagKey<net.minecraft.item.Item> BRONZE_TOOL_MATERIALS = ofItem("bronze_tool_materials");
+        public static final TagKey<net.minecraft.item.Item> IRONCOPPER_TOOL_MATERIALS = ofItem("ironcopper_tool_materials");
+        public static final TagKey<net.minecraft.item.Item> AMETHYST_TOOL_MATERIALS = ofItem("amethyst_tool_materials");
+        public static final TagKey<net.minecraft.item.Item> EMERALD_TOOL_MATERIALS = ofItem("emerald_tool_materials");
+        public static final TagKey<net.minecraft.item.Item> LEAD_TOOL_MATERIALS = ofItem("lead_tool_materials");
+        public static final TagKey<net.minecraft.item.Item> QUARTZ_TOOL_MATERIALS = ofItem("quartz_tool_materials");
+        public static final TagKey<net.minecraft.item.Item> REDSTONE_TOOL_MATERIALS = ofItem("redstone_tool_materials");
+        public static final TagKey<net.minecraft.item.Item> REPAIRS_BRONZE_ARMOR = ofItem("repairs_bronze_armor");
+        public static final TagKey<net.minecraft.item.Item> REPAIRS_IRONCOPPER_ARMOR = ofItem("repairs_ironcopper_armor");
+        public static final TagKey<net.minecraft.item.Item> REPAIRS_AMETHYST_ARMOR = ofItem("repairs_amethyst_armor");
+        public static final TagKey<net.minecraft.item.Item> REPAIRS_EMERALD_ARMOR = ofItem("repairs_emerald_armor");
+        public static final TagKey<net.minecraft.item.Item> REPAIRS_LEAD_ARMOR = ofItem("repairs_lead_armor");
+        public static final TagKey<net.minecraft.item.Item> REPAIRS_QUARTZ_ARMOR = ofItem("repairs_quartz_armor");
+        public static final TagKey<net.minecraft.item.Item> REPAIRS_REDSTONE_ARMOR = ofItem("repairs_redstone_armor");
+        public static final TagKey<net.minecraft.item.Item> REPAIRS_LAVA_ARMOR = ofItem("repairs_lava_armor");
 
-        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_BRONZE_TOOL = of("incorrect_for_bronze_tool");
-
-        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_IRONCOPPER_TOOL = of("incorrect_for_ironcopper_tool");
-
-        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_AMETHYST_TOOL = of("incorrect_for_amethyst_tool");
-
-        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_EMERALD_TOOL = of("incorrect_for_emerald_tool");
-
-        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_LEAD_TOOL = of("incorrect_for_lead_tool");
-
-        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_QUARTZ_TOOL = of("incorrect_for_quartz_tool");
-
-        public static final TagKey<net.minecraft.block.Block> INCORRECT_FOR_REDSTONE_TOOL = of("incorrect_for_redstone_tool");
-
-        private static TagKey<net.minecraft.block.Block> of(String id) {
+        private static TagKey<net.minecraft.block.Block> ofBlock(String id) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(id));
+        }
+
+        private static TagKey<net.minecraft.item.Item> ofItem(String id) {
+            return TagKey.of(RegistryKeys.ITEM, Identifier.of(id));
         }
     }
 

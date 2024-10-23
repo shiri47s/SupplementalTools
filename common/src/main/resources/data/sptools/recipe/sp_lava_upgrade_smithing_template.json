@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "sptools:sp_red_diamond"
-    },
-    "C": {
-      "item": "minecraft:dark_prismarine"
-    },
-    "S": {
-      "item": "sptools:sp_lava_upgrade_smithing_template"
-    }
+    "#": "sptools:sp_red_diamond",
+    "C": "minecraft:dark_prismarine",
+    "S": "sptools:sp_lava_upgrade_smithing_template"
   },
   "pattern": [
     "#S#",

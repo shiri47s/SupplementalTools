@@ -12,12 +12,12 @@ public class HasteAndLuckEffect extends StatusEffect {
     public HasteAndLuckEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0x2211DDD);
         this.addAttributeModifier(
-                EntityAttributes.GENERIC_LUCK,
+                EntityAttributes.LUCK,
                 Identifier.of(LUCK_ATTRIBUTE),
                 1,
                 EntityAttributeModifier.Operation.ADD_VALUE);
         this.addAttributeModifier(
-                EntityAttributes.GENERIC_ATTACK_SPEED,
+                EntityAttributes.ATTACK_SPEED,
                 Identifier.of(ATTACK_SPEED_ATTRIBUTE),
                 0.10000000149011612,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);

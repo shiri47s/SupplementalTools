@@ -2,7 +2,9 @@ package com.shiri47s.mod.sptools.armors;
 
 import com.shiri47s.mod.sptools.Enums;
 import com.shiri47s.mod.sptools.materials.SupplementalArmorMaterials;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
@@ -25,8 +27,8 @@ public class RedstoneArmorItem extends SupplementalArmorItem {
 
     private int currentPower;
 
-    public RedstoneArmorItem(Type type) {
-        super(SupplementalArmorMaterials.REDSTONE, type, new Settings().rarity(Rarity.RARE).maxDamage(type.getMaxDamage(14)));
+    public RedstoneArmorItem(EquipmentType type, Item.Settings settings) {
+        super(SupplementalArmorMaterials.REDSTONE, type, settings.rarity(Rarity.RARE).maxDamage(type.getMaxDamage(14)));
     }
 
     public void receivePower(int power) {

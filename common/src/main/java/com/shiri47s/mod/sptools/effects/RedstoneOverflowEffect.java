@@ -24,8 +24,8 @@ public class RedstoneOverflowEffect extends StatusEffect {
         if (world.getTime() % 5 == 0) {
             int power = getPower(world.getReceivedRedstonePower(player.getBlockPos()));
             var amount = AMOUNT_BASE * power;
-            applyAttribute(player.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_SPEED), amount);
-            applyAttribute(player.getAttributeInstance(EntityAttributes.PLAYER_BLOCK_BREAK_SPEED), amount);
+            applyAttribute(player.getAttributeInstance(EntityAttributes.ATTACK_SPEED), amount);
+            applyAttribute(player.getAttributeInstance(EntityAttributes.BLOCK_BREAK_SPEED), amount);
             var armors = player.getArmorItems();
             for (var armor : armors) {
                 if (armor.getItem() instanceof RedstoneArmorItem armorItem) {
@@ -36,8 +36,8 @@ public class RedstoneOverflowEffect extends StatusEffect {
     }
 
     public static void clear(PlayerEntity player) {
-        removeModifier(player.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_SPEED));
-        removeModifier(player.getAttributeInstance(EntityAttributes.PLAYER_BLOCK_BREAK_SPEED));
+        removeModifier(player.getAttributeInstance(EntityAttributes.ATTACK_SPEED));
+        removeModifier(player.getAttributeInstance(EntityAttributes.BLOCK_BREAK_SPEED));
     }
 
     private static void removeModifier(EntityAttributeInstance attribute) {
