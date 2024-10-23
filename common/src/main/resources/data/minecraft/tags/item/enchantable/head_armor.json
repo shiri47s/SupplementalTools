@@ -7,6 +7,7 @@
     "sptools:sp_ironcopper_helmet",
     "sptools:sp_lead_helmet",
     "sptools:sp_quartz_helmet",
-    "sptools:sp_redstone_helmet"
+    "sptools:sp_redstone_helmet",
+    "sptools:sp_lava_helmet"
   ]
 }

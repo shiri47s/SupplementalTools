@@ -71,6 +71,11 @@
   "item.sptools.sp_redstone_pickaxe": "レッドストーンのツルハシ",
   "item.sptools.sp_redstone_hoe": "レッドストーンのクワ",
 
+  "item.sptools.sp_lava_helmet": "耐溶岩のマヘルメット",
+  "item.sptools.sp_lava_chestplate": "耐溶岩のチェストプレート",
+  "item.sptools.sp_lava_leggings": "耐溶岩のレギンス",
+  "item.sptools.sp_lava_boots": "耐溶岩のブーツ",
+
   "item.sptools.sp_bronze_ingot": "ブロンズインゴット",
   "item.sptools.sp_amethyst_ingot": "アメジストインゴット",
   "item.sptools.sp_emerald_ingot": "エメラルドインゴット",
@@ -81,6 +86,13 @@
   "item.sptools.sp_quartz_ingot": "クォーツインゴット",
   "item.sptools.sp_quartz_scrap": "クォーツの欠片",
   "item.sptools.sp_redstone_ingot": "レッドストーンインゴット",
+  "item.sptools.sp_red_diamond": "レッドダイアモンド",
+  "item.sptools.sp_red_diamond_ingot": "レッドダイアモンドインゴット",
+  "block.sptools.sp_red_diamond_ore": "レッドダイアモンド鉱石",
+  "block.sptools.deepslate_sp_red_diamond_ore": "ディープスレートレッドダイアモンド鉱石",
+  "item.sptools.sp_red_diamond_ore": "レッドダイアモンド鉱石",
+  "item.sptools.deepslate_sp_red_diamond_ore": "ディープスレートレッドダイアモンド鉱石",
+  "item.sptools.sp_lava_upgrade_smithing_template": "耐溶岩の鍛冶型",
 
   "effect.sptools.sp_knockback_resistance" :"ノックバック耐性",
   "effect.sptools.sp_attack_knockback" :"ノックバック",
@@ -89,6 +101,7 @@
   "effect.sptools.sp_heavy" :"重量",
   "effect.sptools.sp_bounded_glowing" :"千里眼",
   "effect.sptools.sp_redstone_overflow" :"溢る信号",
+  "effect.sptools.sp_anti_lava" :"溶岩絶対耐性",
 
   "item.sptools.blessing" :"フルセットボーナス: ",
   "item.sptools.blessing.copper": " ノックバック耐性付与",
@@ -98,6 +111,7 @@
   "item.sptools.blessing.heavy": " 防御上昇＆移動速度低下付与",
   "item.sptools.blessing.quartz": " 透視付与",
   "item.sptools.blessing.redstone": " 溢れる信号付与",
+  "item.sptools.blessing.lava": " 溶岩絶対耐性付与",
 
   "item.sptools.blessing.redstone.level": " 受信パワー: %s",
 

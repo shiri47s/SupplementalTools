@@ -1,6 +1,5 @@
 package com.shiri47s.mod.sptools;
 
-import com.shiri47s.mod.sptools.tools.WorldGenerator;
 import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.DeferredSupplier;
@@ -22,7 +21,7 @@ public class SupplementalTools
 		TAB_REGISTER.register();
 
 		BlockItemModelGenerator.generate();
-		ArmorItemModelGenerator.generate();
+		ItemModelGenerator.generate();
 		ToolItemModelGenerator.generate();
 		EventGenerator.generate();
 		EffectGenerator.generate();
