@@ -6,20 +6,19 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 
-public class HeavyEffect extends StatusEffect {
-    public static final String ATTACK_KNOCKBACK_ATTRIBUTE = AntiLavaEffect.class.getName().toLowerCase() + ".attack_knockback";
-    public static final String MOVEMENT_SPEED_ATTRIBUTE = AntiLavaEffect.class.getName().toLowerCase() + ".movement_speed";
+import java.util.UUID;
 
+public class HeavyEffect extends StatusEffect {
     public HeavyEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0x888888);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_ATTACK_KNOCKBACK,
-                ATTACK_KNOCKBACK_ATTRIBUTE,
+                "ede57eb9-c475-4fb8-b3cf-7b5403549b35",
                 0.25,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_MOVEMENT_SPEED,
-                MOVEMENT_SPEED_ATTRIBUTE,
+                "803dfa39-d4bc-4802-88bf-d21aaa101587"    ,
                 -0.15,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }

@@ -195,13 +195,13 @@ public class SupplementalArmorMaterials {
         });
         return Registry.registerReference(
                 Registries.ARMOR_MATERIAL,
-                Identifier.of(Constants.Armor.LAVA_ARMOR),
+                new Identifier(Constants.Armor.LAVA_ARMOR),
                 new ArmorMaterial(
                         enumMap,
                         12,
                         SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
                         () -> Ingredient.ofItems(Instances.Item.RED_DIAMOND_INGOT),
-                        List.of(new ArmorMaterial.Layer(Identifier.of(Constants.Armor.LAVA_ARMOR))),
+                        List.of(new ArmorMaterial.Layer(new Identifier(Constants.Armor.LAVA_ARMOR))),
                         2.0F,
                         0.2F));
     }

@@ -1,4 +1,4 @@
-package com.shiri47s.mod.sptools.tools;
+package com.shiri47s.mod.sptools;
 
 import com.shiri47s.mod.sptools.Constants;
 import dev.architectury.registry.level.biome.BiomeModifications;

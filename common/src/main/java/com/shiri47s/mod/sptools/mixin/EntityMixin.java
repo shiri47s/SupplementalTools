@@ -17,7 +17,6 @@ public abstract class EntityMixin {
         if (AntiLavaEffect.isActive(this)) {
             if (damageSource.isIn(DamageTypeTags.IS_FIRE)
                     || damageSource.isOf(DamageTypes.LAVA)
-                    || damageSource.isOf(DamageTypes.CAMPFIRE)
                     || damageSource.isOf(DamageTypes.FIREBALL)
                     || damageSource.isOf(DamageTypes.ON_FIRE)) {
                 cir.setReturnValue(true);

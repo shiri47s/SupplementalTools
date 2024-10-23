@@ -6,13 +6,14 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 
+import java.util.UUID;
+
 public class MovementSpeedEffect extends StatusEffect {
-    public static final String MOVEMENT_SPEED_ATTRIBUTE = AntiLavaEffect.class.getName().toLowerCase() + ".movement_speed";
     public MovementSpeedEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0xFFFF33);
         this.addAttributeModifier(
                 EntityAttributes.GENERIC_MOVEMENT_SPEED,
-                MOVEMENT_SPEED_ATTRIBUTE,
+                "29352e66-7851-4ff0-849a-5419dc4dca17",
                 0.20000000298023224,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }

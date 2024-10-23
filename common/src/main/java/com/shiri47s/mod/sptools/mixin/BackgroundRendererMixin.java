@@ -2,10 +2,10 @@ package com.shiri47s.mod.sptools.mixin;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.shiri47s.mod.sptools.Instances;
-import net.minecraft.block.enums.CameraSubmersionType;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.BackgroundRenderer;
 import net.minecraft.client.render.Camera;
+import net.minecraft.client.render.CameraSubmersionType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
