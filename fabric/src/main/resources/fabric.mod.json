@@ -4,8 +4,8 @@
   "version": "${version}",
 
   "name": "Supplemental Tools",
-  "description": "",
-  "authors": [],
+  "description": "This is a mod to add a set of equipment. The items to be added are crafted from copper, amethyst, emeralds, etc.",
+  "authors": ["shiri47s"],
   "contact": {},
 
   "license": "MIT",

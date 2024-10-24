@@ -17,6 +17,7 @@ public class Instances {
         public static final StatusEffect HEAVY = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.HEAVY)));
         public static final StatusEffect BOUNDED_GLOWING = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.BOUNDED_GLOWING)));
         public static final StatusEffect REDSTONE_OVERFLOW = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.REDSTONE_OVERFLOW)));
+        public static final StatusEffect ANTI_LAVA = Objects.requireNonNull(Registries.STATUS_EFFECT.get(new Identifier(MOD_ID, Constants.Effect.ANTI_LAVA)));
     }
 
     public static class Item {
@@ -26,6 +27,7 @@ public class Instances {
         public static final net.minecraft.item.Item BRONZE_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.BRONZE_INGOT)));
         public static final net.minecraft.item.Item QUARTZ_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.QUARTZ_INGOT)));
         public static final net.minecraft.item.Item REDSTONE_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.REDSTONE_INGOT)));
+        public static final net.minecraft.item.Item RED_DIAMOND_INGOT = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Item.RED_DIAMOND_INGOT)));
     }
 
     @SuppressWarnings("unused")
@@ -64,6 +66,11 @@ public class Instances {
         public static final net.minecraft.item.Item REDSTONE_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.REDSTONE_CHESTPLATE)));
         public static final net.minecraft.item.Item REDSTONE_LEGGINGS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.REDSTONE_LEGGINGS)));
         public static final net.minecraft.item.Item REDSTONE_BOOTS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.REDSTONE_BOOTS)));
+
+        public static final net.minecraft.item.Item LAVA_HELMET = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.LAVA_HELMET)));
+        public static final net.minecraft.item.Item LAVA_CHESTPLATE = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.LAVA_CHESTPLATE)));
+        public static final net.minecraft.item.Item LAVA_LEGGINGS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.LAVA_LEGGINGS)));
+        public static final net.minecraft.item.Item LAVA_BOOTS = Objects.requireNonNull(Registries.ITEM.get(new Identifier(MOD_ID, Constants.Armor.LAVA_BOOTS)));
     }
 
     @SuppressWarnings("unused")
@@ -113,5 +120,7 @@ public class Instances {
 
     public static class Block {
         public static final net.minecraft.block.Block LEAD_ORE = Objects.requireNonNull(Registries.BLOCK.get(new Identifier(MOD_ID, Constants.Block.LEAD_ORE)));
+        public static final net.minecraft.block.Block RED_DIAMOND_ORE = Objects.requireNonNull(Registries.BLOCK.get(new Identifier(MOD_ID, Constants.Block.RED_DIAMOND_ORE)));
+        public static final net.minecraft.block.Block DEEPSLATE_RED_DIAMOND_ORE = Objects.requireNonNull(Registries.BLOCK.get(new Identifier(MOD_ID, Constants.Block.DEEPSLATE_RED_DIAMOND_ORE)));
     }
 }

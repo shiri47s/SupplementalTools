@@ -22,10 +22,12 @@ public class SupplementalTools
 		TAB_REGISTER.register();
 
 		BlockItemModelGenerator.generate();
-		ArmorItemModelGenerator.generate();
+		ItemModelGenerator.generate();
 		ToolItemModelGenerator.generate();
 		EventGenerator.generate();
 		EffectGenerator.generate();
 		WorldGenerator.generate();
+
+		BlessingProvider.provide();
 	}
 }

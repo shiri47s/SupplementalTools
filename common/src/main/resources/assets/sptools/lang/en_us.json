@@ -71,6 +71,11 @@
   "item.sptools.sp_redstone_pickaxe": "Redstone Pickaxe",
   "item.sptools.sp_redstone_hoe": "Redstone Hoe",
 
+  "item.sptools.sp_lava_helmet": "Anti-Lava Helmet",
+  "item.sptools.sp_lava_chestplate": "Anti-Lava Chestplate",
+  "item.sptools.sp_lava_leggings": "Anti-Lava Leggings",
+  "item.sptools.sp_lava_boots": "Anti-Lava Boots",
+
   "item.sptools.sp_bronze_ingot": "Bronze Ingot",
   "item.sptools.sp_amethyst_ingot": "Amethyst Ingot",
   "item.sptools.sp_emerald_ingot": "Emerald Ingot",
@@ -81,6 +86,13 @@
   "item.sptools.sp_quartz_ingot": "Quartz Ingot",
   "item.sptools.sp_quartz_scrap": "Quartz Scrap",
   "item.sptools.sp_redstone_ingot": "Redstone Ingot",
+  "item.sptools.sp_red_diamond": "Red Diamond",
+  "item.sptools.sp_red_diamond_ingot": "Red Diamond Ingot",
+  "block.sptools.sp_red_diamond_ore": "Red Diamond Ore",
+  "block.sptools.deepslate_sp_red_diamond_ore": "Deepslate Red Diamond Ore",
+  "item.sptools.sp_red_diamond_ore": "Red Diamond Ore",
+  "item.sptools.deepslate_sp_red_diamond_ore": "Deepslate Red Diamond Ore",
+  "item.sptools.sp_lava_upgrade_smithing_template": "Anti-Lava Smithing Template",
 
   "effect.sptools.sp_knockback_resistance" :"Knockback",
   "effect.sptools.sp_attack_knockback" :"Knockback",
@@ -89,6 +101,7 @@
   "effect.sptools.sp_heavy" :"Heavy",
   "effect.sptools.sp_bounded_glowing" :"Clairvoyance",
   "effect.sptools.sp_redstone_overflow" :"Signal Overflow",
+  "effect.sptools.sp_anti_lava" :"Anti-Lava",
 
   "item.sptools.blessing" :"FullSet Bonus: ",
   "item.sptools.blessing.copper": " Provide Knockback Resistance",
@@ -98,6 +111,7 @@
   "item.sptools.blessing.heavy": " Provide Resistance up and slow down",
   "item.sptools.blessing.quartz": " Provide clairvoyance",
   "item.sptools.blessing.redstone": " Provide Signal Overflow",
+  "item.sptools.blessing.lava": " Provide Anti-Lava",
 
   "item.sptools.blessing.redstone.level": " RedStone Power: %s",
 
