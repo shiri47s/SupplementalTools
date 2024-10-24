@@ -3,8 +3,6 @@ package com.shiri47s.mod.sptools;
 import com.shiri47s.mod.sptools.materials.SupplementalToolMaterials;
 import com.shiri47s.mod.sptools.tools.*;
 import dev.architectury.registry.registries.DeferredRegister;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.RegistryKeys;
 
