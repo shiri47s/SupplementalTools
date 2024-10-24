@@ -71,9 +71,17 @@ subprojects {
             changelog = CHANGE_LOG
             gameVersions = ["${project.minecraft_version}"]
             loaders = [MOD_LOADER]
-            dependencies {
-                required.project "fabric-api"
-                required.project "architectury-api"
+            if (MOD_LOADER.equalsIgnoreCase('fabric')) {
+                dependencies {
+                    required.project "fabric-api"
+                    required.project "architectury-api"
+                    optional.project "lambdynamiclights"
+                }
+            }
+            else {
+                dependencies {
+                    required.project "architectury-api"
+                }
             }
         }
     }
@@ -89,7 +97,22 @@ subprojects {
                 releaseType = RELEASE
                 changelogType = "markdown"
                 changelog = CHANGE_LOG
-                addGameVersion MOD_LOADER.capitalize()
+
+                addGameVersion "${project.support_versions}"
+
+                if (MOD_LOADER.equalsIgnoreCase('fabric')) {
+                    relations {
+                        requiredDependency 'fabric-api'
+                        requiredDependency 'architectury-api'
+                        optionalDependency 'lambdynamiclights'
+                    }
+                }
+                else {
+                    relations {
+                        requiredDependency 'architectury-api'
+                    }
+                }
+
 
                 mainArtifact(remapJar.archiveFile.get().asFile) {
                     displayName = PUBLISH_NAME

@@ -1,6 +1,5 @@
 package com.shiri47s.mod.sptools;
 
-import com.shiri47s.mod.sptools.tools.WorldGenerator;
 import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.DeferredSupplier;
