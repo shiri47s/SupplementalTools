@@ -104,6 +104,14 @@ public class FullSetsBonus {
             return;
         }
 
+        if (all(isLava(player.getEquippedStack(EquipmentSlot.HEAD)),
+                isLava(player.getEquippedStack(EquipmentSlot.CHEST)),
+                isLava(player.getEquippedStack(EquipmentSlot.LEGS)),
+                isLava(player.getEquippedStack(EquipmentSlot.FEET)))) {
+            updateInternal(player, Enums.Series.Lava);
+            return;
+        }
+
         updateInternal(player, Enums.Series.None);
     }
 
@@ -154,5 +162,9 @@ public class FullSetsBonus {
 
     private static boolean isRedstone(ItemStack stack) {
         return stack.getItem() instanceof RedstoneArmorItem;
+    }
+
+    private static boolean isLava(ItemStack stack) {
+        return stack.getItem() instanceof LavaArmorItem;
     }
 }

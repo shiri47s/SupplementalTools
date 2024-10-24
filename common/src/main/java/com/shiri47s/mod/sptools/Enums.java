@@ -9,6 +9,7 @@ public class Enums {
         Emerald,
         Lead,
         Quartz,
-        Redstone
+        Redstone,
+        Lava
     }
 }
