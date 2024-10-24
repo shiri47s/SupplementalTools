@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "sptools:sp_red_diamond_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_boots"
+  },
+  "result": {
+    "item": "sptools:sp_lava_boots"
+  },
+  "template": {
+    "item": "sptools:sp_lava_upgrade_smithing_template"
+  }
+}

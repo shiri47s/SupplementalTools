@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "sptools:sp_red_diamond_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_helmet"
+  },
+  "result": {
+    "item": "sptools:sp_lava_helmet"
+  },
+  "template": {
+    "item": "sptools:sp_lava_upgrade_smithing_template"
+  }
+}

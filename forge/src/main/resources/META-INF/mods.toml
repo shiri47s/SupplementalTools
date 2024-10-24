@@ -34,7 +34,7 @@ logoFile="sp_icon.png" #optional
 authors="shiri47s" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-
+This is a mod to add a set of equipment. The items to be added are crafted from copper, amethyst, emeralds, etc.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.sptools]] #optional
@@ -56,3 +56,6 @@ description='''
    versionRange="[1.20.4,1.21)"
    ordering="NONE"
    side="BOTH"
+
+[[mixins]]
+config = "sptools.mixins.json"
