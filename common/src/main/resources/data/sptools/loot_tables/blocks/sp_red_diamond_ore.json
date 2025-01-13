@@ -13,16 +13,14 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "minecraft:silk_touch",
-                          "levels": {
-                            "min": 1
-                          }
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
                         }
-                      ]
-                    }
+                      }
+                    ]
                   }
                 }
               ],
@@ -48,5 +46,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "sptools:blocks/sp_diamond_ore"
+  "random_sequence": "sptools:blocks/sp_red_diamond_ore"
 }
