@@ -1,6 +1,5 @@
 package com.shiri47s.mod.sptools.mixin;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.shiri47s.mod.sptools.Instances;
 import net.minecraft.block.enums.CameraSubmersionType;
 import net.minecraft.client.MinecraftClient;
@@ -12,7 +11,6 @@ import org.joml.Vector4f;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BackgroundRenderer.class)
