@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "sptools:sp_quartz_armor"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "sptools:sp_quartz_armor"
+      }
+    ]
+  }
+}
