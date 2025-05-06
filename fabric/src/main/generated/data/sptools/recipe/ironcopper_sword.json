@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:copper_ingot",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    " # ",
+    " # ",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "sptools:ironcopper_sword"
+  }
+}

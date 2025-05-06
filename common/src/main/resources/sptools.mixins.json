@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "net.syshima.sptools.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "BackgroundRendererMixin"
+  ],
+  "mixins": [
+    "EntityMixin",
+    "PlayerEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

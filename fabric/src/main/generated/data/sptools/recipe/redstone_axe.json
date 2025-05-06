@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "sptools:redstone_ingot",
+    "I": "minecraft:stick"
+  },
+  "pattern": [
+    "## ",
+    "#I ",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "sptools:redstone_axe"
+  }
+}

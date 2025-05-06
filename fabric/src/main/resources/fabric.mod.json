@@ -2,27 +2,39 @@
   "schemaVersion": 1,
   "id": "sptools",
   "version": "${version}",
-
-  "name": "Supplemental Tools",
-  "description": "This is a mod to add a set of equipment. The items to be added are crafted from copper, amethyst, emeralds, etc.",
-  "authors": ["shiri47s"],
-  "contact": {},
-
+  "name": "SupplementalTools",
+  "description": "Supplemental tools are provided.",
+  "authors": [
+    "shiri47s"
+  ],
+  "contact": {
+    "homepage": "https://github.com/shiri47s/SupplementalTools"
+  },
   "license": "MIT",
-  "icon": "sp_icon.png",
-
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.shiri47s.mod.sptools.fabric.SupplementalToolsFabric"
+      "net.syshima.sptools.fabric.ModFabric"
+    ],
+    "client": [
+      "net.syshima.sptools.fabric.client.FabricClient"
+    ],
+    "fabric-datagen": [
+      "net.syshima.sptools.fabric.datagen.DataGenerator"
     ]
   },
   "mixins": [
-    "sptools.mixins.json",
-    "sptools-common.mixins.json"
+    "sptools.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15.10",
-    "minecraft": ">=1.20"
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.5",
+    "java": ">=21",
+    "architectury": ">=16.1.4",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
 }

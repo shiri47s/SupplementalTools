@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "sptools:block/sp_red_diamond_ore"
-  }
-}

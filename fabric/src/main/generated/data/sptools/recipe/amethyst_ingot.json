@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:amethyst_shard",
+    "B": "minecraft:lapis_lazuli"
+  },
+  "pattern": [
+    "AAA",
+    "BBB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sptools:amethyst_ingot"
+  }
+}
