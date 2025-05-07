@@ -45,12 +45,12 @@ public final class FullEquipmentBenefits {
 
             update(player);
 
-            var boundedGlowingEffect = player.getStatusEffect(ModEffects.BOUNDED_GLOWING_ENTRY);
+            var boundedGlowingEffect = player.getStatusEffect(ModEffects.get(ModEffects.BOUNDED_GLOWING));
             if (boundedGlowingEffect != null) {
                 BoundedGlowingEffect.effect(world, player);
             }
 
-            var redstoneOverflowEffect = player.getStatusEffect(ModEffects.REDSTONE_OVERFLOW_ENTRY);
+            var redstoneOverflowEffect = player.getStatusEffect(ModEffects.get(ModEffects.REDSTONE_OVERFLOW));
             if (redstoneOverflowEffect != null) {
                 RedstoneOverflowEffect.effect(world, player);
             } else {
@@ -213,7 +213,7 @@ public final class FullEquipmentBenefits {
     private static void benefitHeavy(PlayerEntity player) {
         player.setStatusEffect(
                 new StatusEffectInstance(
-                        ModEffects.HEAVY_ENTRY,
+                        ModEffects.get(ModEffects.HEAVY),
                         StatusEffectInstance.INFINITE,
                         0,
                         false,
@@ -225,7 +225,7 @@ public final class FullEquipmentBenefits {
     private static void benefitKnockBackResistance(PlayerEntity player) {
         player.setStatusEffect(
                 new StatusEffectInstance(
-                        ModEffects.KNOCKBACK_RESISTANCE_ENTRY,
+                        ModEffects.get(ModEffects.KNOCKBACK_RESISTANCE),
                         StatusEffectInstance.INFINITE,
                         0,
                         false,
@@ -237,7 +237,7 @@ public final class FullEquipmentBenefits {
     private static void benefitAttackKnockBack(PlayerEntity player) {
         player.setStatusEffect(
                 new StatusEffectInstance(
-                        ModEffects.ATTACK_KNOCKBACK_ENTRY,
+                        ModEffects.get(ModEffects.ATTACK_KNOCKBACK),
                         StatusEffectInstance.INFINITE,
                         0,
                         false,
@@ -249,7 +249,7 @@ public final class FullEquipmentBenefits {
     private static void benefitMovementSpeed(PlayerEntity player) {
         player.setStatusEffect(
                 new StatusEffectInstance(
-                        ModEffects.MOVEMENT_SPEED_ENTRY,
+                        ModEffects.get(ModEffects.MOVEMENT_SPEED),
                         StatusEffectInstance.INFINITE,
                         0,
                         false,
@@ -261,7 +261,7 @@ public final class FullEquipmentBenefits {
     private static void benefitHasteAndLuck(PlayerEntity player) {
         player.setStatusEffect(
                 new StatusEffectInstance(
-                        ModEffects.HASTE_AND_LUCK_ENTRY,
+                        ModEffects.get(ModEffects.HASTE_AND_LUCK),
                         StatusEffectInstance.INFINITE,
                         0,
                         false,
@@ -273,7 +273,7 @@ public final class FullEquipmentBenefits {
     private static void benefitBoundedGlowing(PlayerEntity player) {
         player.setStatusEffect(
                 new StatusEffectInstance(
-                        ModEffects.BOUNDED_GLOWING_ENTRY,
+                        ModEffects.get(ModEffects.BOUNDED_GLOWING),
                         StatusEffectInstance.INFINITE,
                         0,
                         false,
@@ -285,7 +285,7 @@ public final class FullEquipmentBenefits {
     private static void benefitRedstoneOverflow(PlayerEntity player) {
         player.setStatusEffect(
                 new StatusEffectInstance(
-                        ModEffects.REDSTONE_OVERFLOW_ENTRY,
+                        ModEffects.get(ModEffects.REDSTONE_OVERFLOW),
                         StatusEffectInstance.INFINITE,
                         0,
                         false,
@@ -297,7 +297,7 @@ public final class FullEquipmentBenefits {
     private static void benefitAntiLava(PlayerEntity player) {
         player.setStatusEffect(
                 new StatusEffectInstance(
-                        ModEffects.ANTI_LAVA_ENTRY,
+                        ModEffects.get(ModEffects.ANTI_LAVA),
                         StatusEffectInstance.INFINITE,
                         0,
                         false,
@@ -307,13 +307,14 @@ public final class FullEquipmentBenefits {
     }
 
     private static void clearBenefits(PlayerEntity player) {
-        player.removeStatusEffect(ModEffects.KNOCKBACK_RESISTANCE_ENTRY);
-        player.removeStatusEffect(ModEffects.ATTACK_KNOCKBACK_ENTRY);
-        player.removeStatusEffect(ModEffects.MOVEMENT_SPEED_ENTRY);
-        player.removeStatusEffect(ModEffects.HASTE_AND_LUCK_ENTRY);
-        player.removeStatusEffect(ModEffects.HEAVY_ENTRY);
-        player.removeStatusEffect(ModEffects.BOUNDED_GLOWING_ENTRY);
-        player.removeStatusEffect(ModEffects.REDSTONE_OVERFLOW_ENTRY);
-        player.removeStatusEffect(ModEffects.ANTI_LAVA_ENTRY);
+        player.removeStatusEffect(ModEffects.get(ModEffects.KNOCKBACK_RESISTANCE));
+        player.removeStatusEffect(ModEffects.get(ModEffects.ATTACK_KNOCKBACK));
+        player.removeStatusEffect(ModEffects.get(ModEffects.MOVEMENT_SPEED));
+        player.removeStatusEffect(ModEffects.get(ModEffects.HASTE_AND_LUCK));
+        player.removeStatusEffect(ModEffects.get(ModEffects.HEAVY));
+        player.removeStatusEffect(ModEffects.get(ModEffects.BOUNDED_GLOWING));
+        player.removeStatusEffect(ModEffects.get(ModEffects.REDSTONE_OVERFLOW));
+        player.removeStatusEffect(ModEffects.get(ModEffects.ANTI_LAVA));
     }
 }
+

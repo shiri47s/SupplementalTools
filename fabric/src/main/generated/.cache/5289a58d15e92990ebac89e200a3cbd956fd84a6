@@ -1,4 +1,0 @@
-// 1.21.5	-999999999-01-01T00:00:00	SupplementalTools/Tags for minecraft:block
-f9ee7c29516514129b792a94a455f6281ec4fd3a data/minecraft/tags/block/mineable/pickaxe.json
-6023d42bf025298c86483d3c747eed96f35f147e data/minecraft/tags/block/needs_diamond_tool.json
-b05b0eba9e18d93241d347083d97884c3ad5220a data/minecraft/tags/block/needs_stone_tool.json

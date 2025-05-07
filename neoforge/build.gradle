@@ -24,6 +24,24 @@ configurations {
     }
 }
 
+def generatedResources = file("src/generated")
+
+sourceSets {
+    main {
+        resources.srcDir generatedResources
+    }
+}
+
+loom {
+    runs {
+        Datagen {
+            clientData()
+            programArgs "--all", "--mod", "sptools"
+            programArgs "--output", generatedResources.absolutePath
+        }
+    }
+}
+
 repositories {
     maven {
         name = 'NeoForged'

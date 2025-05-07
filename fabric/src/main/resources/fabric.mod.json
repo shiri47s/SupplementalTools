@@ -21,7 +21,7 @@
       "net.syshima.sptools.fabric.client.FabricClient"
     ],
     "fabric-datagen": [
-      "net.syshima.sptools.fabric.datagen.DataGenerator"
+      "net.syshima.sptools.fabric.datagen.ModDataGenerator"
     ]
   },
   "mixins": [

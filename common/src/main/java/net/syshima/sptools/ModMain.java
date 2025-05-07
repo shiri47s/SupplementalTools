@@ -6,7 +6,8 @@ public final class ModMain {
 
     public static void init(IPlatform platform) {
         PLATFORM = platform;
-        PLATFORM.registerItemGroup();
+
+        ModBlocks.register();
         ModItems.register();
         ModEffects.register();;
         PLATFORM.registerConfiguredFeature();

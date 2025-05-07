@@ -26,13 +26,13 @@ public final class ModBlockLootTableProvider extends FabricBlockLootTableProvide
 
     @Override
     public void generate() {
-        var fortuenReference = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE);
-        this.generateCore(ModBlocks.LEAD_ORE, ModItems.RAW_LEAD, 2.0F, 5.0F, fortuenReference);
-        this.generateCore(ModBlocks.RED_DIAMOND_ORE, ModItems.RED_DIAMOND, 1.0F, 1.0F, fortuenReference);
-        this.generateCore(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE, ModItems.RED_DIAMOND, 1.0F, 1.0F, fortuenReference);
+        var fortuneReference = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE);
+        this.generate(ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get(), 2.0F, 5.0F, fortuneReference);
+        this.generate(ModBlocks.RED_DIAMOND_ORE.get(), ModItems.RED_DIAMOND.get(), 1.0F, 1.0F, fortuneReference);
+        this.generate(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get(), ModItems.RED_DIAMOND.get(), 1.0F, 1.0F, fortuneReference);
     }
 
-    private void generateCore(Block block, Item item, float min, float max, RegistryEntry.Reference<Enchantment> fortune) {
+    private void generate(Block block, Item item, float min, float max, RegistryEntry.Reference<Enchantment> fortune) {
         this.addDrop(block, this.dropsWithSilkTouch(block, this.applyExplosionDecay(block, ItemEntry.builder(item).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(min, max))).apply(ApplyBonusLootFunction.oreDrops(fortune)))));
     }
 }

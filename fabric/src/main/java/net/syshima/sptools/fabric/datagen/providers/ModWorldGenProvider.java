@@ -40,9 +40,9 @@ public final class ModWorldGenProvider extends FabricDynamicRegistryProvider {
     }
 
     public static void configuredFeature(Registerable<ConfiguredFeature<?, ?>> registerable) {
-        ConfiguredFeatures.register(registerable, ModWorldGenFeatures.LEAD_ORE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES), ModBlocks.LEAD_ORE.getDefaultState(), 12));
-        ConfiguredFeatures.register(registerable, ModWorldGenFeatures.RED_DIAMOND_ORE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES), ModBlocks.RED_DIAMOND_ORE.getDefaultState(), 5, 0.3F));
-        ConfiguredFeatures.register(registerable, ModWorldGenFeatures.DEEPSLATE_RED_DIAMOND_ORE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.getDefaultState(), 5, 0.77F));
+        ConfiguredFeatures.register(registerable, ModWorldGenFeatures.LEAD_ORE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES), ModBlocks.LEAD_ORE.get().getDefaultState(), 12));
+        ConfiguredFeatures.register(registerable, ModWorldGenFeatures.RED_DIAMOND_ORE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES), ModBlocks.RED_DIAMOND_ORE.get().getDefaultState(), 5, 0.3F));
+        ConfiguredFeatures.register(registerable, ModWorldGenFeatures.DEEPSLATE_RED_DIAMOND_ORE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get().getDefaultState(), 5, 0.77F));
     }
 
     public static void placedFeature(Registerable<PlacedFeature> registerable) {

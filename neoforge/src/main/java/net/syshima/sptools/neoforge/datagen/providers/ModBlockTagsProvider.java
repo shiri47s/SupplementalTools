@@ -1,20 +1,21 @@
-package net.syshima.sptools.fabric.datagen.providers;
+package net.syshima.sptools.neoforge.datagen.providers;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.data.DataOutput;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.syshima.sptools.Constants;
 import net.syshima.sptools.ModBlocks;
 
 import java.util.concurrent.CompletableFuture;
 
-public final class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
-    public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-        super(output, registriesFuture);
+public final class ModBlockTagsProvider extends BlockTagsProvider {
+    public ModBlockTagsProvider(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> lookupProvider) {
+        super(output, lookupProvider, Constants.MOD_ID);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+    protected void configure(RegistryWrapper.WrapperLookup registries) {
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.LEAD_ORE.get());
 

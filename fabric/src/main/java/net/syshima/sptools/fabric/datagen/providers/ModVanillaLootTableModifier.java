@@ -22,7 +22,7 @@ public final class ModVanillaLootTableModifier {
                 var lootPool = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(1.0F))
-                        .with(ItemEntry.builder(ModItems.LAVA_SMITHING_TEMPLATE))
+                        .with(ItemEntry.builder(ModItems.LAVA_SMITHING_TEMPLATE.get()))
                         .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0F)).build());
                 builder.pool(lootPool.build());
             }

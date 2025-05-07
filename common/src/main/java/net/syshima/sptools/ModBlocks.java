@@ -1,6 +1,7 @@
 package net.syshima.sptools;
 
 import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
@@ -24,20 +25,19 @@ public final class ModBlocks {
         }
     }
 
-    public static final Block LEAD_ORE;
-    public static final Block RED_DIAMOND_ORE;
-    public static final Block DEEPSLATE_RED_DIAMOND_ORE;
+    public static final RegistrySupplier<Block> LEAD_ORE;
+    public static final RegistrySupplier<Block> RED_DIAMOND_ORE;
+    public static final RegistrySupplier<Block> DEEPSLATE_RED_DIAMOND_ORE;
 
     static {
-        var leadOre = REGISTER.register(Constants.Block.LEAD_ORE, () -> new ModBlock(UniformIntProvider.create(3, 7), settingsOf(ID.LEAD_ORE, AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.0F, 3.0F))));
-        var redDiamondOre = REGISTER.register(Constants.Block.RED_DIAMOND_ORE, () -> new ModBlock(UniformIntProvider.create(4, 8), settingsOf(ID.RED_DIAMOND_ORE, AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.5F, 3.0F))));
-        var deepslateRedDiamondOre = REGISTER.register(Constants.Block.DEEPSLATE_RED_DIAMOND_ORE, () -> new ModBlock(UniformIntProvider.create(4, 8), settingsOf(ID.DEEPSLATE_RED_DIAMOND_ORE, AbstractBlock.Settings.create().mapColor(MapColor.DEEPSLATE_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(4.2F, 3.0F))));
+        LEAD_ORE = REGISTER.register(Constants.Block.LEAD_ORE, () -> new ModBlock(UniformIntProvider.create(3, 7), settingsOf(ID.LEAD_ORE, AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.0F, 3.0F))));
+        RED_DIAMOND_ORE = REGISTER.register(Constants.Block.RED_DIAMOND_ORE, () -> new ModBlock(UniformIntProvider.create(4, 8), settingsOf(ID.RED_DIAMOND_ORE, AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.5F, 3.0F))));
+        DEEPSLATE_RED_DIAMOND_ORE = REGISTER.register(Constants.Block.DEEPSLATE_RED_DIAMOND_ORE, () -> new ModBlock(UniformIntProvider.create(4, 8), settingsOf(ID.DEEPSLATE_RED_DIAMOND_ORE, AbstractBlock.Settings.create().mapColor(MapColor.DEEPSLATE_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(4.2F, 3.0F))));
 
         REGISTER.register();
+    }
 
-        LEAD_ORE = leadOre.get();
-        RED_DIAMOND_ORE = redDiamondOre.get();
-        DEEPSLATE_RED_DIAMOND_ORE = deepslateRedDiamondOre.get();
+    public static void register() {
     }
 
     private static Block.Settings settingsOf(Identifier id, Block.Settings settings) {

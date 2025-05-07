@@ -1,8 +1,0 @@
-// 1.21.5	-999999999-01-01T00:00:00	SupplementalTools/sptoolsWorldGen
-d1a50ddf796457df143bf38717556fa4282ef940 data/sptools/worldgen/configured_feature/deepslate_red_diamond_ore.json
-67918f30da05a8de98c2ca12ba99a409222603c5 data/sptools/worldgen/configured_feature/lead_ore.json
-db478e34d4f127667c4a97c047e6b757e9d6f63a data/sptools/worldgen/configured_feature/red_diamond_ore.json
-9b08ada2e1cc1dbd5703e4473e124d6158a9619f data/sptools/worldgen/placed_feature/deepslate_red_diamond_ore.json
-cd9e7b291062d756dd6de4dbe418b967d1048d12 data/sptools/worldgen/placed_feature/lead_ore.json
-3919b2b9ee108a56848126f5058df8230a711c6f data/sptools/worldgen/placed_feature/red_diamond_ore_lower.json
-a70216ce3c45d3701a30ab346a80833020447c12 data/sptools/worldgen/placed_feature/red_diamond_ore_upper.json

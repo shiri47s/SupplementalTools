@@ -21,7 +21,7 @@ public class BackgroundRendererMixin {
         if (submersionType == CameraSubmersionType.LAVA) {
             MinecraftClient client = MinecraftClient.getInstance();
             if (client != null && client.player != null && client.player.getWorld().isClient()) {
-                if (client.player.hasStatusEffect(ModEffects.ANTI_LAVA_ENTRY)) {
+                if (client.player.hasStatusEffect(ModEffects.get(ModEffects.ANTI_LAVA))) {
                     cir.setReturnValue(new Fog(0.25F, viewDistance * 0.5F, FogShape.SPHERE,  color.x, color.y, color.z, color.w));
                 }
             }
