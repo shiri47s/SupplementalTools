@@ -9,9 +9,10 @@ version = "${version}"
 displayName = "SupplementalTools"
 authors = "shiri47s"
 description = '''
-Supplemental tools are provided.
+Supplemental Tools provides subtle,
+non-intrusive additions to enhance your everyday Minecraft gameplay experience.
 '''
-#logoFile = ""
+logoFile = "icon.png"
 
 [[dependencies.sptools]]
 modId = "neoforge"

@@ -1,0 +1,12 @@
+{
+  "match": {
+    "items": [
+      "sptools:lava_helmet",
+      "sptools:lava_chestplate",
+      "sptools:lava_leggings",
+      "sptools:lava_boots"
+    ]
+  },
+  "luminance": 9,
+  "water_sensitive": false
+}

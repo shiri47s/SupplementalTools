@@ -26,7 +26,7 @@ import java.util.concurrent.CompletableFuture;
 
 public final class ModBlockLootTableProvider extends LootTableProvider {
 
-    private static final List<LootTypeGenerator> tables = List.of(new LootTypeGenerator(lookup -> new ModBlockLootTableGenerator(Set.of(), FeatureFlags.DEFAULT_ENABLED_FEATURES, lookup), LootContextTypes.BLOCK));;
+    private static final List<LootTypeGenerator> tables = List.of(new LootTypeGenerator(lookup -> new ModBlockLootTableGenerator(Set.of(), FeatureFlags.DEFAULT_ENABLED_FEATURES, lookup), LootContextTypes.BLOCK));
 
     public ModBlockLootTableProvider(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, Set.of(), tables, registriesFuture);
