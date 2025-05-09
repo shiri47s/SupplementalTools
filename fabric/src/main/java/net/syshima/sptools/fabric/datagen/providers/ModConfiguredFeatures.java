@@ -5,7 +5,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.syshima.sptools.ModBlocks;
 
-public final class ModWorldGenFeatures {
+public final class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> LEAD_ORE;
     public static final RegistryKey<ConfiguredFeature<?, ?>> RED_DIAMOND_ORE;

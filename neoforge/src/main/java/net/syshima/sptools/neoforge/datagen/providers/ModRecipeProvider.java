@@ -1,7 +1,6 @@
-package net.syshima.sptools.fabric.datagen.providers;
+package net.syshima.sptools.neoforge.datagen.providers;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.data.DataOutput;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.data.recipe.SmithingTransformRecipeJsonBuilder;
@@ -13,22 +12,21 @@ import net.minecraft.registry.RegistryWrapper;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.ModItems;
 
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public final class ModRecipeProvider extends FabricRecipeProvider {
+public final class ModRecipeProvider extends RecipeGenerator.RecipeProvider {
     private static final String NAME = Constants.MOD_ID + "Recipe";
 
-    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public ModRecipeProvider(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup registryLookup, RecipeExporter exporter) {
-        return new RecipeGenerator(registryLookup, exporter) {
+    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup registries, RecipeExporter exporter) {
+        return new RecipeGenerator(registries, exporter) {
             @Override
-            public void generate() {
+            protected void generate() {
                 this.createTools(ModItems.BRONZE_INGOT.get(), Items.STICK, ModItems.BRONZE_SWORD.get(), ModItems.BRONZE_SHOVEL.get(), ModItems.BRONZE_PICKAXE.get(), ModItems.BRONZE_AXE.get(), ModItems.BRONZE_HOE.get());
                 this.createTools(Items.COPPER_INGOT, Items.IRON_INGOT, ModItems.IRONCOPPER_SWORD.get(), ModItems.IRONCOPPER_SHOVEL.get(), ModItems.IRONCOPPER_PICKAXE.get(), ModItems.IRONCOPPER_AXE.get(), ModItems.IRONCOPPER_HOE.get());
                 this.createTools(ModItems.AMETHYST_INGOT.get(), Items.STICK, ModItems.AMETHYST_SWORD.get(), ModItems.AMETHYST_SHOVEL.get(), ModItems.AMETHYST_PICKAXE.get(), ModItems.AMETHYST_AXE.get(), ModItems.AMETHYST_HOE.get());
