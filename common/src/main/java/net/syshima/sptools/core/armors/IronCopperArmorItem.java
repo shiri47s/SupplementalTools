@@ -10,7 +10,6 @@ import net.syshima.sptools.Constants;
 import net.syshima.sptools.base.ModArmorItem;
 import net.syshima.sptools.core.assets.ModArmorMaterials;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 public class IronCopperArmorItem extends ModArmorItem {

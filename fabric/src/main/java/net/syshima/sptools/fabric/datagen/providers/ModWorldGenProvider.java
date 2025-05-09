@@ -18,7 +18,7 @@ import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.ModBlocks;
 
-import java.util.concurrent.CompletableFuture;;
+import java.util.concurrent.CompletableFuture;
 
 public final class ModWorldGenProvider extends FabricDynamicRegistryProvider {
     private static final String NAME = Constants.MOD_ID + "WorldGen";

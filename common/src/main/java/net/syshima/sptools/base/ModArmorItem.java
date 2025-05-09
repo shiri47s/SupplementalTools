@@ -13,7 +13,6 @@ import net.minecraft.util.Formatting;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.core.effects.FullEquipmentBenefits;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 

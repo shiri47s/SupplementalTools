@@ -13,7 +13,6 @@ import net.minecraft.registry.RegistryWrapper;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.ModItems;
 
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 

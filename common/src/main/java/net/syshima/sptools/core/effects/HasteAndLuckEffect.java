@@ -3,7 +3,6 @@ package net.syshima.sptools.core.effects;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.util.Identifier;
 import net.syshima.sptools.base.ModStatusEffect;
 
 public class HasteAndLuckEffect extends ModStatusEffect {
