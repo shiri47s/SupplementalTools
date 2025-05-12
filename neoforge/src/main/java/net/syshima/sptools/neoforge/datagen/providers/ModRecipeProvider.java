@@ -55,6 +55,8 @@ public final class ModRecipeProvider extends RecipeGenerator.RecipeProvider {
                 this.createIngot(ModItems.RED_DIAMOND.get(), ModItems.RED_DIAMOND_INGOT.get());
 
                 this.createFireworkRocket();
+                this.createTotemOfUndying();
+                this.createTorch();
             }
 
             private void createTools(Item ingot, Item hilt, Item sword, Item shovel, Item pickaxe, Item axe, Item hoe) {
@@ -240,8 +242,38 @@ public final class ModRecipeProvider extends RecipeGenerator.RecipeProvider {
                         .pattern("PBP")
                         .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
                         .criterion(hasItem(Items.BLAZE_POWDER), conditionsFromItem(Items.BLAZE_POWDER))
-                        .criterion(hasItem(Items.FIREWORK_ROCKET), conditionsFromItem(Items.FIREWORK_ROCKET))
                         .offerTo(exporter);
+
+                this.offerNetheriteUpgradeRecipe(ModItems.DURABLE_FIREWORK_ROCKET.get(), RecipeCategory.TOOLS, ModItems.DURABLE_FIREWORK_ROCKET_UPGRADED.get());
+            }
+
+            private void createTotemOfUndying() {
+                this.createShaped(RecipeCategory.TOOLS, ModItems.DURABLE_TOTEM_OF_UNDYING.get())
+                        .input('T', Items.TOTEM_OF_UNDYING)
+                        .input('N', Items.NETHERITE_INGOT)
+                        .pattern(" T ")
+                        .pattern("TNT")
+                        .pattern(" T ")
+                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
+                        .criterion(hasItem(Items.TOTEM_OF_UNDYING), conditionsFromItem(Items.TOTEM_OF_UNDYING))
+                        .offerTo(exporter);
+
+                this.offerNetheriteUpgradeRecipe(ModItems.DURABLE_TOTEM_OF_UNDYING.get(), RecipeCategory.TOOLS, ModItems.DURABLE_TOTEM_OF_UNDYING_UPGRADED.get());
+            }
+
+            private void createTorch() {
+                this.createShaped(RecipeCategory.TOOLS, ModItems.DURABLE_TORCH.get())
+                        .input('T', Items.TORCH)
+                        .input('N', Items.NETHERITE_INGOT)
+                        .input('R', Items.REDSTONE)
+                        .input('S', Items.STICK)
+                        .pattern("TTT")
+                        .pattern("RNR")
+                        .pattern(" S ")
+                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
+                        .offerTo(exporter);
+
+                this.offerNetheriteUpgradeRecipe(ModItems.DURABLE_TORCH.get(), RecipeCategory.TOOLS, ModItems.DURABLE_TORCH_UPGRADED.get());
             }
         };
     }

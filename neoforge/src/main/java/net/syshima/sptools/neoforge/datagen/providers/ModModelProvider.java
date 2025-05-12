@@ -32,6 +32,8 @@ public final class ModModelProvider extends ModelProvider {
         blockModels.registerSimpleCubeAll(ModBlocks.LEAD_ORE.get());
         blockModels.registerSimpleCubeAll(ModBlocks.RED_DIAMOND_ORE.get());
         blockModels.registerSimpleCubeAll(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get());
+
+        blockModels.registerTorch(ModBlocks.TORCH_BLOCK.get(), ModBlocks.WALL_TORCH_BLOCK.get());
     }
 
     private void generateItemModels(ItemModelGenerator itemModels) {
@@ -131,6 +133,11 @@ public final class ModModelProvider extends ModelProvider {
         registerItem(ModItems.LAVA_SMITHING_TEMPLATE.get(), itemModels);
 
         registerTool(ModItems.DURABLE_FIREWORK_ROCKET.get(), itemModels);
+        registerTool(ModItems.DURABLE_FIREWORK_ROCKET_UPGRADED.get(), itemModels);
+        registerTool(ModItems.DURABLE_TOTEM_OF_UNDYING.get(), itemModels);
+        registerTool(ModItems.DURABLE_TOTEM_OF_UNDYING_UPGRADED.get(), itemModels);
+        registerTool(ModItems.DURABLE_TORCH.get(), itemModels);
+        registerTool(ModItems.DURABLE_TORCH_UPGRADED.get(), itemModels);
     }
 
     public void registerItem(Item item, ItemModelGenerator itemModels) {

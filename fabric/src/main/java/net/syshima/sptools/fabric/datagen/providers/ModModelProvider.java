@@ -28,7 +28,6 @@ public final class ModModelProvider extends FabricModelProvider {
         blockModels.registerSimpleCubeAll(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get());
 
         blockModels.registerTorch(ModBlocks.TORCH_BLOCK.get(), ModBlocks.WALL_TORCH_BLOCK.get());
-
     }
 
     @Override
