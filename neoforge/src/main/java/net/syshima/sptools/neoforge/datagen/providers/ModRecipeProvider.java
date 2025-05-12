@@ -53,6 +53,8 @@ public final class ModRecipeProvider extends RecipeGenerator.RecipeProvider {
                 this.createMixedIngot(ModItems.QUARTZ_SCRAP.get(), Items.IRON_INGOT, ModItems.QUARTZ_INGOT.get());
                 this.createIngot(Items.REDSTONE, ModItems.REDSTONE_INGOT.get());
                 this.createIngot(ModItems.RED_DIAMOND.get(), ModItems.RED_DIAMOND_INGOT.get());
+
+                this.createFireworkRocket();
             }
 
             private void createTools(Item ingot, Item hilt, Item sword, Item shovel, Item pickaxe, Item axe, Item hoe) {
@@ -224,6 +226,22 @@ public final class ModRecipeProvider extends RecipeGenerator.RecipeProvider {
                                 conditionsFromItem(ModItems.RED_DIAMOND_INGOT.get()))
                         .offerTo(this.exporter,
                                 getItemPath(result) + "_smithing");
+            }
+
+            private void createFireworkRocket() {
+                this.createShaped(RecipeCategory.TOOLS, ModItems.DURABLE_FIREWORK_ROCKET.get())
+                        .input('E', Items.EMERALD)
+                        .input('N', Items.NETHERITE_INGOT)
+                        .input('R', Items.REDSTONE)
+                        .input('P', Items.PAPER)
+                        .input('B', Items.BLAZE_POWDER)
+                        .pattern(" E ")
+                        .pattern("RNR")
+                        .pattern("PBP")
+                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
+                        .criterion(hasItem(Items.BLAZE_POWDER), conditionsFromItem(Items.BLAZE_POWDER))
+                        .criterion(hasItem(Items.FIREWORK_ROCKET), conditionsFromItem(Items.FIREWORK_ROCKET))
+                        .offerTo(exporter);
             }
         };
     }

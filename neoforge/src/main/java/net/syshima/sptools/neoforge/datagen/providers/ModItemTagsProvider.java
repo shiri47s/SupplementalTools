@@ -103,6 +103,8 @@ public class ModItemTagsProvider implements GatherDataEvent.ItemTagsProvider {
                     .add(ModItems.LAVA_CHESTPLATE.get())
                     .add(ModItems.LAVA_LEGGINGS.get())
                     .add(ModItems.LAVA_BOOTS.get());
+            getOrCreateTagBuilder(ModTags.DURABLE)
+                    .add(ModItems.DURABLE_FIREWORK_ROCKET.get());
 
             getOrCreateTagBuilder(ItemTags.CLUSTER_MAX_HARVESTABLES)
                     .add(ModItems.BRONZE_PICKAXE.get())
@@ -129,7 +131,8 @@ public class ModItemTagsProvider implements GatherDataEvent.ItemTagsProvider {
                     .add(ModItems.EMERALD_PICKAXE.get())
                     .add(ModItems.LEAD_PICKAXE.get())
                     .add(ModItems.QUARTZ_PICKAXE.get())
-                    .add(ModItems.REDSTONE_PICKAXE.get());
+                    .add(ModItems.REDSTONE_PICKAXE.get())
+                    .add(ModItems.DURABLE_FIREWORK_ROCKET.get());
 
             getOrCreateTagBuilder(ItemTags.AXES)
                     .add(ModItems.BRONZE_AXE.get())
@@ -298,7 +301,8 @@ public class ModItemTagsProvider implements GatherDataEvent.ItemTagsProvider {
                     .add(ModItems.LAVA_HELMET.get())
                     .add(ModItems.LAVA_CHESTPLATE.get())
                     .add(ModItems.LAVA_LEGGINGS.get())
-                    .add(ModItems.LAVA_BOOTS.get());
+                    .add(ModItems.LAVA_BOOTS.get())
+                    .add(ModItems.DURABLE_FIREWORK_ROCKET.get());
 
             getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
                     .add(ModItems.BRONZE_HELMET.get())

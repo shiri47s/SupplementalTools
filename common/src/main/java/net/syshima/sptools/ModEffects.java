@@ -23,14 +23,14 @@ public final class ModEffects {
     public static final RegistrySupplier<StatusEffect> REDSTONE_OVERFLOW;
 
     static {
-        ANTI_LAVA = REGISTER.register(ofId(Constants.Effect.ANTI_LAVA), AntiLavaEffect::new);
-        ATTACK_KNOCKBACK = REGISTER.register(ofId(Constants.Effect.ATTACK_KNOCKBACK), AttackKnockBackEffect::new);
-        BOUNDED_GLOWING = REGISTER.register(ofId(Constants.Effect.BOUNDED_GLOWING), BoundedGlowingEffect::new);
-        HASTE_AND_LUCK = REGISTER.register(ofId(Constants.Effect.HASTE_AND_LUCK), HasteAndLuckEffect::new);
-        HEAVY  = REGISTER.register(ofId(Constants.Effect.HEAVY), HeavyEffect::new);
-        KNOCKBACK_RESISTANCE = REGISTER.register(ofId(Constants.Effect.KNOCKBACK_RESISTANCE), KnockBackResistanceEffect::new);
-        MOVEMENT_SPEED = REGISTER.register(ofId(Constants.Effect.MOVEMENT_SPEED), MovementSpeedEffect::new);
-        REDSTONE_OVERFLOW = REGISTER.register(ofId(Constants.Effect.REDSTONE_OVERFLOW), RedstoneOverflowEffect::new);
+        ANTI_LAVA = REGISTER.register(ofId(Constants.Effects.ANTI_LAVA), AntiLavaEffect::new);
+        ATTACK_KNOCKBACK = REGISTER.register(ofId(Constants.Effects.ATTACK_KNOCKBACK), AttackKnockBackEffect::new);
+        BOUNDED_GLOWING = REGISTER.register(ofId(Constants.Effects.BOUNDED_GLOWING), BoundedGlowingEffect::new);
+        HASTE_AND_LUCK = REGISTER.register(ofId(Constants.Effects.HASTE_AND_LUCK), HasteAndLuckEffect::new);
+        HEAVY  = REGISTER.register(ofId(Constants.Effects.HEAVY), HeavyEffect::new);
+        KNOCKBACK_RESISTANCE = REGISTER.register(ofId(Constants.Effects.KNOCKBACK_RESISTANCE), KnockBackResistanceEffect::new);
+        MOVEMENT_SPEED = REGISTER.register(ofId(Constants.Effects.MOVEMENT_SPEED), MovementSpeedEffect::new);
+        REDSTONE_OVERFLOW = REGISTER.register(ofId(Constants.Effects.REDSTONE_OVERFLOW), RedstoneOverflowEffect::new);
 
         REGISTER.register();
     }

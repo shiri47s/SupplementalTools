@@ -21,7 +21,7 @@ public final class Constants {
         public static final String EQUIPMENT_ASSET = "equipment_asset";
     }
 
-    public static class Item {
+    public static class Items {
         public static final String BRONZE_INGOT = "bronze_ingot";
         public static final String AMETHYST_INGOT = "amethyst_ingot";
         public static final String EMERALD_INGOT = "emerald_ingot";
@@ -36,9 +36,6 @@ public final class Constants {
         public static final String DEEPSLATE_RED_DIAMOND_ORE = "deepslate_red_diamond_ore";
         public static final String RED_DIAMOND_INGOT = "red_diamond_ingot";
         public static final String LAVA_SMITHING_TEMPLATE = "lava_upgrade_smithing_template";
-    }
-
-    public static class Armor {
         public static final String BRONZE_ARMOR = "bronze_armor";
         public static final String BRONZE_HELMET = "bronze_helmet";
         public static final String BRONZE_CHESTPLATE = "bronze_chestplate";
@@ -86,9 +83,7 @@ public final class Constants {
         public static final String LAVA_CHESTPLATE = "lava_chestplate";
         public static final String LAVA_LEGGINGS = "lava_leggings";
         public static final String LAVA_BOOTS = "lava_boots";
-    }
 
-    public static class Tool {
         public static final String BRONZE_SWORD = "bronze_sword";
         public static final String BRONZE_AXE = "bronze_axe";
         public static final String BRONZE_SHOVEL = "bronze_shovel";
@@ -130,15 +125,25 @@ public final class Constants {
         public static final String REDSTONE_SHOVEL = "redstone_shovel";
         public static final String REDSTONE_PICKAXE = "redstone_pickaxe";
         public static final String REDSTONE_HOE = "redstone_hoe";
+
+        public static final String DURABLE_FIREWORK_ROCKET = "durable_firework_rocket";
+        public static final String DURABLE_FIREWORK_ROCKET_UPGRADED = "durable_firework_rocket_upgraded";
+        public static final String DURABLE_TOTEM_OF_UNDYING = "durable_totem_of_undying";
+        public static final String DURABLE_TOTEM_OF_UNDYING_UPGRADED = "durable_totem_of_undying_upgraded";
+        public static final String DURABLE_TORCH = "durable_torch";
+        public static final String DURABLE_TORCH_UPGRADED = "durable_torch_upgraded";
     }
 
-    public static class Block {
+    public static class Blocks {
         public static final String LEAD_ORE = "lead_ore";
         public static final String RED_DIAMOND_ORE = "red_diamond_ore";
         public static final String DEEPSLATE_RED_DIAMOND_ORE = "deepslate_red_diamond_ore";
+
+        public static final String TORCH_BLOCK = "torch_block";
+        public static final String WALL_TORCH_BLOCK = "wall_torch_block";
     }
 
-    public static class Effect {
+    public static class Effects {
         public static final String KNOCKBACK_RESISTANCE = "knockback_resistance";
         public static final String ATTACK_KNOCKBACK = "attack_knockback";
         public static final String MOVEMENT_SPEED = "movement_speed";

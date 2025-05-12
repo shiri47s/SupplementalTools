@@ -12,6 +12,8 @@ public final class ModToolMaterials {
     public static final ToolMaterial LEAD;
     public static final ToolMaterial QUARTZ;
     public static final ToolMaterial REDSTONE;
+    public static final ToolMaterial DURABLE;
+    public static final ToolMaterial DURABLE_UPGRADED;
 
     static {
         BRONZE = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 172, 5.0F, 1.5F, 5, ModTags.BRONZE_TOOL_MATERIALS);
@@ -21,5 +23,7 @@ public final class ModToolMaterials {
         LEAD = new ToolMaterial(BlockTags.INCORRECT_FOR_GOLD_TOOL,153, 7.5F, 3.0F, 3, ModTags.LEAD_TOOL_MATERIALS);
         QUARTZ = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL,666, 7.0F, 3.0F, 6, ModTags.QUARTZ_TOOL_MATERIALS);
         REDSTONE = new ToolMaterial(BlockTags.INCORRECT_FOR_GOLD_TOOL,184, 6.5F, 2.5F, 11, ModTags.REDSTONE_TOOL_MATERIALS);
+        DURABLE = new ToolMaterial(BlockTags.INCORRECT_FOR_STONE_TOOL,400, 4.5F, 0.5F, 10, ModTags.DURABLE_TOOL_MATERIALS);
+        DURABLE_UPGRADED = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL,999, 6.5F, 2.5F, 14, ModTags.DURABLE_TOOL_MATERIALS);
     }
 }

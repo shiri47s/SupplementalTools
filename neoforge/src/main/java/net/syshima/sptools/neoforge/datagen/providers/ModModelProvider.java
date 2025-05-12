@@ -129,6 +129,8 @@ public final class ModModelProvider extends ModelProvider {
         registerItem(ModItems.QUARTZ_SCRAP.get(), itemModels);
         registerItem(ModItems.RED_DIAMOND.get(), itemModels);
         registerItem(ModItems.LAVA_SMITHING_TEMPLATE.get(), itemModels);
+
+        registerTool(ModItems.DURABLE_FIREWORK_ROCKET.get(), itemModels);
     }
 
     public void registerItem(Item item, ItemModelGenerator itemModels) {

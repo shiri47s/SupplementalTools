@@ -14,6 +14,7 @@ public final class ModTags {
     public static final TagKey<Item> QUARTZ = ofItem("quartz");
     public static final TagKey<Item> REDSTONE = ofItem("redstone");
     public static final TagKey<Item> LAVA = ofItem("lava");
+    public static final TagKey<Item> DURABLE = ofItem("durable");
     public static final TagKey<Item> BRONZE_TOOL_MATERIALS = ofItem("bronze_tool_materials");
     public static final TagKey<Item> IRONCOPPER_TOOL_MATERIALS = ofItem("ironcopper_tool_materials");
     public static final TagKey<Item> AMETHYST_TOOL_MATERIALS = ofItem("amethyst_tool_materials");
@@ -21,6 +22,7 @@ public final class ModTags {
     public static final TagKey<Item> LEAD_TOOL_MATERIALS = ofItem("lead_tool_materials");
     public static final TagKey<Item> QUARTZ_TOOL_MATERIALS = ofItem("quartz_tool_materials");
     public static final TagKey<Item> REDSTONE_TOOL_MATERIALS = ofItem("redstone_tool_materials");
+    public static final TagKey<Item> DURABLE_TOOL_MATERIALS = ofItem("durable_tool_materials");
     public static final TagKey<Item> REPAIRS_BRONZE_ARMOR = ofItem("repairs_bronze_armor");
     public static final TagKey<Item> REPAIRS_IRONCOPPER_ARMOR = ofItem("repairs_ironcopper_armor");
     public static final TagKey<Item> REPAIRS_AMETHYST_ARMOR = ofItem("repairs_amethyst_armor");

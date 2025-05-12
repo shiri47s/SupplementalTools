@@ -93,6 +93,23 @@
   "item.sptools.red_diamond_ore": "レッドダイアモンド鉱石",
   "item.sptools.deepslate_red_diamond_ore": "ディープスレートレッドダイアモンド鉱石",
 
+  "item.sptools.durable.tooltip": "残り使用回数 約%s回",
+
+  "item.sptools.durable_firework_rocket": "ロケット花火(耐)",
+  "item.sptools.durable_firework_rocket.alert": "[警告] ロケット花火の耐久値が低下しています!",
+  "item.sptools.durable_firework_rocket_upgraded": "ロケット花火改(耐)",
+  "item.sptools.durable_firework_rocket_upgraded.alert": "[警告] ロケット花火の耐久値が低下しています!",
+
+  "item.sptools.durable_totem_of_undying": "不死のトーテム(耐)",
+  "item.sptools.durable_totem_of_undying.alert": "[警告] 不死のトーテムの耐久値が低下しています!",
+  "item.sptools.durable_totem_of_undying_upgraded": "不死のトーテム改(耐)",
+  "item.sptools.durable_totem_of_undying_upgraded.alert": "[警告] 不死のトーテムの耐久値が低下しています!",
+
+  "item.sptools.durable_torch": "トーチ(耐)",
+  "item.sptools.durable_torch.alert": "[警告] トーチの耐久値が低下しています!",
+  "item.sptools.durable_torch_upgraded": "トーチ改(耐)",
+  "item.sptools.durable_torch_upgraded.alert": "[警告] トーチの耐久値が低下しています!",
+
   "item.sptools.lava_upgrade_smithing_template": "耐溶岩の鍛冶型",
   "item.sptools.lava_upgrade_smithing_template.applies_to": "ネザーライト装備",
   "item.sptools.lava_upgrade_smithing_template.ingredients": "レッドダイアモンドインゴット",
