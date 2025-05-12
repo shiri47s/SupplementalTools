@@ -32,9 +32,6 @@ public final class ModTags {
     public static final TagKey<Item> REPAIRS_REDSTONE_ARMOR = ofItem("repairs_redstone_armor");
     public static final TagKey<Item> REPAIRS_LAVA_ARMOR = ofItem("repairs_lava_armor");
     public static final TagKey<Item> PIGLINS_LOVED_ARMOR = ofItem("piglins_loved_armor");
-    private static TagKey<net.minecraft.block.Block> ofBlock(String id) {
-        return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Constants.MOD_ID, id));
-    }
 
     private static TagKey<Item> ofItem(String id) {
         return TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, id));

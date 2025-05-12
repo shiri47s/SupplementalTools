@@ -16,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagsProvider implements GatherDataEvent.ItemTagsProvider {
     @Override
-    public @NotNull TagProvider<Item> create(@NotNull DataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> lookupCompletableFuture, CompletableFuture<TagProvider.TagLookup<Block>> tagLookupCompletableFuture) {
+    public @NotNull TagProvider<Item> create(@NotNull DataOutput dataOutput, @NotNull CompletableFuture<RegistryWrapper.WrapperLookup> lookupCompletableFuture, @NotNull CompletableFuture<TagProvider.TagLookup<Block>> tagLookupCompletableFuture) {
         return new ModItemTagProvider(dataOutput, lookupCompletableFuture, tagLookupCompletableFuture);
     }
 

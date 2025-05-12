@@ -8,7 +8,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.syshima.sptools.IPlatform;
 import net.syshima.sptools.ModMain;
-import net.syshima.sptools.core.effects.FullEquipmentBenefits;
 
 import java.util.function.Consumer;
 
