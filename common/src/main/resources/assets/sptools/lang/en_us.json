@@ -93,6 +93,23 @@
   "item.sptools.red_diamond_ore": "Red Diamond Ore",
   "item.sptools.deepslate_red_diamond_ore": "Deepslate Red Diamond Ore",
 
+  "item.sptools.durable.tooltip": "About %s uses left",
+
+  "item.sptools.durable_firework_rocket": "Durable Firework Rocket",
+  "item.sptools.durable_firework_rocket.alert": "NOTICE: The Durable Firework Rocket will be almost out of durability value!",
+  "item.sptools.durable_firework_rocket_upgraded": "Durable Firework Rocket Mk.2",
+  "item.sptools.durable_firework_rocket_upgraded.alert": "NOTICE: The Durable Firework Rocket will be almost out of durability value!",
+
+  "item.sptools.durable_totem_of_undying": "Durable Totem of Undying",
+  "item.sptools.durable_totem_of_undying.alert": "NOTICE: The Durable Undying of Totem will be almost out of durability value!",
+  "item.sptools.durable_totem_of_undying_upgraded": "Durable Totem of Undying Mk.2",
+  "item.sptools.durable_totem_of_undying_upgraded.alert": "NOTICE: The Durable Undying of Totem will be almost out of durability value!",
+
+  "item.sptools.durable_torch": "Durable Torch",
+  "item.sptools.durable_torch.alert": "NOTICE: The Durable Torch will be almost out of durability value!",
+  "item.sptools.durable_torch_upgraded": "Durable Torch Mk.2",
+  "item.sptools.durable_torch_upgraded.alert": "NOTICE: The Durable Torch will be almost out of durability value!",
+
   "item.sptools.lava_upgrade_smithing_template": "Anti-Lava Smithing Template",
   "item.sptools.lava_upgrade_smithing_template.applies_to": "Netherite Equipment",
   "item.sptools.lava_upgrade_smithing_template.ingredients": "Red Diamond Ingot",

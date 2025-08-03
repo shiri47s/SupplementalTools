@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "sptools:durable_totem_of_undying",
+      "required": false
+    },
+    {
+      "id": "sptools:durable_totem_of_undying_upgraded",
+      "required": false
+    }
+  ]
+}
