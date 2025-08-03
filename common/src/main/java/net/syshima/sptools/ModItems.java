@@ -14,6 +14,7 @@ import net.syshima.sptools.base.ModItem;
 import net.syshima.sptools.base.ModTemplateItem;
 import net.syshima.sptools.core.armors.*;
 import net.syshima.sptools.core.assets.ModToolMaterials;
+import net.syshima.sptools.core.tools.*;
 
 import java.util.List;
 
@@ -120,106 +121,120 @@ public final class ModItems {
     public static final RegistrySupplier<Item> RED_DIAMOND;
     public static final RegistrySupplier<Item> LAVA_SMITHING_TEMPLATE;
 
+    public static final RegistrySupplier<Item> DURABLE_FIREWORK_ROCKET;
+    public static final RegistrySupplier<Item> DURABLE_FIREWORK_ROCKET_UPGRADED;
+    public static final RegistrySupplier<Item> DURABLE_TOTEM_OF_UNDYING;
+    public static final RegistrySupplier<Item> DURABLE_TOTEM_OF_UNDYING_UPGRADED;
+    public static final RegistrySupplier<Item> DURABLE_TORCH;
+    public static final RegistrySupplier<Item> DURABLE_TORCH_UPGRADED;
+
     static {
 
-        BRONZE_SWORD = REGISTER.register(Constants.Tool.BRONZE_SWORD, () -> new ModItem(settingsOf(Constants.Tool.BRONZE_SWORD, new Item.Settings()).sword(ModToolMaterials.BRONZE, 1.0F, -2.4F)));
-        BRONZE_SHOVEL = REGISTER.register(Constants.Tool.BRONZE_SHOVEL, () -> new ShovelItem(ModToolMaterials.BRONZE, 1.0F, -3.0F, settingsOf(Constants.Tool.BRONZE_SHOVEL)));
-        BRONZE_PICKAXE = REGISTER.register(Constants.Tool.BRONZE_PICKAXE, () -> new ModItem(settingsOf(Constants.Tool.BRONZE_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.BRONZE, 1.0F, -2.8F)));
-        BRONZE_AXE = REGISTER.register(Constants.Tool.BRONZE_AXE, () -> new AxeItem(ModToolMaterials.BRONZE, 5.0F, -3.1F, settingsOf(Constants.Tool.BRONZE_AXE)));
-        BRONZE_HOE = REGISTER.register(Constants.Tool.BRONZE_HOE, () -> new HoeItem(ModToolMaterials.BRONZE, -2.0F, -1.6F, settingsOf(Constants.Tool.BRONZE_HOE)));
+        BRONZE_SWORD = REGISTER.register(Constants.Items.BRONZE_SWORD, () -> new ModItem(settingsOf(Constants.Items.BRONZE_SWORD, new Item.Settings()).sword(ModToolMaterials.BRONZE, 1.0F, -2.4F)));
+        BRONZE_SHOVEL = REGISTER.register(Constants.Items.BRONZE_SHOVEL, () -> new ShovelItem(ModToolMaterials.BRONZE, 1.0F, -3.0F, settingsOf(Constants.Items.BRONZE_SHOVEL)));
+        BRONZE_PICKAXE = REGISTER.register(Constants.Items.BRONZE_PICKAXE, () -> new ModItem(settingsOf(Constants.Items.BRONZE_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.BRONZE, 1.0F, -2.8F)));
+        BRONZE_AXE = REGISTER.register(Constants.Items.BRONZE_AXE, () -> new AxeItem(ModToolMaterials.BRONZE, 5.0F, -3.1F, settingsOf(Constants.Items.BRONZE_AXE)));
+        BRONZE_HOE = REGISTER.register(Constants.Items.BRONZE_HOE, () -> new HoeItem(ModToolMaterials.BRONZE, -2.0F, -1.6F, settingsOf(Constants.Items.BRONZE_HOE)));
 
-        IRONCOPPER_SWORD = REGISTER.register(Constants.Tool.IRONCOPPER_SWORD, () -> new ModItem(settingsOf(Constants.Tool.IRONCOPPER_SWORD, new Item.Settings()).sword(ModToolMaterials.IRONCOPPER, 1.0F, -2.4F)));
-        IRONCOPPER_SHOVEL = REGISTER.register(Constants.Tool.IRONCOPPER_SHOVEL, () -> new ShovelItem(ModToolMaterials.IRONCOPPER, 1.0F, -3.0F, settingsOf(Constants.Tool.IRONCOPPER_SHOVEL)));
-        IRONCOPPER_PICKAXE = REGISTER.register(Constants.Tool.IRONCOPPER_PICKAXE, () -> new ModItem(settingsOf(Constants.Tool.IRONCOPPER_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.IRONCOPPER, 1.0F, -2.8F)));
-        IRONCOPPER_AXE = REGISTER.register(Constants.Tool.IRONCOPPER_AXE, () -> new AxeItem(ModToolMaterials.IRONCOPPER, 5.0F, -3.1F, settingsOf(Constants.Tool.IRONCOPPER_AXE)));
-        IRONCOPPER_HOE = REGISTER.register(Constants.Tool.IRONCOPPER_HOE, () -> new HoeItem(ModToolMaterials.IRONCOPPER, -2.0F, -1.6F, settingsOf(Constants.Tool.IRONCOPPER_HOE)));
+        IRONCOPPER_SWORD = REGISTER.register(Constants.Items.IRONCOPPER_SWORD, () -> new ModItem(settingsOf(Constants.Items.IRONCOPPER_SWORD, new Item.Settings()).sword(ModToolMaterials.IRONCOPPER, 1.0F, -2.4F)));
+        IRONCOPPER_SHOVEL = REGISTER.register(Constants.Items.IRONCOPPER_SHOVEL, () -> new ShovelItem(ModToolMaterials.IRONCOPPER, 1.0F, -3.0F, settingsOf(Constants.Items.IRONCOPPER_SHOVEL)));
+        IRONCOPPER_PICKAXE = REGISTER.register(Constants.Items.IRONCOPPER_PICKAXE, () -> new ModItem(settingsOf(Constants.Items.IRONCOPPER_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.IRONCOPPER, 1.0F, -2.8F)));
+        IRONCOPPER_AXE = REGISTER.register(Constants.Items.IRONCOPPER_AXE, () -> new AxeItem(ModToolMaterials.IRONCOPPER, 5.0F, -3.1F, settingsOf(Constants.Items.IRONCOPPER_AXE)));
+        IRONCOPPER_HOE = REGISTER.register(Constants.Items.IRONCOPPER_HOE, () -> new HoeItem(ModToolMaterials.IRONCOPPER, -2.0F, -1.6F, settingsOf(Constants.Items.IRONCOPPER_HOE)));
 
-        AMETHYST_SWORD = REGISTER.register(Constants.Tool.AMETHYST_SWORD, () -> new ModItem(settingsOf(Constants.Tool.AMETHYST_SWORD, new Item.Settings()).sword(ModToolMaterials.AMETHYST, 1.0F, -2.4F)));
-        AMETHYST_SHOVEL = REGISTER.register(Constants.Tool.AMETHYST_SHOVEL, () -> new ShovelItem(ModToolMaterials.AMETHYST, 1.0F, -3.0F, settingsOf(Constants.Tool.AMETHYST_SHOVEL)));
-        AMETHYST_PICKAXE = REGISTER.register(Constants.Tool.AMETHYST_PICKAXE, () -> new ModItem(settingsOf(Constants.Tool.AMETHYST_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.AMETHYST, 1.0F, -2.8F)));
-        AMETHYST_AXE = REGISTER.register(Constants.Tool.AMETHYST_AXE, () -> new AxeItem(ModToolMaterials.AMETHYST, 5.0F, -3.1F, settingsOf(Constants.Tool.AMETHYST_AXE)));
-        AMETHYST_HOE = REGISTER.register(Constants.Tool.AMETHYST_HOE, () -> new HoeItem(ModToolMaterials.AMETHYST, -2.0F, -1.6F, settingsOf(Constants.Tool.AMETHYST_HOE)));
+        AMETHYST_SWORD = REGISTER.register(Constants.Items.AMETHYST_SWORD, () -> new ModItem(settingsOf(Constants.Items.AMETHYST_SWORD, new Item.Settings()).sword(ModToolMaterials.AMETHYST, 1.0F, -2.4F)));
+        AMETHYST_SHOVEL = REGISTER.register(Constants.Items.AMETHYST_SHOVEL, () -> new ShovelItem(ModToolMaterials.AMETHYST, 1.0F, -3.0F, settingsOf(Constants.Items.AMETHYST_SHOVEL)));
+        AMETHYST_PICKAXE = REGISTER.register(Constants.Items.AMETHYST_PICKAXE, () -> new ModItem(settingsOf(Constants.Items.AMETHYST_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.AMETHYST, 1.0F, -2.8F)));
+        AMETHYST_AXE = REGISTER.register(Constants.Items.AMETHYST_AXE, () -> new AxeItem(ModToolMaterials.AMETHYST, 5.0F, -3.1F, settingsOf(Constants.Items.AMETHYST_AXE)));
+        AMETHYST_HOE = REGISTER.register(Constants.Items.AMETHYST_HOE, () -> new HoeItem(ModToolMaterials.AMETHYST, -2.0F, -1.6F, settingsOf(Constants.Items.AMETHYST_HOE)));
 
-        EMERALD_SWORD = REGISTER.register(Constants.Tool.EMERALD_SWORD, () -> new ModItem(settingsOf(Constants.Tool.EMERALD_SWORD, new Item.Settings()).sword(ModToolMaterials.EMERALD, 1.0F, -2.4F)));
-        EMERALD_SHOVEL = REGISTER.register(Constants.Tool.EMERALD_SHOVEL, () -> new ShovelItem(ModToolMaterials.EMERALD, 1.0F, -3.0F, settingsOf(Constants.Tool.EMERALD_SHOVEL)));
-        EMERALD_PICKAXE = REGISTER.register(Constants.Tool.EMERALD_PICKAXE, () -> new ModItem(settingsOf(Constants.Tool.EMERALD_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.EMERALD, 1.0F, -2.8F)));
-        EMERALD_AXE = REGISTER.register(Constants.Tool.EMERALD_AXE, () -> new AxeItem(ModToolMaterials.EMERALD, 5.0F, -3.1F, settingsOf(Constants.Tool.EMERALD_AXE)));
-        EMERALD_HOE = REGISTER.register(Constants.Tool.EMERALD_HOE, () -> new HoeItem(ModToolMaterials.EMERALD, -2.0F, -1.6F, settingsOf(Constants.Tool.EMERALD_HOE)));
+        EMERALD_SWORD = REGISTER.register(Constants.Items.EMERALD_SWORD, () -> new ModItem(settingsOf(Constants.Items.EMERALD_SWORD, new Item.Settings()).sword(ModToolMaterials.EMERALD, 1.0F, -2.4F)));
+        EMERALD_SHOVEL = REGISTER.register(Constants.Items.EMERALD_SHOVEL, () -> new ShovelItem(ModToolMaterials.EMERALD, 1.0F, -3.0F, settingsOf(Constants.Items.EMERALD_SHOVEL)));
+        EMERALD_PICKAXE = REGISTER.register(Constants.Items.EMERALD_PICKAXE, () -> new ModItem(settingsOf(Constants.Items.EMERALD_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.EMERALD, 1.0F, -2.8F)));
+        EMERALD_AXE = REGISTER.register(Constants.Items.EMERALD_AXE, () -> new AxeItem(ModToolMaterials.EMERALD, 5.0F, -3.1F, settingsOf(Constants.Items.EMERALD_AXE)));
+        EMERALD_HOE = REGISTER.register(Constants.Items.EMERALD_HOE, () -> new HoeItem(ModToolMaterials.EMERALD, -2.0F, -1.6F, settingsOf(Constants.Items.EMERALD_HOE)));
 
-        LEAD_SWORD = REGISTER.register(Constants.Tool.LEAD_SWORD, () -> new ModItem(settingsOf(Constants.Tool.LEAD_SWORD, new Item.Settings()).sword(ModToolMaterials.LEAD, 1.0F, -2.4F)));
-        LEAD_SHOVEL = REGISTER.register(Constants.Tool.LEAD_SHOVEL, () -> new ShovelItem(ModToolMaterials.LEAD, 1.0F, -3.0F, settingsOf(Constants.Tool.LEAD_SHOVEL)));
-        LEAD_PICKAXE = REGISTER.register(Constants.Tool.LEAD_PICKAXE, () -> new ModItem(settingsOf(Constants.Tool.LEAD_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.LEAD, 1.0F, -2.8F)));
-        LEAD_AXE = REGISTER.register(Constants.Tool.LEAD_AXE, () -> new AxeItem(ModToolMaterials.LEAD, 5.0F, -3.1F, settingsOf(Constants.Tool.LEAD_AXE)));
-        LEAD_HOE = REGISTER.register(Constants.Tool.LEAD_HOE, () -> new HoeItem(ModToolMaterials.LEAD, -2.0F, -1.6F, settingsOf(Constants.Tool.LEAD_HOE)));
+        LEAD_SWORD = REGISTER.register(Constants.Items.LEAD_SWORD, () -> new ModItem(settingsOf(Constants.Items.LEAD_SWORD, new Item.Settings()).sword(ModToolMaterials.LEAD, 1.0F, -2.4F)));
+        LEAD_SHOVEL = REGISTER.register(Constants.Items.LEAD_SHOVEL, () -> new ShovelItem(ModToolMaterials.LEAD, 1.0F, -3.0F, settingsOf(Constants.Items.LEAD_SHOVEL)));
+        LEAD_PICKAXE = REGISTER.register(Constants.Items.LEAD_PICKAXE, () -> new ModItem(settingsOf(Constants.Items.LEAD_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.LEAD, 1.0F, -2.8F)));
+        LEAD_AXE = REGISTER.register(Constants.Items.LEAD_AXE, () -> new AxeItem(ModToolMaterials.LEAD, 5.0F, -3.1F, settingsOf(Constants.Items.LEAD_AXE)));
+        LEAD_HOE = REGISTER.register(Constants.Items.LEAD_HOE, () -> new HoeItem(ModToolMaterials.LEAD, -2.0F, -1.6F, settingsOf(Constants.Items.LEAD_HOE)));
 
-        QUARTZ_SWORD = REGISTER.register(Constants.Tool.QUARTZ_SWORD, () -> new ModItem(settingsOf(Constants.Tool.QUARTZ_SWORD, new Item.Settings()).sword(ModToolMaterials.QUARTZ, 1.0F, -2.4F)));
-        QUARTZ_SHOVEL = REGISTER.register(Constants.Tool.QUARTZ_SHOVEL, () -> new ShovelItem(ModToolMaterials.QUARTZ, 1.0F, -3.0F, settingsOf(Constants.Tool.QUARTZ_SHOVEL)));
-        QUARTZ_PICKAXE = REGISTER.register(Constants.Tool.QUARTZ_PICKAXE, () -> new ModItem(settingsOf(Constants.Tool.QUARTZ_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.QUARTZ, 1.0F, -2.8F)));
-        QUARTZ_AXE = REGISTER.register(Constants.Tool.QUARTZ_AXE, () -> new AxeItem(ModToolMaterials.QUARTZ, 5.0F, -3.1F, settingsOf(Constants.Tool.QUARTZ_AXE)));
-        QUARTZ_HOE = REGISTER.register(Constants.Tool.QUARTZ_HOE, () -> new HoeItem(ModToolMaterials.QUARTZ, -2.0F, -1.6F, settingsOf(Constants.Tool.QUARTZ_HOE)));
+        QUARTZ_SWORD = REGISTER.register(Constants.Items.QUARTZ_SWORD, () -> new ModItem(settingsOf(Constants.Items.QUARTZ_SWORD, new Item.Settings()).sword(ModToolMaterials.QUARTZ, 1.0F, -2.4F)));
+        QUARTZ_SHOVEL = REGISTER.register(Constants.Items.QUARTZ_SHOVEL, () -> new ShovelItem(ModToolMaterials.QUARTZ, 1.0F, -3.0F, settingsOf(Constants.Items.QUARTZ_SHOVEL)));
+        QUARTZ_PICKAXE = REGISTER.register(Constants.Items.QUARTZ_PICKAXE, () -> new ModItem(settingsOf(Constants.Items.QUARTZ_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.QUARTZ, 1.0F, -2.8F)));
+        QUARTZ_AXE = REGISTER.register(Constants.Items.QUARTZ_AXE, () -> new AxeItem(ModToolMaterials.QUARTZ, 5.0F, -3.1F, settingsOf(Constants.Items.QUARTZ_AXE)));
+        QUARTZ_HOE = REGISTER.register(Constants.Items.QUARTZ_HOE, () -> new HoeItem(ModToolMaterials.QUARTZ, -2.0F, -1.6F, settingsOf(Constants.Items.QUARTZ_HOE)));
 
-        REDSTONE_SWORD = REGISTER.register(Constants.Tool.REDSTONE_SWORD, () -> new ModItem(settingsOf(Constants.Tool.REDSTONE_SWORD, new Item.Settings()).sword(ModToolMaterials.REDSTONE, 1.0F, -2.4F)));
-        REDSTONE_SHOVEL = REGISTER.register(Constants.Tool.REDSTONE_SHOVEL, () -> new ShovelItem(ModToolMaterials.REDSTONE, 1.0F, -3.0F, settingsOf(Constants.Tool.REDSTONE_SHOVEL)));
-        REDSTONE_PICKAXE = REGISTER.register(Constants.Tool.REDSTONE_PICKAXE, () -> new ModItem(settingsOf(Constants.Tool.REDSTONE_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.REDSTONE, 1.0F, -2.8F)));
-        REDSTONE_AXE = REGISTER.register(Constants.Tool.REDSTONE_AXE, () -> new AxeItem(ModToolMaterials.REDSTONE, 5.0F, -3.1F, settingsOf(Constants.Tool.REDSTONE_AXE)));
-        REDSTONE_HOE = REGISTER.register(Constants.Tool.REDSTONE_HOE, () -> new HoeItem(ModToolMaterials.REDSTONE, -2.0F, -1.6F, settingsOf(Constants.Tool.REDSTONE_HOE)));
+        REDSTONE_SWORD = REGISTER.register(Constants.Items.REDSTONE_SWORD, () -> new ModItem(settingsOf(Constants.Items.REDSTONE_SWORD, new Item.Settings()).sword(ModToolMaterials.REDSTONE, 1.0F, -2.4F)));
+        REDSTONE_SHOVEL = REGISTER.register(Constants.Items.REDSTONE_SHOVEL, () -> new ShovelItem(ModToolMaterials.REDSTONE, 1.0F, -3.0F, settingsOf(Constants.Items.REDSTONE_SHOVEL)));
+        REDSTONE_PICKAXE = REGISTER.register(Constants.Items.REDSTONE_PICKAXE, () -> new ModItem(settingsOf(Constants.Items.REDSTONE_PICKAXE, new Item.Settings()).pickaxe(ModToolMaterials.REDSTONE, 1.0F, -2.8F)));
+        REDSTONE_AXE = REGISTER.register(Constants.Items.REDSTONE_AXE, () -> new AxeItem(ModToolMaterials.REDSTONE, 5.0F, -3.1F, settingsOf(Constants.Items.REDSTONE_AXE)));
+        REDSTONE_HOE = REGISTER.register(Constants.Items.REDSTONE_HOE, () -> new HoeItem(ModToolMaterials.REDSTONE, -2.0F, -1.6F, settingsOf(Constants.Items.REDSTONE_HOE)));
 
-        BRONZE_HELMET = REGISTER.register(Constants.Armor.BRONZE_HELMET, () -> new BronzeArmorItem(EquipmentType.HELMET, settingsOf(Constants.Armor.BRONZE_HELMET)));
-        BRONZE_CHESTPLATE = REGISTER.register(Constants.Armor.BRONZE_CHESTPLATE, () -> new BronzeArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Armor.BRONZE_CHESTPLATE)));
-        BRONZE_LEGGINGS = REGISTER.register(Constants.Armor.BRONZE_LEGGINGS, () -> new BronzeArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Armor.BRONZE_LEGGINGS)));
-        BRONZE_BOOTS = REGISTER.register(Constants.Armor.BRONZE_BOOTS, () -> new BronzeArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Armor.BRONZE_BOOTS)));
+        BRONZE_HELMET = REGISTER.register(Constants.Items.BRONZE_HELMET, () -> new BronzeArmorItem(EquipmentType.HELMET, settingsOf(Constants.Items.BRONZE_HELMET)));
+        BRONZE_CHESTPLATE = REGISTER.register(Constants.Items.BRONZE_CHESTPLATE, () -> new BronzeArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Items.BRONZE_CHESTPLATE)));
+        BRONZE_LEGGINGS = REGISTER.register(Constants.Items.BRONZE_LEGGINGS, () -> new BronzeArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Items.BRONZE_LEGGINGS)));
+        BRONZE_BOOTS = REGISTER.register(Constants.Items.BRONZE_BOOTS, () -> new BronzeArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Items.BRONZE_BOOTS)));
 
-        IRONCOPPER_HELMET = REGISTER.register(Constants.Armor.IRONCOPPER_HELMET, () -> new IronCopperArmorItem(EquipmentType.HELMET, settingsOf(Constants.Armor.IRONCOPPER_HELMET)));
-        IRONCOPPER_CHESTPLATE = REGISTER.register(Constants.Armor.IRONCOPPER_CHESTPLATE, () -> new IronCopperArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Armor.IRONCOPPER_CHESTPLATE)));
-        IRONCOPPER_LEGGINGS = REGISTER.register(Constants.Armor.IRONCOPPER_LEGGINGS, () -> new IronCopperArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Armor.IRONCOPPER_LEGGINGS)));
-        IRONCOPPER_BOOTS = REGISTER.register(Constants.Armor.IRONCOPPER_BOOTS, () -> new IronCopperArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Armor.IRONCOPPER_BOOTS)));
+        IRONCOPPER_HELMET = REGISTER.register(Constants.Items.IRONCOPPER_HELMET, () -> new IronCopperArmorItem(EquipmentType.HELMET, settingsOf(Constants.Items.IRONCOPPER_HELMET)));
+        IRONCOPPER_CHESTPLATE = REGISTER.register(Constants.Items.IRONCOPPER_CHESTPLATE, () -> new IronCopperArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Items.IRONCOPPER_CHESTPLATE)));
+        IRONCOPPER_LEGGINGS = REGISTER.register(Constants.Items.IRONCOPPER_LEGGINGS, () -> new IronCopperArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Items.IRONCOPPER_LEGGINGS)));
+        IRONCOPPER_BOOTS = REGISTER.register(Constants.Items.IRONCOPPER_BOOTS, () -> new IronCopperArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Items.IRONCOPPER_BOOTS)));
 
-        AMETHYST_HELMET = REGISTER.register(Constants.Armor.AMETHYST_HELMET, () -> new AmethystArmorItem(EquipmentType.HELMET, settingsOf(Constants.Armor.AMETHYST_HELMET)));
-        AMETHYST_CHESTPLATE = REGISTER.register(Constants.Armor.AMETHYST_CHESTPLATE, () -> new AmethystArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Armor.AMETHYST_CHESTPLATE)));
-        AMETHYST_LEGGINGS = REGISTER.register(Constants.Armor.AMETHYST_LEGGINGS, () -> new AmethystArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Armor.AMETHYST_LEGGINGS)));
-        AMETHYST_BOOTS = REGISTER.register(Constants.Armor.AMETHYST_BOOTS, () -> new AmethystArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Armor.AMETHYST_BOOTS)));
+        AMETHYST_HELMET = REGISTER.register(Constants.Items.AMETHYST_HELMET, () -> new AmethystArmorItem(EquipmentType.HELMET, settingsOf(Constants.Items.AMETHYST_HELMET)));
+        AMETHYST_CHESTPLATE = REGISTER.register(Constants.Items.AMETHYST_CHESTPLATE, () -> new AmethystArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Items.AMETHYST_CHESTPLATE)));
+        AMETHYST_LEGGINGS = REGISTER.register(Constants.Items.AMETHYST_LEGGINGS, () -> new AmethystArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Items.AMETHYST_LEGGINGS)));
+        AMETHYST_BOOTS = REGISTER.register(Constants.Items.AMETHYST_BOOTS, () -> new AmethystArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Items.AMETHYST_BOOTS)));
 
-        EMERALD_HELMET = REGISTER.register(Constants.Armor.EMERALD_HELMET, () -> new EmeraldArmorItem(EquipmentType.HELMET, settingsOf(Constants.Armor.EMERALD_HELMET)));
-        EMERALD_CHESTPLATE = REGISTER.register(Constants.Armor.EMERALD_CHESTPLATE, () -> new EmeraldArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Armor.EMERALD_CHESTPLATE)));
-        EMERALD_LEGGINGS = REGISTER.register(Constants.Armor.EMERALD_LEGGINGS, () -> new EmeraldArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Armor.EMERALD_LEGGINGS)));
-        EMERALD_BOOTS = REGISTER.register(Constants.Armor.EMERALD_BOOTS, () -> new EmeraldArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Armor.EMERALD_BOOTS)));
+        EMERALD_HELMET = REGISTER.register(Constants.Items.EMERALD_HELMET, () -> new EmeraldArmorItem(EquipmentType.HELMET, settingsOf(Constants.Items.EMERALD_HELMET)));
+        EMERALD_CHESTPLATE = REGISTER.register(Constants.Items.EMERALD_CHESTPLATE, () -> new EmeraldArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Items.EMERALD_CHESTPLATE)));
+        EMERALD_LEGGINGS = REGISTER.register(Constants.Items.EMERALD_LEGGINGS, () -> new EmeraldArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Items.EMERALD_LEGGINGS)));
+        EMERALD_BOOTS = REGISTER.register(Constants.Items.EMERALD_BOOTS, () -> new EmeraldArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Items.EMERALD_BOOTS)));
 
-        LEAD_HELMET = REGISTER.register(Constants.Armor.LEAD_HELMET, () -> new LeadArmorItem(EquipmentType.HELMET, settingsOf(Constants.Armor.LEAD_HELMET)));
-        LEAD_CHESTPLATE = REGISTER.register(Constants.Armor.LEAD_CHESTPLATE, () -> new LeadArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Armor.LEAD_CHESTPLATE)));
-        LEAD_LEGGINGS = REGISTER.register(Constants.Armor.LEAD_LEGGINGS, () -> new LeadArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Armor.LEAD_LEGGINGS)));
-        LEAD_BOOTS = REGISTER.register(Constants.Armor.LEAD_BOOTS, () -> new LeadArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Armor.LEAD_BOOTS)));
+        LEAD_HELMET = REGISTER.register(Constants.Items.LEAD_HELMET, () -> new LeadArmorItem(EquipmentType.HELMET, settingsOf(Constants.Items.LEAD_HELMET)));
+        LEAD_CHESTPLATE = REGISTER.register(Constants.Items.LEAD_CHESTPLATE, () -> new LeadArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Items.LEAD_CHESTPLATE)));
+        LEAD_LEGGINGS = REGISTER.register(Constants.Items.LEAD_LEGGINGS, () -> new LeadArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Items.LEAD_LEGGINGS)));
+        LEAD_BOOTS = REGISTER.register(Constants.Items.LEAD_BOOTS, () -> new LeadArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Items.LEAD_BOOTS)));
 
-        QUARTZ_HELMET = REGISTER.register(Constants.Armor.QUARTZ_HELMET, () -> new QuartzArmorItem(EquipmentType.HELMET, settingsOf(Constants.Armor.QUARTZ_HELMET)));
-        QUARTZ_CHESTPLATE = REGISTER.register(Constants.Armor.QUARTZ_CHESTPLATE, () -> new QuartzArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Armor.QUARTZ_CHESTPLATE)));
-        QUARTZ_LEGGINGS = REGISTER.register(Constants.Armor.QUARTZ_LEGGINGS, () -> new QuartzArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Armor.QUARTZ_LEGGINGS)));
-        QUARTZ_BOOTS = REGISTER.register(Constants.Armor.QUARTZ_BOOTS, () -> new QuartzArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Armor.QUARTZ_BOOTS)));
+        QUARTZ_HELMET = REGISTER.register(Constants.Items.QUARTZ_HELMET, () -> new QuartzArmorItem(EquipmentType.HELMET, settingsOf(Constants.Items.QUARTZ_HELMET)));
+        QUARTZ_CHESTPLATE = REGISTER.register(Constants.Items.QUARTZ_CHESTPLATE, () -> new QuartzArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Items.QUARTZ_CHESTPLATE)));
+        QUARTZ_LEGGINGS = REGISTER.register(Constants.Items.QUARTZ_LEGGINGS, () -> new QuartzArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Items.QUARTZ_LEGGINGS)));
+        QUARTZ_BOOTS = REGISTER.register(Constants.Items.QUARTZ_BOOTS, () -> new QuartzArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Items.QUARTZ_BOOTS)));
 
-        REDSTONE_HELMET = REGISTER.register(Constants.Armor.REDSTONE_HELMET, () -> new RedstoneArmorItem(EquipmentType.HELMET, settingsOf(Constants.Armor.REDSTONE_HELMET)));
-        REDSTONE_CHESTPLATE = REGISTER.register(Constants.Armor.REDSTONE_CHESTPLATE, () -> new RedstoneArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Armor.REDSTONE_CHESTPLATE)));
-        REDSTONE_LEGGINGS = REGISTER.register(Constants.Armor.REDSTONE_LEGGINGS, () -> new RedstoneArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Armor.REDSTONE_LEGGINGS)));
-        REDSTONE_BOOTS = REGISTER.register(Constants.Armor.REDSTONE_BOOTS, () -> new RedstoneArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Armor.REDSTONE_BOOTS)));
+        REDSTONE_HELMET = REGISTER.register(Constants.Items.REDSTONE_HELMET, () -> new RedstoneArmorItem(EquipmentType.HELMET, settingsOf(Constants.Items.REDSTONE_HELMET)));
+        REDSTONE_CHESTPLATE = REGISTER.register(Constants.Items.REDSTONE_CHESTPLATE, () -> new RedstoneArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Items.REDSTONE_CHESTPLATE)));
+        REDSTONE_LEGGINGS = REGISTER.register(Constants.Items.REDSTONE_LEGGINGS, () -> new RedstoneArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Items.REDSTONE_LEGGINGS)));
+        REDSTONE_BOOTS = REGISTER.register(Constants.Items.REDSTONE_BOOTS, () -> new RedstoneArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Items.REDSTONE_BOOTS)));
 
-        LAVA_HELMET = REGISTER.register(Constants.Armor.LAVA_HELMET, () -> new LavaArmorItem(EquipmentType.HELMET, settingsOf(Constants.Armor.LAVA_HELMET)));
-        LAVA_CHESTPLATE = REGISTER.register(Constants.Armor.LAVA_CHESTPLATE, () -> new LavaArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Armor.LAVA_CHESTPLATE)));
-        LAVA_LEGGINGS = REGISTER.register(Constants.Armor.LAVA_LEGGINGS, () -> new LavaArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Armor.LAVA_LEGGINGS)));
-        LAVA_BOOTS = REGISTER.register(Constants.Armor.LAVA_BOOTS, () -> new LavaArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Armor.LAVA_BOOTS)));
+        LAVA_HELMET = REGISTER.register(Constants.Items.LAVA_HELMET, () -> new LavaArmorItem(EquipmentType.HELMET, settingsOf(Constants.Items.LAVA_HELMET)));
+        LAVA_CHESTPLATE = REGISTER.register(Constants.Items.LAVA_CHESTPLATE, () -> new LavaArmorItem(EquipmentType.CHESTPLATE, settingsOf(Constants.Items.LAVA_CHESTPLATE)));
+        LAVA_LEGGINGS = REGISTER.register(Constants.Items.LAVA_LEGGINGS, () -> new LavaArmorItem(EquipmentType.LEGGINGS, settingsOf(Constants.Items.LAVA_LEGGINGS)));
+        LAVA_BOOTS = REGISTER.register(Constants.Items.LAVA_BOOTS, () -> new LavaArmorItem(EquipmentType.BOOTS, settingsOf(Constants.Items.LAVA_BOOTS)));
 
-        BRONZE_INGOT = REGISTER.register(Constants.Item.BRONZE_INGOT, () -> new ModItem(settingsOf(Constants.Item.BRONZE_INGOT, new Item.Settings())));
-        AMETHYST_INGOT = REGISTER.register(Constants.Item.AMETHYST_INGOT, () -> new ModItem(settingsOf(Constants.Item.AMETHYST_INGOT, new Item.Settings())));
-        EMERALD_INGOT = REGISTER.register(Constants.Item.EMERALD_INGOT, () -> new ModItem(settingsOf(Constants.Item.EMERALD_INGOT, new Item.Settings())));
-        LEAD_INGOT = REGISTER.register(Constants.Item.LEAD_INGOT, () -> new ModItem(settingsOf(Constants.Item.LEAD_INGOT, new Item.Settings())));
-        QUARTZ_INGOT = REGISTER.register(Constants.Item.QUARTZ_INGOT, () -> new ModItem(settingsOf(Constants.Item.QUARTZ_INGOT, new Item.Settings())));
-        REDSTONE_INGOT = REGISTER.register(Constants.Item.REDSTONE_INGOT, () -> new ModItem(settingsOf(Constants.Item.REDSTONE_INGOT, new Item.Settings())));
-        RED_DIAMOND_INGOT = REGISTER.register(Constants.Item.RED_DIAMOND_INGOT, () -> new ModItem(settingsOf(Constants.Item.RED_DIAMOND_INGOT, new Item.Settings())));
+        BRONZE_INGOT = REGISTER.register(Constants.Items.BRONZE_INGOT, () -> new ModItem(settingsOf(Constants.Items.BRONZE_INGOT, new Item.Settings())));
+        AMETHYST_INGOT = REGISTER.register(Constants.Items.AMETHYST_INGOT, () -> new ModItem(settingsOf(Constants.Items.AMETHYST_INGOT, new Item.Settings())));
+        EMERALD_INGOT = REGISTER.register(Constants.Items.EMERALD_INGOT, () -> new ModItem(settingsOf(Constants.Items.EMERALD_INGOT, new Item.Settings())));
+        LEAD_INGOT = REGISTER.register(Constants.Items.LEAD_INGOT, () -> new ModItem(settingsOf(Constants.Items.LEAD_INGOT, new Item.Settings())));
+        QUARTZ_INGOT = REGISTER.register(Constants.Items.QUARTZ_INGOT, () -> new ModItem(settingsOf(Constants.Items.QUARTZ_INGOT, new Item.Settings())));
+        REDSTONE_INGOT = REGISTER.register(Constants.Items.REDSTONE_INGOT, () -> new ModItem(settingsOf(Constants.Items.REDSTONE_INGOT, new Item.Settings())));
+        RED_DIAMOND_INGOT = REGISTER.register(Constants.Items.RED_DIAMOND_INGOT, () -> new ModItem(settingsOf(Constants.Items.RED_DIAMOND_INGOT, new Item.Settings())));
 
-        LEAD_ORE = REGISTER.register(Constants.Item.LEAD_ORE, () -> new ModBlockItem(ModBlocks.LEAD_ORE.get(), settingsOf(Constants.Item.LEAD_ORE, new Item.Settings().useBlockPrefixedTranslationKey())));
-        RED_DIAMOND_ORE = REGISTER.register(Constants.Item.RED_DIAMOND_ORE, () -> new ModBlockItem(ModBlocks.RED_DIAMOND_ORE.get(), settingsOf(Constants.Item.RED_DIAMOND_ORE, new Item.Settings().useBlockPrefixedTranslationKey())));
-        DEEPSLATE_RED_DIAMOND_ORE = REGISTER.register(Constants.Item.DEEPSLATE_RED_DIAMOND_ORE, () -> new ModBlockItem(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get(), settingsOf(Constants.Item.DEEPSLATE_RED_DIAMOND_ORE, new Item.Settings().useBlockPrefixedTranslationKey())));
+        LEAD_ORE = REGISTER.register(Constants.Items.LEAD_ORE, () -> new ModBlockItem(ModBlocks.LEAD_ORE.get(), settingsOf(Constants.Items.LEAD_ORE, new Item.Settings().useBlockPrefixedTranslationKey())));
+        RED_DIAMOND_ORE = REGISTER.register(Constants.Items.RED_DIAMOND_ORE, () -> new ModBlockItem(ModBlocks.RED_DIAMOND_ORE.get(), settingsOf(Constants.Items.RED_DIAMOND_ORE, new Item.Settings().useBlockPrefixedTranslationKey())));
+        DEEPSLATE_RED_DIAMOND_ORE = REGISTER.register(Constants.Items.DEEPSLATE_RED_DIAMOND_ORE, () -> new ModBlockItem(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get(), settingsOf(Constants.Items.DEEPSLATE_RED_DIAMOND_ORE, new Item.Settings().useBlockPrefixedTranslationKey())));
 
-        RAW_LEAD = REGISTER.register(Constants.Item.RAW_LEAD, () -> new ModItem(settingsOf(Constants.Item.RAW_LEAD, new Item.Settings())));
-        QUARTZ_SCRAP = REGISTER.register(Constants.Item.QUARTZ_SCRAP, () -> new ModItem(settingsOf(Constants.Item.QUARTZ_SCRAP, new Item.Settings())));
-        RED_DIAMOND = REGISTER.register(Constants.Item.RED_DIAMOND, () -> new ModItem(settingsOf(Constants.Item.RED_DIAMOND, new Item.Settings())));
-        LAVA_SMITHING_TEMPLATE = REGISTER.register(Constants.Item.LAVA_SMITHING_TEMPLATE, () -> new ModTemplateItem(Text.translatable("item.sptools.lava_upgrade_smithing_template.applies_to"), Text.translatable("item.sptools.lava_upgrade_smithing_template.ingredients"), Text.translatable("item.sptools.lava_upgrade_smithing_template.base_slot"), Text.translatable("item.sptools.lava_upgrade_smithing_template.additions_slot"), getLavaUpgradeEmptyBaseSlotTextures(), getLavaUpgradeEmptyAdditionsSlotTextures(), settingsOf(Constants.Item.LAVA_SMITHING_TEMPLATE, (new Item.Settings()).fireproof().rarity(Rarity.EPIC))));
+        RAW_LEAD = REGISTER.register(Constants.Items.RAW_LEAD, () -> new ModItem(settingsOf(Constants.Items.RAW_LEAD, new Item.Settings())));
+        QUARTZ_SCRAP = REGISTER.register(Constants.Items.QUARTZ_SCRAP, () -> new ModItem(settingsOf(Constants.Items.QUARTZ_SCRAP, new Item.Settings())));
+        RED_DIAMOND = REGISTER.register(Constants.Items.RED_DIAMOND, () -> new ModItem(settingsOf(Constants.Items.RED_DIAMOND, new Item.Settings())));
+        LAVA_SMITHING_TEMPLATE = REGISTER.register(Constants.Items.LAVA_SMITHING_TEMPLATE, () -> new ModTemplateItem(Text.translatable("item.sptools.lava_upgrade_smithing_template.applies_to"), Text.translatable("item.sptools.lava_upgrade_smithing_template.ingredients"), Text.translatable("item.sptools.lava_upgrade_smithing_template.base_slot"), Text.translatable("item.sptools.lava_upgrade_smithing_template.additions_slot"), getLavaUpgradeEmptyBaseSlotTextures(), getLavaUpgradeEmptyAdditionsSlotTextures(), settingsOf(Constants.Items.LAVA_SMITHING_TEMPLATE, (new Item.Settings()).fireproof().rarity(Rarity.EPIC))));
+
+        DURABLE_FIREWORK_ROCKET = REGISTER.register(Constants.Items.DURABLE_FIREWORK_ROCKET, () -> new DurableFireworkRocket(settingsOf(Constants.Items.DURABLE_FIREWORK_ROCKET, (new Item.Settings()).pickaxe(ModToolMaterials.DURABLE, 1.0F, -2.2F))));
+        DURABLE_FIREWORK_ROCKET_UPGRADED = REGISTER.register(Constants.Items.DURABLE_FIREWORK_ROCKET_UPGRADED, () -> new DurableFireworkRocketUpgraded(settingsOf(Constants.Items.DURABLE_FIREWORK_ROCKET_UPGRADED, (new Item.Settings()).pickaxe(ModToolMaterials.DURABLE_UPGRADED, 1.5F, -2.1F))));
+        DURABLE_TOTEM_OF_UNDYING = REGISTER.register(Constants.Items.DURABLE_TOTEM_OF_UNDYING, () -> new DurableTotemOfUndying(settingsOf(Constants.Items.DURABLE_TOTEM_OF_UNDYING, (new Item.Settings()).shovel(ModToolMaterials.DURABLE, 1.0F, -2.3F))));
+        DURABLE_TOTEM_OF_UNDYING_UPGRADED = REGISTER.register(Constants.Items.DURABLE_TOTEM_OF_UNDYING_UPGRADED, () -> new DurableTotemOfUndyingUpgraded(settingsOf(Constants.Items.DURABLE_TOTEM_OF_UNDYING_UPGRADED, (new Item.Settings()).shovel(ModToolMaterials.DURABLE_UPGRADED, 1.5F, -2.2F))));
+        DURABLE_TORCH = REGISTER.register(Constants.Items.DURABLE_TORCH, () -> new DurableTorch(settingsOf(Constants.Items.DURABLE_TORCH, (new Item.Settings()).pickaxe(ModToolMaterials.DURABLE, 1.0F, -2.1F))));
+        DURABLE_TORCH_UPGRADED = REGISTER.register(Constants.Items.DURABLE_TORCH_UPGRADED, () -> new DurableTorchUpgraded(settingsOf(Constants.Items.DURABLE_TORCH_UPGRADED, (new Item.Settings()).pickaxe(ModToolMaterials.DURABLE_UPGRADED, 1.5F, -2.0F))));
 
         var itemGroupRegister = DeferredRegister.create(Constants.MOD_ID, RegistryKeys.ITEM_GROUP);
         itemGroupRegister.register(MOD_GROUP.getRegistry(), () -> ItemGroup.create(ItemGroup.Row.BOTTOM, 0)
@@ -324,6 +339,13 @@ public final class ModItems {
                     entries.add(new ItemStack(QUARTZ_SCRAP.get()));
                     entries.add(new ItemStack(RED_DIAMOND.get()));
                     entries.add(new ItemStack(LAVA_SMITHING_TEMPLATE.get()));
+
+                    entries.add(new ItemStack(DURABLE_FIREWORK_ROCKET.get()));
+                    entries.add(new ItemStack(DURABLE_FIREWORK_ROCKET_UPGRADED.get()));
+                    entries.add(new ItemStack(DURABLE_TOTEM_OF_UNDYING.get()));
+                    entries.add(new ItemStack(DURABLE_TOTEM_OF_UNDYING_UPGRADED.get()));
+                    entries.add(new ItemStack(DURABLE_TORCH.get()));
+                    entries.add(new ItemStack(DURABLE_TORCH_UPGRADED.get()));
                 })
                 .build());
         itemGroupRegister.register();
@@ -332,7 +354,6 @@ public final class ModItems {
     }
 
     public static void register() {
-
     }
 
     private static Item.Settings settingsOf(String name) {

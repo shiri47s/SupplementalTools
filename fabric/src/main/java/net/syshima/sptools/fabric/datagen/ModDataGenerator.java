@@ -11,6 +11,7 @@ public final class ModDataGenerator implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         var modPack = fabricDataGenerator.createPack();
+
         modPack.addProvider(ModModelProvider::new);
         modPack.addProvider(ModBlockLootTableProvider::new);
         modPack.addProvider(ModItemTagProvider::new);
