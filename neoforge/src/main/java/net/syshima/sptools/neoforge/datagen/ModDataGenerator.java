@@ -7,7 +7,7 @@ import net.syshima.sptools.Constants;
 import net.syshima.sptools.core.assets.ModEquipmentAssetProvider;
 import net.syshima.sptools.neoforge.datagen.providers.*;
 
-@EventBusSubscriber(modid = Constants.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = Constants.MOD_ID)
 public final class ModDataGenerator {
 
     @SubscribeEvent

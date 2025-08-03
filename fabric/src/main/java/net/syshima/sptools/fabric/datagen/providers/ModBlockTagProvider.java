@@ -15,13 +15,16 @@ public final class ModBlockTagProvider extends FabricTagProvider.BlockTagProvide
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.LEAD_ORE.get());
+        getTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.LEAD_ORE.getId());
 
-        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.RED_DIAMOND_ORE.get(), ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get());
+        getTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(ModBlocks.RED_DIAMOND_ORE.getId())
+                .add(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.getId());
 
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.LEAD_ORE.get(), ModBlocks.RED_DIAMOND_ORE.get(), ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get());
+        getTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.LEAD_ORE.getId())
+                .add(ModBlocks.RED_DIAMOND_ORE.getId())
+                .add(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.getId());
     }
 }
