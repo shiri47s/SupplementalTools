@@ -1,7 +1,5 @@
 package net.syshima.sptools.mixin;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
