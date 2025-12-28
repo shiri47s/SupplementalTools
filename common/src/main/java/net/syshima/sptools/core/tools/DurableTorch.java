@@ -30,7 +30,7 @@ public class DurableTorch extends ModDurableItem {
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         var world = context.getWorld();
-        if (!world.isClient) {
+        if (!world.isClient()) {
             var player = context.getPlayer();
             if (player == null) {
                 return ActionResult.PASS;

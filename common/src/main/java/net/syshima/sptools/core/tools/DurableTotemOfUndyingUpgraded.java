@@ -18,6 +18,6 @@ public class DurableTotemOfUndyingUpgraded extends DurableTotemOfUndying {
         playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1500, 0));
         playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 1000, 1));
 
-        playerEntity.getWorld().sendEntityStatus(playerEntity, (byte)35);
+        playerEntity.getEntityWorld().sendEntityStatus(playerEntity, (byte)35);
     }
 }

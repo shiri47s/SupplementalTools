@@ -37,7 +37,7 @@ public class DurableFireworkRocket extends ModDurableItem {
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         var world = context.getWorld();
-        if (!world.isClient) {
+        if (!world.isClient()) {
             PlayerEntity player = context.getPlayer();
             if (player == null) {
                 return ActionResult.PASS;
@@ -65,7 +65,7 @@ public class DurableFireworkRocket extends ModDurableItem {
     public ActionResult use(World world, PlayerEntity player, Hand hand) {
         if (player.isGliding()) {
             var used = false;
-            if (!world.isClient) {
+            if (!world.isClient()) {
                 var fireworkRocket = new ItemStack(this);
                 var itemStack = player.getStackInHand(hand);
                 var slot = PLATFORM.getEquipmentSlot(player, fireworkRocket);

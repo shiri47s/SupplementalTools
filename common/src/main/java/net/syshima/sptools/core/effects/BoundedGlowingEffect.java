@@ -20,7 +20,7 @@ public class BoundedGlowingEffect extends ModStatusEffect {
     }
 
     public static void effect(World world, PlayerEntity player) {
-        Vec3d pos = player.getPos();
+        Vec3d pos = player.getEntityPos();
         double range = BoundedGlowingEffect.RANGE;
         Box box = new Box(
                 new Vec3d(pos.x - range, pos.y - range, pos.z - range),

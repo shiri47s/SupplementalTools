@@ -48,7 +48,7 @@ public class DurableTotemOfUndying extends ModDurableItem {
         playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100, 1));
         playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 800, 0));
 
-        playerEntity.getWorld().sendEntityStatus(playerEntity, (byte)35);
+        playerEntity.getEntityWorld().sendEntityStatus(playerEntity, (byte)35);
     }
 
     @Override

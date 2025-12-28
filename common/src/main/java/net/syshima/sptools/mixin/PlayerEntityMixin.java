@@ -19,7 +19,7 @@ public abstract class PlayerEntityMixin {
         PlayerEntity player = (PlayerEntity)(Object)this;
 
         if (player.isInLava() && AntiLavaEffect.isActive(this)) {
-            World world = player.getWorld();
+            World world = player.getEntityWorld();
             BlockPos pos = player.getBlockPos();
             BlockState state = world.getBlockState(pos.down());
             if (state.getBlock() == Blocks.LAVA) {

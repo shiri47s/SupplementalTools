@@ -40,7 +40,7 @@ public final class FullEquipmentBenefits {
         });
 
         TickEvent.SERVER_LEVEL_PRE.register(tick -> tick.getPlayers().forEach(player -> {
-            var world = player.getWorld();
+            var world = player.getEntityWorld();
             if (world.isClient()) { return; }
 
             update(player);

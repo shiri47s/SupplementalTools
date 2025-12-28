@@ -4,13 +4,13 @@
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
-    "FogRendererMixin",
-    "ClientPlayerNetworkHandlerMixin",
-    "ClientLivingEntityMixin"
+    "FogRendererMixin"
   ],
   "mixins": [
     "EntityMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "ClientPlayerNetworkHandlerMixin",
+    "ClientLivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
