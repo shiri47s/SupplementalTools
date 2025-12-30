@@ -22,7 +22,7 @@ public class FogRendererMixin {
     )
     private void injectTransparency(
             Camera camera, float tickProgress, net.minecraft.client.world.ClientWorld world,
-            int viewDistance, float skyDarkness, boolean thick,
+            int viewDistance, float skyDarkness,
             CallbackInfoReturnable<Vector4f> cir
     ) {
         if (camera.getSubmersionType().name().equalsIgnoreCase("LAVA")) {

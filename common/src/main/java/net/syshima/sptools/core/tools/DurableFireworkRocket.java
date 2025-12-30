@@ -37,55 +37,50 @@ public class DurableFireworkRocket extends ModDurableItem {
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         var world = context.getWorld();
-        if (!world.isClient()) {
-            PlayerEntity player = context.getPlayer();
-            if (player == null) {
-                return ActionResult.PASS;
-            }
+        var player = context.getPlayer();
+        if (player == null) return ActionResult.PASS;
 
-            ItemStack itemStack = context.getStack();
-            EquipmentSlot slot = PLATFORM.getEquipmentSlot(player, itemStack);
-            if (slot == null) {
-                return ActionResult.PASS;
-            }
+        var itemStack = context.getStack();
+        var slot = PLATFORM.getEquipmentSlot(player, itemStack);
+        if (slot == null) return ActionResult.PASS;
 
-            var vec3d = context.getHitPos();
-            var direction = context.getSide();
-            var fireworkRocketEntity = new FireworkRocketEntity(world, context.getPlayer(), vec3d.x + (double) direction.getOffsetX() * 0.15, vec3d.y + (double) direction.getOffsetY() * 0.15, vec3d.z + (double) direction.getOffsetZ() * 0.15, itemStack);
-            spawnFireworkRocket(world, player, fireworkRocketEntity, itemStack, slot);
-            this.alertAboutBreak(player, itemStack);
-
+        if (world.isClient()) {
             return ActionResult.SUCCESS;
         }
 
-        return ActionResult.PASS;
+        var vec3d = context.getHitPos();
+        var direction = context.getSide();
+        var fireworkRocketEntity = new FireworkRocketEntity(
+                world,
+                player,
+                vec3d.x + direction.getOffsetX() * 0.15,
+                vec3d.y + direction.getOffsetY() * 0.15,
+                vec3d.z + direction.getOffsetZ() * 0.15,
+                itemStack
+        );
+
+        spawnFireworkRocket(world, player, fireworkRocketEntity, itemStack, slot);
+        alertAboutBreak(player, itemStack);
+
+        return ActionResult.SUCCESS;
     }
 
     @Override
     public ActionResult use(World world, PlayerEntity player, Hand hand) {
-        if (player.isGliding()) {
-            var used = false;
-            if (!world.isClient()) {
-                var fireworkRocket = new ItemStack(this);
-                var itemStack = player.getStackInHand(hand);
-                var slot = PLATFORM.getEquipmentSlot(player, fireworkRocket);
-                if (slot != null) {
-                    var fireworkRocketEntity = new FireworkRocketEntity(world, fireworkRocket, player);
-                    this.spawnFireworkRocket(world, player, fireworkRocketEntity, itemStack, slot);
-                    used = true;
-                }
+        var fireworkRocket = new ItemStack(this);
+        var slot = PLATFORM.getEquipmentSlot(player, fireworkRocket);
+        if (slot == null) return ActionResult.PASS;
 
-                alertAboutBreak(player, itemStack);
-            }
-
-            if (used) {
-                return ActionResult.SUCCESS;
-            } else {
-                return ActionResult.PASS;
-            }
-        } else {
-            return ActionResult.PASS;
+        if (world.isClient()) {
+            return ActionResult.SUCCESS;
         }
+
+        var itemStack = player.getStackInHand(hand);
+        var fireworkRocketEntity = new FireworkRocketEntity(world, fireworkRocket, player);
+        this.spawnFireworkRocket(world, player, fireworkRocketEntity, itemStack, slot);
+        alertAboutBreak(player, itemStack);
+
+        return ActionResult.SUCCESS;
     }
 
     @Override
