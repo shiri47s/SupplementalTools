@@ -5,6 +5,7 @@ import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.fog.FogModifier;
 import net.minecraft.client.render.fog.FogRenderer;
 import net.minecraft.client.render.fog.LavaFogModifier;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.math.ColorHelper;
 import net.syshima.sptools.ModEffects;
 import org.joml.Vector4f;
@@ -21,10 +22,8 @@ public class FogRendererMixin {
             cancellable = true
     )
     private void injectTransparency(
-            Camera camera, float tickProgress, net.minecraft.client.world.ClientWorld world,
-            int viewDistance, float skyDarkness,
-            CallbackInfoReturnable<Vector4f> cir
-    ) {
+            Camera camera, float tickProgress, ClientWorld world, int viewDistance, float skyDarkness, boolean thick, CallbackInfoReturnable<Vector4f> cir)
+    {
         if (camera.getSubmersionType().name().equalsIgnoreCase("LAVA")) {
             MinecraftClient client = MinecraftClient.getInstance();
             if (client != null && client.player != null && client.player.hasStatusEffect(ModEffects.get(ModEffects.ANTI_LAVA))) {

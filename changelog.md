@@ -1,10 +1,9 @@
 # 🗓️ Changelog
 
-## 📦 Version 2.1.1
+## 📦 Version 2.1.2
 
 ### ✨ What's New
 
-- Added support for **Minecraft v1.21.11**. 
 - Improve Fireworks Rocket / Torch swing & hit detection.
 
 ---
