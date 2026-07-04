@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class ClientLivingEntityMixin {
-    @Inject(method = "tryUseDeathProtector", at = @At(value = "HEAD"), cancellable = true)
+    @Inject(method = "checkTotemDeathProtection", at = @At(value = "HEAD"), cancellable = true)
     private void sptools$tryUseDeathProtector(DamageSource src, CallbackInfoReturnable<Boolean> cir) {
         if (!((LivingEntity)(Object)this instanceof Player))
         {

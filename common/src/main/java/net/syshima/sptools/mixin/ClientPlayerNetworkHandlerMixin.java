@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ClientPacketListener.class)
 public abstract class ClientPlayerNetworkHandlerMixin {
 
-    @Inject(method = "getActiveDeathProtector", at = @At(value = "HEAD"), cancellable = true)
+    @Inject(method = "findTotem", at = @At(value = "HEAD"), cancellable = true)
     private static void sptools$getActiveDeathProtector(Player player, CallbackInfoReturnable<ItemStack> cir) {
         ItemStack item = ModMain.PLATFORM.getItemIfEquipment(
                 player,
