@@ -1,21 +1,22 @@
 package net.syshima.sptools.core.tools;
+import net.minecraft.world.item.Item;
 
-import net.minecraft.advancement.criterion.Criteria;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.stat.Stats;
-import net.minecraft.text.Text;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.advancements.triggers.CriteriaTriggers;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.Stats;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.syshima.sptools.base.ModDurableItem;
 
 public class DurableTotemOfUndying extends ModDurableItem {
 
-    public DurableTotemOfUndying(Settings settings) {
+    public DurableTotemOfUndying(Item.Properties settings) {
         super(settings);
     }
 
@@ -24,31 +25,31 @@ public class DurableTotemOfUndying extends ModDurableItem {
         return 150;
     }
 
-    public void trigger(ServerPlayerEntity playerEntity, ItemStack totem) {
+    public void trigger(ServerPlayer playerEntity, ItemStack totem) {
         EquipmentSlot slot = PLATFORM.getEquipmentSlot(playerEntity, totem);
         if (slot == null) {
             return;
         }
 
-        playerEntity.incrementStat(Stats.USED.getOrCreateStat(Items.TOTEM_OF_UNDYING));
-        ItemStack itemStack = playerEntity.getMainHandStack();
-        Criteria.USED_TOTEM.trigger(playerEntity, itemStack);
-        playerEntity.emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
-        totem.damage(this.getCost(), playerEntity, slot);
+        playerEntity.awardStat(Stats.ITEM_USED.get(Items.TOTEM_OF_UNDYING));
+        ItemStack itemStack = playerEntity.getMainHandItem();
+        CriteriaTriggers.USED_TOTEM.trigger(playerEntity, itemStack);
+        playerEntity.gameEvent(GameEvent.ITEM_INTERACT_FINISH);
+        totem.hurtAndBreak(this.getCost(), playerEntity, slot);
 
         blessing(playerEntity);
 
         alertAboutBreak(playerEntity, totem);
     }
 
-    protected void blessing(PlayerEntity playerEntity) {
+    protected void blessing(Player playerEntity) {
         playerEntity.setHealth(2.5F);
-        playerEntity.clearStatusEffects();
-        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 900, 1));
-        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100, 1));
-        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 800, 0));
+        playerEntity.removeAllEffects();
+        playerEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 900, 1));
+        playerEntity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1));
+        playerEntity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 800, 0));
 
-        playerEntity.getEntityWorld().sendEntityStatus(playerEntity, (byte)35);
+        playerEntity.level().broadcastEntityEvent(playerEntity, (byte)35);
     }
 
     @Override
@@ -57,7 +58,7 @@ public class DurableTotemOfUndying extends ModDurableItem {
     }
 
     @Override
-    protected Text getAlertText() {
-        return Text.translatable("item.sptools.durable_totem_of_undying.alert");
+    protected Component getAlertText() {
+        return Component.translatable("item.sptools.durable_totem_of_undying.alert");
     }
 }

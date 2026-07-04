@@ -1,0 +1,9 @@
+s#\bEquipmentType\b#ArmorType#g
+s#\.getEquipmentSlot()#.getSlot()#g
+s#type\.getMaxDamage(#type.getDurability(#g
+s#SoundEvents\.ITEM_ARMOR_EQUIP_#SoundEvents.ARMOR_EQUIP_#g
+s#\.formatted(#.withStyle(#g
+s#\.getDamage()#.getDamageValue()#g
+s#\.sendMessage(#.displayClientMessage(#g
+s#\.fireproof()#.fireResistant()#g
+s#\.armor(#.humanoidArmor(#g

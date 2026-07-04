@@ -1,15 +1,15 @@
 package net.syshima.sptools.fabric.datagen.providers;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.BlockStateModelGenerator;
 import net.minecraft.client.data.ItemModelGenerator;
 import net.minecraft.client.data.Models;
-import net.minecraft.item.Item;
-import net.minecraft.item.equipment.EquipmentAsset;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.Identifier;
 import net.syshima.sptools.ModBlocks;
 import net.syshima.sptools.ModItems;
 import net.syshima.sptools.core.assets.ModEquipmentAssets;
@@ -143,8 +143,8 @@ public final class ModModelProvider extends FabricModelProvider {
         itemModels.register(item, Models.HANDHELD);
     }
 
-    public void registerArmor(Item item, ItemModelGenerator itemModels, RegistryKey<EquipmentAsset> equipmentKey) {
-        var id = Registries.ITEM.getId(item);
+    public void registerArmor(Item item, ItemModelGenerator itemModels, ResourceKey<EquipmentAsset> equipmentKey) {
+        var id = BuiltInRegistries.ITEM.getId(item);
         var armorType = determineArmorType(id.getPath());
         itemModels.registerArmor(item, equipmentKey, armorType, false);
     }

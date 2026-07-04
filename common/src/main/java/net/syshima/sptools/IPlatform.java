@@ -1,15 +1,15 @@
 package net.syshima.sptools;
 
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 public interface IPlatform {
     void registerConfiguredFeature();
     void modifyLootTable();
 
-    EquipmentSlot getEquipmentSlot(PlayerEntity player, ItemStack itemStack);
+    EquipmentSlot getEquipmentSlot(Player player, ItemStack itemStack);
 
-    ItemStack getItemIfEquipment(PlayerEntity player, Item... items);
+    ItemStack getItemIfEquipment(Player player, Item... items);
 }

@@ -1,9 +1,9 @@
 package net.syshima.sptools.fabric.datagen;
+import net.minecraft.core.registries.Registries;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.minecraft.registry.RegistryBuilder;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.core.RegistryBuilder;
 import net.syshima.sptools.core.assets.ModEquipmentAssetProvider;
 import net.syshima.sptools.fabric.datagen.providers.*;
 
@@ -25,7 +25,7 @@ public final class ModDataGenerator implements DataGeneratorEntrypoint {
 
     @Override
     public void buildRegistry(RegistryBuilder registryBuilder) {
-        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModWorldGenProvider::configuredFeature);
-        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModWorldGenProvider::placedFeature);
+        registryBuilder.addRegistry(Registries.CONFIGURED_FEATURE, ModWorldGenProvider::configuredFeature);
+        registryBuilder.addRegistry(Registries.PLACED_FEATURE, ModWorldGenProvider::placedFeature);
     }
 }

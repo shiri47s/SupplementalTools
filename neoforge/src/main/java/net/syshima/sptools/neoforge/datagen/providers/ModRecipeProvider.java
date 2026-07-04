@@ -1,14 +1,14 @@
 package net.syshima.sptools.neoforge.datagen.providers;
 
-import net.minecraft.data.DataOutput;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.data.recipe.SmithingTransformRecipeJsonBuilder;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.core.RegistryWrapper;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.ModItems;
 
@@ -18,7 +18,7 @@ import java.util.concurrent.CompletableFuture;
 public final class ModRecipeProvider extends RecipeGenerator.RecipeProvider {
     private static final String NAME = Constants.MOD_ID + "Recipe";
 
-    public ModRecipeProvider(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public ModRecipeProvider(PackOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 

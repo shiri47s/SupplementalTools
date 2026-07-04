@@ -1,25 +1,26 @@
 package net.syshima.sptools.core.tools;
+import net.minecraft.world.item.Item;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.syshima.sptools.ModBlocks;
 import net.syshima.sptools.base.ModDurableItem;
 import org.jetbrains.annotations.Nullable;
 
 public class DurableTorch extends ModDurableItem {
 
-    public DurableTorch(Settings settings) {
+    public DurableTorch(Item.Properties settings) {
         super(settings);
     }
 
@@ -29,63 +30,62 @@ public class DurableTorch extends ModDurableItem {
     }
 
     @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        var world = context.getWorld();
+    public InteractionResult useOn(UseOnContext context) {
+        var world = context.getLevel();
         var player = context.getPlayer();
-        if (player == null) return ActionResult.PASS;
+        if (player == null) return InteractionResult.PASS;
 
-        var stack = context.getStack();
+        var stack = context.getItemInHand();
         var slot = PLATFORM.getEquipmentSlot(player, stack);
-        if (slot == null) return ActionResult.PASS;
+        if (slot == null) return InteractionResult.PASS;
 
-        if (context.getHand() == Hand.MAIN_HAND) {
-            var offStack = player.getStackInHand(Hand.OFF_HAND);
+        if (context.getHand() == InteractionHand.MAIN_HAND) {
+            var offStack = player.getItemInHand(InteractionHand.OFF_HAND);
             if (!offStack.isEmpty() && offStack.isStackable()) {
-                return ActionResult.PASS;
+                return InteractionResult.PASS;
             }
         }
 
-        var basePos = context.getBlockPos();
+        var basePos = context.getClickedPos();
         var baseState = world.getBlockState(basePos);
 
-        var placementContext = new ItemPlacementContext(context);
+        var placementContext = new BlockPlaceContext(context);
 
-        var placePos = baseState.canReplace(placementContext)
+        var placePos = baseState.canBeReplaced(placementContext)
                 ? basePos
-                : basePos.offset(context.getSide());
+                : basePos.relative(context.getClickedFace());
 
-        if (!world.getBlockState(placePos).isAir() && !world.getBlockState(placePos).isReplaceable()) {
-            return ActionResult.PASS;
+        if (!world.getBlockState(placePos).isAir() && !world.getBlockState(placePos).canBeReplaced()) {
+            return InteractionResult.PASS;
         }
 
         var placementState = this.getPlacementStateFor(placePos, placementContext);
-        if (placementState == null) return ActionResult.PASS;
+        if (placementState == null) return InteractionResult.PASS;
 
-        if (!world.canPlace(placementState, placePos, ShapeContext.absent())) {
-            return ActionResult.PASS;
+        if (!world.isUnobstructed(placementState, placePos, CollisionContext.empty())) {
+            return InteractionResult.PASS;
         }
 
-        if (world.isClient()) {
-            return ActionResult.SUCCESS;
+        if (world.isClientSide()) {
+            return InteractionResult.SUCCESS;
         }
 
-        world.setBlockState(placePos, placementState);
-        world.playSound(null, placePos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS);
-        stack.damage(this.getCost(), player, slot);
+        world.setBlockAndUpdate(placePos, placementState);
+        world.playSound(null, placePos, SoundEvents.WOOD_PLACE, SoundSource.BLOCKS);
+        stack.hurtAndBreak(this.getCost(), player, slot);
 
-        return ActionResult.SUCCESS;
+        return InteractionResult.SUCCESS;
     }
 
     @Override
-    public void postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        super.postHit(stack, target, attacker);
+    public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        super.hurtEnemy(stack, target, attacker);
 
-        if (!target.isMobOrPlayer()) return;
-        if (target.isFireImmune()) return;
-        if (target.isTouchingWaterOrRain()) return;
+        if (!(target instanceof net.minecraft.world.entity.Mob) && !(target instanceof net.minecraft.world.entity.player.Player)) return;
+        if (target.fireImmune()) return;
+        if (target.isInWaterOrRain()) return;
 
-        target.setOnFire(true);
-        target.setOnFireFor(1.5F);
+        target.igniteForSeconds(1.5F);
     }
 
     @Override
@@ -94,33 +94,33 @@ public class DurableTorch extends ModDurableItem {
     }
 
     @Override
-    protected Text getAlertText() {
-        return Text.translatable("item.sptools.durable_torch.alert");
+    protected Component getAlertText() {
+        return Component.translatable("item.sptools.durable_torch.alert");
     }
 
     @Nullable
-    protected BlockState getPlacementStateFor(BlockPos placePos, ItemPlacementContext context) {
-        var worldView = context.getWorld();
-        var directions = context.getPlacementDirections();
+    protected BlockState getPlacementStateFor(BlockPos placePos, BlockPlaceContext context) {
+        var worldView = context.getLevel();
+        var directions = context.getNearestLookingDirections();
 
-        var sideState = ModBlocks.WALL_TORCH_BLOCK.get().getPlacementState(context);
+        var sideState = ModBlocks.WALL_TORCH_BLOCK.get().getStateForPlacement(context);
 
         BlockState replacementState = null;
 
         for (var direction : directions) {
             if (direction != Direction.DOWN.getOpposite()) {
                 var candidate = direction == Direction.DOWN
-                        ? ModBlocks.TORCH_BLOCK.get().getDefaultState()
+                        ? ModBlocks.TORCH_BLOCK.get().defaultBlockState()
                         : sideState;
 
-                if (candidate != null && candidate.canPlaceAt(worldView, placePos)) {
+                if (candidate != null && candidate.canSurvive(worldView, placePos)) {
                     replacementState = candidate;
                     break;
                 }
             }
         }
 
-        return replacementState != null && worldView.canPlace(replacementState, placePos, ShapeContext.absent())
+        return replacementState != null && worldView.isUnobstructed(replacementState, placePos, CollisionContext.empty())
                 ? replacementState
                 : null;
     }

@@ -1,10 +1,11 @@
 package net.syshima.sptools.base;
 
-import net.minecraft.block.ExperienceDroppingBlock;
-import net.minecraft.util.math.intprovider.IntProvider;
+import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.util.valueproviders.IntProvider;
 
-public class ModBlock extends ExperienceDroppingBlock {
-    public ModBlock(IntProvider experienceDropped, Settings settings) {
+public class ModBlock extends DropExperienceBlock {
+    public ModBlock(IntProvider experienceDropped, BlockBehaviour.Properties settings) {
         super(experienceDropped, settings);
     }
 }

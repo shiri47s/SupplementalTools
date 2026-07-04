@@ -1,0 +1,12 @@
+s#ResourceLocation\.of(#ResourceLocation.fromNamespaceAndPath(#g
+s#ResourceLocation\.ofVanilla(#ResourceLocation.withDefaultNamespace(#g
+s#ResourceKey\.of(#ResourceKey.create(#g
+s#\.registryKey(#.setId(#g
+s#\bItemGroup\b#CreativeModeTab#g
+s#Registries\.ITEM_GROUP\b#Registries.CREATIVE_MODE_TAB#g
+s#BlockBehaviour\.Settings\.create(#BlockBehaviour.Properties.of(#g
+s#\.requiresTool()#.requiresCorrectToolForDrops()#g
+s#\.breakInstantly()#.instabreak()#g
+s#\.luminance(#.lightLevel(#g
+s#\.sounds(#.sound(#g
+s#\.pistonBehavior(#.pushReaction(#g

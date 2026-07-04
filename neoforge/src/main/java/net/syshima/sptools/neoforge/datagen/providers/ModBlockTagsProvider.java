@@ -1,8 +1,8 @@
 package net.syshima.sptools.neoforge.datagen.providers;
 
-import net.minecraft.data.DataOutput;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.data.PackOutput;
+import net.minecraft.core.RegistryWrapper;
+import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.ModBlocks;
@@ -10,7 +10,7 @@ import net.syshima.sptools.ModBlocks;
 import java.util.concurrent.CompletableFuture;
 
 public final class ModBlockTagsProvider extends BlockTagsProvider {
-    public ModBlockTagsProvider(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> lookupProvider) {
+    public ModBlockTagsProvider(PackOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> lookupProvider) {
         super(output, lookupProvider, Constants.MOD_ID);
     }
 

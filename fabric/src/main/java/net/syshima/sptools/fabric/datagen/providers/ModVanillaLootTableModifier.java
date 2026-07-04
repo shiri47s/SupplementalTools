@@ -1,4 +1,5 @@
 package net.syshima.sptools.fabric.datagen.providers;
+import net.minecraft.core.registries.Registries;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.loot.LootPool;
@@ -7,14 +8,13 @@ import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.Identifier;
 import net.syshima.sptools.ModItems;
 
 public final class ModVanillaLootTableModifier {
 
-    private static final RegistryKey<LootTable> BASTION_TREASURE = RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.ofVanilla("chests/bastion_treasure"));
+    private static final ResourceKey<LootTable> BASTION_TREASURE = ResourceKey.create(Registries.LOOT_TABLE, Identifier.withDefaultNamespace("chests/bastion_treasure"));
 
     public static void modify() {
         LootTableEvents.MODIFY.register((key, builder, source, lookup) -> {

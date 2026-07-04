@@ -1,11 +1,11 @@
 package net.syshima.sptools.core.armors;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.equipment.EquipmentType;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Rarity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
+import net.minecraft.world.item.Rarity;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.base.ModArmorItem;
 import net.syshima.sptools.core.assets.ModArmorMaterials;
@@ -14,8 +14,8 @@ import java.util.function.Consumer;
 
 public class EmeraldArmorItem extends ModArmorItem {
 
-    public EmeraldArmorItem(EquipmentType type, Item.Settings settings) {
-        super(ModArmorMaterials.EMERALD, type, settings.rarity(Rarity.RARE).maxDamage(type.getMaxDamage(21)));
+    public EmeraldArmorItem(ArmorType type, Item.Properties settings) {
+        super(ModArmorMaterials.EMERALD, type, settings.rarity(Rarity.RARE).durability(type.getDurability(21)));
     }
 
     @Override
@@ -24,7 +24,7 @@ public class EmeraldArmorItem extends ModArmorItem {
     }
 
     @Override
-    protected void appendFullSetsTooltip(ItemStack stack, TooltipContext context, Consumer<Text> textConsumer) {
-        textConsumer.accept(Text.translatable("item.sptools.blessing.emerald").formatted(Formatting.GREEN));
+    protected void appendFullSetsTooltip(ItemStack stack, Item.TooltipContext context, Consumer<Component> textConsumer) {
+        textConsumer.accept(Component.translatable("item.sptools.blessing.emerald").withStyle(ChatFormatting.GREEN));
     }
 }

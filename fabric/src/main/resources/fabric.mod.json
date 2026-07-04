@@ -19,19 +19,16 @@
     ],
     "client": [
       "net.syshima.sptools.fabric.client.FabricClient"
-    ],
-    "fabric-datagen": [
-      "net.syshima.sptools.fabric.datagen.ModDataGenerator"
     ]
   },
   "mixins": [
     "sptools.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.18.4",
-    "minecraft": "~1.21.10",
-    "java": ">=21",
-    "architectury": ">=18.0.8",
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "architectury": ">=21.0.2",
     "fabric-api": "*"
   },
   "suggests": {

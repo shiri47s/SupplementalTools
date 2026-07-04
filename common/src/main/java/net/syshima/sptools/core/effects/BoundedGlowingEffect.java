@@ -1,13 +1,13 @@
 package net.syshima.sptools.core.effects;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.Box;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.Level;
 import net.syshima.sptools.base.ModStatusEffect;
 
 import java.util.List;
@@ -16,18 +16,18 @@ public class BoundedGlowingEffect extends ModStatusEffect {
     private static final double RANGE = 12.0F;
     private static final int DURATION = 100;
     public BoundedGlowingEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0xDDEEFF);
+        super(MobEffectCategory.BENEFICIAL, 0xDDEEFF);
     }
 
-    public static void effect(World world, PlayerEntity player) {
-        Vec3d pos = player.getEntityPos();
+    public static void effect(Level world, Player player) {
+        Vec3 pos = player.position();
         double range = BoundedGlowingEffect.RANGE;
-        Box box = new Box(
-                new Vec3d(pos.x - range, pos.y - range, pos.z - range),
-                new Vec3d(pos.x + range, pos.y + range, pos.z + range)
+        AABB box = new AABB(
+                new Vec3(pos.x - range, pos.y - range, pos.z - range),
+                new Vec3(pos.x + range, pos.y + range, pos.z + range)
         );
 
-        List<LivingEntity> entities = world.getEntitiesByClass(
+        List<LivingEntity> entities = world.getEntitiesOfClass(
                 LivingEntity.class,
                 box,
                 entity -> entity != null && entity.isAlive());
@@ -37,8 +37,8 @@ public class BoundedGlowingEffect extends ModStatusEffect {
                 continue;
             }
 
-            if (!entity.hasStatusEffect(StatusEffects.GLOWING)) {
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, DURATION, 1, false ,false, false));
+            if (!entity.hasEffect(MobEffects.GLOWING)) {
+                entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, DURATION, 1, false ,false, false));
             }
         }
     }

@@ -1,20 +1,20 @@
 package net.syshima.sptools.neoforge.datagen.providers;
+import net.minecraft.core.registries.Registries;
 
-import net.minecraft.block.Block;
-import net.minecraft.data.DataOutput;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.loottable.BlockLootTableGenerator;
 import net.minecraft.data.loottable.LootTableProvider;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.core.RegistryWrapper;
+import net.minecraft.core.Holder;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.syshima.sptools.ModBlocks;
@@ -28,7 +28,7 @@ public final class ModBlockLootTableProvider extends LootTableProvider {
 
     private static final List<LootTypeGenerator> tables = List.of(new LootTypeGenerator(lookup -> new ModBlockLootTableGenerator(Set.of(), FeatureFlags.DEFAULT_ENABLED_FEATURES, lookup), LootContextTypes.BLOCK));
 
-    public ModBlockLootTableProvider(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public ModBlockLootTableProvider(PackOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, Set.of(), tables, registriesFuture);
     }
 
@@ -45,13 +45,13 @@ public final class ModBlockLootTableProvider extends LootTableProvider {
 
         @Override
         protected void generate() {
-            var fortuneReference = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE);
+            var fortuneReference = this.registries.getOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE);
             this.generate(ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get(), 2.0F, 5.0F, fortuneReference);
             this.generate(ModBlocks.RED_DIAMOND_ORE.get(), ModItems.RED_DIAMOND.get(), 1.0F, 1.0F, fortuneReference);
             this.generate(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get(), ModItems.RED_DIAMOND.get(), 1.0F, 1.0F, fortuneReference);
         }
 
-        private void generate(Block block, Item item, float min, float max, RegistryEntry.Reference<Enchantment> fortune) {
+        private void generate(Block block, Item item, float min, float max, Holder.Reference<Enchantment> fortune) {
             this.addDrop(block, this.dropsWithSilkTouch(block, this.applyExplosionDecay(block, ItemEntry.builder(item).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(min, max))).apply(ApplyBonusLootFunction.oreDrops(fortune)))));
         }
     }

@@ -1,10 +1,10 @@
 package net.syshima.sptools.neoforge.datagen.providers;
 
-import net.minecraft.block.Block;
-import net.minecraft.data.DataOutput;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tag.TagProvider;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.world.item.Item;
+import net.minecraft.core.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.neoforged.neoforge.common.data.BlockTagCopyingItemTagProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -17,13 +17,13 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagsProvider implements GatherDataEvent.ItemTagsProvider {
     @Override
-    public @NotNull TagProvider<Item> create(@NotNull DataOutput dataOutput, @NotNull CompletableFuture<RegistryWrapper.WrapperLookup> lookupCompletableFuture, @NotNull CompletableFuture<TagProvider.TagLookup<Block>> tagLookupCompletableFuture) {
+    public @NotNull TagProvider<Item> create(@NotNull PackOutput dataOutput, @NotNull CompletableFuture<RegistryWrapper.WrapperLookup> lookupCompletableFuture, @NotNull CompletableFuture<TagProvider.TagLookup<Block>> tagLookupCompletableFuture) {
         return new ModItemTagProvider(dataOutput, lookupCompletableFuture, tagLookupCompletableFuture);
     }
 
     private static class ModItemTagProvider extends BlockTagCopyingItemTagProvider {
 
-        public ModItemTagProvider(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, CompletableFuture<TagProvider.TagLookup<Block>> tagLookupCompletableFuture) {
+        public ModItemTagProvider(PackOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, CompletableFuture<TagProvider.TagLookup<Block>> tagLookupCompletableFuture) {
             super(output, registriesFuture, tagLookupCompletableFuture, Constants.MOD_ID);
         }
 

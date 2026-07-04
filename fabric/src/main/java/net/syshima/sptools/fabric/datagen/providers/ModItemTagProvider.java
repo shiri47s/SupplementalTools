@@ -2,7 +2,7 @@ package net.syshima.sptools.fabric.datagen.providers;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.core.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.syshima.sptools.ModItems;
 import net.syshima.sptools.ModTags;

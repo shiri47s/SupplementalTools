@@ -1,26 +1,26 @@
 package net.syshima.sptools;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.Identifier;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.Identifier;
 import net.syshima.sptools.core.effects.*;
 
 public final class ModEffects {
-    private static final DeferredRegister<StatusEffect> REGISTER = DeferredRegister.create(Constants.MOD_ID, RegistryKeys.STATUS_EFFECT);
+    private static final DeferredRegister<MobEffect> REGISTER = DeferredRegister.create(Constants.MOD_ID, Registries.MOB_EFFECT);
 
-    public static final RegistrySupplier<StatusEffect> ANTI_LAVA;
-    public static final RegistrySupplier<StatusEffect> ATTACK_KNOCKBACK;
-    public static final RegistrySupplier<StatusEffect> BOUNDED_GLOWING;
-    public static final RegistrySupplier<StatusEffect> HASTE_AND_LUCK;
-    public static final RegistrySupplier<StatusEffect> HEAVY;
-    public static final RegistrySupplier<StatusEffect> KNOCKBACK_RESISTANCE;
-    public static final RegistrySupplier<StatusEffect> MOVEMENT_SPEED;
-    public static final RegistrySupplier<StatusEffect> REDSTONE_OVERFLOW;
+    public static final RegistrySupplier<MobEffect> ANTI_LAVA;
+    public static final RegistrySupplier<MobEffect> ATTACK_KNOCKBACK;
+    public static final RegistrySupplier<MobEffect> BOUNDED_GLOWING;
+    public static final RegistrySupplier<MobEffect> HASTE_AND_LUCK;
+    public static final RegistrySupplier<MobEffect> HEAVY;
+    public static final RegistrySupplier<MobEffect> KNOCKBACK_RESISTANCE;
+    public static final RegistrySupplier<MobEffect> MOVEMENT_SPEED;
+    public static final RegistrySupplier<MobEffect> REDSTONE_OVERFLOW;
 
     static {
         ANTI_LAVA = REGISTER.register(ofId(Constants.Effects.ANTI_LAVA), AntiLavaEffect::new);
@@ -39,13 +39,13 @@ public final class ModEffects {
         FullEquipmentBenefits.boostrap();
     }
 
-    public static RegistryEntry<StatusEffect> get(RegistrySupplier<StatusEffect> supplier) {
-        return Registries.STATUS_EFFECT.getEntry(supplier.getId()).orElseThrow(() -> new IllegalStateException("Could not find status effect " + supplier.getId()));
+    public static Holder<MobEffect> get(RegistrySupplier<MobEffect> supplier) {
+        return BuiltInRegistries.MOB_EFFECT.get(supplier.getId()).orElseThrow(() -> new IllegalStateException("Could not find status effect " + supplier.getId()));
     }
 
     private static Identifier ofId(String name) {
-        var id = Identifier.of(Constants.MOD_ID, name);
-        RegistryKey.of(RegistryKeys.STATUS_EFFECT, id);
+        var id = Identifier.fromNamespaceAndPath(Constants.MOD_ID, name);
+        ResourceKey.create(Registries.MOB_EFFECT, id);
         return id;
     }
 }

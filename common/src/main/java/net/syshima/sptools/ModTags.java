@@ -1,9 +1,9 @@
 package net.syshima.sptools;
+import net.minecraft.core.registries.Registries;
 
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.world.item.Item;
+import net.minecraft.tags.TagKey;
+import net.minecraft.resources.Identifier;
 
 public final class ModTags {
     public static final TagKey<Item> Bronzes = ofItem("bronzes");
@@ -34,6 +34,6 @@ public final class ModTags {
     public static final TagKey<Item> PIGLINS_LOVED_ARMOR = ofItem("piglins_loved_armor");
 
     private static TagKey<Item> ofItem(String id) {
-        return TagKey.of(RegistryKeys.ITEM, Identifier.of(Constants.MOD_ID, id));
+        return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Constants.MOD_ID, id));
     }
 }

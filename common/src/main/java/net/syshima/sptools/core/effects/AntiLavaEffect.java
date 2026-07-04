@@ -1,9 +1,9 @@
 package net.syshima.sptools.core.effects;
 
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.player.Player;
 import net.syshima.sptools.ModEffects;
 import net.syshima.sptools.base.ModStatusEffect;
 
@@ -11,19 +11,19 @@ public class AntiLavaEffect extends ModStatusEffect {
     public static final String BURN_TIME_ATTRIBUTE = AntiLavaEffect.class.getName().toLowerCase() + ".burn_time";
 
     public AntiLavaEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0xFFA54321);
+        super(MobEffectCategory.BENEFICIAL, 0xFFA54321);
         this.addAttributeModifier(
-                EntityAttributes.BURNING_TIME,
+                Attributes.BURNING_TIME,
                 this.attrId(BURN_TIME_ATTRIBUTE),
                 -0.91,
-                EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE);
+                AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
     }
 
     public static boolean isActive(Object instance) {
-        if (!(instance instanceof PlayerEntity player)) {
+        if (!(instance instanceof Player player)) {
             return false;
         }
 
-        return player.hasStatusEffect(ModEffects.get(ModEffects.ANTI_LAVA));
+        return player.hasEffect(ModEffects.get(ModEffects.ANTI_LAVA));
     }
 }

@@ -1,9 +1,9 @@
 package net.syshima.sptools.base;
 
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 
 public class ModItem extends Item {
-    public ModItem(Settings settings) {
+    public ModItem(Item.Properties settings) {
         super(settings);
     }
 }

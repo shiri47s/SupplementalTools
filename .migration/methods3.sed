@@ -1,0 +1,11 @@
+s#\.getEquippedStack(#.getItemBySlot(#g
+s#\.maxDamage(#.durability(#g
+s#MobEffectInstance\.INFINITE\b#MobEffectInstance.INFINITE_DURATION#g
+s#\.setStatusEffect(#.addEffect(#g
+s#\.addStatusEffect(#.addEffect(#g
+s#\.hasStatusEffect(#.hasEffect(#g
+s#\.getStatusEffect(#.getEffect(#g
+s#\.removeStatusEffect(#.removeEffect(#g
+s#\.clearStatusEffects(#.removeAllEffects(#g
+s#\.getEntitiesByClass(#.getEntitiesOfClass(#g
+s#\.getEntityPos(#.position(#g

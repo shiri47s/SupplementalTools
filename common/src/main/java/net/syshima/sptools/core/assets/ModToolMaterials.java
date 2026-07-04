@@ -1,7 +1,7 @@
 package net.syshima.sptools.core.assets;
 
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.tags.BlockTags;
 import net.syshima.sptools.ModTags;
 
 public final class ModToolMaterials {

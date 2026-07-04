@@ -1,12 +1,13 @@
 package net.syshima.sptools.core.tools;
+import net.minecraft.world.item.Item;
 
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.FireworksComponent;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.item.component.Fireworks;
 
 import java.util.List;
 
 public class DurableFireworkRocketUpgraded extends DurableFireworkRocket {
-    public DurableFireworkRocketUpgraded(Settings settings) {
-        super(settings.component(DataComponentTypes.FIREWORKS, new FireworksComponent(4, List.of())));
+    public DurableFireworkRocketUpgraded(Item.Properties settings) {
+        super(settings.component(DataComponents.FIREWORKS, new Fireworks(4, List.of())));
     }
 }

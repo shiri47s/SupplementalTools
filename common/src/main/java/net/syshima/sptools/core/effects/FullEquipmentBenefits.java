@@ -1,10 +1,10 @@
 package net.syshima.sptools.core.effects;
 
 import dev.architectury.event.events.common.TickEvent;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.ModEffects;
 import net.syshima.sptools.core.armors.*;
@@ -15,9 +15,9 @@ import java.util.Map;
 import java.util.function.Consumer;
 
 public final class FullEquipmentBenefits {
-    private static final Map<PlayerEntity, Constants.Series> seriesMap = new HashMap<>();
-    private static Consumer<Pair<PlayerEntity, Constants.Series>> onFullSet;
-    private static void attach(Consumer<Pair<PlayerEntity, Constants.Series>> onFullSet) {
+    private static final Map<Player, Constants.Series> seriesMap = new HashMap<>();
+    private static Consumer<Pair<Player, Constants.Series>> onFullSet;
+    private static void attach(Consumer<Pair<Player, Constants.Series>> onFullSet) {
         FullEquipmentBenefits.onFullSet = onFullSet;
     }
 
@@ -39,18 +39,18 @@ public final class FullEquipmentBenefits {
             }
         });
 
-        TickEvent.SERVER_LEVEL_PRE.register(tick -> tick.getPlayers().forEach(player -> {
-            var world = player.getEntityWorld();
-            if (world.isClient()) { return; }
+        TickEvent.SERVER_LEVEL_PRE.register(tick -> tick.players().forEach(player -> {
+            var world = player.level();
+            if (world.isClientSide()) { return; }
 
             update(player);
 
-            var boundedGlowingEffect = player.getStatusEffect(ModEffects.get(ModEffects.BOUNDED_GLOWING));
+            var boundedGlowingEffect = player.getEffect(ModEffects.get(ModEffects.BOUNDED_GLOWING));
             if (boundedGlowingEffect != null) {
                 BoundedGlowingEffect.effect(world, player);
             }
 
-            var redstoneOverflowEffect = player.getStatusEffect(ModEffects.get(ModEffects.REDSTONE_OVERFLOW));
+            var redstoneOverflowEffect = player.getEffect(ModEffects.get(ModEffects.REDSTONE_OVERFLOW));
             if (redstoneOverflowEffect != null) {
                 RedstoneOverflowEffect.effect(world, player);
             } else {
@@ -69,7 +69,7 @@ public final class FullEquipmentBenefits {
         return false;
     }
 
-    public static boolean isActive(PlayerEntity player, Constants.Series series) {
+    public static boolean isActive(Player player, Constants.Series series) {
         if (!seriesMap.containsKey(player)) {
             return false;
         }
@@ -77,7 +77,7 @@ public final class FullEquipmentBenefits {
         return getFullSets(player) == series;
     }
 
-    public static Constants.Series getFullSets(PlayerEntity player) {
+    public static Constants.Series getFullSets(Player player) {
         if (!seriesMap.containsKey(player)) {
             return Constants.Series.None;
         }
@@ -85,71 +85,71 @@ public final class FullEquipmentBenefits {
         return seriesMap.get(player);
     }
 
-    public static void update(PlayerEntity player) {
+    public static void update(Player player) {
         if (player == null) {
             return;
         }
 
-        if (all(isCopper(player.getEquippedStack(EquipmentSlot.HEAD)),
-                isCopper(player.getEquippedStack(EquipmentSlot.CHEST)),
-                isCopper(player.getEquippedStack(EquipmentSlot.LEGS)),
-                isCopper(player.getEquippedStack(EquipmentSlot.FEET)))) {
+        if (all(isCopper(player.getItemBySlot(EquipmentSlot.HEAD)),
+                isCopper(player.getItemBySlot(EquipmentSlot.CHEST)),
+                isCopper(player.getItemBySlot(EquipmentSlot.LEGS)),
+                isCopper(player.getItemBySlot(EquipmentSlot.FEET)))) {
             update(player, Constants.Series.Bronze);
             return;
         }
 
-        if (all(isIronCopper(player.getEquippedStack(EquipmentSlot.HEAD)),
-                isIronCopper(player.getEquippedStack(EquipmentSlot.CHEST)),
-                isIronCopper(player.getEquippedStack(EquipmentSlot.LEGS)),
-                isIronCopper(player.getEquippedStack(EquipmentSlot.FEET)))) {
+        if (all(isIronCopper(player.getItemBySlot(EquipmentSlot.HEAD)),
+                isIronCopper(player.getItemBySlot(EquipmentSlot.CHEST)),
+                isIronCopper(player.getItemBySlot(EquipmentSlot.LEGS)),
+                isIronCopper(player.getItemBySlot(EquipmentSlot.FEET)))) {
             update(player, Constants.Series.IronCopper);
             return;
         }
 
-        if (all(isAmethyst(player.getEquippedStack(EquipmentSlot.HEAD)),
-                isAmethyst(player.getEquippedStack(EquipmentSlot.CHEST)),
-                isAmethyst(player.getEquippedStack(EquipmentSlot.LEGS)),
-                isAmethyst(player.getEquippedStack(EquipmentSlot.FEET)))) {
+        if (all(isAmethyst(player.getItemBySlot(EquipmentSlot.HEAD)),
+                isAmethyst(player.getItemBySlot(EquipmentSlot.CHEST)),
+                isAmethyst(player.getItemBySlot(EquipmentSlot.LEGS)),
+                isAmethyst(player.getItemBySlot(EquipmentSlot.FEET)))) {
             update(player, Constants.Series.Amethyst);
             return;
         }
 
-        if (all(isEmerald(player.getEquippedStack(EquipmentSlot.HEAD)),
-                isEmerald(player.getEquippedStack(EquipmentSlot.CHEST)),
-                isEmerald(player.getEquippedStack(EquipmentSlot.LEGS)),
-                isEmerald(player.getEquippedStack(EquipmentSlot.FEET)))) {
+        if (all(isEmerald(player.getItemBySlot(EquipmentSlot.HEAD)),
+                isEmerald(player.getItemBySlot(EquipmentSlot.CHEST)),
+                isEmerald(player.getItemBySlot(EquipmentSlot.LEGS)),
+                isEmerald(player.getItemBySlot(EquipmentSlot.FEET)))) {
             update(player, Constants.Series.Emerald);
             return;
         }
 
-        if (all(isLead(player.getEquippedStack(EquipmentSlot.HEAD)),
-                isLead(player.getEquippedStack(EquipmentSlot.CHEST)),
-                isLead(player.getEquippedStack(EquipmentSlot.LEGS)),
-                isLead(player.getEquippedStack(EquipmentSlot.FEET)))) {
+        if (all(isLead(player.getItemBySlot(EquipmentSlot.HEAD)),
+                isLead(player.getItemBySlot(EquipmentSlot.CHEST)),
+                isLead(player.getItemBySlot(EquipmentSlot.LEGS)),
+                isLead(player.getItemBySlot(EquipmentSlot.FEET)))) {
             update(player, Constants.Series.Lead);
             return;
         }
 
-        if (all(isQuartz(player.getEquippedStack(EquipmentSlot.HEAD)),
-                isQuartz(player.getEquippedStack(EquipmentSlot.CHEST)),
-                isQuartz(player.getEquippedStack(EquipmentSlot.LEGS)),
-                isQuartz(player.getEquippedStack(EquipmentSlot.FEET)))) {
+        if (all(isQuartz(player.getItemBySlot(EquipmentSlot.HEAD)),
+                isQuartz(player.getItemBySlot(EquipmentSlot.CHEST)),
+                isQuartz(player.getItemBySlot(EquipmentSlot.LEGS)),
+                isQuartz(player.getItemBySlot(EquipmentSlot.FEET)))) {
             update(player, Constants.Series.Quartz);
             return;
         }
 
-        if (all(isRedstone(player.getEquippedStack(EquipmentSlot.HEAD)),
-                isRedstone(player.getEquippedStack(EquipmentSlot.CHEST)),
-                isRedstone(player.getEquippedStack(EquipmentSlot.LEGS)),
-                isRedstone(player.getEquippedStack(EquipmentSlot.FEET)))) {
+        if (all(isRedstone(player.getItemBySlot(EquipmentSlot.HEAD)),
+                isRedstone(player.getItemBySlot(EquipmentSlot.CHEST)),
+                isRedstone(player.getItemBySlot(EquipmentSlot.LEGS)),
+                isRedstone(player.getItemBySlot(EquipmentSlot.FEET)))) {
             update(player, Constants.Series.Redstone);
             return;
         }
 
-        if (all(isLava(player.getEquippedStack(EquipmentSlot.HEAD)),
-                isLava(player.getEquippedStack(EquipmentSlot.CHEST)),
-                isLava(player.getEquippedStack(EquipmentSlot.LEGS)),
-                isLava(player.getEquippedStack(EquipmentSlot.FEET)))) {
+        if (all(isLava(player.getItemBySlot(EquipmentSlot.HEAD)),
+                isLava(player.getItemBySlot(EquipmentSlot.CHEST)),
+                isLava(player.getItemBySlot(EquipmentSlot.LEGS)),
+                isLava(player.getItemBySlot(EquipmentSlot.FEET)))) {
             update(player, Constants.Series.Lava);
             return;
         }
@@ -157,7 +157,7 @@ public final class FullEquipmentBenefits {
         update(player, Constants.Series.None);
     }
 
-    private static void update(PlayerEntity player, Constants.Series series) {
+    private static void update(Player player, Constants.Series series) {
         if (isActive(player, series)) {
             return;
         }
@@ -210,11 +210,11 @@ public final class FullEquipmentBenefits {
         return stack.getItem() instanceof LavaArmorItem;
     }
 
-    private static void benefitHeavy(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
+    private static void benefitHeavy(Player player) {
+        player.addEffect(
+                new MobEffectInstance(
                         ModEffects.get(ModEffects.HEAVY),
-                        StatusEffectInstance.INFINITE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         false,
                         false,
@@ -222,11 +222,11 @@ public final class FullEquipmentBenefits {
                 player);
     }
 
-    private static void benefitKnockBackResistance(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
+    private static void benefitKnockBackResistance(Player player) {
+        player.addEffect(
+                new MobEffectInstance(
                         ModEffects.get(ModEffects.KNOCKBACK_RESISTANCE),
-                        StatusEffectInstance.INFINITE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         false,
                         false,
@@ -234,11 +234,11 @@ public final class FullEquipmentBenefits {
                 player);
     }
 
-    private static void benefitAttackKnockBack(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
+    private static void benefitAttackKnockBack(Player player) {
+        player.addEffect(
+                new MobEffectInstance(
                         ModEffects.get(ModEffects.ATTACK_KNOCKBACK),
-                        StatusEffectInstance.INFINITE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         false,
                         false,
@@ -246,11 +246,11 @@ public final class FullEquipmentBenefits {
                 player);
     }
 
-    private static void benefitMovementSpeed(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
+    private static void benefitMovementSpeed(Player player) {
+        player.addEffect(
+                new MobEffectInstance(
                         ModEffects.get(ModEffects.MOVEMENT_SPEED),
-                        StatusEffectInstance.INFINITE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         false,
                         false,
@@ -258,11 +258,11 @@ public final class FullEquipmentBenefits {
                 player);
     }
 
-    private static void benefitHasteAndLuck(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
+    private static void benefitHasteAndLuck(Player player) {
+        player.addEffect(
+                new MobEffectInstance(
                         ModEffects.get(ModEffects.HASTE_AND_LUCK),
-                        StatusEffectInstance.INFINITE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         false,
                         false,
@@ -270,11 +270,11 @@ public final class FullEquipmentBenefits {
                 player);
     }
 
-    private static void benefitBoundedGlowing(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
+    private static void benefitBoundedGlowing(Player player) {
+        player.addEffect(
+                new MobEffectInstance(
                         ModEffects.get(ModEffects.BOUNDED_GLOWING),
-                        StatusEffectInstance.INFINITE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         false,
                         false,
@@ -282,11 +282,11 @@ public final class FullEquipmentBenefits {
                 player);
     }
 
-    private static void benefitRedstoneOverflow(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
+    private static void benefitRedstoneOverflow(Player player) {
+        player.addEffect(
+                new MobEffectInstance(
                         ModEffects.get(ModEffects.REDSTONE_OVERFLOW),
-                        StatusEffectInstance.INFINITE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         false,
                         false,
@@ -294,11 +294,11 @@ public final class FullEquipmentBenefits {
                 player);
     }
 
-    private static void benefitAntiLava(PlayerEntity player) {
-        player.setStatusEffect(
-                new StatusEffectInstance(
+    private static void benefitAntiLava(Player player) {
+        player.addEffect(
+                new MobEffectInstance(
                         ModEffects.get(ModEffects.ANTI_LAVA),
-                        StatusEffectInstance.INFINITE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         false,
                         false,
@@ -306,15 +306,15 @@ public final class FullEquipmentBenefits {
                 player);
     }
 
-    private static void clearBenefits(PlayerEntity player) {
-        player.removeStatusEffect(ModEffects.get(ModEffects.KNOCKBACK_RESISTANCE));
-        player.removeStatusEffect(ModEffects.get(ModEffects.ATTACK_KNOCKBACK));
-        player.removeStatusEffect(ModEffects.get(ModEffects.MOVEMENT_SPEED));
-        player.removeStatusEffect(ModEffects.get(ModEffects.HASTE_AND_LUCK));
-        player.removeStatusEffect(ModEffects.get(ModEffects.HEAVY));
-        player.removeStatusEffect(ModEffects.get(ModEffects.BOUNDED_GLOWING));
-        player.removeStatusEffect(ModEffects.get(ModEffects.REDSTONE_OVERFLOW));
-        player.removeStatusEffect(ModEffects.get(ModEffects.ANTI_LAVA));
+    private static void clearBenefits(Player player) {
+        player.removeEffect(ModEffects.get(ModEffects.KNOCKBACK_RESISTANCE));
+        player.removeEffect(ModEffects.get(ModEffects.ATTACK_KNOCKBACK));
+        player.removeEffect(ModEffects.get(ModEffects.MOVEMENT_SPEED));
+        player.removeEffect(ModEffects.get(ModEffects.HASTE_AND_LUCK));
+        player.removeEffect(ModEffects.get(ModEffects.HEAVY));
+        player.removeEffect(ModEffects.get(ModEffects.BOUNDED_GLOWING));
+        player.removeEffect(ModEffects.get(ModEffects.REDSTONE_OVERFLOW));
+        player.removeEffect(ModEffects.get(ModEffects.ANTI_LAVA));
     }
 }
 

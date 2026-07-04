@@ -17,21 +17,21 @@ logoFile = "icon.png"
 [[dependencies.sptools]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21,)"
+versionRange = "[26.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.sptools]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.10,)"
+versionRange = "[26.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.sptools]]
 modId = "architectury"
 type = "required"
-versionRange = "[18.0.8,)"
+versionRange = "[21.0.2,)"
 ordering = "AFTER"
 side = "BOTH"
 

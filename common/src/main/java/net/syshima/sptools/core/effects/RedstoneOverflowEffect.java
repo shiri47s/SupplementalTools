@@ -1,14 +1,14 @@
 package net.syshima.sptools.core.effects;
 
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.attribute.EntityAttributeInstance;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.Level;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.base.ModStatusEffect;
 import net.syshima.sptools.core.armors.RedstoneArmorItem;
@@ -19,18 +19,18 @@ import java.util.List;
 public class RedstoneOverflowEffect extends ModStatusEffect {
 
     private static final double AMOUNT_BASE = 0.16;
-    private static final Identifier MODIFIER_ID = Identifier.of(Constants.MOD_ID, RedstoneOverflowEffect.class.getName().toLowerCase());
+    private static final Identifier MODIFIER_ID = Identifier.fromNamespaceAndPath(Constants.MOD_ID, RedstoneOverflowEffect.class.getName().toLowerCase());
 
     public RedstoneOverflowEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0xFF0000);
+        super(MobEffectCategory.BENEFICIAL, 0xFF0000);
     }
 
-    public static void effect(World world, PlayerEntity player) {
-        if (world.getTime() % 5 == 0) {
-            int power = getPower(world.getReceivedRedstonePower(player.getBlockPos()));
+    public static void effect(Level world, Player player) {
+        if (world.getGameTime() % 5 == 0) {
+            int power = getPower(world.getBestNeighborSignal(player.blockPosition()));
             var amount = AMOUNT_BASE * power;
-            applyAttribute(player.getAttributeInstance(EntityAttributes.ATTACK_SPEED), amount);
-            applyAttribute(player.getAttributeInstance(EntityAttributes.BLOCK_BREAK_SPEED), amount);
+            applyAttribute(player.getAttribute(Attributes.ATTACK_SPEED), amount);
+            applyAttribute(player.getAttribute(Attributes.BLOCK_BREAK_SPEED), amount);
             var armors = getArmors(player);
             for (var armor : armors) {
                 if (armor.getItem() instanceof RedstoneArmorItem armorItem) {
@@ -40,15 +40,15 @@ public class RedstoneOverflowEffect extends ModStatusEffect {
         }
     }
 
-    public static void clear(PlayerEntity player) {
-        removeModifier(player.getAttributeInstance(EntityAttributes.ATTACK_SPEED));
-        removeModifier(player.getAttributeInstance(EntityAttributes.BLOCK_BREAK_SPEED));
+    public static void clear(Player player) {
+        removeModifier(player.getAttribute(Attributes.ATTACK_SPEED));
+        removeModifier(player.getAttribute(Attributes.BLOCK_BREAK_SPEED));
     }
 
-    private static List<ItemStack> getArmors(PlayerEntity player) {
+    private static List<ItemStack> getArmors(Player player) {
         var armors = new ArrayList<ItemStack>();
         for(EquipmentSlot slot : EquipmentSlot.VALUES) {
-            ItemStack itemStack = player.getEquippedStack(slot);
+            ItemStack itemStack = player.getItemBySlot(slot);
             if (slot.getType() == EquipmentSlot.Type.HUMANOID_ARMOR) {
                 armors.add(itemStack);
             }
@@ -57,7 +57,7 @@ public class RedstoneOverflowEffect extends ModStatusEffect {
         return armors;
     }
 
-    private static void removeModifier(EntityAttributeInstance attribute) {
+    private static void removeModifier(AttributeInstance attribute) {
         if (attribute == null) {
             return;
         }
@@ -68,17 +68,17 @@ public class RedstoneOverflowEffect extends ModStatusEffect {
         }
     }
 
-    private static void applyAttribute(EntityAttributeInstance attribute, double amount) {
+    private static void applyAttribute(AttributeInstance attribute, double amount) {
         if (attribute == null) {
             return;
         }
 
         removeModifier(attribute);
-        var newModifier = new EntityAttributeModifier(
+        var newModifier = new AttributeModifier(
                 MODIFIER_ID,
                 amount,
-                EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
-        attribute.addPersistentModifier(newModifier);
+                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+        attribute.addPermanentModifier(newModifier);
     }
 
     private static int getPower(int redstonePower) {

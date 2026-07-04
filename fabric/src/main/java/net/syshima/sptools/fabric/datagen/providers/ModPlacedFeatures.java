@@ -1,7 +1,7 @@
 package net.syshima.sptools.fabric.datagen.providers;
+import net.minecraft.core.registries.Registries;
 
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.syshima.sptools.ModBlocks;
@@ -10,19 +10,19 @@ import java.util.List;
 
 public final class ModPlacedFeatures {
 
-    public final static RegistryKey<PlacedFeature> LEAD_ORE_LOWER;
-    public final static RegistryKey<PlacedFeature> RED_DIAMOND_ORE_LOWER;
-    public final static RegistryKey<PlacedFeature> RED_DIAMOND_ORE_UPPER;
-    public final static RegistryKey<PlacedFeature> DEEPSLATE_RED_DIAMOND_ORE_LOWER;
+    public final static ResourceKey<PlacedFeature> LEAD_ORE_LOWER;
+    public final static ResourceKey<PlacedFeature> RED_DIAMOND_ORE_LOWER;
+    public final static ResourceKey<PlacedFeature> RED_DIAMOND_ORE_UPPER;
+    public final static ResourceKey<PlacedFeature> DEEPSLATE_RED_DIAMOND_ORE_LOWER;
 
     private final static String LOWER_POSTFIX = "_lower";
     private final static String UPPER_POSTFIX = "_upper";
 
     static {
-        LEAD_ORE_LOWER = RegistryKey.of(RegistryKeys.PLACED_FEATURE, ModBlocks.ID.LEAD_ORE);
-        RED_DIAMOND_ORE_LOWER = RegistryKey.of(RegistryKeys.PLACED_FEATURE, ModBlocks.ID.postfix(ModBlocks.ID.RED_DIAMOND_ORE, LOWER_POSTFIX));
-        RED_DIAMOND_ORE_UPPER = RegistryKey.of(RegistryKeys.PLACED_FEATURE, ModBlocks.ID.postfix(ModBlocks.ID.RED_DIAMOND_ORE, UPPER_POSTFIX));
-        DEEPSLATE_RED_DIAMOND_ORE_LOWER = RegistryKey.of(RegistryKeys.PLACED_FEATURE, ModBlocks.ID.DEEPSLATE_RED_DIAMOND_ORE);
+        LEAD_ORE_LOWER = ResourceKey.create(Registries.PLACED_FEATURE, ModBlocks.ID.LEAD_ORE);
+        RED_DIAMOND_ORE_LOWER = ResourceKey.create(Registries.PLACED_FEATURE, ModBlocks.ID.postfix(ModBlocks.ID.RED_DIAMOND_ORE, LOWER_POSTFIX));
+        RED_DIAMOND_ORE_UPPER = ResourceKey.create(Registries.PLACED_FEATURE, ModBlocks.ID.postfix(ModBlocks.ID.RED_DIAMOND_ORE, UPPER_POSTFIX));
+        DEEPSLATE_RED_DIAMOND_ORE_LOWER = ResourceKey.create(Registries.PLACED_FEATURE, ModBlocks.ID.DEEPSLATE_RED_DIAMOND_ORE);
     }
 
     public static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {

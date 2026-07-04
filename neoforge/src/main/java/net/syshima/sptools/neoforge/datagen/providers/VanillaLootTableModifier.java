@@ -5,7 +5,7 @@ import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.LootTableLoadEvent;
@@ -15,7 +15,7 @@ import net.syshima.sptools.ModItems;
 @EventBusSubscriber( modid = Constants.MOD_ID )
 
 public final class VanillaLootTableModifier {
-    private static final Identifier BASTION_TREASURE = Identifier.ofVanilla("chests/bastion_treasure");
+    private static final Identifier BASTION_TREASURE = Identifier.withDefaultNamespace("chests/bastion_treasure");
 
     @SubscribeEvent
     public static void onLootTableLoad(LootTableLoadEvent event) {

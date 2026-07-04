@@ -1,13 +1,11 @@
 package net.syshima.sptools.fabric;
 
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Hand;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.InteractionHand;
 import net.syshima.sptools.IPlatform;
-import net.syshima.sptools.fabric.datagen.providers.ModVanillaLootTableModifier;
-import net.syshima.sptools.fabric.datagen.providers.ModWorldGenProvider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,20 +13,20 @@ import java.util.List;
 public final class ModFabricPlatform implements IPlatform {
     @Override
     public void registerConfiguredFeature() {
-        ModWorldGenProvider.register();
+        // TODO(26.2): re-enable custom ore world generation once datagen/worldgen is migrated
     }
 
     @Override
     public void modifyLootTable() {
-        ModVanillaLootTableModifier.modify();
+        // TODO(26.2): re-enable vanilla loot table modification once datagen is migrated
     }
 
     @Override
-    public EquipmentSlot getEquipmentSlot(PlayerEntity player, ItemStack itemStack) {
-        var hands = Hand.values();
-        for (Hand hand : hands) {
-            var testItemStack = player.getStackInHand(hand);
-            if (itemStack.isOf(testItemStack.getItem())) {
+    public EquipmentSlot getEquipmentSlot(Player player, ItemStack itemStack) {
+        var hands = InteractionHand.values();
+        for (InteractionHand hand : hands) {
+            var testItemStack = player.getItemInHand(hand);
+            if (itemStack.is(testItemStack.getItem())) {
                 return switch (hand) {
                     case MAIN_HAND -> EquipmentSlot.MAINHAND;
                     case OFF_HAND -> EquipmentSlot.OFFHAND;
@@ -38,8 +36,8 @@ public final class ModFabricPlatform implements IPlatform {
 
         var armors = getEquipmentArmorItems(player);
         for (var armor : armors) {
-            if (itemStack.isOf(armor.getItem())) {
-                return player.getPreferredEquipmentSlot(itemStack);
+            if (itemStack.is(armor.getItem())) {
+                return player.getEquipmentSlotForItem(itemStack);
             }
         }
 
@@ -47,12 +45,12 @@ public final class ModFabricPlatform implements IPlatform {
     }
 
     @Override
-    public ItemStack getItemIfEquipment(PlayerEntity player, Item... items) {
-        var hands = Hand.values();
-        for (Hand hand : hands) {
-            var itemStack = player.getStackInHand(hand);
+    public ItemStack getItemIfEquipment(Player player, Item... items) {
+        var hands = InteractionHand.values();
+        for (InteractionHand hand : hands) {
+            var itemStack = player.getItemInHand(hand);
             for (var item : items) {
-                if (itemStack.isOf(item)) {
+                if (itemStack.is(item)) {
                     return itemStack;
                 }
             }
@@ -61,7 +59,7 @@ public final class ModFabricPlatform implements IPlatform {
         var armors = getEquipmentArmorItems(player);
         for (var armor : armors) {
             for (var item : items) {
-                if (armor.isOf(item)) {
+                if (armor.is(item)) {
                     return armor;
                 }
             }
@@ -70,12 +68,12 @@ public final class ModFabricPlatform implements IPlatform {
         return null;
     }
 
-    private static List<ItemStack> getEquipmentArmorItems(PlayerEntity player) {
+    private static List<ItemStack> getEquipmentArmorItems(Player player) {
         var items = new ArrayList<ItemStack>();
-        items.add(player.getEquippedStack(EquipmentSlot.HEAD));
-        items.add(player.getEquippedStack(EquipmentSlot.CHEST));
-        items.add(player.getEquippedStack(EquipmentSlot.LEGS));
-        items.add(player.getEquippedStack(EquipmentSlot.FEET));
+        items.add(player.getItemBySlot(EquipmentSlot.HEAD));
+        items.add(player.getItemBySlot(EquipmentSlot.CHEST));
+        items.add(player.getItemBySlot(EquipmentSlot.LEGS));
+        items.add(player.getItemBySlot(EquipmentSlot.FEET));
         return items;
     }
 }

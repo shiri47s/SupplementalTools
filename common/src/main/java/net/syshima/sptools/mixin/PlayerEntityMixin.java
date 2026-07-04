@@ -1,29 +1,29 @@
 package net.syshima.sptools.mixin;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
 import net.syshima.sptools.core.effects.AntiLavaEffect;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(PlayerEntity.class)
+@Mixin(Player.class)
 public abstract class PlayerEntityMixin {
 
     @Inject(at = @At("HEAD"), method = "travel")
     private void sptools$travel(CallbackInfo ci) {
-        PlayerEntity player = (PlayerEntity)(Object)this;
+        Player player = (Player)(Object)this;
 
         if (player.isInLava() && AntiLavaEffect.isActive(this)) {
-            World world = player.getEntityWorld();
-            BlockPos pos = player.getBlockPos();
-            BlockState state = world.getBlockState(pos.down());
+            Level world = player.level();
+            BlockPos pos = player.blockPosition();
+            BlockState state = world.getBlockState(pos.below());
             if (state.getBlock() == Blocks.LAVA) {
-                player.setVelocity(player.getVelocity().multiply(1.789F));
+                player.setDeltaMovement(player.getDeltaMovement().scale(1.789));
             }
         }
     }
