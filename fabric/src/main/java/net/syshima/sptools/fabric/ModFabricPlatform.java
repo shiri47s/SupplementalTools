@@ -6,6 +6,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.InteractionHand;
 import net.syshima.sptools.IPlatform;
+import net.syshima.sptools.fabric.worldgen.ModLootModifier;
+import net.syshima.sptools.fabric.worldgen.ModWorldGen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +15,12 @@ import java.util.List;
 public final class ModFabricPlatform implements IPlatform {
     @Override
     public void registerConfiguredFeature() {
-        // TODO(26.2): re-enable custom ore world generation once datagen/worldgen is migrated
+        ModWorldGen.register();
     }
 
     @Override
     public void modifyLootTable() {
-        // TODO(26.2): re-enable vanilla loot table modification once datagen is migrated
+        ModLootModifier.modify();
     }
 
     @Override
