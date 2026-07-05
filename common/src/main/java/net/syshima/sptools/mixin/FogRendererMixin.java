@@ -1,7 +1,9 @@
 package net.syshima.sptools.mixin;
 
 import net.minecraft.client.Camera;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.fog.FogData;
 import net.minecraft.client.renderer.fog.FogRenderer;
 import net.minecraft.world.level.material.FogType;
@@ -17,7 +19,8 @@ public class FogRendererMixin {
     // When submerged in lava with the Anti-Lava effect, push the dense lava fog
     // far out so the player can see, keeping only a faint orange tint.
     @Inject(method = "setupFog", at = @At("RETURN"))
-    private void sptools$clearLavaFog(Camera camera, CallbackInfoReturnable<FogData> cir) {
+    private void sptools$clearLavaFog(Camera camera, int renderDistance, DeltaTracker deltaTracker,
+                                       float partialTick, ClientLevel level, CallbackInfoReturnable<FogData> cir) {
         if (camera.getFluidInCamera() != FogType.LAVA) {
             return;
         }
