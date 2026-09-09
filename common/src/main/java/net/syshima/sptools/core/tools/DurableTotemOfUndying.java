@@ -12,6 +12,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.syshima.sptools.PlayerEquipment;
 import net.syshima.sptools.base.ModDurableItem;
 
 public class DurableTotemOfUndying extends ModDurableItem {
@@ -26,7 +27,7 @@ public class DurableTotemOfUndying extends ModDurableItem {
     }
 
     public void trigger(ServerPlayer playerEntity, ItemStack totem) {
-        EquipmentSlot slot = PLATFORM.getEquipmentSlot(playerEntity, totem);
+        EquipmentSlot slot = PlayerEquipment.slotOf(playerEntity, totem);
         if (slot == null) {
             return;
         }

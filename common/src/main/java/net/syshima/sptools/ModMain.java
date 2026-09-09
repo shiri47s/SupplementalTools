@@ -1,16 +1,19 @@
 package net.syshima.sptools;
 
+import net.syshima.sptools.worldgen.ModLootModifier;
+import net.syshima.sptools.worldgen.ModWorldGen;
+
 public final class ModMain {
-    public static final String MOD_ID = "sptools";
-    public static IPlatform PLATFORM;
+    public static final String MOD_ID = Constants.MOD_ID;
 
-    public static void init(IPlatform platform) {
-        PLATFORM = platform;
+    private ModMain() {
+    }
 
+    public static void init() {
         ModBlocks.register();
         ModItems.register();
-        ModEffects.register();;
-        PLATFORM.registerConfiguredFeature();
-        PLATFORM.modifyLootTable();
+        ModEffects.register();
+        ModWorldGen.register();
+        ModLootModifier.register();
     }
 }

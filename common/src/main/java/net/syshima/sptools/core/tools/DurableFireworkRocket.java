@@ -12,6 +12,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.level.Level;
+import net.syshima.sptools.PlayerEquipment;
 import net.syshima.sptools.base.ModDurableItem;
 
 public class DurableFireworkRocket extends ModDurableItem {
@@ -42,7 +43,7 @@ public class DurableFireworkRocket extends ModDurableItem {
         if (player == null) return InteractionResult.PASS;
 
         var itemStack = context.getItemInHand();
-        var slot = PLATFORM.getEquipmentSlot(player, itemStack);
+        var slot = PlayerEquipment.slotOf(player, itemStack);
         if (slot == null) return InteractionResult.PASS;
 
         if (world.isClientSide()) {
@@ -69,7 +70,7 @@ public class DurableFireworkRocket extends ModDurableItem {
     @Override
     public InteractionResult use(Level world, Player player, InteractionHand hand) {
         var fireworkRocket = new ItemStack(this);
-        var slot = PLATFORM.getEquipmentSlot(player, fireworkRocket);
+        var slot = PlayerEquipment.slotOf(player, fireworkRocket);
         if (slot == null) return InteractionResult.PASS;
 
         if (world.isClientSide()) {

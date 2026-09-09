@@ -15,6 +15,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.syshima.sptools.ModBlocks;
+import net.syshima.sptools.PlayerEquipment;
 import net.syshima.sptools.base.ModDurableItem;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,7 +37,7 @@ public class DurableTorch extends ModDurableItem {
         if (player == null) return InteractionResult.PASS;
 
         var stack = context.getItemInHand();
-        var slot = PLATFORM.getEquipmentSlot(player, stack);
+        var slot = PlayerEquipment.slotOf(player, stack);
         if (slot == null) return InteractionResult.PASS;
 
         if (context.getHand() == InteractionHand.MAIN_HAND) {

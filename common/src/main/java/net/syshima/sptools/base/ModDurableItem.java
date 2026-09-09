@@ -7,14 +7,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.ChatFormatting;
-import net.syshima.sptools.IPlatform;
-import net.syshima.sptools.ModMain;
 
 import java.util.function.Consumer;
 
 public abstract class ModDurableItem extends ModItem {
-
-    protected final IPlatform PLATFORM = ModMain.PLATFORM;
 
     public ModDurableItem(Item.Properties settings) {
         super(settings);
