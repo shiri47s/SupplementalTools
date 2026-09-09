@@ -94,19 +94,19 @@ public interface ModArmorMaterials {
             ModTags.REPAIRS_LAVA_ARMOR,
             ModEquipmentAssets.LAVA_ARMOR);
 
-    static EnumMap<ArmorType, Integer> toMap(int boots, int leggings, int chestplate, int helmet, int body) {
-        EnumMap<ArmorType, Integer> defenseMap = new EnumMap<>(ArmorType.class);
-        defenseMap.put(ArmorType.BOOTS, boots);
-        defenseMap.put(ArmorType.LEGGINGS, leggings);
-        defenseMap.put(ArmorType.CHESTPLATE, chestplate);
-        defenseMap.put(ArmorType.HELMET, helmet);
-        defenseMap.put(ArmorType.BODY, body);
-        return defenseMap;
+    private static EnumMap<ArmorType, Integer> toMap(int boots, int leggings, int chestplate, int helmet, int body) {
+        EnumMap<ArmorType, Integer> defense = new EnumMap<>(ArmorType.class);
+        defense.put(ArmorType.BOOTS, boots);
+        defense.put(ArmorType.LEGGINGS, leggings);
+        defense.put(ArmorType.CHESTPLATE, chestplate);
+        defense.put(ArmorType.HELMET, helmet);
+        defense.put(ArmorType.BODY, body);
+        return defense;
     }
 
     private static ArmorMaterial register(
             int durability,
-            EnumMap<ArmorType, Integer> defenseMap,
+            EnumMap<ArmorType, Integer> defense,
             int enchantmentValue,
             Holder<SoundEvent> equipSound,
             float toughness,
@@ -114,37 +114,17 @@ public interface ModArmorMaterials {
             TagKey<Item> repairIngredient,
             ResourceKey<EquipmentAsset> assets
     ) {
-        return create(
-                durability,
-                defenseMap,
-                enchantmentValue,
-                equipSound,
-                toughness,
-                knockbackResistance,
-                repairIngredient,
-                assets
-        );
-    }
-
-    private static ArmorMaterial create(
-            int durability,
-            EnumMap<ArmorType, Integer> defenseMap,
-            int enchantmentValue,
-            Holder<SoundEvent> equipSound,
-            float toughness,
-            float knockbackResistance,
-            TagKey<Item> repairIngredient,
-            ResourceKey<EquipmentAsset> assets
-    ) {
-        EnumMap<ArmorType, Integer> map = new EnumMap<>(ArmorType.class);
-
+        // toMap covers every ArmorType; assert that here so a new vanilla armour slot
+        // surfaces as a clear failure rather than a null unboxing later on.
         for (ArmorType type : ArmorType.values()) {
-            map.put(type, defenseMap.get(type));
+            if (!defense.containsKey(type)) {
+                throw new IllegalStateException("Missing defense value for armor type " + type);
+            }
         }
 
         return new ArmorMaterial(
                 durability,
-                map,
+                defense,
                 enchantmentValue,
                 equipSound,
                 toughness,

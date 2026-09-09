@@ -2,7 +2,6 @@ package net.syshima.sptools.core.tools;
 import net.minecraft.world.item.Item;
 
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FireworkRocketEntity;
 import net.minecraft.world.item.ItemStack;
@@ -83,11 +82,6 @@ public class DurableFireworkRocket extends ModDurableItem {
         alertAboutBreak(player, itemStack);
 
         return InteractionResult.SUCCESS;
-    }
-
-    @Override
-    public InteractionResult interactLivingEntity(ItemStack stack, Player user, LivingEntity entity, InteractionHand hand) {
-        return super.interactLivingEntity(stack, user, entity, hand);
     }
 
     private void spawnFireworkRocket(Level world, Player player, FireworkRocketEntity fireworkRocketEntity, ItemStack itemStack, EquipmentSlot slot) {

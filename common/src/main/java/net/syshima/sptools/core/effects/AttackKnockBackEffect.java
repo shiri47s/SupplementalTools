@@ -6,7 +6,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.syshima.sptools.base.ModStatusEffect;
 
 public class AttackKnockBackEffect extends ModStatusEffect {
-    public static final String ATTACK_KNOCKBACK_ATTRIBUTE = AttackKnockBackEffect.class.getName().toLowerCase() + ".attack_knockback";
+    private static final String ATTACK_KNOCKBACK_ATTRIBUTE = "attack_knockback.attack_knockback";
     public AttackKnockBackEffect() {
         super(MobEffectCategory.BENEFICIAL, 0x44AA33);
         this.addAttributeModifier(

@@ -6,7 +6,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.syshima.sptools.base.ModStatusEffect;
 
 public class MovementSpeedEffect extends ModStatusEffect {
-    public static final String MOVEMENT_SPEED_ATTRIBUTE = MovementSpeedEffect.class.getName().toLowerCase() + ".movement_speed";
+    private static final String MOVEMENT_SPEED_ATTRIBUTE = "movement_speed.movement_speed";
     public MovementSpeedEffect() {
         super(MobEffectCategory.BENEFICIAL, 0xFFFF33);
         this.addAttributeModifier(

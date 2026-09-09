@@ -10,10 +10,10 @@ import net.syshima.sptools.ModEffects;
 import net.syshima.sptools.base.ModStatusEffect;
 
 public class AntiLavaEffect extends ModStatusEffect {
-    public static final String BURN_TIME_ATTRIBUTE = AntiLavaEffect.class.getName().toLowerCase() + ".burn_time";
+    private static final String BURN_TIME_ATTRIBUTE = "anti_lava.burn_time";
 
     public AntiLavaEffect() {
-        super(MobEffectCategory.BENEFICIAL, 0xFFA54321);
+        super(MobEffectCategory.BENEFICIAL, 0xA54321);
         this.addAttributeModifier(
                 Attributes.BURNING_TIME,
                 this.attrId(BURN_TIME_ATTRIBUTE),

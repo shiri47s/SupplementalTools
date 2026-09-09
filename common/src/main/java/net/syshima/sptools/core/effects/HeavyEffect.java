@@ -6,8 +6,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.syshima.sptools.base.ModStatusEffect;
 
 public class HeavyEffect extends ModStatusEffect {
-    public static final String ATTACK_KNOCKBACK_ATTRIBUTE = HeavyEffect.class.getName().toLowerCase() + ".attack_knockback";
-    public static final String MOVEMENT_SPEED_ATTRIBUTE = HeavyEffect.class.getName().toLowerCase() + ".movement_speed";
+    private static final String ATTACK_KNOCKBACK_ATTRIBUTE = "heavy.attack_knockback";
+    private static final String MOVEMENT_SPEED_ATTRIBUTE = "heavy.movement_speed";
 
     public HeavyEffect() {
         super(MobEffectCategory.BENEFICIAL, 0x888888);

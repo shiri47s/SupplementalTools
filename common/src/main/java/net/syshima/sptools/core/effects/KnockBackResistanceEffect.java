@@ -6,7 +6,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.syshima.sptools.base.ModStatusEffect;
 
 public final class KnockBackResistanceEffect extends ModStatusEffect {
-    public static final String KNOCKBACK_RESISTANCE_ATTRIBUTE = KnockBackResistanceEffect.class.getName().toLowerCase() + ".knockback_resistance";
+    private static final String KNOCKBACK_RESISTANCE_ATTRIBUTE = "knockback_resistance.knockback_resistance";
     public KnockBackResistanceEffect() {
         super(MobEffectCategory.BENEFICIAL, 0x4477BB);
         this.addAttributeModifier(

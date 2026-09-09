@@ -6,10 +6,10 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.syshima.sptools.base.ModStatusEffect;
 
 public class HasteAndLuckEffect extends ModStatusEffect {
-    public static final String LUCK_ATTRIBUTE = HasteAndLuckEffect.class.getName().toLowerCase() + ".luck";
-    public static final String ATTACK_SPEED_ATTRIBUTE = HasteAndLuckEffect.class.getName().toLowerCase() + ".attack_speed";
+    private static final String LUCK_ATTRIBUTE = "haste_and_luck.luck";
+    private static final String ATTACK_SPEED_ATTRIBUTE = "haste_and_luck.attack_speed";
     public HasteAndLuckEffect() {
-        super(MobEffectCategory.BENEFICIAL, 0x2211DDD);
+        super(MobEffectCategory.BENEFICIAL, 0x2211DD);
         this.addAttributeModifier(
                 Attributes.LUCK,
                 this.attrId(LUCK_ATTRIBUTE),

@@ -10,7 +10,7 @@ import net.minecraft.ChatFormatting;
 
 import java.util.function.Consumer;
 
-public abstract class ModDurableItem extends ModItem {
+public abstract class ModDurableItem extends Item {
 
     public ModDurableItem(Item.Properties settings) {
         super(settings);
@@ -20,13 +20,16 @@ public abstract class ModDurableItem extends ModItem {
     abstract protected int getAlertDurability();
     abstract protected Component getAlertText();
 
-    @SuppressWarnings("deprecation")
-    @Deprecated
+    @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
         super.appendHoverText(stack, context, displayComponent, textConsumer, type);
 
-        var leftDurability = stack.getMaxDamage() - stack.getDamageValue();
-        var usesLeft = leftDurability / this.getCost();
+        int cost = this.getCost();
+        if (cost <= 0) {
+            return;
+        }
+
+        int usesLeft = (stack.getMaxDamage() - stack.getDamageValue()) / cost;
         textConsumer.accept(Component.translatable("item.sptools.durable.tooltip", usesLeft).withStyle(ChatFormatting.GREEN));
     }
 

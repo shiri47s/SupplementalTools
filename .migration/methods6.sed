@@ -1,9 +1,0 @@
-s#\.canReplace(#.canBeReplaced(#g
-s#\.isReplaceable()#.canBeReplaced()#g
-s#\.canPlaceAt(#.canSurvive(#g
-s#\.canPlace(#.isUnobstructed(#g
-s#\.setBlockState(#.setBlockAndUpdate(#g
-s#\.offset(context\.getClickedFace())#.relative(context.getClickedFace())#g
-s#TagKey\.of(#TagKey.create(#g
-s#tick\.getPlayers()#tick.players()#g
-s#ResourceKey\.ofRegistry(#ResourceKey.createRegistryKey(#g

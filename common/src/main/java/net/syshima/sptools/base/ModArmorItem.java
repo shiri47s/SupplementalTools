@@ -14,7 +14,7 @@ import net.syshima.sptools.Constants;
 
 import java.util.function.Consumer;
 
-public abstract class ModArmorItem extends ModItem {
+public abstract class ModArmorItem extends Item {
 
     public ModArmorItem(ArmorMaterial material, ArmorType type, Item.Properties settings) {
         super(settings.humanoidArmor(material, type));
