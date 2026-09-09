@@ -28,15 +28,34 @@ def generatedResources = file("src/generated")
 
 sourceSets {
     main {
-        resources.srcDir generatedResources
+        resources {
+            srcDir generatedResources
+            // Datagen's hash cache is a build artifact, not a shipped resource.
+            exclude '.cache/**'
+        }
+    }
+    // Data generation code is compiled and run, but never shipped in the mod jar.
+    datagen {
+        compileClasspath += sourceSets.main.compileClasspath + sourceSets.main.output
+        runtimeClasspath += sourceSets.main.runtimeClasspath + sourceSets.main.output
     }
 }
 
 loom {
+    // NeoForge discovers @EventBusSubscriber by scanning the mod's paths, so the
+    // datagen source set must be registered as part of the mod in dev runs.
+    mods {
+        register(rootProject.mod_id) {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.datagen
+        }
+    }
+
     runs {
         Datagen {
             clientData()
-            programArgs "--all", "--mod", "sptools"
+            source sourceSets.datagen
+            programArgs "--all", "--mod", rootProject.mod_id
             programArgs "--output", generatedResources.absolutePath
         }
     }
@@ -78,7 +97,5 @@ shadowJar {
     configurations = [project.configurations.shadowBundle]
     archiveClassifier = null
 }
-
-sourceSets.main.java.exclude 'net/syshima/sptools/neoforge/datagen/**'
 
 tasks.named('assemble') { dependsOn tasks.named('shadowJar') }

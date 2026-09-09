@@ -25,8 +25,10 @@ configurations {
 }
 
 fabricApi {
-    configureDataGeneration() {
+    configureDataGeneration {
         client = true
+        createSourceSet = true
+        modId = rootProject.mod_id
     }
 }
 
@@ -60,6 +62,5 @@ shadowJar {
     archiveClassifier = null
 }
 
-sourceSets.main.java.exclude 'net/syshima/sptools/fabric/datagen/**'
-
 tasks.named('assemble') { dependsOn tasks.named('shadowJar') }
+
