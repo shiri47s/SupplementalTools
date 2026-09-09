@@ -3,7 +3,7 @@ plugins {
     id 'architectury-plugin' version '3.5-SNAPSHOT'
     id 'com.gradleup.shadow' version '9.4.3' apply false
     id "com.matthewprenger.cursegradle" version "1.4.0" apply false
-    id "com.modrinth.minotaur" version "2.+" apply false
+    id "com.modrinth.minotaur" version "2.9.0" apply false
 }
 
 
@@ -65,22 +65,19 @@ subprojects {
             token = MODRINTH_TOKEN
             projectId = project.modrinth_id
             versionName = PUBLISH_NAME
-            versionNumber = project.mod_version
+            // Must be unique per project: both loaders previously uploaded "3.0.0".
+            versionNumber = "${project.mod_version}+${project.minecraft_version}-${MOD_LOADER}"
             versionType = RELEASE
             uploadFile = project.provider { project.tasks.named("shadowJar").get() }
             changelog = CHANGE_LOG
             gameVersions = ["${project.minecraft_version}"]
             loaders = [MOD_LOADER]
-            if (MOD_LOADER.equalsIgnoreCase('fabric')) {
-                dependencies {
+            dependencies {
+                required.project "architectury-api"
+                optional.project "trinkets-updated"
+                if (MOD_LOADER.equalsIgnoreCase('fabric')) {
                     required.project "fabric-api"
-                    required.project "architectury-api"
                     optional.project "lambdynamiclights"
-                }
-            }
-            else {
-                dependencies {
-                    required.project "architectury-api"
                 }
             }
         }
@@ -97,18 +94,14 @@ subprojects {
                 releaseType = RELEASE
                 changelogType = "markdown"
                 changelog = CHANGE_LOG
-                addGameVersion "${project.support_versions}"
+                project.support_versions.split(',').each { addGameVersion it.trim() }
 
-                if (MOD_LOADER.equalsIgnoreCase('fabric')) {
-                    relations {
+                relations {
+                    requiredDependency 'architectury-api'
+                    optionalDependency 'trinkets-updated'
+                    if (MOD_LOADER.equalsIgnoreCase('fabric')) {
                         requiredDependency 'fabric-api'
-                        requiredDependency 'architectury-api'
                         optionalDependency 'lambdynamiclights'
-                    }
-                }
-                else {
-                    relations {
-                        requiredDependency 'architectury-api'
                     }
                 }
 
