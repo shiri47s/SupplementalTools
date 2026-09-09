@@ -14,6 +14,9 @@ import net.syshima.sptools.ModItems;
 
 public final class ModLootModifier {
 
+    /** Chance for the Anti-Lava smithing template to appear in a bastion treasure chest. */
+    private static final float CHANCE = 0.25F;
+
     private static final ResourceKey<LootTable> BASTION_TREASURE =
             ResourceKey.create(Registries.LOOT_TABLE, Identifier.withDefaultNamespace("chests/bastion_treasure"));
 
@@ -22,7 +25,7 @@ public final class ModLootModifier {
             if (key == BASTION_TREASURE) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
-                        .when(LootItemRandomChanceCondition.randomChance(1.0F))
+                        .when(LootItemRandomChanceCondition.randomChance(CHANCE))
                         .add(LootItem.lootTableItem(ModItems.LAVA_SMITHING_TEMPLATE.get()))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)));
                 builder.withPool(pool);
