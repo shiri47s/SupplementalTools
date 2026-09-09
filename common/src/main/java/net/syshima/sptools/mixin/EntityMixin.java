@@ -12,9 +12,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin {
-    @Inject(method = "isInvulnerableToBase", at = @At("HEAD"), cancellable = true)
+    @Inject(
+            method = "isInvulnerableToBase(Lnet/minecraft/world/damagesource/DamageSource;)Z",
+            at = @At("HEAD"),
+            cancellable = true)
     private void sptools$isInvulnerableTo(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
-        if (AntiLavaEffect.isActive(this)) {
+        if (AntiLavaEffect.isActive((Entity) (Object) this)) {
             if (damageSource.is(DamageTypeTags.IS_FIRE)
                     || damageSource.is(DamageTypes.LAVA)
                     || damageSource.is(DamageTypes.CAMPFIRE)

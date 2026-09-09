@@ -11,11 +11,15 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+/** Lets the mod's durable totems stand in for a vanilla totem of undying. */
 @Mixin(LivingEntity.class)
-public abstract class ClientLivingEntityMixin {
+public abstract class LivingEntityMixin {
 
-    @Inject(method = "checkTotemDeathProtection", at = @At("HEAD"), cancellable = true)
-    private void sptools$tryUseDeathProtector(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
+    @Inject(
+            method = "checkTotemDeathProtection(Lnet/minecraft/world/damagesource/DamageSource;)Z",
+            at = @At("HEAD"),
+            cancellable = true)
+    private void sptools$tryUseDurableTotem(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
         if (!((LivingEntity) (Object) this instanceof ServerPlayer player)) {
             return;
         }

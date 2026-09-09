@@ -37,7 +37,7 @@ dependencies {
     implementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
     implementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
 
-    // Present in dev runs only, so the optional integration can be exercised.
+    // Dev runs only, so the optional accessory integration can be exercised.
     localRuntime "eu.pb4:trinkets:$rootProject.trinkets_version"
 
     common(project(path: ':common')) { transitive false }
@@ -63,6 +63,10 @@ shadowJar {
 
     configurations = [project.configurations.shadowBundle]
     archiveClassifier = null
+
+    // common's data generation helpers reference client-only Minecraft classes and are
+    // only needed by the datagen source sets, so keep them out of the shipped jar.
+    exclude 'net/syshima/sptools/datagen/**'
 }
 
 tasks.named('assemble') { dependsOn tasks.named('shadowJar') }

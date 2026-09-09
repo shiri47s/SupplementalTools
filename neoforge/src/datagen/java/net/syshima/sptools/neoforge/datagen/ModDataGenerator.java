@@ -4,7 +4,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.syshima.sptools.Constants;
-import net.syshima.sptools.core.assets.ModEquipmentAssetProvider;
+import net.syshima.sptools.datagen.ModEquipmentAssetProvider;
 import net.syshima.sptools.neoforge.datagen.providers.ModBlockLootTableProvider;
 import net.syshima.sptools.neoforge.datagen.providers.ModBlockTagsProvider;
 import net.syshima.sptools.neoforge.datagen.providers.ModItemTagsProvider;

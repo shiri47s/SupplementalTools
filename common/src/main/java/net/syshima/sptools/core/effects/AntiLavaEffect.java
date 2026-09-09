@@ -3,7 +3,9 @@ package net.syshima.sptools.core.effects;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import org.jetbrains.annotations.Nullable;
 import net.syshima.sptools.ModEffects;
 import net.syshima.sptools.base.ModStatusEffect;
 
@@ -19,11 +21,8 @@ public class AntiLavaEffect extends ModStatusEffect {
                 AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
     }
 
-    public static boolean isActive(Object instance) {
-        if (!(instance instanceof Player player)) {
-            return false;
-        }
-
-        return player.hasEffect(ModEffects.ANTI_LAVA.asHolder());
+    /** Whether the entity currently carries the Anti-Lava effect. */
+    public static boolean isActive(@Nullable Entity entity) {
+        return entity instanceof Player player && player.hasEffect(ModEffects.ANTI_LAVA.asHolder());
     }
 }

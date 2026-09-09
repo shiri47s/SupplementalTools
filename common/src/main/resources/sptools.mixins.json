@@ -2,15 +2,15 @@
   "required": true,
   "package": "net.syshima.sptools.mixin",
   "compatibilityLevel": "JAVA_25",
-  "minVersion": "0.8",
-  "client": [
-    "FogRendererMixin"
-  ],
+  "minVersion": "0.8.7",
   "mixins": [
     "EntityMixin",
-    "PlayerEntityMixin",
-    "ClientPlayerNetworkHandlerMixin",
-    "ClientLivingEntityMixin"
+    "LivingEntityFluidTravelMixin",
+    "LivingEntityMixin"
+  ],
+  "client": [
+    "client.ClientPacketListenerMixin",
+    "client.FogRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

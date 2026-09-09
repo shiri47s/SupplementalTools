@@ -4,7 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
-import net.syshima.sptools.core.assets.ModEquipmentAssetProvider;
+import net.syshima.sptools.datagen.ModEquipmentAssetProvider;
 import net.syshima.sptools.fabric.datagen.providers.ModBlockLootTableProvider;
 import net.syshima.sptools.fabric.datagen.providers.ModBlockTagProvider;
 import net.syshima.sptools.fabric.datagen.providers.ModConfiguredFeatures;
