@@ -7,6 +7,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.item.Items;
 import net.syshima.sptools.ModItems;
 import net.syshima.sptools.ModTags;
 
@@ -71,6 +73,8 @@ public final class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvide
         add(ModTags.DURABLE, DURABLE_PICKAXE_LIKE);
         add(ModTags.DURABLE, DURABLE_SHOVEL_LIKE);
 
+        addRepairMaterials();
+
         add(ItemTags.SWORDS, SWORDS);
         add(ItemTags.SHOVELS, SHOVELS, DURABLE_SHOVEL_LIKE);
         add(ItemTags.PICKAXES, PICKAXES, DURABLE_PICKAXE_LIKE);
@@ -100,6 +104,32 @@ public final class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvide
         add(ModTags.PIGLINS_LOVED_ARMOR, LAVA_ARMOR);
         add(ItemTags.PIGLIN_LOVED, LAVA_ARMOR);
         builder(ItemTags.PIGLIN_SAFE_ARMOR).addTag(ModTags.PIGLINS_LOVED_ARMOR);
+    }
+
+    /** Repair ingredients backing {@code ModToolMaterials} and {@code ModArmorMaterials}. */
+    private void addRepairMaterials() {
+        addRepairs(ModTags.BRONZE_TOOL_MATERIALS, ModTags.REPAIRS_BRONZE_ARMOR, ModItems.BRONZE_INGOT.get());
+        addRepairs(ModTags.IRONCOPPER_TOOL_MATERIALS, ModTags.REPAIRS_IRONCOPPER_ARMOR, Items.IRON_INGOT, Items.COPPER_INGOT);
+        addRepairs(ModTags.AMETHYST_TOOL_MATERIALS, ModTags.REPAIRS_AMETHYST_ARMOR, ModItems.AMETHYST_INGOT.get());
+        addRepairs(ModTags.EMERALD_TOOL_MATERIALS, ModTags.REPAIRS_EMERALD_ARMOR, ModItems.EMERALD_INGOT.get());
+        addRepairs(ModTags.LEAD_TOOL_MATERIALS, ModTags.REPAIRS_LEAD_ARMOR, ModItems.LEAD_INGOT.get());
+        addRepairs(ModTags.QUARTZ_TOOL_MATERIALS, ModTags.REPAIRS_QUARTZ_ARMOR, ModItems.QUARTZ_INGOT.get());
+        addRepairs(ModTags.REDSTONE_TOOL_MATERIALS, ModTags.REPAIRS_REDSTONE_ARMOR, ModItems.REDSTONE_INGOT.get());
+
+        addItems(ModTags.REPAIRS_LAVA_ARMOR, ModItems.RED_DIAMOND_INGOT.get());
+        addItems(ModTags.DURABLE_TOOL_MATERIALS, Items.NETHERITE_INGOT);
+    }
+
+    private void addRepairs(TagKey<Item> toolMaterials, TagKey<Item> repairsArmor, ItemLike... ingredients) {
+        addItems(toolMaterials, ingredients);
+        addItems(repairsArmor, ingredients);
+    }
+
+    private void addItems(TagKey<Item> tag, ItemLike... items) {
+        var appender = builder(tag);
+        for (ItemLike item : items) {
+            appender.add(item.asItem().builtInRegistryHolder().key());
+        }
     }
 
     /** Adds the five tool slots plus the four armor slots of one series to its group tag. */
