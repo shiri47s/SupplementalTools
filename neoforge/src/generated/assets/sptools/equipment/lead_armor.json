@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "sptools:lead_armor"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "sptools:lead_armor"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "sptools:lead_armor"
+      }
+    ]
+  }
+}

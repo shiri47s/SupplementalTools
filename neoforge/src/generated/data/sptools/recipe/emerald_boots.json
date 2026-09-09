@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "sptools:emerald_ingot"
+  },
+  "pattern": [
+    "# #",
+    "# #"
+  ],
+  "result": {
+    "id": "sptools:emerald_boots"
+  }
+}

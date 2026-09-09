@@ -118,4 +118,7 @@ run/
 !gradle-wrapper.jar
 
 # Data Generation files
-**/generated/
+# Generated resources ARE committed: they are part of the shipped mod (models,
+# recipes, loot tables, tags, worldgen). Only the datagen hash cache is ignored.
+**/generated/.cache/
+neoforge/src/generated/.cache/

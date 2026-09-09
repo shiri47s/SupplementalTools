@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "sptools:block/wall_torch_block"
+    },
+    "facing=north": {
+      "model": "sptools:block/wall_torch_block",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "sptools:block/wall_torch_block",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "sptools:block/wall_torch_block",
+      "y": 180
+    }
+  }
+}

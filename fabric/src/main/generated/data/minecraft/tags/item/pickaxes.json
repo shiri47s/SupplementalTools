@@ -1,0 +1,15 @@
+{
+  "values": [
+    "sptools:bronze_pickaxe",
+    "sptools:ironcopper_pickaxe",
+    "sptools:amethyst_pickaxe",
+    "sptools:emerald_pickaxe",
+    "sptools:lead_pickaxe",
+    "sptools:quartz_pickaxe",
+    "sptools:redstone_pickaxe",
+    "sptools:durable_firework_rocket",
+    "sptools:durable_firework_rocket_upgraded",
+    "sptools:durable_torch",
+    "sptools:durable_torch_upgraded"
+  ]
+}

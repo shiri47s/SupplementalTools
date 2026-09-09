@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:blaze_powder",
+    "E": "minecraft:emerald",
+    "N": "minecraft:netherite_ingot",
+    "P": "minecraft:paper",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    " E ",
+    "RNR",
+    "PBP"
+  ],
+  "result": {
+    "id": "sptools:durable_firework_rocket"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sptools:quartz_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "iron_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:iron_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "quartz_scrap": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sptools:quartz_scrap"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "quartz_scrap",
+      "iron_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sptools:quartz_ingot"
+    ]
+  }
+}

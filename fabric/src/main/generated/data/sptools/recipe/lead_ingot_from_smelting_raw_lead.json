@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 220,
+  "experience": 0.8,
+  "group": "lead_ingot",
+  "ingredient": "sptools:raw_lead",
+  "result": {
+    "id": "sptools:lead_ingot"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "sptools:amethyst_armor"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "sptools:amethyst_armor"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "sptools:amethyst_armor"
+      }
+    ]
+  }
+}

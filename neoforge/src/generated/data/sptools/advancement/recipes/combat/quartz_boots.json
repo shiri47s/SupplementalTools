@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sptools:quartz_boots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "quartz_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sptools:quartz_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "quartz_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sptools:quartz_boots"
+    ]
+  }
+}

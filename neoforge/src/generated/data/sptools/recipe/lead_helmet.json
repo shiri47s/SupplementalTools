@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "sptools:lead_ingot"
+  },
+  "pattern": [
+    "###",
+    "# #"
+  ],
+  "result": {
+    "id": "sptools:lead_helmet"
+  }
+}

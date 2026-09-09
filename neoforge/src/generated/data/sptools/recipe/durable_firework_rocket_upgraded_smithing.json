@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:netherite_ingot",
+  "base": "sptools:durable_firework_rocket",
+  "result": {
+    "id": "sptools:durable_firework_rocket_upgraded"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

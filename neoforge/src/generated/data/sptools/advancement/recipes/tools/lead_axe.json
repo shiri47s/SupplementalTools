@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sptools:lead_axe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "lead_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sptools:lead_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "lead_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sptools:lead_axe"
+    ]
+  }
+}

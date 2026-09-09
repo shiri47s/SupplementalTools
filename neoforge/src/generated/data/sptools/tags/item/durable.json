@@ -1,0 +1,10 @@
+{
+  "values": [
+    "sptools:durable_firework_rocket",
+    "sptools:durable_firework_rocket_upgraded",
+    "sptools:durable_torch",
+    "sptools:durable_torch_upgraded",
+    "sptools:durable_totem_of_undying",
+    "sptools:durable_totem_of_undying_upgraded"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:iron_ingot",
+    "C": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "CCC",
+    "# #"
+  ],
+  "result": {
+    "id": "sptools:ironcopper_helmet"
+  }
+}

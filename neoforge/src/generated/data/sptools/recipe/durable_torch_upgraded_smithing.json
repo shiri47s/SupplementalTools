@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:netherite_ingot",
+  "base": "sptools:durable_torch",
+  "result": {
+    "id": "sptools:durable_torch_upgraded"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

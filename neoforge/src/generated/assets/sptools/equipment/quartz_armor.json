@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "sptools:quartz_armor"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "sptools:quartz_armor"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "sptools:quartz_armor"
+      }
+    ]
+  }
+}
