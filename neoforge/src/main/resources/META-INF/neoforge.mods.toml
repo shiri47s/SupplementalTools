@@ -12,7 +12,7 @@ description = '''
 Supplemental Tools provides subtle,
 non-intrusive additions to enhance your everyday Minecraft gameplay experience.
 '''
-logoFile = "icon.png"
+iconFile = "icon.png"
 
 [[dependencies.sptools]]
 modId = "neoforge"
