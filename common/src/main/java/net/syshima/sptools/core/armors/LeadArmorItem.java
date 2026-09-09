@@ -19,12 +19,12 @@ public class LeadArmorItem extends ModArmorItem {
     }
 
     @Override
-    protected Constants.Series getSeries() {
-        return Constants.Series.Amethyst;
+    public Constants.Series getSeries() {
+        return Constants.Series.Lead;
     }
 
     @Override
     protected void appendFullSetsTooltip(ItemStack stack, Item.TooltipContext context, Consumer<Component> textConsumer) {
-        textConsumer.accept(Component.translatable("item.sptools.blessing.amethyst").withStyle(ChatFormatting.GREEN));
+        textConsumer.accept(Component.translatable("item.sptools.blessing.heavy").withStyle(ChatFormatting.GREEN));
     }
 }

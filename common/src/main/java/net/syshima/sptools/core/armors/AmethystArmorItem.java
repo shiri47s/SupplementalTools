@@ -19,7 +19,7 @@ public class AmethystArmorItem extends ModArmorItem {
     }
 
     @Override
-    protected Constants.Series getSeries() {
+    public Constants.Series getSeries() {
         return Constants.Series.Amethyst;
     }
 

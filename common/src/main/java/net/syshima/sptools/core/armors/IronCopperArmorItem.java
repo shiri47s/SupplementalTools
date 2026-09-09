@@ -18,7 +18,7 @@ public class IronCopperArmorItem extends ModArmorItem {
     }
 
     @Override
-    protected Constants.Series getSeries() {
+    public Constants.Series getSeries() {
         return Constants.Series.IronCopper;
     }
 

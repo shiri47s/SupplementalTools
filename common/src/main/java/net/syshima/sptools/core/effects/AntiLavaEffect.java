@@ -24,6 +24,6 @@ public class AntiLavaEffect extends ModStatusEffect {
             return false;
         }
 
-        return player.hasEffect(ModEffects.get(ModEffects.ANTI_LAVA));
+        return player.hasEffect(ModEffects.ANTI_LAVA.asHolder());
     }
 }
