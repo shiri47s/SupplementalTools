@@ -2,7 +2,6 @@ package net.syshima.sptools.core.tools;
 import net.minecraft.world.item.Item;
 
 import net.minecraft.advancements.triggers.CriteriaTriggers;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -27,16 +26,12 @@ public class DurableTotemOfUndying extends ModDurableItem {
     }
 
     public void trigger(ServerPlayer playerEntity, ItemStack totem) {
-        EquipmentSlot slot = PlayerEquipment.slotOf(playerEntity, totem);
-        if (slot == null) {
-            return;
-        }
-
         playerEntity.awardStat(Stats.ITEM_USED.get(Items.TOTEM_OF_UNDYING));
-        ItemStack itemStack = playerEntity.getMainHandItem();
-        CriteriaTriggers.USED_TOTEM.trigger(playerEntity, itemStack);
+        CriteriaTriggers.USED_TOTEM.trigger(playerEntity, totem);
         playerEntity.gameEvent(GameEvent.ITEM_INTERACT_FINISH);
-        totem.hurtAndBreak(this.getCost(), playerEntity, slot);
+
+        // Works for hands, armour and accessory slots alike.
+        PlayerEquipment.hurtEquipped(playerEntity, totem, this.getCost());
 
         blessing(playerEntity);
 
