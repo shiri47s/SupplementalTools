@@ -1,4 +1,4 @@
-package net.syshima.sptools.fabric.datagen.providers;
+package net.syshima.sptools.datagen;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;

@@ -7,8 +7,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.flag.FeatureFlagSet;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -17,8 +15,7 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.syshima.sptools.ModBlocks;
-import net.syshima.sptools.ModItems;
+import net.syshima.sptools.datagen.ModOreDrops;
 
 import java.util.List;
 import java.util.Set;
@@ -41,23 +38,19 @@ public final class ModBlockLootTableProvider extends LootTableProvider {
 
         @Override
         protected Iterable<Block> getKnownBlocks() {
-            return List.of(ModBlocks.LEAD_ORE.get(), ModBlocks.RED_DIAMOND_ORE.get(), ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get());
+            return ModOreDrops.blocks();
         }
 
         @Override
         public void generate() {
             Holder<Enchantment> fortune = this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE);
 
-            addOreDrop(ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get(), 2.0F, 5.0F, fortune);
-            addOreDrop(ModBlocks.RED_DIAMOND_ORE.get(), ModItems.RED_DIAMOND.get(), 1.0F, 1.0F, fortune);
-            addOreDrop(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get(), ModItems.RED_DIAMOND.get(), 1.0F, 1.0F, fortune);
-        }
-
-        private void addOreDrop(Block block, Item drop, float min, float max, Holder<Enchantment> fortune) {
-            this.add(block, this.createSilkTouchDispatchTable(block,
-                    this.applyExplosionDecay(block, LootItem.lootTableItem(drop)
-                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max)))
-                            .apply(ApplyBonusCount.addOreBonusCount(fortune)))));
+            for (ModOreDrops.OreDrop ore : ModOreDrops.all()) {
+                add(ore.block(), createSilkTouchDispatchTable(ore.block(),
+                        applyExplosionDecay(ore.block(), LootItem.lootTableItem(ore.drop())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(ore.min(), ore.max())))
+                                .apply(ApplyBonusCount.addOreBonusCount(fortune)))));
+            }
         }
     }
 }
