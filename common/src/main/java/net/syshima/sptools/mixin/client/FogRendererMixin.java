@@ -16,8 +16,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(FogRenderer.class)
 public class FogRendererMixin {
 
-    // When submerged in lava with the Anti-Lava effect, push the dense lava fog
-    // far out so the player can see, keeping only a faint orange tint.
+    // Vanilla drowns the view at one block (environmentalEnd = 1.0). Submerged in lava
+    // the visible geometry is only a few blocks out, so the ramp has to stay short to
+    // register at all - pushing it far out reads as no fog whatsoever.
+    private static final float FOG_START = 0.0F;
+    private static final float FOG_END = 10.0F;
+    private static final float FOG_STRENGTH = 0.85F;
+
+    // When submerged in lava with the Anti-Lava effect, stretch the dense lava fog far
+    // enough to navigate by, while keeping a red haze that thickens with distance.
     @Inject(
             method = "setupFog(Lnet/minecraft/client/Camera;ILnet/minecraft/client/DeltaTracker;FLnet/minecraft/client/multiplayer/ClientLevel;)Lnet/minecraft/client/renderer/fog/FogData;",
             at = @At("RETURN"))
@@ -39,12 +46,13 @@ public class FogRendererMixin {
             return;
         }
 
-        data.environmentalStart = 24.0F;
-        data.environmentalEnd = 192.0F;
-        data.renderDistanceStart = 24.0F;
-        data.renderDistanceEnd = 192.0F;
+        // The render distance range is left alone: this ramp saturates long before it,
+        // and the shader takes the stronger of the two.
+        data.environmentalStart = FOG_START;
+        data.environmentalEnd = FOG_END;
         if (data.color != null) {
-            data.color.w = 0.25F;
+            // The colour itself stays the vanilla lava tint; only its strength is adjusted.
+            data.color.w = FOG_STRENGTH;
         }
     }
 }
