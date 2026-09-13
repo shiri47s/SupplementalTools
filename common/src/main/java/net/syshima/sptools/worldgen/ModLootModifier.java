@@ -25,6 +25,18 @@ public final class ModLootModifier {
     }
 
     public static void register() {
+        // The three-argument overload this lambda binds to is marked for removal in
+        // favour of one that also passes a HolderLookup.Provider, which is why the
+        // build warns here. There is no way to act on that yet: on Architectury 21.0.7
+        // the deprecated overload is still the functional interface's only abstract
+        // method, so the four-argument lambda its own javadoc suggests does not compile,
+        // and implementing the replacement through an anonymous class still has to
+        // implement the deprecated one and still warns.
+        //
+        // Nothing is at risk of breaking silently. Once the overload goes, the
+        // replacement becomes the abstract method and this lambda stops compiling on
+        // its parameter count; the fix at that point is to accept the provider as a
+        // leading parameter and ignore it.
         LootEvent.MODIFY_LOOT_TABLE.register((key, context, builtin) -> {
             // Keep the `builtin` guard. NeoForge only fires this event for built-in
             // tables, so dropping the check would silently make Fabric also append to
