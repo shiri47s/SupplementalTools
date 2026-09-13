@@ -1,14 +1,16 @@
 package net.syshima.sptools;
-import net.minecraft.core.registries.Registries;
 
-import net.minecraft.world.item.Item;
-import net.minecraft.tags.TagKey;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 
 public final class ModTags {
-    public static final TagKey<Item> Bronzes = ofItem("bronzes");
+    public static final TagKey<Item> BRONZES = ofItem("bronzes");
     public static final TagKey<Item> IRONCOPPERS = ofItem("ironcoppers");
     public static final TagKey<Item> AMETHYSTS = ofItem("amethysts");
+    // Path is deliberately left singular: renaming it would change the tag id that
+    // data packs and the generated files already use.
     public static final TagKey<Item> EMERALDS = ofItem("emerald");
     public static final TagKey<Item> LEAD = ofItem("lead");
     public static final TagKey<Item> QUARTZ = ofItem("quartz");

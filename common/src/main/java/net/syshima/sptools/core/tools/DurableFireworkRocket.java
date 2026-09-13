@@ -1,15 +1,15 @@
 package net.syshima.sptools.core.tools;
-import net.minecraft.world.item.Item;
 
+import net.minecraft.network.chat.Component;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FireworkRocketEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.stats.Stats;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.level.Level;
 import net.syshima.sptools.PlayerEquipment;
 import net.syshima.sptools.base.ModDurableItem;
@@ -42,8 +42,7 @@ public class DurableFireworkRocket extends ModDurableItem {
         if (player == null) return InteractionResult.PASS;
 
         var itemStack = context.getItemInHand();
-        var slot = PlayerEquipment.slotOf(player, itemStack);
-        if (slot == null) return InteractionResult.PASS;
+        var slot = PlayerEquipment.slotOf(context.getHand());
 
         if (world.isClientSide()) {
             return InteractionResult.SUCCESS;
@@ -68,16 +67,16 @@ public class DurableFireworkRocket extends ModDurableItem {
 
     @Override
     public InteractionResult use(Level world, Player player, InteractionHand hand) {
-        var fireworkRocket = new ItemStack(this);
-        var slot = PlayerEquipment.slotOf(player, fireworkRocket);
-        if (slot == null) return InteractionResult.PASS;
-
         if (world.isClientSide()) {
             return InteractionResult.SUCCESS;
         }
 
+        // The hand already names the slot. Looking it up from a throwaway stack matched
+        // the slot by item, so holding rockets in both hands damaged one stack while
+        // reporting the other one's slot.
+        var slot = PlayerEquipment.slotOf(hand);
         var itemStack = player.getItemInHand(hand);
-        var fireworkRocketEntity = new FireworkRocketEntity(world, fireworkRocket, player);
+        var fireworkRocketEntity = new FireworkRocketEntity(world, itemStack, player);
         this.spawnFireworkRocket(world, player, fireworkRocketEntity, itemStack, slot);
         alertAboutBreak(player, itemStack);
 

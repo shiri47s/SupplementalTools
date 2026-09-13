@@ -17,7 +17,8 @@ import java.util.List;
  */
 public final class PlayerEquipment {
 
-    private static final List<EquipmentSlot> ARMOR_SLOTS =
+    /** The four worn armour slots, in head-to-feet order. Shared; never mutated. */
+    public static final List<EquipmentSlot> ARMOR_SLOTS =
             List.of(EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET);
 
     /** Mod id Trinkets Updated registers itself under. */
@@ -35,24 +36,37 @@ public final class PlayerEquipment {
     }
 
     /**
+     * Slot a hand corresponds to. Callers that already know the hand - every
+     * {@code useOn} and {@code use} override - should use this rather than searching
+     * for the stack, which cannot fail and cannot pick the wrong hand.
+     */
+    public static EquipmentSlot slotOf(InteractionHand hand) {
+        return switch (hand) {
+            case MAIN_HAND -> EquipmentSlot.MAINHAND;
+            case OFF_HAND -> EquipmentSlot.OFFHAND;
+        };
+    }
+
+    /**
      * Slot the given stack is held or worn in, or {@code null} when the player does not
      * have it in a vanilla slot. Accessory slots have no {@link EquipmentSlot} and are
      * therefore never reported here; use {@link #hurtEquipped} to damage a stack safely.
+     *
+     * <p>Stacks are matched by identity rather than by item. Comparing items instead
+     * reports the main hand for a stack held in the off hand whenever both hands carry
+     * the same item, which then damages one stack while reporting the other's slot.
      */
     @Nullable
     public static EquipmentSlot slotOf(Player player, ItemStack stack) {
         for (InteractionHand hand : InteractionHand.values()) {
-            if (stack.is(player.getItemInHand(hand).getItem())) {
-                return switch (hand) {
-                    case MAIN_HAND -> EquipmentSlot.MAINHAND;
-                    case OFF_HAND -> EquipmentSlot.OFFHAND;
-                };
+            if (player.getItemInHand(hand) == stack) {
+                return slotOf(hand);
             }
         }
 
         for (EquipmentSlot slot : ARMOR_SLOTS) {
-            if (stack.is(player.getItemBySlot(slot).getItem())) {
-                return player.getEquipmentSlotForItem(stack);
+            if (player.getItemBySlot(slot) == stack) {
+                return slot;
             }
         }
 

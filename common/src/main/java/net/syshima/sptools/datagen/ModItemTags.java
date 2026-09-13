@@ -66,7 +66,7 @@ public final class ModItemTags {
     }
 
     private void add() {
-        addSeries(ModTags.Bronzes, 0);
+        addSeries(ModTags.BRONZES, 0);
         addSeries(ModTags.IRONCOPPERS, 1);
         addSeries(ModTags.AMETHYSTS, 2);
         addSeries(ModTags.EMERALDS, 3);

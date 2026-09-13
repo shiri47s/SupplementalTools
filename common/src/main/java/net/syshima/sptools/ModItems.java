@@ -1,129 +1,131 @@
 package net.syshima.sptools;
-import net.minecraft.core.registries.Registries;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ShovelItem;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.HoeItem;
-import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.resources.ResourceKey;
+import java.util.List;
+import java.util.function.BiFunction;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SmithingTemplateItem;
+import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.level.block.Block;
 import net.syshima.sptools.core.armors.*;
 import net.syshima.sptools.core.assets.ModToolMaterials;
 import net.syshima.sptools.core.tools.*;
-
-import java.util.List;
 
 public final class ModItems {
     public static final ResourceKey<CreativeModeTab> MOD_GROUP = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(Constants.MOD_ID, Constants.GROUP_NAME));
     private static final DeferredRegister<Item> REGISTER = DeferredRegister.create(Constants.MOD_ID, Registries.ITEM);
 
 
-    public static final RegistrySupplier<Item> BRONZE_SWORD = REGISTER.register(Constants.Items.BRONZE_SWORD, () -> new Item(settingsOf(Constants.Items.BRONZE_SWORD, new Item.Properties()).sword(ModToolMaterials.BRONZE, 1.0F, -2.4F)));
-    public static final RegistrySupplier<Item> BRONZE_SHOVEL = REGISTER.register(Constants.Items.BRONZE_SHOVEL, () -> new ShovelItem(ModToolMaterials.BRONZE, 1.0F, -3.0F, settingsOf(Constants.Items.BRONZE_SHOVEL)));
-    public static final RegistrySupplier<Item> BRONZE_PICKAXE = REGISTER.register(Constants.Items.BRONZE_PICKAXE, () -> new Item(settingsOf(Constants.Items.BRONZE_PICKAXE, new Item.Properties()).pickaxe(ModToolMaterials.BRONZE, 1.0F, -2.8F)));
-    public static final RegistrySupplier<Item> BRONZE_AXE = REGISTER.register(Constants.Items.BRONZE_AXE, () -> new AxeItem(ModToolMaterials.BRONZE, 5.0F, -3.1F, settingsOf(Constants.Items.BRONZE_AXE)));
-    public static final RegistrySupplier<Item> BRONZE_HOE = REGISTER.register(Constants.Items.BRONZE_HOE, () -> new HoeItem(ModToolMaterials.BRONZE, -2.0F, -1.6F, settingsOf(Constants.Items.BRONZE_HOE)));
+    public static final RegistrySupplier<Item> BRONZE_SWORD = sword(Constants.Items.BRONZE_SWORD, ModToolMaterials.BRONZE);
+    public static final RegistrySupplier<Item> BRONZE_SHOVEL = shovel(Constants.Items.BRONZE_SHOVEL, ModToolMaterials.BRONZE);
+    public static final RegistrySupplier<Item> BRONZE_PICKAXE = pickaxe(Constants.Items.BRONZE_PICKAXE, ModToolMaterials.BRONZE);
+    public static final RegistrySupplier<Item> BRONZE_AXE = axe(Constants.Items.BRONZE_AXE, ModToolMaterials.BRONZE);
+    public static final RegistrySupplier<Item> BRONZE_HOE = hoe(Constants.Items.BRONZE_HOE, ModToolMaterials.BRONZE);
 
-    public static final RegistrySupplier<Item> IRONCOPPER_SWORD = REGISTER.register(Constants.Items.IRONCOPPER_SWORD, () -> new Item(settingsOf(Constants.Items.IRONCOPPER_SWORD, new Item.Properties()).sword(ModToolMaterials.IRONCOPPER, 1.0F, -2.4F)));
-    public static final RegistrySupplier<Item> IRONCOPPER_SHOVEL = REGISTER.register(Constants.Items.IRONCOPPER_SHOVEL, () -> new ShovelItem(ModToolMaterials.IRONCOPPER, 1.0F, -3.0F, settingsOf(Constants.Items.IRONCOPPER_SHOVEL)));
-    public static final RegistrySupplier<Item> IRONCOPPER_PICKAXE = REGISTER.register(Constants.Items.IRONCOPPER_PICKAXE, () -> new Item(settingsOf(Constants.Items.IRONCOPPER_PICKAXE, new Item.Properties()).pickaxe(ModToolMaterials.IRONCOPPER, 1.0F, -2.8F)));
-    public static final RegistrySupplier<Item> IRONCOPPER_AXE = REGISTER.register(Constants.Items.IRONCOPPER_AXE, () -> new AxeItem(ModToolMaterials.IRONCOPPER, 5.0F, -3.1F, settingsOf(Constants.Items.IRONCOPPER_AXE)));
-    public static final RegistrySupplier<Item> IRONCOPPER_HOE = REGISTER.register(Constants.Items.IRONCOPPER_HOE, () -> new HoeItem(ModToolMaterials.IRONCOPPER, -2.0F, -1.6F, settingsOf(Constants.Items.IRONCOPPER_HOE)));
+    public static final RegistrySupplier<Item> IRONCOPPER_SWORD = sword(Constants.Items.IRONCOPPER_SWORD, ModToolMaterials.IRONCOPPER);
+    public static final RegistrySupplier<Item> IRONCOPPER_SHOVEL = shovel(Constants.Items.IRONCOPPER_SHOVEL, ModToolMaterials.IRONCOPPER);
+    public static final RegistrySupplier<Item> IRONCOPPER_PICKAXE = pickaxe(Constants.Items.IRONCOPPER_PICKAXE, ModToolMaterials.IRONCOPPER);
+    public static final RegistrySupplier<Item> IRONCOPPER_AXE = axe(Constants.Items.IRONCOPPER_AXE, ModToolMaterials.IRONCOPPER);
+    public static final RegistrySupplier<Item> IRONCOPPER_HOE = hoe(Constants.Items.IRONCOPPER_HOE, ModToolMaterials.IRONCOPPER);
 
-    public static final RegistrySupplier<Item> AMETHYST_SWORD = REGISTER.register(Constants.Items.AMETHYST_SWORD, () -> new Item(settingsOf(Constants.Items.AMETHYST_SWORD, new Item.Properties()).sword(ModToolMaterials.AMETHYST, 1.0F, -2.4F)));
-    public static final RegistrySupplier<Item> AMETHYST_SHOVEL = REGISTER.register(Constants.Items.AMETHYST_SHOVEL, () -> new ShovelItem(ModToolMaterials.AMETHYST, 1.0F, -3.0F, settingsOf(Constants.Items.AMETHYST_SHOVEL)));
-    public static final RegistrySupplier<Item> AMETHYST_PICKAXE = REGISTER.register(Constants.Items.AMETHYST_PICKAXE, () -> new Item(settingsOf(Constants.Items.AMETHYST_PICKAXE, new Item.Properties()).pickaxe(ModToolMaterials.AMETHYST, 1.0F, -2.8F)));
-    public static final RegistrySupplier<Item> AMETHYST_AXE = REGISTER.register(Constants.Items.AMETHYST_AXE, () -> new AxeItem(ModToolMaterials.AMETHYST, 5.0F, -3.1F, settingsOf(Constants.Items.AMETHYST_AXE)));
-    public static final RegistrySupplier<Item> AMETHYST_HOE = REGISTER.register(Constants.Items.AMETHYST_HOE, () -> new HoeItem(ModToolMaterials.AMETHYST, -2.0F, -1.6F, settingsOf(Constants.Items.AMETHYST_HOE)));
+    public static final RegistrySupplier<Item> AMETHYST_SWORD = sword(Constants.Items.AMETHYST_SWORD, ModToolMaterials.AMETHYST);
+    public static final RegistrySupplier<Item> AMETHYST_SHOVEL = shovel(Constants.Items.AMETHYST_SHOVEL, ModToolMaterials.AMETHYST);
+    public static final RegistrySupplier<Item> AMETHYST_PICKAXE = pickaxe(Constants.Items.AMETHYST_PICKAXE, ModToolMaterials.AMETHYST);
+    public static final RegistrySupplier<Item> AMETHYST_AXE = axe(Constants.Items.AMETHYST_AXE, ModToolMaterials.AMETHYST);
+    public static final RegistrySupplier<Item> AMETHYST_HOE = hoe(Constants.Items.AMETHYST_HOE, ModToolMaterials.AMETHYST);
 
-    public static final RegistrySupplier<Item> EMERALD_SWORD = REGISTER.register(Constants.Items.EMERALD_SWORD, () -> new Item(settingsOf(Constants.Items.EMERALD_SWORD, new Item.Properties()).sword(ModToolMaterials.EMERALD, 1.0F, -2.4F)));
-    public static final RegistrySupplier<Item> EMERALD_SHOVEL = REGISTER.register(Constants.Items.EMERALD_SHOVEL, () -> new ShovelItem(ModToolMaterials.EMERALD, 1.0F, -3.0F, settingsOf(Constants.Items.EMERALD_SHOVEL)));
-    public static final RegistrySupplier<Item> EMERALD_PICKAXE = REGISTER.register(Constants.Items.EMERALD_PICKAXE, () -> new Item(settingsOf(Constants.Items.EMERALD_PICKAXE, new Item.Properties()).pickaxe(ModToolMaterials.EMERALD, 1.0F, -2.8F)));
-    public static final RegistrySupplier<Item> EMERALD_AXE = REGISTER.register(Constants.Items.EMERALD_AXE, () -> new AxeItem(ModToolMaterials.EMERALD, 5.0F, -3.1F, settingsOf(Constants.Items.EMERALD_AXE)));
-    public static final RegistrySupplier<Item> EMERALD_HOE = REGISTER.register(Constants.Items.EMERALD_HOE, () -> new HoeItem(ModToolMaterials.EMERALD, -2.0F, -1.6F, settingsOf(Constants.Items.EMERALD_HOE)));
+    public static final RegistrySupplier<Item> EMERALD_SWORD = sword(Constants.Items.EMERALD_SWORD, ModToolMaterials.EMERALD);
+    public static final RegistrySupplier<Item> EMERALD_SHOVEL = shovel(Constants.Items.EMERALD_SHOVEL, ModToolMaterials.EMERALD);
+    public static final RegistrySupplier<Item> EMERALD_PICKAXE = pickaxe(Constants.Items.EMERALD_PICKAXE, ModToolMaterials.EMERALD);
+    public static final RegistrySupplier<Item> EMERALD_AXE = axe(Constants.Items.EMERALD_AXE, ModToolMaterials.EMERALD);
+    public static final RegistrySupplier<Item> EMERALD_HOE = hoe(Constants.Items.EMERALD_HOE, ModToolMaterials.EMERALD);
 
-    public static final RegistrySupplier<Item> LEAD_SWORD = REGISTER.register(Constants.Items.LEAD_SWORD, () -> new Item(settingsOf(Constants.Items.LEAD_SWORD, new Item.Properties()).sword(ModToolMaterials.LEAD, 1.0F, -2.4F)));
-    public static final RegistrySupplier<Item> LEAD_SHOVEL = REGISTER.register(Constants.Items.LEAD_SHOVEL, () -> new ShovelItem(ModToolMaterials.LEAD, 1.0F, -3.0F, settingsOf(Constants.Items.LEAD_SHOVEL)));
-    public static final RegistrySupplier<Item> LEAD_PICKAXE = REGISTER.register(Constants.Items.LEAD_PICKAXE, () -> new Item(settingsOf(Constants.Items.LEAD_PICKAXE, new Item.Properties()).pickaxe(ModToolMaterials.LEAD, 1.0F, -2.8F)));
-    public static final RegistrySupplier<Item> LEAD_AXE = REGISTER.register(Constants.Items.LEAD_AXE, () -> new AxeItem(ModToolMaterials.LEAD, 5.0F, -3.1F, settingsOf(Constants.Items.LEAD_AXE)));
-    public static final RegistrySupplier<Item> LEAD_HOE = REGISTER.register(Constants.Items.LEAD_HOE, () -> new HoeItem(ModToolMaterials.LEAD, -2.0F, -1.6F, settingsOf(Constants.Items.LEAD_HOE)));
+    public static final RegistrySupplier<Item> LEAD_SWORD = sword(Constants.Items.LEAD_SWORD, ModToolMaterials.LEAD);
+    public static final RegistrySupplier<Item> LEAD_SHOVEL = shovel(Constants.Items.LEAD_SHOVEL, ModToolMaterials.LEAD);
+    public static final RegistrySupplier<Item> LEAD_PICKAXE = pickaxe(Constants.Items.LEAD_PICKAXE, ModToolMaterials.LEAD);
+    public static final RegistrySupplier<Item> LEAD_AXE = axe(Constants.Items.LEAD_AXE, ModToolMaterials.LEAD);
+    public static final RegistrySupplier<Item> LEAD_HOE = hoe(Constants.Items.LEAD_HOE, ModToolMaterials.LEAD);
 
-    public static final RegistrySupplier<Item> QUARTZ_SWORD = REGISTER.register(Constants.Items.QUARTZ_SWORD, () -> new Item(settingsOf(Constants.Items.QUARTZ_SWORD, new Item.Properties()).sword(ModToolMaterials.QUARTZ, 1.0F, -2.4F)));
-    public static final RegistrySupplier<Item> QUARTZ_SHOVEL = REGISTER.register(Constants.Items.QUARTZ_SHOVEL, () -> new ShovelItem(ModToolMaterials.QUARTZ, 1.0F, -3.0F, settingsOf(Constants.Items.QUARTZ_SHOVEL)));
-    public static final RegistrySupplier<Item> QUARTZ_PICKAXE = REGISTER.register(Constants.Items.QUARTZ_PICKAXE, () -> new Item(settingsOf(Constants.Items.QUARTZ_PICKAXE, new Item.Properties()).pickaxe(ModToolMaterials.QUARTZ, 1.0F, -2.8F)));
-    public static final RegistrySupplier<Item> QUARTZ_AXE = REGISTER.register(Constants.Items.QUARTZ_AXE, () -> new AxeItem(ModToolMaterials.QUARTZ, 5.0F, -3.1F, settingsOf(Constants.Items.QUARTZ_AXE)));
-    public static final RegistrySupplier<Item> QUARTZ_HOE = REGISTER.register(Constants.Items.QUARTZ_HOE, () -> new HoeItem(ModToolMaterials.QUARTZ, -2.0F, -1.6F, settingsOf(Constants.Items.QUARTZ_HOE)));
+    public static final RegistrySupplier<Item> QUARTZ_SWORD = sword(Constants.Items.QUARTZ_SWORD, ModToolMaterials.QUARTZ);
+    public static final RegistrySupplier<Item> QUARTZ_SHOVEL = shovel(Constants.Items.QUARTZ_SHOVEL, ModToolMaterials.QUARTZ);
+    public static final RegistrySupplier<Item> QUARTZ_PICKAXE = pickaxe(Constants.Items.QUARTZ_PICKAXE, ModToolMaterials.QUARTZ);
+    public static final RegistrySupplier<Item> QUARTZ_AXE = axe(Constants.Items.QUARTZ_AXE, ModToolMaterials.QUARTZ);
+    public static final RegistrySupplier<Item> QUARTZ_HOE = hoe(Constants.Items.QUARTZ_HOE, ModToolMaterials.QUARTZ);
 
-    public static final RegistrySupplier<Item> REDSTONE_SWORD = REGISTER.register(Constants.Items.REDSTONE_SWORD, () -> new Item(settingsOf(Constants.Items.REDSTONE_SWORD, new Item.Properties()).sword(ModToolMaterials.REDSTONE, 1.0F, -2.4F)));
-    public static final RegistrySupplier<Item> REDSTONE_SHOVEL = REGISTER.register(Constants.Items.REDSTONE_SHOVEL, () -> new ShovelItem(ModToolMaterials.REDSTONE, 1.0F, -3.0F, settingsOf(Constants.Items.REDSTONE_SHOVEL)));
-    public static final RegistrySupplier<Item> REDSTONE_PICKAXE = REGISTER.register(Constants.Items.REDSTONE_PICKAXE, () -> new Item(settingsOf(Constants.Items.REDSTONE_PICKAXE, new Item.Properties()).pickaxe(ModToolMaterials.REDSTONE, 1.0F, -2.8F)));
-    public static final RegistrySupplier<Item> REDSTONE_AXE = REGISTER.register(Constants.Items.REDSTONE_AXE, () -> new AxeItem(ModToolMaterials.REDSTONE, 5.0F, -3.1F, settingsOf(Constants.Items.REDSTONE_AXE)));
-    public static final RegistrySupplier<Item> REDSTONE_HOE = REGISTER.register(Constants.Items.REDSTONE_HOE, () -> new HoeItem(ModToolMaterials.REDSTONE, -2.0F, -1.6F, settingsOf(Constants.Items.REDSTONE_HOE)));
+    public static final RegistrySupplier<Item> REDSTONE_SWORD = sword(Constants.Items.REDSTONE_SWORD, ModToolMaterials.REDSTONE);
+    public static final RegistrySupplier<Item> REDSTONE_SHOVEL = shovel(Constants.Items.REDSTONE_SHOVEL, ModToolMaterials.REDSTONE);
+    public static final RegistrySupplier<Item> REDSTONE_PICKAXE = pickaxe(Constants.Items.REDSTONE_PICKAXE, ModToolMaterials.REDSTONE);
+    public static final RegistrySupplier<Item> REDSTONE_AXE = axe(Constants.Items.REDSTONE_AXE, ModToolMaterials.REDSTONE);
+    public static final RegistrySupplier<Item> REDSTONE_HOE = hoe(Constants.Items.REDSTONE_HOE, ModToolMaterials.REDSTONE);
 
-    public static final RegistrySupplier<Item> BRONZE_HELMET = REGISTER.register(Constants.Items.BRONZE_HELMET, () -> new BronzeArmorItem(ArmorType.HELMET, settingsOf(Constants.Items.BRONZE_HELMET)));
-    public static final RegistrySupplier<Item> BRONZE_CHESTPLATE = REGISTER.register(Constants.Items.BRONZE_CHESTPLATE, () -> new BronzeArmorItem(ArmorType.CHESTPLATE, settingsOf(Constants.Items.BRONZE_CHESTPLATE)));
-    public static final RegistrySupplier<Item> BRONZE_LEGGINGS = REGISTER.register(Constants.Items.BRONZE_LEGGINGS, () -> new BronzeArmorItem(ArmorType.LEGGINGS, settingsOf(Constants.Items.BRONZE_LEGGINGS)));
-    public static final RegistrySupplier<Item> BRONZE_BOOTS = REGISTER.register(Constants.Items.BRONZE_BOOTS, () -> new BronzeArmorItem(ArmorType.BOOTS, settingsOf(Constants.Items.BRONZE_BOOTS)));
+    public static final RegistrySupplier<Item> BRONZE_HELMET = armor(Constants.Items.BRONZE_HELMET, ArmorType.HELMET, BronzeArmorItem::new);
+    public static final RegistrySupplier<Item> BRONZE_CHESTPLATE = armor(Constants.Items.BRONZE_CHESTPLATE, ArmorType.CHESTPLATE, BronzeArmorItem::new);
+    public static final RegistrySupplier<Item> BRONZE_LEGGINGS = armor(Constants.Items.BRONZE_LEGGINGS, ArmorType.LEGGINGS, BronzeArmorItem::new);
+    public static final RegistrySupplier<Item> BRONZE_BOOTS = armor(Constants.Items.BRONZE_BOOTS, ArmorType.BOOTS, BronzeArmorItem::new);
 
-    public static final RegistrySupplier<Item> IRONCOPPER_HELMET = REGISTER.register(Constants.Items.IRONCOPPER_HELMET, () -> new IronCopperArmorItem(ArmorType.HELMET, settingsOf(Constants.Items.IRONCOPPER_HELMET)));
-    public static final RegistrySupplier<Item> IRONCOPPER_CHESTPLATE = REGISTER.register(Constants.Items.IRONCOPPER_CHESTPLATE, () -> new IronCopperArmorItem(ArmorType.CHESTPLATE, settingsOf(Constants.Items.IRONCOPPER_CHESTPLATE)));
-    public static final RegistrySupplier<Item> IRONCOPPER_LEGGINGS = REGISTER.register(Constants.Items.IRONCOPPER_LEGGINGS, () -> new IronCopperArmorItem(ArmorType.LEGGINGS, settingsOf(Constants.Items.IRONCOPPER_LEGGINGS)));
-    public static final RegistrySupplier<Item> IRONCOPPER_BOOTS = REGISTER.register(Constants.Items.IRONCOPPER_BOOTS, () -> new IronCopperArmorItem(ArmorType.BOOTS, settingsOf(Constants.Items.IRONCOPPER_BOOTS)));
+    public static final RegistrySupplier<Item> IRONCOPPER_HELMET = armor(Constants.Items.IRONCOPPER_HELMET, ArmorType.HELMET, IronCopperArmorItem::new);
+    public static final RegistrySupplier<Item> IRONCOPPER_CHESTPLATE = armor(Constants.Items.IRONCOPPER_CHESTPLATE, ArmorType.CHESTPLATE, IronCopperArmorItem::new);
+    public static final RegistrySupplier<Item> IRONCOPPER_LEGGINGS = armor(Constants.Items.IRONCOPPER_LEGGINGS, ArmorType.LEGGINGS, IronCopperArmorItem::new);
+    public static final RegistrySupplier<Item> IRONCOPPER_BOOTS = armor(Constants.Items.IRONCOPPER_BOOTS, ArmorType.BOOTS, IronCopperArmorItem::new);
 
-    public static final RegistrySupplier<Item> AMETHYST_HELMET = REGISTER.register(Constants.Items.AMETHYST_HELMET, () -> new AmethystArmorItem(ArmorType.HELMET, settingsOf(Constants.Items.AMETHYST_HELMET)));
-    public static final RegistrySupplier<Item> AMETHYST_CHESTPLATE = REGISTER.register(Constants.Items.AMETHYST_CHESTPLATE, () -> new AmethystArmorItem(ArmorType.CHESTPLATE, settingsOf(Constants.Items.AMETHYST_CHESTPLATE)));
-    public static final RegistrySupplier<Item> AMETHYST_LEGGINGS = REGISTER.register(Constants.Items.AMETHYST_LEGGINGS, () -> new AmethystArmorItem(ArmorType.LEGGINGS, settingsOf(Constants.Items.AMETHYST_LEGGINGS)));
-    public static final RegistrySupplier<Item> AMETHYST_BOOTS = REGISTER.register(Constants.Items.AMETHYST_BOOTS, () -> new AmethystArmorItem(ArmorType.BOOTS, settingsOf(Constants.Items.AMETHYST_BOOTS)));
+    public static final RegistrySupplier<Item> AMETHYST_HELMET = armor(Constants.Items.AMETHYST_HELMET, ArmorType.HELMET, AmethystArmorItem::new);
+    public static final RegistrySupplier<Item> AMETHYST_CHESTPLATE = armor(Constants.Items.AMETHYST_CHESTPLATE, ArmorType.CHESTPLATE, AmethystArmorItem::new);
+    public static final RegistrySupplier<Item> AMETHYST_LEGGINGS = armor(Constants.Items.AMETHYST_LEGGINGS, ArmorType.LEGGINGS, AmethystArmorItem::new);
+    public static final RegistrySupplier<Item> AMETHYST_BOOTS = armor(Constants.Items.AMETHYST_BOOTS, ArmorType.BOOTS, AmethystArmorItem::new);
 
-    public static final RegistrySupplier<Item> EMERALD_HELMET = REGISTER.register(Constants.Items.EMERALD_HELMET, () -> new EmeraldArmorItem(ArmorType.HELMET, settingsOf(Constants.Items.EMERALD_HELMET)));
-    public static final RegistrySupplier<Item> EMERALD_CHESTPLATE = REGISTER.register(Constants.Items.EMERALD_CHESTPLATE, () -> new EmeraldArmorItem(ArmorType.CHESTPLATE, settingsOf(Constants.Items.EMERALD_CHESTPLATE)));
-    public static final RegistrySupplier<Item> EMERALD_LEGGINGS = REGISTER.register(Constants.Items.EMERALD_LEGGINGS, () -> new EmeraldArmorItem(ArmorType.LEGGINGS, settingsOf(Constants.Items.EMERALD_LEGGINGS)));
-    public static final RegistrySupplier<Item> EMERALD_BOOTS = REGISTER.register(Constants.Items.EMERALD_BOOTS, () -> new EmeraldArmorItem(ArmorType.BOOTS, settingsOf(Constants.Items.EMERALD_BOOTS)));
+    public static final RegistrySupplier<Item> EMERALD_HELMET = armor(Constants.Items.EMERALD_HELMET, ArmorType.HELMET, EmeraldArmorItem::new);
+    public static final RegistrySupplier<Item> EMERALD_CHESTPLATE = armor(Constants.Items.EMERALD_CHESTPLATE, ArmorType.CHESTPLATE, EmeraldArmorItem::new);
+    public static final RegistrySupplier<Item> EMERALD_LEGGINGS = armor(Constants.Items.EMERALD_LEGGINGS, ArmorType.LEGGINGS, EmeraldArmorItem::new);
+    public static final RegistrySupplier<Item> EMERALD_BOOTS = armor(Constants.Items.EMERALD_BOOTS, ArmorType.BOOTS, EmeraldArmorItem::new);
 
-    public static final RegistrySupplier<Item> LEAD_HELMET = REGISTER.register(Constants.Items.LEAD_HELMET, () -> new LeadArmorItem(ArmorType.HELMET, settingsOf(Constants.Items.LEAD_HELMET)));
-    public static final RegistrySupplier<Item> LEAD_CHESTPLATE = REGISTER.register(Constants.Items.LEAD_CHESTPLATE, () -> new LeadArmorItem(ArmorType.CHESTPLATE, settingsOf(Constants.Items.LEAD_CHESTPLATE)));
-    public static final RegistrySupplier<Item> LEAD_LEGGINGS = REGISTER.register(Constants.Items.LEAD_LEGGINGS, () -> new LeadArmorItem(ArmorType.LEGGINGS, settingsOf(Constants.Items.LEAD_LEGGINGS)));
-    public static final RegistrySupplier<Item> LEAD_BOOTS = REGISTER.register(Constants.Items.LEAD_BOOTS, () -> new LeadArmorItem(ArmorType.BOOTS, settingsOf(Constants.Items.LEAD_BOOTS)));
+    public static final RegistrySupplier<Item> LEAD_HELMET = armor(Constants.Items.LEAD_HELMET, ArmorType.HELMET, LeadArmorItem::new);
+    public static final RegistrySupplier<Item> LEAD_CHESTPLATE = armor(Constants.Items.LEAD_CHESTPLATE, ArmorType.CHESTPLATE, LeadArmorItem::new);
+    public static final RegistrySupplier<Item> LEAD_LEGGINGS = armor(Constants.Items.LEAD_LEGGINGS, ArmorType.LEGGINGS, LeadArmorItem::new);
+    public static final RegistrySupplier<Item> LEAD_BOOTS = armor(Constants.Items.LEAD_BOOTS, ArmorType.BOOTS, LeadArmorItem::new);
 
-    public static final RegistrySupplier<Item> QUARTZ_HELMET = REGISTER.register(Constants.Items.QUARTZ_HELMET, () -> new QuartzArmorItem(ArmorType.HELMET, settingsOf(Constants.Items.QUARTZ_HELMET)));
-    public static final RegistrySupplier<Item> QUARTZ_CHESTPLATE = REGISTER.register(Constants.Items.QUARTZ_CHESTPLATE, () -> new QuartzArmorItem(ArmorType.CHESTPLATE, settingsOf(Constants.Items.QUARTZ_CHESTPLATE)));
-    public static final RegistrySupplier<Item> QUARTZ_LEGGINGS = REGISTER.register(Constants.Items.QUARTZ_LEGGINGS, () -> new QuartzArmorItem(ArmorType.LEGGINGS, settingsOf(Constants.Items.QUARTZ_LEGGINGS)));
-    public static final RegistrySupplier<Item> QUARTZ_BOOTS = REGISTER.register(Constants.Items.QUARTZ_BOOTS, () -> new QuartzArmorItem(ArmorType.BOOTS, settingsOf(Constants.Items.QUARTZ_BOOTS)));
+    public static final RegistrySupplier<Item> QUARTZ_HELMET = armor(Constants.Items.QUARTZ_HELMET, ArmorType.HELMET, QuartzArmorItem::new);
+    public static final RegistrySupplier<Item> QUARTZ_CHESTPLATE = armor(Constants.Items.QUARTZ_CHESTPLATE, ArmorType.CHESTPLATE, QuartzArmorItem::new);
+    public static final RegistrySupplier<Item> QUARTZ_LEGGINGS = armor(Constants.Items.QUARTZ_LEGGINGS, ArmorType.LEGGINGS, QuartzArmorItem::new);
+    public static final RegistrySupplier<Item> QUARTZ_BOOTS = armor(Constants.Items.QUARTZ_BOOTS, ArmorType.BOOTS, QuartzArmorItem::new);
 
-    public static final RegistrySupplier<Item> REDSTONE_HELMET = REGISTER.register(Constants.Items.REDSTONE_HELMET, () -> new RedstoneArmorItem(ArmorType.HELMET, settingsOf(Constants.Items.REDSTONE_HELMET)));
-    public static final RegistrySupplier<Item> REDSTONE_CHESTPLATE = REGISTER.register(Constants.Items.REDSTONE_CHESTPLATE, () -> new RedstoneArmorItem(ArmorType.CHESTPLATE, settingsOf(Constants.Items.REDSTONE_CHESTPLATE)));
-    public static final RegistrySupplier<Item> REDSTONE_LEGGINGS = REGISTER.register(Constants.Items.REDSTONE_LEGGINGS, () -> new RedstoneArmorItem(ArmorType.LEGGINGS, settingsOf(Constants.Items.REDSTONE_LEGGINGS)));
-    public static final RegistrySupplier<Item> REDSTONE_BOOTS = REGISTER.register(Constants.Items.REDSTONE_BOOTS, () -> new RedstoneArmorItem(ArmorType.BOOTS, settingsOf(Constants.Items.REDSTONE_BOOTS)));
+    public static final RegistrySupplier<Item> REDSTONE_HELMET = armor(Constants.Items.REDSTONE_HELMET, ArmorType.HELMET, RedstoneArmorItem::new);
+    public static final RegistrySupplier<Item> REDSTONE_CHESTPLATE = armor(Constants.Items.REDSTONE_CHESTPLATE, ArmorType.CHESTPLATE, RedstoneArmorItem::new);
+    public static final RegistrySupplier<Item> REDSTONE_LEGGINGS = armor(Constants.Items.REDSTONE_LEGGINGS, ArmorType.LEGGINGS, RedstoneArmorItem::new);
+    public static final RegistrySupplier<Item> REDSTONE_BOOTS = armor(Constants.Items.REDSTONE_BOOTS, ArmorType.BOOTS, RedstoneArmorItem::new);
 
-    public static final RegistrySupplier<Item> LAVA_HELMET = REGISTER.register(Constants.Items.LAVA_HELMET, () -> new LavaArmorItem(ArmorType.HELMET, settingsOf(Constants.Items.LAVA_HELMET)));
-    public static final RegistrySupplier<Item> LAVA_CHESTPLATE = REGISTER.register(Constants.Items.LAVA_CHESTPLATE, () -> new LavaArmorItem(ArmorType.CHESTPLATE, settingsOf(Constants.Items.LAVA_CHESTPLATE)));
-    public static final RegistrySupplier<Item> LAVA_LEGGINGS = REGISTER.register(Constants.Items.LAVA_LEGGINGS, () -> new LavaArmorItem(ArmorType.LEGGINGS, settingsOf(Constants.Items.LAVA_LEGGINGS)));
-    public static final RegistrySupplier<Item> LAVA_BOOTS = REGISTER.register(Constants.Items.LAVA_BOOTS, () -> new LavaArmorItem(ArmorType.BOOTS, settingsOf(Constants.Items.LAVA_BOOTS)));
+    public static final RegistrySupplier<Item> LAVA_HELMET = armor(Constants.Items.LAVA_HELMET, ArmorType.HELMET, LavaArmorItem::new);
+    public static final RegistrySupplier<Item> LAVA_CHESTPLATE = armor(Constants.Items.LAVA_CHESTPLATE, ArmorType.CHESTPLATE, LavaArmorItem::new);
+    public static final RegistrySupplier<Item> LAVA_LEGGINGS = armor(Constants.Items.LAVA_LEGGINGS, ArmorType.LEGGINGS, LavaArmorItem::new);
+    public static final RegistrySupplier<Item> LAVA_BOOTS = armor(Constants.Items.LAVA_BOOTS, ArmorType.BOOTS, LavaArmorItem::new);
 
-    public static final RegistrySupplier<Item> BRONZE_INGOT = REGISTER.register(Constants.Items.BRONZE_INGOT, () -> new Item(settingsOf(Constants.Items.BRONZE_INGOT, new Item.Properties())));
-    public static final RegistrySupplier<Item> AMETHYST_INGOT = REGISTER.register(Constants.Items.AMETHYST_INGOT, () -> new Item(settingsOf(Constants.Items.AMETHYST_INGOT, new Item.Properties())));
-    public static final RegistrySupplier<Item> EMERALD_INGOT = REGISTER.register(Constants.Items.EMERALD_INGOT, () -> new Item(settingsOf(Constants.Items.EMERALD_INGOT, new Item.Properties())));
-    public static final RegistrySupplier<Item> LEAD_INGOT = REGISTER.register(Constants.Items.LEAD_INGOT, () -> new Item(settingsOf(Constants.Items.LEAD_INGOT, new Item.Properties())));
-    public static final RegistrySupplier<Item> QUARTZ_INGOT = REGISTER.register(Constants.Items.QUARTZ_INGOT, () -> new Item(settingsOf(Constants.Items.QUARTZ_INGOT, new Item.Properties())));
-    public static final RegistrySupplier<Item> REDSTONE_INGOT = REGISTER.register(Constants.Items.REDSTONE_INGOT, () -> new Item(settingsOf(Constants.Items.REDSTONE_INGOT, new Item.Properties())));
-    public static final RegistrySupplier<Item> RED_DIAMOND_INGOT = REGISTER.register(Constants.Items.RED_DIAMOND_INGOT, () -> new Item(settingsOf(Constants.Items.RED_DIAMOND_INGOT, new Item.Properties())));
+    public static final RegistrySupplier<Item> BRONZE_INGOT = simple(Constants.Items.BRONZE_INGOT);
+    public static final RegistrySupplier<Item> AMETHYST_INGOT = simple(Constants.Items.AMETHYST_INGOT);
+    public static final RegistrySupplier<Item> EMERALD_INGOT = simple(Constants.Items.EMERALD_INGOT);
+    public static final RegistrySupplier<Item> LEAD_INGOT = simple(Constants.Items.LEAD_INGOT);
+    public static final RegistrySupplier<Item> QUARTZ_INGOT = simple(Constants.Items.QUARTZ_INGOT);
+    public static final RegistrySupplier<Item> REDSTONE_INGOT = simple(Constants.Items.REDSTONE_INGOT);
+    public static final RegistrySupplier<Item> RED_DIAMOND_INGOT = simple(Constants.Items.RED_DIAMOND_INGOT);
 
-    public static final RegistrySupplier<Item> LEAD_ORE = REGISTER.register(Constants.Items.LEAD_ORE, () -> new BlockItem(ModBlocks.LEAD_ORE.get(), settingsOf(Constants.Items.LEAD_ORE, new Item.Properties().useBlockDescriptionPrefix())));
-    public static final RegistrySupplier<Item> RED_DIAMOND_ORE = REGISTER.register(Constants.Items.RED_DIAMOND_ORE, () -> new BlockItem(ModBlocks.RED_DIAMOND_ORE.get(), settingsOf(Constants.Items.RED_DIAMOND_ORE, new Item.Properties().useBlockDescriptionPrefix())));
-    public static final RegistrySupplier<Item> DEEPSLATE_RED_DIAMOND_ORE = REGISTER.register(Constants.Items.DEEPSLATE_RED_DIAMOND_ORE, () -> new BlockItem(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get(), settingsOf(Constants.Items.DEEPSLATE_RED_DIAMOND_ORE, new Item.Properties().useBlockDescriptionPrefix())));
+    public static final RegistrySupplier<Item> LEAD_ORE = blockItem(Constants.Items.LEAD_ORE, ModBlocks.LEAD_ORE);
+    public static final RegistrySupplier<Item> RED_DIAMOND_ORE = blockItem(Constants.Items.RED_DIAMOND_ORE, ModBlocks.RED_DIAMOND_ORE);
+    public static final RegistrySupplier<Item> DEEPSLATE_RED_DIAMOND_ORE = blockItem(Constants.Items.DEEPSLATE_RED_DIAMOND_ORE, ModBlocks.DEEPSLATE_RED_DIAMOND_ORE);
 
-    public static final RegistrySupplier<Item> RAW_LEAD = REGISTER.register(Constants.Items.RAW_LEAD, () -> new Item(settingsOf(Constants.Items.RAW_LEAD, new Item.Properties())));
-    public static final RegistrySupplier<Item> QUARTZ_SCRAP = REGISTER.register(Constants.Items.QUARTZ_SCRAP, () -> new Item(settingsOf(Constants.Items.QUARTZ_SCRAP, new Item.Properties())));
-    public static final RegistrySupplier<Item> RED_DIAMOND = REGISTER.register(Constants.Items.RED_DIAMOND, () -> new Item(settingsOf(Constants.Items.RED_DIAMOND, new Item.Properties())));
+    public static final RegistrySupplier<Item> RAW_LEAD = simple(Constants.Items.RAW_LEAD);
+    public static final RegistrySupplier<Item> QUARTZ_SCRAP = simple(Constants.Items.QUARTZ_SCRAP);
+    public static final RegistrySupplier<Item> RED_DIAMOND = simple(Constants.Items.RED_DIAMOND);
     public static final RegistrySupplier<Item> LAVA_SMITHING_TEMPLATE = REGISTER.register(Constants.Items.LAVA_SMITHING_TEMPLATE, () -> new SmithingTemplateItem(Component.translatable("item.sptools.lava_upgrade_smithing_template.applies_to"), Component.translatable("item.sptools.lava_upgrade_smithing_template.ingredients"), Component.translatable("item.sptools.lava_upgrade_smithing_template.base_slot"), Component.translatable("item.sptools.lava_upgrade_smithing_template.additions_slot"), getLavaUpgradeEmptyBaseSlotTextures(), getLavaUpgradeEmptyAdditionsSlotTextures(), settingsOf(Constants.Items.LAVA_SMITHING_TEMPLATE, (new Item.Properties()).fireResistant().rarity(Rarity.EPIC))));
 
     public static final RegistrySupplier<Item> DURABLE_FIREWORK_ROCKET = REGISTER.register(Constants.Items.DURABLE_FIREWORK_ROCKET, () -> new DurableFireworkRocket(settingsOf(Constants.Items.DURABLE_FIREWORK_ROCKET, (new Item.Properties()).pickaxe(ModToolMaterials.DURABLE, 1.0F, -2.2F))));
@@ -144,114 +146,90 @@ public final class ModItems {
             .icon(() -> new ItemStack(ModItems.AMETHYST_INGOT.get()))
             .title(Component.translatable("item.sptools"))
             .displayItems((displayContext, entries) -> {
-                entries.accept(BRONZE_SWORD.get());
-                entries.accept(BRONZE_SHOVEL.get());
-                entries.accept(BRONZE_PICKAXE.get());
-                entries.accept(BRONZE_AXE.get());
-                entries.accept(BRONZE_HOE.get());
+                accept(entries, BRONZE_SWORD, BRONZE_SHOVEL, BRONZE_PICKAXE, BRONZE_AXE, BRONZE_HOE);
 
-                entries.accept(IRONCOPPER_SWORD.get());
-                entries.accept(IRONCOPPER_SHOVEL.get());
-                entries.accept(IRONCOPPER_PICKAXE.get());
-                entries.accept(IRONCOPPER_AXE.get());
-                entries.accept(IRONCOPPER_HOE.get());
+                accept(entries, IRONCOPPER_SWORD, IRONCOPPER_SHOVEL, IRONCOPPER_PICKAXE, IRONCOPPER_AXE, IRONCOPPER_HOE);
 
-                entries.accept(AMETHYST_SWORD.get());
-                entries.accept(AMETHYST_SHOVEL.get());
-                entries.accept(AMETHYST_PICKAXE.get());
-                entries.accept(AMETHYST_AXE.get());
-                entries.accept(AMETHYST_HOE.get());
+                accept(entries, AMETHYST_SWORD, AMETHYST_SHOVEL, AMETHYST_PICKAXE, AMETHYST_AXE, AMETHYST_HOE);
 
-                entries.accept(EMERALD_SWORD.get());
-                entries.accept(EMERALD_SHOVEL.get());
-                entries.accept(EMERALD_PICKAXE.get());
-                entries.accept(EMERALD_AXE.get());
-                entries.accept(EMERALD_HOE.get());
+                accept(entries, EMERALD_SWORD, EMERALD_SHOVEL, EMERALD_PICKAXE, EMERALD_AXE, EMERALD_HOE);
 
-                entries.accept(LEAD_SWORD.get());
-                entries.accept(LEAD_SHOVEL.get());
-                entries.accept(LEAD_PICKAXE.get());
-                entries.accept(LEAD_AXE.get());
-                entries.accept(LEAD_HOE.get());
+                accept(entries, LEAD_SWORD, LEAD_SHOVEL, LEAD_PICKAXE, LEAD_AXE, LEAD_HOE);
 
-                entries.accept(QUARTZ_SWORD.get());
-                entries.accept(QUARTZ_SHOVEL.get());
-                entries.accept(QUARTZ_PICKAXE.get());
-                entries.accept(QUARTZ_AXE.get());
-                entries.accept(QUARTZ_HOE.get());
+                accept(entries, QUARTZ_SWORD, QUARTZ_SHOVEL, QUARTZ_PICKAXE, QUARTZ_AXE, QUARTZ_HOE);
 
-                entries.accept(REDSTONE_SWORD.get());
-                entries.accept(REDSTONE_SHOVEL.get());
-                entries.accept(REDSTONE_PICKAXE.get());
-                entries.accept(REDSTONE_AXE.get());
-                entries.accept(REDSTONE_HOE.get());
+                accept(entries, REDSTONE_SWORD, REDSTONE_SHOVEL, REDSTONE_PICKAXE, REDSTONE_AXE, REDSTONE_HOE);
 
-                entries.accept(BRONZE_HELMET.get());
-                entries.accept(BRONZE_CHESTPLATE.get());
-                entries.accept(BRONZE_LEGGINGS.get());
-                entries.accept(BRONZE_BOOTS.get());
+                accept(entries, BRONZE_HELMET, BRONZE_CHESTPLATE, BRONZE_LEGGINGS, BRONZE_BOOTS);
 
-                entries.accept(IRONCOPPER_HELMET.get());
-                entries.accept(IRONCOPPER_CHESTPLATE.get());
-                entries.accept(IRONCOPPER_LEGGINGS.get());
-                entries.accept(IRONCOPPER_BOOTS.get());
+                accept(entries, IRONCOPPER_HELMET, IRONCOPPER_CHESTPLATE, IRONCOPPER_LEGGINGS, IRONCOPPER_BOOTS);
 
-                entries.accept(AMETHYST_HELMET.get());
-                entries.accept(AMETHYST_CHESTPLATE.get());
-                entries.accept(AMETHYST_LEGGINGS.get());
-                entries.accept(AMETHYST_BOOTS.get());
+                accept(entries, AMETHYST_HELMET, AMETHYST_CHESTPLATE, AMETHYST_LEGGINGS, AMETHYST_BOOTS);
 
-                entries.accept(EMERALD_HELMET.get());
-                entries.accept(EMERALD_CHESTPLATE.get());
-                entries.accept(EMERALD_LEGGINGS.get());
-                entries.accept(EMERALD_BOOTS.get());
+                accept(entries, EMERALD_HELMET, EMERALD_CHESTPLATE, EMERALD_LEGGINGS, EMERALD_BOOTS);
 
-                entries.accept(LEAD_HELMET.get());
-                entries.accept(LEAD_CHESTPLATE.get());
-                entries.accept(LEAD_LEGGINGS.get());
-                entries.accept(LEAD_BOOTS.get());
+                accept(entries, LEAD_HELMET, LEAD_CHESTPLATE, LEAD_LEGGINGS, LEAD_BOOTS);
 
-                entries.accept(QUARTZ_HELMET.get());
-                entries.accept(QUARTZ_CHESTPLATE.get());
-                entries.accept(QUARTZ_LEGGINGS.get());
-                entries.accept(QUARTZ_BOOTS.get());
+                accept(entries, QUARTZ_HELMET, QUARTZ_CHESTPLATE, QUARTZ_LEGGINGS, QUARTZ_BOOTS);
 
-                entries.accept(REDSTONE_HELMET.get());
-                entries.accept(REDSTONE_CHESTPLATE.get());
-                entries.accept(REDSTONE_LEGGINGS.get());
-                entries.accept(REDSTONE_BOOTS.get());
+                accept(entries, REDSTONE_HELMET, REDSTONE_CHESTPLATE, REDSTONE_LEGGINGS, REDSTONE_BOOTS);
 
-                entries.accept(LAVA_HELMET.get());
-                entries.accept(LAVA_CHESTPLATE.get());
-                entries.accept(LAVA_LEGGINGS.get());
-                entries.accept(LAVA_BOOTS.get());
+                accept(entries, LAVA_HELMET, LAVA_CHESTPLATE, LAVA_LEGGINGS, LAVA_BOOTS);
 
-                entries.accept(BRONZE_INGOT.get());
-                entries.accept(AMETHYST_INGOT.get());
-                entries.accept(EMERALD_INGOT.get());
-                entries.accept(LEAD_INGOT.get());
-                entries.accept(QUARTZ_INGOT.get());
-                entries.accept(REDSTONE_INGOT.get());
-                entries.accept(RED_DIAMOND_INGOT.get());
+                accept(entries, BRONZE_INGOT, AMETHYST_INGOT, EMERALD_INGOT, LEAD_INGOT, QUARTZ_INGOT, REDSTONE_INGOT, RED_DIAMOND_INGOT);
 
-                entries.accept(LEAD_ORE.get());
-                entries.accept(RED_DIAMOND_ORE.get());
-                entries.accept(DEEPSLATE_RED_DIAMOND_ORE.get());
+                accept(entries, LEAD_ORE, RED_DIAMOND_ORE, DEEPSLATE_RED_DIAMOND_ORE);
 
-                entries.accept(RAW_LEAD.get());
-                entries.accept(QUARTZ_SCRAP.get());
-                entries.accept(RED_DIAMOND.get());
-                entries.accept(LAVA_SMITHING_TEMPLATE.get());
+                accept(entries, RAW_LEAD, QUARTZ_SCRAP, RED_DIAMOND, LAVA_SMITHING_TEMPLATE);
 
-                entries.accept(DURABLE_FIREWORK_ROCKET.get());
-                entries.accept(DURABLE_FIREWORK_ROCKET_UPGRADED.get());
-                entries.accept(DURABLE_TOTEM_OF_UNDYING.get());
-                entries.accept(DURABLE_TOTEM_OF_UNDYING_UPGRADED.get());
-                entries.accept(DURABLE_TORCH.get());
-                entries.accept(DURABLE_TORCH_UPGRADED.get());
+                accept(entries, DURABLE_FIREWORK_ROCKET, DURABLE_FIREWORK_ROCKET_UPGRADED, DURABLE_TOTEM_OF_UNDYING, DURABLE_TOTEM_OF_UNDYING_UPGRADED, DURABLE_TORCH, DURABLE_TORCH_UPGRADED);
             })
             .build());
         itemGroupRegister.register();
+    }
+
+    // One helper per item shape. The numbers are the per-shape balance and live here
+    // rather than being repeated on every series.
+
+    private static RegistrySupplier<Item> sword(String name, ToolMaterial material) {
+        return REGISTER.register(name, () -> new Item(settingsOf(name).sword(material, 1.0F, -2.4F)));
+    }
+
+    private static RegistrySupplier<Item> shovel(String name, ToolMaterial material) {
+        return REGISTER.register(name, () -> new ShovelItem(material, 1.0F, -3.0F, settingsOf(name)));
+    }
+
+    private static RegistrySupplier<Item> pickaxe(String name, ToolMaterial material) {
+        return REGISTER.register(name, () -> new Item(settingsOf(name).pickaxe(material, 1.0F, -2.8F)));
+    }
+
+    private static RegistrySupplier<Item> axe(String name, ToolMaterial material) {
+        return REGISTER.register(name, () -> new AxeItem(material, 5.0F, -3.1F, settingsOf(name)));
+    }
+
+    private static RegistrySupplier<Item> hoe(String name, ToolMaterial material) {
+        return REGISTER.register(name, () -> new HoeItem(material, -2.0F, -1.6F, settingsOf(name)));
+    }
+
+    private static RegistrySupplier<Item> armor(String name, ArmorType type,
+                                                BiFunction<ArmorType, Item.Properties, Item> factory) {
+        return REGISTER.register(name, () -> factory.apply(type, settingsOf(name)));
+    }
+
+    private static RegistrySupplier<Item> simple(String name) {
+        return REGISTER.register(name, () -> new Item(settingsOf(name)));
+    }
+
+    private static RegistrySupplier<Item> blockItem(String name, RegistrySupplier<Block> block) {
+        return REGISTER.register(name,
+                () -> new BlockItem(block.get(), settingsOf(name, new Item.Properties().useBlockDescriptionPrefix())));
+    }
+
+    @SafeVarargs
+    private static void accept(CreativeModeTab.Output entries, RegistrySupplier<Item>... items) {
+        for (RegistrySupplier<Item> item : items) {
+            entries.accept(item.get());
+        }
     }
 
     private static Item.Properties settingsOf(String name) {

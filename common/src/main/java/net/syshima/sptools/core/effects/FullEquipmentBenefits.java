@@ -9,14 +9,13 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.ModEffects;
+import net.syshima.sptools.PlayerEquipment;
 import net.syshima.sptools.base.ModArmorItem;
 
 import java.util.EnumMap;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -27,11 +26,12 @@ import java.util.UUID;
  * safe to call from either side. Only the bookkeeping needed to avoid re-applying the
  * effect every tick is stateful, and that state is server-side and keyed by UUID so a
  * disconnecting player cannot keep an entity alive.
+ *
+ * <p>This class only hands the effect out. Effects that do work of their own each tick
+ * drive that from {@code MobEffect.applyEffectTick}, so they behave the same whether
+ * the armour set or {@code /effect} granted them, and adding one needs no change here.
  */
 public final class FullEquipmentBenefits {
-
-    private static final List<EquipmentSlot> ARMOR_SLOTS =
-            List.of(EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET);
 
     private static final Map<Constants.Series, RegistrySupplier<MobEffect>> BENEFITS =
             new EnumMap<>(Constants.Series.class);
@@ -67,7 +67,7 @@ public final class FullEquipmentBenefits {
             return Constants.Series.None;
         }
 
-        for (EquipmentSlot slot : ARMOR_SLOTS) {
+        for (EquipmentSlot slot : PlayerEquipment.ARMOR_SLOTS) {
             if (seriesOf(player.getItemBySlot(slot)) != worn) {
                 return Constants.Series.None;
             }
@@ -82,21 +82,9 @@ public final class FullEquipmentBenefits {
 
     private static void tick(Player player) {
         Constants.Series series = seriesOf(player);
-        if (ACTIVE.put(player.getUUID(), series) != series) {
+        if (ACTIVE.get(player.getUUID()) != series) {
+            ACTIVE.put(player.getUUID(), series);
             applyBenefit(player, series);
-        }
-
-        // Driven by the effect rather than the armour set, so an effect handed out by
-        // /effect behaves the same way the set-granted one does.
-        Level level = player.level();
-        if (player.hasEffect(ModEffects.BOUNDED_GLOWING.asHolder())) {
-            BoundedGlowingEffect.effect(level, player);
-        }
-
-        if (player.hasEffect(ModEffects.REDSTONE_OVERFLOW.asHolder())) {
-            RedstoneOverflowEffect.effect(level, player);
-        } else {
-            RedstoneOverflowEffect.clear(player);
         }
     }
 

@@ -61,6 +61,8 @@ loom {
     }
 }
 
+// Project-level repositories in the root build.gradle take precedence over the ones in
+// settings.gradle, so this declaration is load-bearing rather than a duplicate.
 repositories {
     maven {
         name = 'NeoForged'

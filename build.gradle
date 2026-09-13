@@ -26,7 +26,9 @@ allprojects {
     base {
         archivesName = rootProject.archives_name
     }
-    version = rootProject.mod_version + "_" + rootProject.minecraft_version + "-" + project.name
+    // "+" rather than "_": Fabric Loader parses this as a semantic version and warns
+    // on every launch otherwise. Everything after it is SemVer build metadata.
+    version = rootProject.mod_version + "+" + rootProject.minecraft_version + "-" + project.name
     group = rootProject.maven_group
 
     repositories {

@@ -1,45 +1,50 @@
 package net.syshima.sptools.core.effects;
 
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.level.Level;
 import net.syshima.sptools.base.ModStatusEffect;
 
-import java.util.List;
-
 public class BoundedGlowingEffect extends ModStatusEffect {
-    private static final double RANGE = 12.0F;
+    private static final double RANGE = 12.0;
     private static final int DURATION = 100;
+
+    /**
+     * Ticks between sweeps. Well inside {@link #DURATION}, so the glow never lapses
+     * between two sweeps while the carrier keeps the effect.
+     */
+    private static final int INTERVAL = 20;
+
     public BoundedGlowingEffect() {
         super(MobEffectCategory.BENEFICIAL, 0xDDEEFF);
     }
 
-    public static void effect(Level world, Player player) {
-        Vec3 pos = player.position();
-        double range = BoundedGlowingEffect.RANGE;
-        AABB box = new AABB(
-                new Vec3(pos.x - range, pos.y - range, pos.z - range),
-                new Vec3(pos.x + range, pos.y + range, pos.z + range)
-        );
+    /**
+     * {@inheritDoc}
+     *
+     * <p>For an infinite effect the game passes the carrier's tick count here rather
+     * than a remaining duration, so this reads as a steady interval either way.
+     */
+    @Override
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
+        return duration % INTERVAL == 0;
+    }
 
-        List<LivingEntity> entities = world.getEntitiesOfClass(
-                LivingEntity.class,
-                box,
-                entity -> entity != null && entity.isAlive());
+    @Override
+    public boolean applyEffectTick(ServerLevel level, LivingEntity carrier, int amplifier) {
+        AABB box = AABB.ofSize(carrier.position(), RANGE * 2, RANGE * 2, RANGE * 2);
 
-        for (LivingEntity entity : entities) {
-            if (entity == player) {
+        for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, box, LivingEntity::isAlive)) {
+            if (entity == carrier || entity.hasEffect(MobEffects.GLOWING)) {
                 continue;
             }
 
-            if (!entity.hasEffect(MobEffects.GLOWING)) {
-                entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, DURATION, 1, false ,false, false));
-            }
+            entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, DURATION, 1, false, false, false));
         }
+
+        return true;
     }
 }
