@@ -18,17 +18,10 @@ public final class TrinketsCompat {
     private TrinketsCompat() {
     }
 
-    /** First accessory slot holding one of the items, or {@link ItemStack#EMPTY}. */
-    public static ItemStack findEquipped(Player player, Item... items) {
-        var attachment = TrinketsApi.getAttachment(player);
-        for (Item item : items) {
-            var found = attachment.findFirst(item, true);
-            if (found.isPresent()) {
-                return found.get().get();
-            }
-        }
-
-        return ItemStack.EMPTY;
+    /** First accessory slot holding the item, or {@link ItemStack#EMPTY}. */
+    public static ItemStack findEquipped(Player player, Item item) {
+        var found = TrinketsApi.getAttachment(player).findFirst(item, true);
+        return found.isPresent() ? found.get().get() : ItemStack.EMPTY;
     }
 
     /**

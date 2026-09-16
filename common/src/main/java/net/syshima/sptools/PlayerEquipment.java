@@ -76,24 +76,42 @@ public final class PlayerEquipment {
     /**
      * First held, worn or accessory stack matching any of the given items, or
      * {@link ItemStack#EMPTY} when none is equipped.
+     *
+     * <p>The items decide the order: each is looked for across every slot before the
+     * next is tried, so a caller listing an upgraded item ahead of its plain
+     * counterpart gets the upgraded one wherever it happens to be worn. Sweeping slot
+     * by slot instead let the slot order win for hands and armour while accessories
+     * still went by item, so the same pair resolved differently depending on which
+     * kind of slot held them.
      */
     public static ItemStack findEquipped(Player player, Item... items) {
+        for (Item item : items) {
+            ItemStack found = findEquipped(player, item);
+            if (!found.isEmpty()) {
+                return found;
+            }
+        }
+
+        return ItemStack.EMPTY;
+    }
+
+    private static ItemStack findEquipped(Player player, Item item) {
         for (InteractionHand hand : InteractionHand.values()) {
             ItemStack stack = player.getItemInHand(hand);
-            if (matches(stack, items)) {
+            if (stack.is(item)) {
                 return stack;
             }
         }
 
         for (EquipmentSlot slot : ARMOR_SLOTS) {
             ItemStack stack = player.getItemBySlot(slot);
-            if (matches(stack, items)) {
+            if (stack.is(item)) {
                 return stack;
             }
         }
 
         if (TRINKETS_PRESENT) {
-            return TrinketsCompat.findEquipped(player, items);
+            return TrinketsCompat.findEquipped(player, item);
         }
 
         return ItemStack.EMPTY;
@@ -109,15 +127,5 @@ public final class PlayerEquipment {
         if (slot != null) {
             stack.hurtAndBreak(amount, player, slot);
         }
-    }
-
-    private static boolean matches(ItemStack stack, Item... items) {
-        for (Item item : items) {
-            if (stack.is(item)) {
-                return true;
-            }
-        }
-
-        return false;
     }
 }
