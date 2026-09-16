@@ -25,7 +25,7 @@ public class RedstoneArmorItem extends SeriesArmorItem {
     };
 
     public RedstoneArmorItem(ArmorType type, Item.Properties settings) {
-        super(Constants.Series.Redstone, type, settings);
+        super(Constants.Series.REDSTONE, type, settings);
     }
 
     @Override

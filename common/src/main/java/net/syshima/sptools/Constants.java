@@ -24,33 +24,33 @@ public final class Constants {
      * They are arguments to the constant here instead, which turns leaving one out
      * into a compile error rather than a missing row noticed at runtime.
      *
-     * <p>{@link #None} carries no traits: it is what "this player is not wearing a
+     * <p>{@link #NONE} carries no traits: it is what "this player is not wearing a
      * matched set" means everywhere a series is read.
      */
     public enum Series {
-        None,
+        NONE,
 
         // The Bronze line reads "blessing.copper" on purpose: it is an existing
         // translation key, and renaming it would break language files.
-        Bronze(ModArmorMaterials.BRONZE, Rarity.UNCOMMON, 12,
+        BRONZE(ModArmorMaterials.BRONZE, Rarity.UNCOMMON, 12,
                 "item.sptools.blessing.copper", false, ModEffects.KNOCKBACK_RESISTANCE),
-        IronCopper(ModArmorMaterials.IRONCOPPER, Rarity.UNCOMMON, 11,
+        IRON_COPPER(ModArmorMaterials.IRONCOPPER, Rarity.UNCOMMON, 11,
                 "item.sptools.blessing.ironcopper", false, ModEffects.ATTACK_KNOCKBACK),
-        Amethyst(ModArmorMaterials.AMETHYST, Rarity.RARE, 17,
+        AMETHYST(ModArmorMaterials.AMETHYST, Rarity.RARE, 17,
                 "item.sptools.blessing.amethyst", false, ModEffects.MOVEMENT_SPEED),
-        Emerald(ModArmorMaterials.EMERALD, Rarity.RARE, 21,
+        EMERALD(ModArmorMaterials.EMERALD, Rarity.RARE, 21,
                 "item.sptools.blessing.emerald", false, ModEffects.HASTE_AND_LUCK),
-        Lead(ModArmorMaterials.LEAD, Rarity.UNCOMMON, 12,
+        LEAD(ModArmorMaterials.LEAD, Rarity.UNCOMMON, 12,
                 "item.sptools.blessing.heavy", false, ModEffects.HEAVY),
-        Quartz(ModArmorMaterials.QUARTZ, Rarity.RARE, 22,
+        QUARTZ(ModArmorMaterials.QUARTZ, Rarity.RARE, 22,
                 "item.sptools.blessing.quartz", false, ModEffects.BOUNDED_GLOWING),
-        Redstone(ModArmorMaterials.REDSTONE, Rarity.RARE, 14,
+        REDSTONE(ModArmorMaterials.REDSTONE, Rarity.RARE, 14,
                 "item.sptools.blessing.redstone", false, ModEffects.REDSTONE_OVERFLOW),
-        Lava(ModArmorMaterials.LAVA, Rarity.EPIC, 40,
+        LAVA(ModArmorMaterials.LAVA, Rarity.EPIC, 40,
                 "item.sptools.blessing.lava", true, ModEffects.ANTI_LAVA);
 
         /**
-         * Every series that grants a set bonus, in declaration order. {@link #None} is
+         * Every series that grants a set bonus, in declaration order. {@link #NONE} is
          * not among them. Shared; never mutated.
          */
         public static final List<Series> WITH_BONUS = withBonus();
@@ -70,7 +70,7 @@ public final class Constants {
         /**
          * Everything an armour piece of this series is built from.
          *
-         * @throws IllegalStateException for {@link #None}, which describes no armour
+         * @throws IllegalStateException for {@link #NONE}, which describes no armour
          */
         public ArmorSeries traits() {
             if (traits == null) {
@@ -83,7 +83,7 @@ public final class Constants {
         /**
          * Effect a complete set of this series grants.
          *
-         * @throws IllegalStateException for {@link #None}, which grants nothing
+         * @throws IllegalStateException for {@link #NONE}, which grants nothing
          */
         public Holder<MobEffect> bonus() {
             return traits().benefit().asHolder();

@@ -27,7 +27,7 @@ public abstract class ModArmorItem extends Item {
         // is looking at the item - which is only ever the client.
         Constants.Series worn = EnvExecutor.getEnvSpecific(
                 () -> () -> net.syshima.sptools.client.ClientEquipment.localSeries(),
-                () -> () -> Constants.Series.None);
+                () -> () -> Constants.Series.NONE);
 
         if (worn == getSeries()) {
             textConsumer.accept(Component.translatable("item.sptools.blessing").withStyle(ChatFormatting.GREEN));

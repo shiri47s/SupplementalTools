@@ -72,45 +72,45 @@ public final class ModItems {
     public static final RegistrySupplier<Item> REDSTONE_AXE = axe(Constants.Items.REDSTONE_AXE, ModToolMaterials.REDSTONE);
     public static final RegistrySupplier<Item> REDSTONE_HOE = hoe(Constants.Items.REDSTONE_HOE, ModToolMaterials.REDSTONE);
 
-    public static final RegistrySupplier<Item> BRONZE_HELMET = armor(Constants.Items.BRONZE_HELMET, ArmorType.HELMET, Constants.Series.Bronze);
-    public static final RegistrySupplier<Item> BRONZE_CHESTPLATE = armor(Constants.Items.BRONZE_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.Bronze);
-    public static final RegistrySupplier<Item> BRONZE_LEGGINGS = armor(Constants.Items.BRONZE_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.Bronze);
-    public static final RegistrySupplier<Item> BRONZE_BOOTS = armor(Constants.Items.BRONZE_BOOTS, ArmorType.BOOTS, Constants.Series.Bronze);
+    public static final RegistrySupplier<Item> BRONZE_HELMET = armor(Constants.Items.BRONZE_HELMET, ArmorType.HELMET, Constants.Series.BRONZE);
+    public static final RegistrySupplier<Item> BRONZE_CHESTPLATE = armor(Constants.Items.BRONZE_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.BRONZE);
+    public static final RegistrySupplier<Item> BRONZE_LEGGINGS = armor(Constants.Items.BRONZE_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.BRONZE);
+    public static final RegistrySupplier<Item> BRONZE_BOOTS = armor(Constants.Items.BRONZE_BOOTS, ArmorType.BOOTS, Constants.Series.BRONZE);
 
-    public static final RegistrySupplier<Item> IRONCOPPER_HELMET = armor(Constants.Items.IRONCOPPER_HELMET, ArmorType.HELMET, Constants.Series.IronCopper);
-    public static final RegistrySupplier<Item> IRONCOPPER_CHESTPLATE = armor(Constants.Items.IRONCOPPER_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.IronCopper);
-    public static final RegistrySupplier<Item> IRONCOPPER_LEGGINGS = armor(Constants.Items.IRONCOPPER_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.IronCopper);
-    public static final RegistrySupplier<Item> IRONCOPPER_BOOTS = armor(Constants.Items.IRONCOPPER_BOOTS, ArmorType.BOOTS, Constants.Series.IronCopper);
+    public static final RegistrySupplier<Item> IRONCOPPER_HELMET = armor(Constants.Items.IRONCOPPER_HELMET, ArmorType.HELMET, Constants.Series.IRON_COPPER);
+    public static final RegistrySupplier<Item> IRONCOPPER_CHESTPLATE = armor(Constants.Items.IRONCOPPER_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.IRON_COPPER);
+    public static final RegistrySupplier<Item> IRONCOPPER_LEGGINGS = armor(Constants.Items.IRONCOPPER_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.IRON_COPPER);
+    public static final RegistrySupplier<Item> IRONCOPPER_BOOTS = armor(Constants.Items.IRONCOPPER_BOOTS, ArmorType.BOOTS, Constants.Series.IRON_COPPER);
 
-    public static final RegistrySupplier<Item> AMETHYST_HELMET = armor(Constants.Items.AMETHYST_HELMET, ArmorType.HELMET, Constants.Series.Amethyst);
-    public static final RegistrySupplier<Item> AMETHYST_CHESTPLATE = armor(Constants.Items.AMETHYST_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.Amethyst);
-    public static final RegistrySupplier<Item> AMETHYST_LEGGINGS = armor(Constants.Items.AMETHYST_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.Amethyst);
-    public static final RegistrySupplier<Item> AMETHYST_BOOTS = armor(Constants.Items.AMETHYST_BOOTS, ArmorType.BOOTS, Constants.Series.Amethyst);
+    public static final RegistrySupplier<Item> AMETHYST_HELMET = armor(Constants.Items.AMETHYST_HELMET, ArmorType.HELMET, Constants.Series.AMETHYST);
+    public static final RegistrySupplier<Item> AMETHYST_CHESTPLATE = armor(Constants.Items.AMETHYST_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.AMETHYST);
+    public static final RegistrySupplier<Item> AMETHYST_LEGGINGS = armor(Constants.Items.AMETHYST_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.AMETHYST);
+    public static final RegistrySupplier<Item> AMETHYST_BOOTS = armor(Constants.Items.AMETHYST_BOOTS, ArmorType.BOOTS, Constants.Series.AMETHYST);
 
-    public static final RegistrySupplier<Item> EMERALD_HELMET = armor(Constants.Items.EMERALD_HELMET, ArmorType.HELMET, Constants.Series.Emerald);
-    public static final RegistrySupplier<Item> EMERALD_CHESTPLATE = armor(Constants.Items.EMERALD_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.Emerald);
-    public static final RegistrySupplier<Item> EMERALD_LEGGINGS = armor(Constants.Items.EMERALD_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.Emerald);
-    public static final RegistrySupplier<Item> EMERALD_BOOTS = armor(Constants.Items.EMERALD_BOOTS, ArmorType.BOOTS, Constants.Series.Emerald);
+    public static final RegistrySupplier<Item> EMERALD_HELMET = armor(Constants.Items.EMERALD_HELMET, ArmorType.HELMET, Constants.Series.EMERALD);
+    public static final RegistrySupplier<Item> EMERALD_CHESTPLATE = armor(Constants.Items.EMERALD_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.EMERALD);
+    public static final RegistrySupplier<Item> EMERALD_LEGGINGS = armor(Constants.Items.EMERALD_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.EMERALD);
+    public static final RegistrySupplier<Item> EMERALD_BOOTS = armor(Constants.Items.EMERALD_BOOTS, ArmorType.BOOTS, Constants.Series.EMERALD);
 
-    public static final RegistrySupplier<Item> LEAD_HELMET = armor(Constants.Items.LEAD_HELMET, ArmorType.HELMET, Constants.Series.Lead);
-    public static final RegistrySupplier<Item> LEAD_CHESTPLATE = armor(Constants.Items.LEAD_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.Lead);
-    public static final RegistrySupplier<Item> LEAD_LEGGINGS = armor(Constants.Items.LEAD_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.Lead);
-    public static final RegistrySupplier<Item> LEAD_BOOTS = armor(Constants.Items.LEAD_BOOTS, ArmorType.BOOTS, Constants.Series.Lead);
+    public static final RegistrySupplier<Item> LEAD_HELMET = armor(Constants.Items.LEAD_HELMET, ArmorType.HELMET, Constants.Series.LEAD);
+    public static final RegistrySupplier<Item> LEAD_CHESTPLATE = armor(Constants.Items.LEAD_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.LEAD);
+    public static final RegistrySupplier<Item> LEAD_LEGGINGS = armor(Constants.Items.LEAD_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.LEAD);
+    public static final RegistrySupplier<Item> LEAD_BOOTS = armor(Constants.Items.LEAD_BOOTS, ArmorType.BOOTS, Constants.Series.LEAD);
 
-    public static final RegistrySupplier<Item> QUARTZ_HELMET = armor(Constants.Items.QUARTZ_HELMET, ArmorType.HELMET, Constants.Series.Quartz);
-    public static final RegistrySupplier<Item> QUARTZ_CHESTPLATE = armor(Constants.Items.QUARTZ_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.Quartz);
-    public static final RegistrySupplier<Item> QUARTZ_LEGGINGS = armor(Constants.Items.QUARTZ_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.Quartz);
-    public static final RegistrySupplier<Item> QUARTZ_BOOTS = armor(Constants.Items.QUARTZ_BOOTS, ArmorType.BOOTS, Constants.Series.Quartz);
+    public static final RegistrySupplier<Item> QUARTZ_HELMET = armor(Constants.Items.QUARTZ_HELMET, ArmorType.HELMET, Constants.Series.QUARTZ);
+    public static final RegistrySupplier<Item> QUARTZ_CHESTPLATE = armor(Constants.Items.QUARTZ_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.QUARTZ);
+    public static final RegistrySupplier<Item> QUARTZ_LEGGINGS = armor(Constants.Items.QUARTZ_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.QUARTZ);
+    public static final RegistrySupplier<Item> QUARTZ_BOOTS = armor(Constants.Items.QUARTZ_BOOTS, ArmorType.BOOTS, Constants.Series.QUARTZ);
 
     public static final RegistrySupplier<Item> REDSTONE_HELMET = armor(Constants.Items.REDSTONE_HELMET, ArmorType.HELMET, RedstoneArmorItem::new);
     public static final RegistrySupplier<Item> REDSTONE_CHESTPLATE = armor(Constants.Items.REDSTONE_CHESTPLATE, ArmorType.CHESTPLATE, RedstoneArmorItem::new);
     public static final RegistrySupplier<Item> REDSTONE_LEGGINGS = armor(Constants.Items.REDSTONE_LEGGINGS, ArmorType.LEGGINGS, RedstoneArmorItem::new);
     public static final RegistrySupplier<Item> REDSTONE_BOOTS = armor(Constants.Items.REDSTONE_BOOTS, ArmorType.BOOTS, RedstoneArmorItem::new);
 
-    public static final RegistrySupplier<Item> LAVA_HELMET = armor(Constants.Items.LAVA_HELMET, ArmorType.HELMET, Constants.Series.Lava);
-    public static final RegistrySupplier<Item> LAVA_CHESTPLATE = armor(Constants.Items.LAVA_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.Lava);
-    public static final RegistrySupplier<Item> LAVA_LEGGINGS = armor(Constants.Items.LAVA_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.Lava);
-    public static final RegistrySupplier<Item> LAVA_BOOTS = armor(Constants.Items.LAVA_BOOTS, ArmorType.BOOTS, Constants.Series.Lava);
+    public static final RegistrySupplier<Item> LAVA_HELMET = armor(Constants.Items.LAVA_HELMET, ArmorType.HELMET, Constants.Series.LAVA);
+    public static final RegistrySupplier<Item> LAVA_CHESTPLATE = armor(Constants.Items.LAVA_CHESTPLATE, ArmorType.CHESTPLATE, Constants.Series.LAVA);
+    public static final RegistrySupplier<Item> LAVA_LEGGINGS = armor(Constants.Items.LAVA_LEGGINGS, ArmorType.LEGGINGS, Constants.Series.LAVA);
+    public static final RegistrySupplier<Item> LAVA_BOOTS = armor(Constants.Items.LAVA_BOOTS, ArmorType.BOOTS, Constants.Series.LAVA);
 
     public static final RegistrySupplier<Item> BRONZE_INGOT = simple(Constants.Items.BRONZE_INGOT);
     public static final RegistrySupplier<Item> AMETHYST_INGOT = simple(Constants.Items.AMETHYST_INGOT);
@@ -134,7 +134,7 @@ public final class ModItems {
     public static final RegistrySupplier<Item> DURABLE_TOTEM_OF_UNDYING = REGISTER.register(Constants.Items.DURABLE_TOTEM_OF_UNDYING, () -> new DurableTotemOfUndying(settingsOf(Constants.Items.DURABLE_TOTEM_OF_UNDYING, (new Item.Properties()).shovel(ModToolMaterials.DURABLE, 1.0F, -2.3F))));
     public static final RegistrySupplier<Item> DURABLE_TOTEM_OF_UNDYING_UPGRADED = REGISTER.register(Constants.Items.DURABLE_TOTEM_OF_UNDYING_UPGRADED, () -> new DurableTotemOfUndyingUpgraded(settingsOf(Constants.Items.DURABLE_TOTEM_OF_UNDYING_UPGRADED, (new Item.Properties()).shovel(ModToolMaterials.DURABLE_UPGRADED, 1.5F, -2.2F))));
     public static final RegistrySupplier<Item> DURABLE_TORCH = REGISTER.register(Constants.Items.DURABLE_TORCH, () -> new DurableTorch(settingsOf(Constants.Items.DURABLE_TORCH, (new Item.Properties()).pickaxe(ModToolMaterials.DURABLE, 1.0F, -2.1F))));
-    public static final RegistrySupplier<Item> DURABLE_TORCH_UPGRADED = REGISTER.register(Constants.Items.DURABLE_TORCH_UPGRADED, () -> new DurableTorchUpgraded(settingsOf(Constants.Items.DURABLE_TORCH_UPGRADED, (new Item.Properties()).pickaxe(ModToolMaterials.DURABLE_UPGRADED, 1.5F, -2.0F))));
+    public static final RegistrySupplier<Item> DURABLE_TORCH_UPGRADED = REGISTER.register(Constants.Items.DURABLE_TORCH_UPGRADED, () -> new DurableTorch(settingsOf(Constants.Items.DURABLE_TORCH_UPGRADED, (new Item.Properties()).pickaxe(ModToolMaterials.DURABLE_UPGRADED, 1.5F, -2.0F))));
 
     private ModItems() {
     }

@@ -36,7 +36,7 @@ public final class FullEquipmentBenefits {
 
     /**
      * Series each player is currently being granted a bonus for. A player wearing no
-     * matched set is absent rather than mapped to {@link Constants.Series#None}, so an
+     * matched set is absent rather than mapped to {@link Constants.Series#NONE}, so an
      * absent entry and a fresh login read the same: nothing to take away. Reading it as
      * "unknown" instead would strip our effects off everyone on their first tick.
      */
@@ -55,18 +55,18 @@ public final class FullEquipmentBenefits {
     }
 
     /**
-     * Series the player is wearing a complete set of, or {@link Constants.Series#None}.
+     * Series the player is wearing a complete set of, or {@link Constants.Series#NONE}.
      * Pure; holds no state and is valid on both the client and the server.
      */
     public static Constants.Series seriesOf(Player player) {
         Constants.Series worn = seriesOf(player.getItemBySlot(EquipmentSlot.HEAD));
-        if (worn == Constants.Series.None) {
-            return Constants.Series.None;
+        if (worn == Constants.Series.NONE) {
+            return Constants.Series.NONE;
         }
 
         for (EquipmentSlot slot : PlayerEquipment.ARMOR_SLOTS) {
             if (seriesOf(player.getItemBySlot(slot)) != worn) {
-                return Constants.Series.None;
+                return Constants.Series.NONE;
             }
         }
 
@@ -74,15 +74,15 @@ public final class FullEquipmentBenefits {
     }
 
     private static Constants.Series seriesOf(ItemStack stack) {
-        return stack.getItem() instanceof ModArmorItem armor ? armor.getSeries() : Constants.Series.None;
+        return stack.getItem() instanceof ModArmorItem armor ? armor.getSeries() : Constants.Series.NONE;
     }
 
     private static void tick(Player player) {
         UUID id = player.getUUID();
         Constants.Series series = seriesOf(player);
 
-        if (ACTIVE.getOrDefault(id, Constants.Series.None) != series) {
-            if (series == Constants.Series.None) {
+        if (ACTIVE.getOrDefault(id, Constants.Series.NONE) != series) {
+            if (series == Constants.Series.NONE) {
                 ACTIVE.remove(id);
             } else {
                 ACTIVE.put(id, series);
@@ -96,7 +96,7 @@ public final class FullEquipmentBenefits {
         // including one of our own effects handed out by /effect. Only put back the
         // bonus this set owes the player, which anything that clears effects wholesale
         // (a totem, a bucket of milk) will have taken with it.
-        if (series != Constants.Series.None) {
+        if (series != Constants.Series.NONE) {
             Holder<MobEffect> bonus = series.bonus();
             if (!player.hasEffect(bonus)) {
                 grant(player, bonus);
@@ -109,7 +109,7 @@ public final class FullEquipmentBenefits {
             player.removeEffect(other.bonus());
         }
 
-        if (series != Constants.Series.None) {
+        if (series != Constants.Series.NONE) {
             grant(player, series.bonus());
         }
     }

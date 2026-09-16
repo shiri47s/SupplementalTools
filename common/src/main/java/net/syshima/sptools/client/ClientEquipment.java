@@ -24,7 +24,7 @@ public final class ClientEquipment {
     /** Series the local player is wearing a complete set of. */
     public static Constants.Series localSeries() {
         Player player = Minecraft.getInstance().player;
-        return player == null ? Constants.Series.None : FullEquipmentBenefits.seriesOf(player);
+        return player == null ? Constants.Series.NONE : FullEquipmentBenefits.seriesOf(player);
     }
 
     /** Redstone power level (0-8) the local player is currently standing in. */
