@@ -122,3 +122,7 @@ run/
 # recipes, loot tables, tags, worldgen). Only the datagen hash cache is ignored.
 **/generated/.cache/
 neoforge/src/generated/.cache/
+
+# MCP server config. It addresses an IDE listening on a port on this machine,
+# so it is per-developer rather than per-project.
+.mcp.json

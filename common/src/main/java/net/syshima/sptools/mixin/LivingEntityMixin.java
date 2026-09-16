@@ -1,6 +1,7 @@
 package net.syshima.sptools.mixin;
 
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.syshima.sptools.ModItems;
@@ -20,6 +21,13 @@ public abstract class LivingEntityMixin {
             at = @At("HEAD"),
             cancellable = true)
     private void sptools$tryUseDurableTotem(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
+        // Vanilla's own first line, repeated because HEAD runs ahead of it. Without it a
+        // durable totem would revive the player from /kill and from the void, which no
+        // totem of undying does.
+        if (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
+            return;
+        }
+
         if (!((LivingEntity) (Object) this instanceof ServerPlayer player)) {
             return;
         }

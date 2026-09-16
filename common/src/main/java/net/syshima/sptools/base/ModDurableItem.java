@@ -31,7 +31,10 @@ public abstract class ModDurableItem extends Item {
             return;
         }
 
-        int usesLeft = (stack.getMaxDamage() - stack.getDamageValue()) / cost;
+        // Rounded up, because a stack holding less than one full cost still pays for a
+        // last use: hurtAndBreak caps the overdraw and breaks the item instead of
+        // refusing it. Rounding down would promise one use fewer than the item gives.
+        int usesLeft = Math.ceilDiv(stack.getMaxDamage() - stack.getDamageValue(), cost);
         textConsumer.accept(Component.translatable("item.sptools.durable.tooltip", usesLeft).withStyle(ChatFormatting.GREEN));
     }
 

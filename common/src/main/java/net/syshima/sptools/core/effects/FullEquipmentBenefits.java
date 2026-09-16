@@ -1,5 +1,6 @@
 package net.syshima.sptools.core.effects;
 
+import dev.architectury.event.events.common.LifecycleEvent;
 import dev.architectury.event.events.common.PlayerEvent;
 import dev.architectury.event.events.common.TickEvent;
 import net.minecraft.core.Holder;
@@ -34,6 +35,12 @@ import java.util.UUID;
  */
 public final class FullEquipmentBenefits {
 
+    /**
+     * Series each player is currently being granted a bonus for. A player wearing no
+     * matched set is absent rather than mapped to {@link Constants.Series#None}, so an
+     * absent entry and a fresh login read the same: nothing to take away. Reading it as
+     * "unknown" instead would strip our effects off everyone on their first tick.
+     */
     private static final Map<UUID, Constants.Series> ACTIVE = new HashMap<>();
 
     private FullEquipmentBenefits() {
@@ -42,6 +49,10 @@ public final class FullEquipmentBenefits {
     public static void bootstrap() {
         TickEvent.SERVER_LEVEL_PRE.register(level -> level.players().forEach(FullEquipmentBenefits::tick));
         PlayerEvent.PLAYER_QUIT.register(player -> ACTIVE.remove(player.getUUID()));
+
+        // An integrated server comes and goes inside a client that keeps running, so
+        // quitting alone does not empty this between worlds.
+        LifecycleEvent.SERVER_STOPPED.register(server -> ACTIVE.clear());
     }
 
     /**
@@ -68,11 +79,17 @@ public final class FullEquipmentBenefits {
     }
 
     private static void tick(Player player) {
+        UUID id = player.getUUID();
         Constants.Series series = seriesOf(player);
         Holder<MobEffect> benefit = benefitOf(series);
 
-        if (ACTIVE.get(player.getUUID()) != series) {
-            ACTIVE.put(player.getUUID(), series);
+        if (ACTIVE.getOrDefault(id, Constants.Series.None) != series) {
+            if (series == Constants.Series.None) {
+                ACTIVE.remove(id);
+            } else {
+                ACTIVE.put(id, series);
+            }
+
             applyBenefit(player, benefit);
             return;
         }

@@ -18,6 +18,12 @@ public class BoundedGlowingEffect extends ModStatusEffect {
      */
     private static final int INTERVAL = 20;
 
+    /**
+     * Renew a glow with no more than this left. One sweep of headroom covers the case
+     * where the carrier has already ticked past this sweep when the target ticks.
+     */
+    private static final int RENEW_BELOW = INTERVAL * 2;
+
     public BoundedGlowingEffect() {
         super(MobEffectCategory.BENEFICIAL, 0xDDEEFF);
     }
@@ -38,7 +44,7 @@ public class BoundedGlowingEffect extends ModStatusEffect {
         AABB box = AABB.ofSize(carrier.position(), RANGE * 2, RANGE * 2, RANGE * 2);
 
         for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, box, LivingEntity::isAlive)) {
-            if (entity == carrier || entity.hasEffect(MobEffects.GLOWING)) {
+            if (entity == carrier || glowsPastNextSweep(entity)) {
                 continue;
             }
 
@@ -46,5 +52,21 @@ public class BoundedGlowingEffect extends ModStatusEffect {
         }
 
         return true;
+    }
+
+    /**
+     * Whether the entity's glow is certain to outlast the next sweep.
+     *
+     * <p>Testing only that the effect is present let it lapse: {@link #DURATION} is a
+     * whole number of sweeps, so the tick a glow expires on is the tick a sweep would
+     * have renewed it, and which of the two entities ticks first decided whether the
+     * target flickered for up to {@link #INTERVAL} ticks.
+     *
+     * <p>An endless glow from somewhere else counts as outlasting the sweep and is left
+     * alone, so renewing can only ever lengthen a glow, never cut one short.
+     */
+    private static boolean glowsPastNextSweep(LivingEntity entity) {
+        MobEffectInstance glowing = entity.getEffect(MobEffects.GLOWING);
+        return glowing != null && !glowing.endsWithin(RENEW_BELOW);
     }
 }

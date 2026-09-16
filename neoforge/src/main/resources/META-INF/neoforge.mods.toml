@@ -17,14 +17,14 @@ iconFile = "icon.png"
 [[dependencies.sptools]]
 modId = "neoforge"
 type = "required"
-versionRange = "[26.2,)"
+versionRange = "[26.2,26.3)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.sptools]]
 modId = "minecraft"
 type = "required"
-versionRange = "[26.2,)"
+versionRange = "[26.2,26.3)"
 ordering = "NONE"
 side = "BOTH"
 
