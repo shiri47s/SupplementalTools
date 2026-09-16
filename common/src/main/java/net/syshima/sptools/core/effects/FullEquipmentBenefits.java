@@ -12,8 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import net.syshima.sptools.Constants;
 import net.syshima.sptools.PlayerEquipment;
 import net.syshima.sptools.base.ModArmorItem;
-import net.syshima.sptools.core.ArmorSeries;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +29,8 @@ import java.util.UUID;
  * drive that from {@code MobEffect.applyEffectTick}, so they behave the same whether
  * the armour set or {@code /effect} granted them, and adding one needs no change here.
  *
- * <p>Which effect a series grants is not decided here either - see {@link ArmorSeries}.
+ * <p>Which effect a series grants is not decided here either - see
+ * {@link Constants.Series}.
  */
 public final class FullEquipmentBenefits {
 
@@ -81,7 +80,6 @@ public final class FullEquipmentBenefits {
     private static void tick(Player player) {
         UUID id = player.getUUID();
         Constants.Series series = seriesOf(player);
-        Holder<MobEffect> benefit = benefitOf(series);
 
         if (ACTIVE.getOrDefault(id, Constants.Series.None) != series) {
             if (series == Constants.Series.None) {
@@ -90,7 +88,7 @@ public final class FullEquipmentBenefits {
                 ACTIVE.put(id, series);
             }
 
-            applyBenefit(player, benefit);
+            applyBenefit(player, series);
             return;
         }
 
@@ -98,31 +96,25 @@ public final class FullEquipmentBenefits {
         // including one of our own effects handed out by /effect. Only put back the
         // bonus this set owes the player, which anything that clears effects wholesale
         // (a totem, a bucket of milk) will have taken with it.
-        if (benefit != null && !player.hasEffect(benefit)) {
-            grant(player, benefit);
-        }
-    }
-
-    private static void applyBenefit(Player player, @Nullable Holder<MobEffect> benefit) {
-        for (Constants.Series series : Constants.Series.values()) {
-            ArmorSeries traits = ArmorSeries.of(series);
-            if (traits != null) {
-                player.removeEffect(traits.benefit().asHolder());
+        if (series != Constants.Series.None) {
+            Holder<MobEffect> bonus = series.bonus();
+            if (!player.hasEffect(bonus)) {
+                grant(player, bonus);
             }
         }
+    }
 
-        if (benefit != null) {
-            grant(player, benefit);
+    private static void applyBenefit(Player player, Constants.Series series) {
+        for (Constants.Series other : Constants.Series.WITH_BONUS) {
+            player.removeEffect(other.bonus());
+        }
+
+        if (series != Constants.Series.None) {
+            grant(player, series.bonus());
         }
     }
 
-    private static void grant(Player player, Holder<MobEffect> benefit) {
-        player.addEffect(new MobEffectInstance(benefit, MobEffectInstance.INFINITE_DURATION, 0, false, false, false), player);
-    }
-
-    @Nullable
-    private static Holder<MobEffect> benefitOf(Constants.Series series) {
-        ArmorSeries traits = ArmorSeries.of(series);
-        return traits == null ? null : traits.benefit().asHolder();
+    private static void grant(Player player, Holder<MobEffect> bonus) {
+        player.addEffect(new MobEffectInstance(bonus, MobEffectInstance.INFINITE_DURATION, 0, false, false, false), player);
     }
 }

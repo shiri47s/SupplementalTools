@@ -1,19 +1,104 @@
 package net.syshima.sptools;
 
+import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.Holder;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.syshima.sptools.core.ArmorSeries;
+import net.syshima.sptools.core.assets.ModArmorMaterials;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public final class Constants {
     public static final String MOD_ID = "sptools";
     public static final String GROUP_NAME = "supplemental_tools";
 
+    /**
+     * An armour series, and everything that differs between one series and the next.
+     *
+     * <p>The material, the rarity, the durability, the tooltip line and the set bonus
+     * each used to live somewhere else, so adding a series meant finding all five.
+     * They are arguments to the constant here instead, which turns leaving one out
+     * into a compile error rather than a missing row noticed at runtime.
+     *
+     * <p>{@link #None} carries no traits: it is what "this player is not wearing a
+     * matched set" means everywhere a series is read.
+     */
     public enum Series {
         None,
-        Bronze,
-        IronCopper,
-        Amethyst,
-        Emerald,
-        Lead,
-        Quartz,
-        Redstone,
-        Lava
+
+        // The Bronze line reads "blessing.copper" on purpose: it is an existing
+        // translation key, and renaming it would break language files.
+        Bronze(ModArmorMaterials.BRONZE, Rarity.UNCOMMON, 12,
+                "item.sptools.blessing.copper", false, ModEffects.KNOCKBACK_RESISTANCE),
+        IronCopper(ModArmorMaterials.IRONCOPPER, Rarity.UNCOMMON, 11,
+                "item.sptools.blessing.ironcopper", false, ModEffects.ATTACK_KNOCKBACK),
+        Amethyst(ModArmorMaterials.AMETHYST, Rarity.RARE, 17,
+                "item.sptools.blessing.amethyst", false, ModEffects.MOVEMENT_SPEED),
+        Emerald(ModArmorMaterials.EMERALD, Rarity.RARE, 21,
+                "item.sptools.blessing.emerald", false, ModEffects.HASTE_AND_LUCK),
+        Lead(ModArmorMaterials.LEAD, Rarity.UNCOMMON, 12,
+                "item.sptools.blessing.heavy", false, ModEffects.HEAVY),
+        Quartz(ModArmorMaterials.QUARTZ, Rarity.RARE, 22,
+                "item.sptools.blessing.quartz", false, ModEffects.BOUNDED_GLOWING),
+        Redstone(ModArmorMaterials.REDSTONE, Rarity.RARE, 14,
+                "item.sptools.blessing.redstone", false, ModEffects.REDSTONE_OVERFLOW),
+        Lava(ModArmorMaterials.LAVA, Rarity.EPIC, 40,
+                "item.sptools.blessing.lava", true, ModEffects.ANTI_LAVA);
+
+        /**
+         * Every series that grants a set bonus, in declaration order. {@link #None} is
+         * not among them. Shared; never mutated.
+         */
+        public static final List<Series> WITH_BONUS = withBonus();
+
+        @Nullable
+        private final ArmorSeries traits;
+
+        Series() {
+            this.traits = null;
+        }
+
+        Series(ArmorMaterial material, Rarity rarity, int durability, String blessingKey,
+               boolean fireResistant, RegistrySupplier<MobEffect> benefit) {
+            this.traits = new ArmorSeries(material, rarity, durability, blessingKey, fireResistant, benefit);
+        }
+
+        /**
+         * Everything an armour piece of this series is built from.
+         *
+         * @throws IllegalStateException for {@link #None}, which describes no armour
+         */
+        public ArmorSeries traits() {
+            if (traits == null) {
+                throw new IllegalStateException(this + " describes no armour series");
+            }
+
+            return traits;
+        }
+
+        /**
+         * Effect a complete set of this series grants.
+         *
+         * @throws IllegalStateException for {@link #None}, which grants nothing
+         */
+        public Holder<MobEffect> bonus() {
+            return traits().benefit().asHolder();
+        }
+
+        private static List<Series> withBonus() {
+            List<Series> found = new ArrayList<>();
+            for (Series series : values()) {
+                if (series.traits != null) {
+                    found.add(series);
+                }
+            }
+
+            return List.copyOf(found);
+        }
     }
 
     public static class Path {
