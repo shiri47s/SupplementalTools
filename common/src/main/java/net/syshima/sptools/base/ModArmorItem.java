@@ -1,6 +1,5 @@
 package net.syshima.sptools.base;
 
-import dev.architectury.utils.Env;
 import dev.architectury.utils.EnvExecutor;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -26,9 +25,9 @@ public abstract class ModArmorItem extends Item {
 
         // The tooltip context carries no player, so the bonus is reported for whoever
         // is looking at the item - which is only ever the client.
-        Constants.Series worn = EnvExecutor.getInEnv(Env.CLIENT,
-                        () -> () -> net.syshima.sptools.client.ClientEquipment.localSeries())
-                .orElse(Constants.Series.None);
+        Constants.Series worn = EnvExecutor.getEnvSpecific(
+                () -> () -> net.syshima.sptools.client.ClientEquipment.localSeries(),
+                () -> () -> Constants.Series.None);
 
         if (worn == getSeries()) {
             textConsumer.accept(Component.translatable("item.sptools.blessing").withStyle(ChatFormatting.GREEN));

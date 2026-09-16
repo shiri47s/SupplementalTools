@@ -2,7 +2,6 @@ package net.syshima.sptools.core.effects;
 
 import dev.architectury.event.events.common.PlayerEvent;
 import dev.architectury.event.events.common.TickEvent;
-import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -10,11 +9,11 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.syshima.sptools.Constants;
-import net.syshima.sptools.ModEffects;
 import net.syshima.sptools.PlayerEquipment;
 import net.syshima.sptools.base.ModArmorItem;
+import net.syshima.sptools.core.ArmorSeries;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -30,24 +29,12 @@ import java.util.UUID;
  * <p>This class only hands the effect out. Effects that do work of their own each tick
  * drive that from {@code MobEffect.applyEffectTick}, so they behave the same whether
  * the armour set or {@code /effect} granted them, and adding one needs no change here.
+ *
+ * <p>Which effect a series grants is not decided here either - see {@link ArmorSeries}.
  */
 public final class FullEquipmentBenefits {
 
-    private static final Map<Constants.Series, RegistrySupplier<MobEffect>> BENEFITS =
-            new EnumMap<>(Constants.Series.class);
-
     private static final Map<UUID, Constants.Series> ACTIVE = new HashMap<>();
-
-    static {
-        BENEFITS.put(Constants.Series.Bronze, ModEffects.KNOCKBACK_RESISTANCE);
-        BENEFITS.put(Constants.Series.IronCopper, ModEffects.ATTACK_KNOCKBACK);
-        BENEFITS.put(Constants.Series.Amethyst, ModEffects.MOVEMENT_SPEED);
-        BENEFITS.put(Constants.Series.Emerald, ModEffects.HASTE_AND_LUCK);
-        BENEFITS.put(Constants.Series.Lead, ModEffects.HEAVY);
-        BENEFITS.put(Constants.Series.Quartz, ModEffects.BOUNDED_GLOWING);
-        BENEFITS.put(Constants.Series.Redstone, ModEffects.REDSTONE_OVERFLOW);
-        BENEFITS.put(Constants.Series.Lava, ModEffects.ANTI_LAVA);
-    }
 
     private FullEquipmentBenefits() {
     }
@@ -82,23 +69,43 @@ public final class FullEquipmentBenefits {
 
     private static void tick(Player player) {
         Constants.Series series = seriesOf(player);
+        Holder<MobEffect> benefit = benefitOf(series);
+
         if (ACTIVE.get(player.getUUID()) != series) {
             ACTIVE.put(player.getUUID(), series);
-            applyBenefit(player, series);
-        }
-    }
-
-    private static void applyBenefit(Player player, Constants.Series series) {
-        for (RegistrySupplier<MobEffect> effect : BENEFITS.values()) {
-            player.removeEffect(effect.asHolder());
-        }
-
-        RegistrySupplier<MobEffect> benefit = BENEFITS.get(series);
-        if (benefit == null) {
+            applyBenefit(player, benefit);
             return;
         }
 
-        Holder<MobEffect> holder = benefit.asHolder();
-        player.addEffect(new MobEffectInstance(holder, MobEffectInstance.INFINITE_DURATION, 0, false, false, false), player);
+        // The set has not changed since last tick, so leave everything else alone -
+        // including one of our own effects handed out by /effect. Only put back the
+        // bonus this set owes the player, which anything that clears effects wholesale
+        // (a totem, a bucket of milk) will have taken with it.
+        if (benefit != null && !player.hasEffect(benefit)) {
+            grant(player, benefit);
+        }
+    }
+
+    private static void applyBenefit(Player player, @Nullable Holder<MobEffect> benefit) {
+        for (Constants.Series series : Constants.Series.values()) {
+            ArmorSeries traits = ArmorSeries.of(series);
+            if (traits != null) {
+                player.removeEffect(traits.benefit().asHolder());
+            }
+        }
+
+        if (benefit != null) {
+            grant(player, benefit);
+        }
+    }
+
+    private static void grant(Player player, Holder<MobEffect> benefit) {
+        player.addEffect(new MobEffectInstance(benefit, MobEffectInstance.INFINITE_DURATION, 0, false, false, false), player);
+    }
+
+    @Nullable
+    private static Holder<MobEffect> benefitOf(Constants.Series series) {
+        ArmorSeries traits = ArmorSeries.of(series);
+        return traits == null ? null : traits.benefit().asHolder();
     }
 }

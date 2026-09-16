@@ -27,10 +27,6 @@ public final class ModBlocks {
 
         public static final Identifier TORCH_BLOCK = Identifier.fromNamespaceAndPath(Constants.MOD_ID, Constants.Blocks.TORCH_BLOCK);
         public static final Identifier WALL_TORCH_BLOCK = Identifier.fromNamespaceAndPath(Constants.MOD_ID, Constants.Blocks.WALL_TORCH_BLOCK);
-
-        public static Identifier postfix(Identifier identifier, String postfix) {
-            return Identifier.fromNamespaceAndPath(identifier.getNamespace(), identifier.getPath() + postfix);
-        }
     }
 
     public static final RegistrySupplier<Block> LEAD_ORE = REGISTER.register(Constants.Blocks.LEAD_ORE, () -> new DropExperienceBlock(UniformInt.of(3, 7), settingsOf(ID.LEAD_ORE, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F))));

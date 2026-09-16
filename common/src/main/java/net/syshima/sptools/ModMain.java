@@ -1,5 +1,6 @@
 package net.syshima.sptools;
 
+import net.syshima.sptools.core.effects.FullEquipmentBenefits;
 import net.syshima.sptools.worldgen.ModLootModifier;
 import net.syshima.sptools.worldgen.ModWorldGen;
 
@@ -15,5 +16,7 @@ public final class ModMain {
         ModEffects.register();
         ModWorldGen.register();
         ModLootModifier.register();
+
+        FullEquipmentBenefits.bootstrap();
     }
 }

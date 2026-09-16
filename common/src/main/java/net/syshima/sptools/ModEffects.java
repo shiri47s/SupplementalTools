@@ -7,7 +7,6 @@ import net.minecraft.world.effect.MobEffect;
 import net.syshima.sptools.core.effects.AntiLavaEffect;
 import net.syshima.sptools.core.effects.AttackKnockBackEffect;
 import net.syshima.sptools.core.effects.BoundedGlowingEffect;
-import net.syshima.sptools.core.effects.FullEquipmentBenefits;
 import net.syshima.sptools.core.effects.HasteAndLuckEffect;
 import net.syshima.sptools.core.effects.HeavyEffect;
 import net.syshima.sptools.core.effects.KnockBackResistanceEffect;
@@ -31,6 +30,5 @@ public final class ModEffects {
 
     public static void register() {
         REGISTER.register();
-        FullEquipmentBenefits.bootstrap();
     }
 }

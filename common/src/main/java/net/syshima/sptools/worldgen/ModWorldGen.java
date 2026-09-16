@@ -27,9 +27,9 @@ public final class ModWorldGen {
 
     public static final ResourceKey<PlacedFeature> LEAD_ORE = placed(ModBlocks.ID.LEAD_ORE);
     public static final ResourceKey<PlacedFeature> RED_DIAMOND_ORE_LOWER =
-            placed(ModBlocks.ID.postfix(ModBlocks.ID.RED_DIAMOND_ORE, "_lower"));
+            placed(variant(ModBlocks.ID.RED_DIAMOND_ORE, "_lower"));
     public static final ResourceKey<PlacedFeature> RED_DIAMOND_ORE_UPPER =
-            placed(ModBlocks.ID.postfix(ModBlocks.ID.RED_DIAMOND_ORE, "_upper"));
+            placed(variant(ModBlocks.ID.RED_DIAMOND_ORE, "_upper"));
     public static final ResourceKey<PlacedFeature> DEEPSLATE_RED_DIAMOND_ORE =
             placed(ModBlocks.ID.DEEPSLATE_RED_DIAMOND_ORE);
 
@@ -52,5 +52,10 @@ public final class ModWorldGen {
 
     private static ResourceKey<PlacedFeature> placed(Identifier id) {
         return ResourceKey.create(Registries.PLACED_FEATURE, id);
+    }
+
+    /** One ore, two placements: the height bands are named apart by a suffix. */
+    private static Identifier variant(Identifier id, String suffix) {
+        return Identifier.fromNamespaceAndPath(id.getNamespace(), id.getPath() + suffix);
     }
 }
