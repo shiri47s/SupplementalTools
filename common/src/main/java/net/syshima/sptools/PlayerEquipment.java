@@ -86,7 +86,7 @@ public final class PlayerEquipment {
      */
     public static ItemStack findEquipped(Player player, Item... items) {
         for (Item item : items) {
-            ItemStack found = findEquipped(player, item);
+            ItemStack found = firstEquipped(player, item);
             if (!found.isEmpty()) {
                 return found;
             }
@@ -95,7 +95,13 @@ public final class PlayerEquipment {
         return ItemStack.EMPTY;
     }
 
-    private static ItemStack findEquipped(Player player, Item item) {
+    /**
+     * Every slot searched for one item. Named apart from {@link #findEquipped} rather
+     * than overloading it: a single {@code Item} argument matches both signatures, so
+     * one edit to this one's parameters would silently turn the call above into
+     * unbounded recursion.
+     */
+    private static ItemStack firstEquipped(Player player, Item item) {
         for (InteractionHand hand : InteractionHand.values()) {
             ItemStack stack = player.getItemInHand(hand);
             if (stack.is(item)) {
