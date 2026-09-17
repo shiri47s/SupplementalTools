@@ -116,7 +116,13 @@ subprojects {
             }
             options {
                 forgeGradleIntegration = false
-                javaVersionAutoDetect = true
+                // Off because it cannot work and would do nothing if it did. The check
+                // reads targetCompatibility through Project.getConvention(), removed in
+                // Gradle 9, so it throws and prints its stack trace on every configure;
+                // and all it ever adds are "Java 6" through "Java 9" version tags, which
+                // a Java 25 project never qualifies for. Uploading itself is unaffected:
+                // nothing else in CurseGradle touches the removed API.
+                javaVersionAutoDetect = false
             }
         }
     }
