@@ -2,7 +2,7 @@ plugins {
     id 'dev.architectury.loom-no-remap' version '1.17-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.5-SNAPSHOT'
     id 'com.gradleup.shadow' version '9.4.3' apply false
-    id "com.matthewprenger.cursegradle" version "1.4.0" apply false
+    id "net.darkhax.curseforgegradle" version "1.3.33" apply false
     id "com.modrinth.minotaur" version "2.9.0" apply false
 }
 
@@ -85,44 +85,35 @@ subprojects {
         }
     }
 
-    apply plugin: "com.matthewprenger.cursegradle"
-    curseforge {
-        def CURSEFORGE_TOKEN = System.getenv("CURSEFORGE_TOKEN")
-        if (CURSEFORGE_TOKEN != null) {
-            apiKey = CURSEFORGE_TOKEN
-            //noinspection GroovyAssignabilityCheck
-            project {
-                id = project.curseforge_id
-                releaseType = RELEASE
-                changelogType = "markdown"
-                changelog = CHANGE_LOG
-                project.support_versions.split(',').each { addGameVersion it.trim() }
+    apply plugin: "net.darkhax.curseforgegradle"
+    def CURSEFORGE_TOKEN = System.getenv("CURSEFORGE_TOKEN")
+    if (CURSEFORGE_TOKEN != null) {
+        // CurseForge spells its loader tags differently from the loader module names.
+        def CURSEFORGE_LOADER = ["fabric": "Fabric", "neoforge": "NeoForge"][MOD_LOADER]
 
-                relations {
-                    requiredDependency 'architectury-api'
-                    optionalDependency 'trinkets-updated'
-                    if (MOD_LOADER.equalsIgnoreCase('fabric')) {
-                        requiredDependency 'fabric-api'
-                        optionalDependency 'lambdynamiclights'
-                    }
-                }
+        tasks.register("publishCurseForge", net.darkhax.curseforgegradle.TaskPublishCurseForge) {
+            // Keeps the artifacts from being uploaded when tests fail.
+            dependsOn("build")
+            apiToken = CURSEFORGE_TOKEN
 
-                afterEvaluate {
-                    mainArtifact(tasks.named("shadowJar").get()) {
-                        displayName = PUBLISH_NAME
-                    }
-                    uploadTask.dependsOn("build")
-                }
-            }
-            options {
-                forgeGradleIntegration = false
-                // Off because it cannot work and would do nothing if it did. The check
-                // reads targetCompatibility through Project.getConvention(), removed in
-                // Gradle 9, so it throws and prints its stack trace on every configure;
-                // and all it ever adds are "Java 6" through "Java 9" version tags, which
-                // a Java 25 project never qualifies for. Uploading itself is unaffected:
-                // nothing else in CurseGradle touches the removed API.
-                javaVersionAutoDetect = false
+            // Every tag is declared below, so the Minecraft and Java versions the plugin
+            // would infer from the build are not needed.
+            disableVersionDetection()
+
+            def mainFile = upload(project.curseforge_id, tasks.named("shadowJar"))
+            mainFile.displayName = PUBLISH_NAME
+            mainFile.releaseType = RELEASE
+            mainFile.changelogType = "markdown"
+            mainFile.changelog = CHANGE_LOG
+            project.support_versions.split(',').each { mainFile.addGameVersion it.trim() }
+            mainFile.addModLoader CURSEFORGE_LOADER
+            // Required for Minecraft mods since 2026-07-15.
+            mainFile.addEnvironment "Client", "Server"
+            mainFile.addRequirement "architectury-api"
+            mainFile.addOptional "trinkets-updated"
+            if (MOD_LOADER.equalsIgnoreCase('fabric')) {
+                mainFile.addRequirement "fabric-api"
+                mainFile.addOptional "lambdynamiclights"
             }
         }
     }
