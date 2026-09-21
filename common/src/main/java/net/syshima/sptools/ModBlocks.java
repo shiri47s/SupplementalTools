@@ -34,8 +34,8 @@ public final class ModBlocks {
     public static final RegistrySupplier<Block> DEEPSLATE_RED_DIAMOND_ORE = REGISTER.register(Constants.Blocks.DEEPSLATE_RED_DIAMOND_ORE, () -> new DropExperienceBlock(UniformInt.of(4, 8), settingsOf(ID.DEEPSLATE_RED_DIAMOND_ORE, BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(4.2F, 3.0F))));
 
 
-    public static final RegistrySupplier<Block> TORCH_BLOCK = REGISTER.register(Constants.Blocks.TORCH_BLOCK, () -> new TorchBlock(ParticleTypes.FLAME, settingsOf(ID.TORCH_BLOCK, BlockBehaviour.Properties.of().noCollision().instabreak().lightLevel(state -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY))));
-    public static final RegistrySupplier<Block> WALL_TORCH_BLOCK = REGISTER.register(Constants.Blocks.WALL_TORCH_BLOCK, () -> new WallTorchBlock(ParticleTypes.FLAME, settingsOf(ID.WALL_TORCH_BLOCK, BlockBehaviour.Properties.of().noCollision().instabreak().lightLevel(state -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY))));
+    public static final RegistrySupplier<Block> TORCH_BLOCK = REGISTER.register(Constants.Blocks.TORCH_BLOCK, () -> new TorchBlock(ParticleTypes.FLAME, settingsOf(ID.TORCH_BLOCK, BlockBehaviour.Properties.of().noCollision().instabreak().lightLevel(state -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.POPPED))));
+    public static final RegistrySupplier<Block> WALL_TORCH_BLOCK = REGISTER.register(Constants.Blocks.WALL_TORCH_BLOCK, () -> new WallTorchBlock(ParticleTypes.FLAME, settingsOf(ID.WALL_TORCH_BLOCK, BlockBehaviour.Properties.of().noCollision().instabreak().lightLevel(state -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.POPPED))));
 
     private ModBlocks() {
     }

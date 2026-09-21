@@ -22,20 +22,20 @@ public final class ModPlacedFeatures {
     }
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
-        var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+        var features = context.lookup(Registries.FEATURE);
 
         PlacementUtils.register(context, ModWorldGen.LEAD_ORE,
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.LEAD_ORE),
+                features.getOrThrow(ModConfiguredFeatures.LEAD_ORE),
                 countModifiers(6, HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(192))));
 
-        var redDiamondOre = configuredFeatures.getOrThrow(ModConfiguredFeatures.RED_DIAMOND_ORE);
+        var redDiamondOre = features.getOrThrow(ModConfiguredFeatures.RED_DIAMOND_ORE);
         PlacementUtils.register(context, ModWorldGen.RED_DIAMOND_ORE_LOWER, redDiamondOre,
                 countModifiers(2, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(0))));
         PlacementUtils.register(context, ModWorldGen.RED_DIAMOND_ORE_UPPER, redDiamondOre,
                 countModifiers(2, HeightRangePlacement.triangle(VerticalAnchor.absolute(142), VerticalAnchor.absolute(242))));
 
         PlacementUtils.register(context, ModWorldGen.DEEPSLATE_RED_DIAMOND_ORE,
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEPSLATE_RED_DIAMOND_ORE),
+                features.getOrThrow(ModConfiguredFeatures.DEEPSLATE_RED_DIAMOND_ORE),
                 countModifiers(2, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-32))));
     }
 

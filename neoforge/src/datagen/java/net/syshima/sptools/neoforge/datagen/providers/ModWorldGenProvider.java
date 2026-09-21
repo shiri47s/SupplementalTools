@@ -13,7 +13,7 @@ public final class ModWorldGenProvider {
      * data-driven modifiers as well would double the spawn rate.
      */
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-            .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
+            .add(Registries.FEATURE, ModConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
 
     private ModWorldGenProvider() {

@@ -8,14 +8,11 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SmithingTemplateItem;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
@@ -197,7 +194,7 @@ public final class ModItems {
     }
 
     private static RegistrySupplier<Item> shovel(String name, ToolMaterial material) {
-        return REGISTER.register(name, () -> new ShovelItem(material, 1.0F, -3.0F, settingsOf(name)));
+        return REGISTER.register(name, () -> new Item(settingsOf(name).shovel(material, 1.0F, -3.0F)));
     }
 
     private static RegistrySupplier<Item> pickaxe(String name, ToolMaterial material) {
@@ -205,11 +202,11 @@ public final class ModItems {
     }
 
     private static RegistrySupplier<Item> axe(String name, ToolMaterial material) {
-        return REGISTER.register(name, () -> new AxeItem(material, 5.0F, -3.1F, settingsOf(name)));
+        return REGISTER.register(name, () -> new Item(settingsOf(name).axe(material, 5.0F, -3.1F)));
     }
 
     private static RegistrySupplier<Item> hoe(String name, ToolMaterial material) {
-        return REGISTER.register(name, () -> new HoeItem(material, -2.0F, -1.6F, settingsOf(name)));
+        return REGISTER.register(name, () -> new Item(settingsOf(name).hoe(material, -2.0F, -1.6F)));
     }
 
     private static RegistrySupplier<Item> armor(String name, ArmorType type, Constants.Series series) {

@@ -31,7 +31,7 @@ public final class ModDataGenerator implements DataGeneratorEntrypoint {
 
     @Override
     public void buildRegistry(RegistrySetBuilder builder) {
-        builder.add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+        builder.add(Registries.FEATURE, ModConfiguredFeatures::bootstrap);
         builder.add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
     }
 }

@@ -1,12 +1,12 @@
 package net.syshima.sptools.datagen;
 
-import net.minecraft.core.HolderLookup;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
@@ -20,11 +20,8 @@ import net.syshima.sptools.ModItems;
 /** Every recipe the mod contributes. Shared by both loaders' recipe providers. */
 public final class ModRecipes extends RecipeProvider {
 
-    private final RecipeOutput output;
-
-    public ModRecipes(HolderLookup.Provider registries, RecipeOutput output) {
-        super(registries, output);
-        this.output = output;
+    public ModRecipes(BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
+        super(recipes, advancements);
     }
 
     @Override

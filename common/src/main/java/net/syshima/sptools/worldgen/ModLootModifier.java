@@ -9,7 +9,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.syshima.sptools.ModItems;
 
 /** Adds the Anti-Lava smithing template to bastion treasure chests. */
@@ -25,19 +25,9 @@ public final class ModLootModifier {
     }
 
     public static void register() {
-        // The three-argument overload this lambda binds to is marked for removal in
-        // favour of one that also passes a HolderLookup.Provider, which is why the
-        // build warns here. There is no way to act on that yet: on Architectury 21.0.7
-        // the deprecated overload is still the functional interface's only abstract
-        // method, so the four-argument lambda its own javadoc suggests does not compile,
-        // and implementing the replacement through an anonymous class still has to
-        // implement the deprecated one and still warns.
-        //
-        // Nothing is at risk of breaking silently. Once the overload goes, the
-        // replacement becomes the abstract method and this lambda stops compiling on
-        // its parameter count; the fix at that point is to accept the provider as a
-        // leading parameter and ignore it.
-        LootEvent.MODIFY_LOOT_TABLE.register((key, context, builtin) -> {
+        // `registries` resolves the holders and tags a replacement table refers to.
+        // This listener only appends a fixed pool, so it goes unused.
+        LootEvent.MODIFY_LOOT_TABLE.register((registries, key, context, builtin) -> {
             // Keep the `builtin` guard. NeoForge only fires this event for built-in
             // tables, so dropping the check would silently make Fabric also append to
             // data pack overrides and diverge from NeoForge. It also means a pack that
@@ -48,10 +38,10 @@ public final class ModLootModifier {
             }
 
             context.addPool(LootPool.lootPool()
-                    .setRolls(ConstantValue.exactly(1))
+                    .setRolls(ContextIntProviders.exactly(1))
                     .when(LootItemRandomChanceCondition.randomChance(CHANCE))
                     .add(LootItem.lootTableItem(ModItems.LAVA_SMITHING_TEMPLATE.get()))
-                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))));
+                    .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(1))));
         });
     }
 }

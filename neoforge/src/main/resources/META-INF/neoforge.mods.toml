@@ -17,28 +17,28 @@ iconFile = "icon.png"
 [[dependencies.sptools]]
 modId = "neoforge"
 type = "required"
-versionRange = "[26.2,26.3)"
+versionRange = "[26.3,26.4)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.sptools]]
 modId = "minecraft"
 type = "required"
-versionRange = "[26.2,26.3)"
+versionRange = "[26.3,26.4)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.sptools]]
 modId = "architectury"
 type = "required"
-versionRange = "[21.0.7,)"
+versionRange = "[22.0.2,)"
 ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.sptools]]
 modId = "trinkets_updated"
 type = "optional"
-versionRange = "[4.1.0,)"
+versionRange = "[4.2.0,)"
 ordering = "AFTER"
 side = "BOTH"
 
