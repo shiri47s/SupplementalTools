@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:lava_upgrade_smithing_template"
+        "recipes": "sptools:lava_upgrade_smithing_template"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

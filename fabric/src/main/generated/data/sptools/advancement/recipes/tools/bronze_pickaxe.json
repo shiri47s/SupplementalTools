@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:bronze_pickaxe"
+        "recipes": "sptools:bronze_pickaxe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

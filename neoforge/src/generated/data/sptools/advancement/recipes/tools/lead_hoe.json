@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:lead_hoe"
+        "recipes": "sptools:lead_hoe"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

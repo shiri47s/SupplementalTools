@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:redstone_leggings"
+        "recipes": "sptools:redstone_leggings"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

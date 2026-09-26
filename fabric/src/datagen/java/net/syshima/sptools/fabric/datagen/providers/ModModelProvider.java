@@ -9,6 +9,8 @@ import net.minecraft.world.item.Item;
 import net.syshima.sptools.ModBlocks;
 import net.syshima.sptools.datagen.ModModelContent;
 
+import java.util.Map;
+
 public final class ModModelProvider extends FabricModelProvider {
 
     public ModModelProvider(FabricPackOutput output) {
@@ -35,10 +37,9 @@ public final class ModModelProvider extends FabricModelProvider {
         }
 
         for (ModModelContent.ArmorSet set : ModModelContent.armorSets()) {
-            itemModels.generateTrimmableItem(set.helmet(), set.asset(), ItemModelGenerators.TRIM_PREFIX_HELMET, false);
-            itemModels.generateTrimmableItem(set.chestplate(), set.asset(), ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
-            itemModels.generateTrimmableItem(set.leggings(), set.asset(), ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
-            itemModels.generateTrimmableItem(set.boots(), set.asset(), ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+            // The trim palette overrides are empty: 26.2 resolved them from the equipment
+            // asset, and no vanilla trim material overrides this mod's assets.
+            itemModels.generateTrimmableArmorSet(set.helmet(), set.chestplate(), set.leggings(), set.boots(), false, Map.of());
         }
     }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:amethyst_ingot"
+        "recipes": "sptools:amethyst_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

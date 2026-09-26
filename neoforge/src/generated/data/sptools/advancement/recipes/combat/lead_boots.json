@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:lead_boots"
+        "recipes": "sptools:lead_boots"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

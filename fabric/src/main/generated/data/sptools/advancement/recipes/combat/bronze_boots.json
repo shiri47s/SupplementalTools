@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:bronze_boots"
+        "recipes": "sptools:bronze_boots"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

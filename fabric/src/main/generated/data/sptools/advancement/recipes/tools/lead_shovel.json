@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:lead_shovel"
+        "recipes": "sptools:lead_shovel"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:amethyst_shovel"
+        "recipes": "sptools:amethyst_shovel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

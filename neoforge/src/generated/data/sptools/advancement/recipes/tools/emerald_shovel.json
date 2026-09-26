@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:emerald_shovel"
+        "recipes": "sptools:emerald_shovel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:emerald_hoe"
+        "recipes": "sptools:emerald_hoe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

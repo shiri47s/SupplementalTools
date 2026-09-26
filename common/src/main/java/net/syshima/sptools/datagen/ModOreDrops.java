@@ -17,7 +17,7 @@ import java.util.List;
 public final class ModOreDrops {
 
     /** A block that drops an item in a Fortune-scaled range under silk touch dispatch. */
-    public record OreDrop(Block block, Item drop, float min, float max) {
+    public record OreDrop(Block block, Item drop, int min, int max) {
     }
 
     private ModOreDrops() {
@@ -25,9 +25,9 @@ public final class ModOreDrops {
 
     public static List<OreDrop> all() {
         return List.of(
-                new OreDrop(ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get(), 2.0F, 5.0F),
-                new OreDrop(ModBlocks.RED_DIAMOND_ORE.get(), ModItems.RED_DIAMOND.get(), 1.0F, 1.0F),
-                new OreDrop(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get(), ModItems.RED_DIAMOND.get(), 1.0F, 1.0F));
+                new OreDrop(ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get(), 2, 5),
+                new OreDrop(ModBlocks.RED_DIAMOND_ORE.get(), ModItems.RED_DIAMOND.get(), 1, 1),
+                new OreDrop(ModBlocks.DEEPSLATE_RED_DIAMOND_ORE.get(), ModItems.RED_DIAMOND.get(), 1, 1));
     }
 
     public static List<Block> blocks() {

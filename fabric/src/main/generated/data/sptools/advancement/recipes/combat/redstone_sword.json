@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:redstone_sword"
+        "recipes": "sptools:redstone_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

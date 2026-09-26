@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:emerald_chestplate"
+        "recipes": "sptools:emerald_chestplate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

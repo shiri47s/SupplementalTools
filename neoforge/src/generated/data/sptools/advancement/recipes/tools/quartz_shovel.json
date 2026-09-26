@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:quartz_shovel"
+        "recipes": "sptools:quartz_shovel"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

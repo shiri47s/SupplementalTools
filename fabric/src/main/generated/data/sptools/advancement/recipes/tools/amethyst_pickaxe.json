@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:amethyst_pickaxe"
+        "recipes": "sptools:amethyst_pickaxe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

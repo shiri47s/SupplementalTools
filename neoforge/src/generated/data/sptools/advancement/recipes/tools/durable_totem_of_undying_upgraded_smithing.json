@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:durable_totem_of_undying_upgraded_smithing"
+        "recipes": "sptools:durable_totem_of_undying_upgraded_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

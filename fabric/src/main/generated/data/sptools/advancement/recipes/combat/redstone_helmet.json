@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:redstone_helmet"
+        "recipes": "sptools:redstone_helmet"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:ironcopper_pickaxe"
+        "recipes": "sptools:ironcopper_pickaxe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

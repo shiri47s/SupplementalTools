@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:emerald_leggings"
+        "recipes": "sptools:emerald_leggings"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

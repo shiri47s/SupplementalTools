@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:bronze_ingot"
+        "recipes": "sptools:bronze_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

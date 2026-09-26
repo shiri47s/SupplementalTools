@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:ironcopper_helmet"
+        "recipes": "sptools:ironcopper_helmet"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

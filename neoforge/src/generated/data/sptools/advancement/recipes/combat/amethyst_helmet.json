@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:amethyst_helmet"
+        "recipes": "sptools:amethyst_helmet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:quartz_hoe"
+        "recipes": "sptools:quartz_hoe"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

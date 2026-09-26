@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:redstone_chestplate"
+        "recipes": "sptools:redstone_chestplate"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

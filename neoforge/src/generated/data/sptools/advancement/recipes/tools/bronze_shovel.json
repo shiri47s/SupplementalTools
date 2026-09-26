@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:bronze_shovel"
+        "recipes": "sptools:bronze_shovel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

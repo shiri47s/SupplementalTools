@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:quartz_sword"
+        "recipes": "sptools:quartz_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

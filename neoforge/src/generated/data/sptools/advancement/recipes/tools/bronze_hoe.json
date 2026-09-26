@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:bronze_hoe"
+        "recipes": "sptools:bronze_hoe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:redstone_pickaxe"
+        "recipes": "sptools:redstone_pickaxe"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:durable_totem_of_undying"
+        "recipes": "sptools:durable_totem_of_undying"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

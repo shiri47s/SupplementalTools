@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:lead_pickaxe"
+        "recipes": "sptools:lead_pickaxe"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

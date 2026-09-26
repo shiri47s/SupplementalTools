@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:durable_firework_rocket"
+        "recipes": "sptools:durable_firework_rocket"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:quartz_ingot"
+        "recipes": "sptools:quartz_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:quartz_helmet"
+        "recipes": "sptools:quartz_helmet"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:lead_ingot_from_blasting_raw_lead"
+        "recipes": "sptools:lead_ingot_from_blasting_raw_lead"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

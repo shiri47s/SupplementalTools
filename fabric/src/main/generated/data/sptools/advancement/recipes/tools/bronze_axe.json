@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sptools:bronze_axe"
+        "recipes": "sptools:bronze_axe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
