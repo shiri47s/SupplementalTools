@@ -31,14 +31,14 @@ side = "BOTH"
 [[dependencies.sptools]]
 modId = "architectury"
 type = "required"
-versionRange = "[22.0.2,)"
+versionRange = "[22.0.3,)"
 ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.sptools]]
 modId = "trinkets_updated"
 type = "optional"
-versionRange = "[4.2.0,)"
+versionRange = "[4.2.1,)"
 ordering = "AFTER"
 side = "BOTH"
 
