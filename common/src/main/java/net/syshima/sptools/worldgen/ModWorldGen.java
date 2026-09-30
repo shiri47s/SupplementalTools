@@ -12,16 +12,18 @@ import net.syshima.sptools.ModBlocks;
 import java.util.List;
 
 /**
- * Injects the mod's ore placed features into overworld biomes.
+ * The mod's ore placed features and their injection into overworld biomes.
  *
  * <p>These keys are the single definition of what the mod generates: the data
- * generator registers exactly this set, and this class injects exactly this set.
+ * generator registers exactly this set, and each loader injects exactly this set.
  * Keeping both sides on the same constants means a rename cannot leave the runtime
  * pointing at a feature that was never written out.
  *
- * <p>Architectury's biome modifications are used on both loaders so the ores
- * generate identically; NeoForge's data-driven biome modifiers are deliberately
- * not generated, as having both would double the spawn rate.
+ * <p>Fabric injects them at runtime through {@link #register()}. NeoForge uses its
+ * own data-driven biome modifiers instead, because Architectury's NeoForge biome
+ * modifications never run on 26.3: no biome modifier references its codec, and its
+ * modifier still implements the pre-26.3 {@code BiomeModifier.modify} signature.
+ * Only one route may be active on a loader, or the spawn rate doubles.
  */
 public final class ModWorldGen {
 
@@ -33,12 +35,13 @@ public final class ModWorldGen {
     public static final ResourceKey<PlacedFeature> DEEPSLATE_RED_DIAMOND_ORE =
             placed(ModBlocks.ID.DEEPSLATE_RED_DIAMOND_ORE);
 
-    private static final List<ResourceKey<PlacedFeature>> OVERWORLD_ORES =
+    public static final List<ResourceKey<PlacedFeature>> OVERWORLD_ORES =
             List.of(LEAD_ORE, RED_DIAMOND_ORE_LOWER, RED_DIAMOND_ORE_UPPER, DEEPSLATE_RED_DIAMOND_ORE);
 
     private ModWorldGen() {
     }
 
+    /** Fabric only; see the class documentation for why NeoForge must not call this. */
     public static void register() {
         BiomeModifications.addProperties(
                 context -> context.hasTag(BiomeTags.IS_OVERWORLD),

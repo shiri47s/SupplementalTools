@@ -2,7 +2,6 @@ package net.syshima.sptools;
 
 import net.syshima.sptools.core.effects.FullEquipmentBenefits;
 import net.syshima.sptools.worldgen.ModLootModifier;
-import net.syshima.sptools.worldgen.ModWorldGen;
 
 public final class ModMain {
     public static final String MOD_ID = Constants.MOD_ID;
@@ -14,7 +13,6 @@ public final class ModMain {
         ModBlocks.register();
         ModItems.register();
         ModEffects.register();
-        ModWorldGen.register();
         ModLootModifier.register();
 
         FullEquipmentBenefits.bootstrap();
