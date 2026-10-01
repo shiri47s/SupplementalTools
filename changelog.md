@@ -1,13 +1,10 @@
 # 🗓️ Changelog
 
-## 📦 Version 3.1.0
+## 📦 Version 3.1.1
 
-### 🔧 Fixes
+### ✨ What's New
 
-- Tools and armour can now be repaired on an anvil.
-- A full Lead set now grants its bonus.
-- Accessory slots work with Trinkets Updated.
-- A number of other small fixes.
+- Updated for Minecraft 26.3.
 
 ---
 💡 *As always, back up your worlds before updating. Happy crafting!*
