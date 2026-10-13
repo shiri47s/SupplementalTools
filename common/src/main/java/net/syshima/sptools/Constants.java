@@ -86,7 +86,7 @@ public final class Constants {
          * @throws IllegalStateException for {@link #NONE}, which grants nothing
          */
         public Holder<MobEffect> bonus() {
-            return traits().benefit().asHolder();
+            return ModEffects.holder(traits().benefit());
         }
 
         private static List<Series> withBonus() {

@@ -2,6 +2,8 @@ package net.syshima.sptools;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
 import net.syshima.sptools.core.effects.AntiLavaEffect;
@@ -30,5 +32,15 @@ public final class ModEffects {
 
     public static void register() {
         REGISTER.register();
+    }
+
+    /**
+     * The registry's own holder for an effect.
+     *
+     * <p>Active effects are keyed by holder identity, and those decoded from saves or
+     * packets use the registry's reference. The supplier is a holder too, but not that one.
+     */
+    public static Holder<MobEffect> holder(RegistrySupplier<MobEffect> effect) {
+        return BuiltInRegistries.MOB_EFFECT.getOrThrow(effect.getKey());
     }
 }

@@ -30,6 +30,6 @@ public class AntiLavaEffect extends ModStatusEffect {
      * still dying in lava.
      */
     public static boolean isActive(@Nullable Entity entity) {
-        return entity instanceof LivingEntity living && living.hasEffect(ModEffects.ANTI_LAVA.asHolder());
+        return entity instanceof LivingEntity living && living.hasEffect(ModEffects.holder(ModEffects.ANTI_LAVA));
     }
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Function;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.tags.TagAppender;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -54,14 +55,14 @@ public final class ModItemTags {
     private static final List<RegistrySupplier<Item>> DURABLE_SHOVEL_LIKE = List.of(
             ModItems.DURABLE_TOTEM_OF_UNDYING, ModItems.DURABLE_TOTEM_OF_UNDYING_UPGRADED);
 
-    private final Function<TagKey<Item>, TagAppender<Item>> builders;
+    private final Function<TagKey<Item>, TagAppender<ResourceKey<Item>, Item>> builders;
 
-    private ModItemTags(Function<TagKey<Item>, TagAppender<Item>> builders) {
+    private ModItemTags(Function<TagKey<Item>, TagAppender<ResourceKey<Item>, Item>> builders) {
         this.builders = builders;
     }
 
     /** Applies every item tag through the platform's appender lookup. */
-    public static void addTags(Function<TagKey<Item>, TagAppender<Item>> builders) {
+    public static void addTags(Function<TagKey<Item>, TagAppender<ResourceKey<Item>, Item>> builders) {
         new ModItemTags(builders).add();
     }
 
@@ -177,7 +178,7 @@ public final class ModItemTags {
         }
         return all;
     }
-    private TagAppender<Item> appender(TagKey<Item> tag) {
+    private TagAppender<ResourceKey<Item>, Item> appender(TagKey<Item> tag) {
         return builders.apply(tag);
     }
 }

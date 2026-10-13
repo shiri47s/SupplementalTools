@@ -1,6 +1,7 @@
 package net.syshima.sptools.datagen;
 
 import net.minecraft.data.tags.TagAppender;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -15,7 +16,7 @@ public final class ModBlockTags {
     }
 
     /** Applies every block tag through the platform's appender lookup. */
-    public static void addTags(Function<TagKey<Block>, TagAppender<Block>> builders) {
+    public static void addTags(Function<TagKey<Block>, TagAppender<ResourceKey<Block>, Block>> builders) {
         builders.apply(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.LEAD_ORE.getKey());
 

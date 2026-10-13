@@ -3,6 +3,7 @@ package net.syshima.sptools.neoforge.datagen.providers;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagAppender;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
@@ -22,7 +23,7 @@ public final class ModItemTagsProvider extends ItemTagsProvider {
         ModItemTags.addTags(this::appender);
     }
 
-    private TagAppender<Item> appender(TagKey<Item> tag) {
+    private TagAppender<ResourceKey<Item>, Item> appender(TagKey<Item> tag) {
         return TagAppender.forBuilder(getOrCreateRawBuilder(tag));
     }
 }

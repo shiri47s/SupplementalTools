@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "A": "sptools:quartz_scrap",
     "B": "minecraft:iron_ingot"
