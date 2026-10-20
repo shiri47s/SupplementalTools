@@ -1,65 +1,180 @@
-# User-specific stuff
+# =============================================================================
+# Java / Gradle / IntelliJ / NeoForge Development
+# =============================================================================
+#
+# Project-wide ignore rules for Java, Gradle, IntelliJ IDEA,
+# Minecraft / NeoForge development, operating-system metadata,
+# local tooling, caches, and generated artifacts.
+#
+# Generated game resources are intentionally kept in version control.
+# Only transient caches and local runtime data are ignored.
+# =============================================================================
+
+
+# =============================================================================
+# IDE / Editor
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# IntelliJ IDEA
+# -----------------------------------------------------------------------------
+
 .idea/
+.idea_modules/
 
 *.iml
 *.ipr
 *.iws
 
-# IntelliJ
-out/
-# mpeltonen/sbt-idea plugin
-.idea_modules/
-
-# JIRA plugin
+# IntelliJ / Atlassian plugin
 atlassian-ide-plugin.xml
 
-# Compiled class file
+
+# =============================================================================
+# Java / JVM
+# =============================================================================
+
+# Compiled classes
 *.class
 
-# Log file
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# Java process logs
 *.log
 
-# BlueJ files
-*.ctxt
 
-# Package Files #
+# =============================================================================
+# Gradle
+# =============================================================================
+
+.gradle/
+
+# Build output
+build/
+out/
+
+# Gradle GUI / local task state
+gradle-app.setting
+.gradletasknamecache
+
+# Machine-specific Gradle configuration
+local.properties
+
+
+# =============================================================================
+# Cache
+# =============================================================================
+
+# Generic cache directories at any depth
+.cache/
+
+
+# =============================================================================
+# Gradle Wrapper
+# =============================================================================
+
+# The Gradle Wrapper JAR must remain version-controlled even though
+# JAR files are ignored below.
+
+!gradle/wrapper/gradle-wrapper.jar
+
+
+# =============================================================================
+# Build Packages / Archives
+# =============================================================================
+
 *.jar
 *.war
 *.nar
 *.ear
+
 *.zip
+*.tar
 *.tar.gz
+*.tgz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# Keep the Gradle Wrapper binary tracked.
+!gradle/wrapper/gradle-wrapper.jar
+
+
+# =============================================================================
+# Minecraft / NeoForge Runtime
+# =============================================================================
+
+# Local game / development runtime
+run/
+
+# Runtime artifacts
+logs/
+crash-reports/
+
+# Uncomment if these can also be generated outside run/.
+#
+# saves/
+# screenshots/
+# options.txt
+# usercache.json
+
+
+# =============================================================================
+# Data Generation
+# =============================================================================
+
+# Generated resources themselves ARE committed because they are part of the
+# shipped mod: models, recipes, loot tables, tags, worldgen data, etc.
+#
+# DataGen cache directories are covered globally by:
+#
+#   .cache/
+#
+# Therefore files such as:
+#
+#   neoforge/src/generated/.cache/
+#
+# are ignored while the generated resources themselves remain tracked.
+
+
+# =============================================================================
+# MCP / Local Agent Configuration
+# =============================================================================
+
+# Points to an IDE or MCP service running on this developer's machine.
+# It is therefore machine-specific and should not be shared.
+
+.mcp.json
+
+
+# =============================================================================
+# Temporary / Backup Files
+# =============================================================================
 
 *~
+*.tmp
+*.temp
+*.swp
+*.swo
 
-# temporary files which can be created if a process still has a handle open of a deleted file
+# File-system temporary artifacts
 .fuse_hidden*
-
-# KDE directory preferences
-.directory
-
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
-
-# .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-# General
+
+# =============================================================================
+# macOS
+# =============================================================================
+
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Icon must end with two \r
-Icon
-
-# Thumbnails
 ._*
 
-# Files that might appear in the root of a volume
+# Custom folder icon metadata
+Icon?
+
+# Volume / filesystem metadata
 .DocumentRevisions-V100
 .fseventsd
 .Spotlight-V100
@@ -68,61 +183,59 @@ Icon
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 
-# Directories potentially created on remote AFP share
+# AFP / network-share metadata
 .AppleDB
 .AppleDesktop
 Network Trash Folder
 Temporary Items
 .apdisk
 
-# Windows thumbnail cache files
+
+# =============================================================================
+# Windows
+# =============================================================================
+
+# Thumbnail caches
 Thumbs.db
 Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
-# Dump file
+# Crash / dump files
 *.stackdump
 
-# Folder config file
+# Folder metadata
 [Dd]esktop.ini
 
-# Recycle Bin used on file shares
+# Recycle Bin
 $RECYCLE.BIN/
 
-# Windows Installer files
+# Installer packages
 *.cab
 *.msi
 *.msix
 *.msm
 *.msp
 
-# Windows shortcuts
+# Shortcuts
 *.lnk
 
-.gradle
-build/
 
-# Ignore Gradle GUI config
-gradle-app.setting
+# =============================================================================
+# Linux / Unix Desktop
+# =============================================================================
 
-# Cache of project
-.gradletasknamecache
+.directory
+.Trash-*
 
-**/build/
 
-# Common working directory
-run/
+# =============================================================================
+# Optional Local Configuration
+# =============================================================================
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
-
-# Data Generation files
-# Generated resources ARE committed: they are part of the shipped mod (models,
-# recipes, loot tables, tags, worldgen). Only the datagen hash cache is ignored.
-**/generated/.cache/
-neoforge/src/generated/.cache/
-
-# MCP server config. It addresses an IDE listening on a port on this machine,
-# so it is per-developer rather than per-project.
-.mcp.json
+# .env
+# .env.*
+# !.env.example
+#
+# *.local
+# *.local.properties
